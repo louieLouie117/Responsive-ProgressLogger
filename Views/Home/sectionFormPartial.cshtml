@@ -1,0 +1,9 @@
+@using ProgressLog.Models
+@model Section
+
+<div class="newRecord_container">
+    <form asp-action="CreateSection" asp-controller="Home" method="POST">
+        <input asp-for="Title">
+        <input type="submit" value="+" class="SectionBTN">
+    </form>
+</div>

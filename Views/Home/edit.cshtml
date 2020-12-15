@@ -1,0 +1,69 @@
+@using ProgressLog.Models
+@model MainWrapper
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Written Logs</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/globalStyles.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Progress Log</h1>
+        <a href="/logout">logout</a>
+        <picture>
+            <img src="~/images/logo.png" alt="">
+        </picture>
+
+        <partial name="sectionFormPartial" model="@Model.Section" />
+
+
+        <nav class="page-nav">
+
+            <ul>
+                @foreach (var item in ViewBag.allSections)
+                {
+                    <li>
+                        <a href="/deleteSection/@item.SectionId">O</a>
+                        <button id="page-selected"> <a href="/sectionLink/@item.SectionId">@item.Title</a></button>
+                    </li>
+                }
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div class="content-container">
+
+            <div class="paper-container" id="id">
+                <div class="content-wrapper" id="hide-wapper2">
+
+
+                </div>
+                <partial name="editPartial" model="@Model.LogRecord" />
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </main>
+
+</body>
+
+</html>

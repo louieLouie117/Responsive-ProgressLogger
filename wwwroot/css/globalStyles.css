@@ -1,0 +1,163 @@
+body {
+    display: grid;
+    background: whitesmoke;
+    max-width: 65em;
+    margin: 0 auto;
+    font: 1em sans-serif;
+    height: 100vh;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    padding: 0px;
+
+}
+
+
+
+
+
+
+.outline ::-webkit-scrollbar,
+.month-tabs ::-webkit-scrollbar,
+.content-wrapper ::-webkit-scrollbar,
+.paper-container ::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+/*Header navigation for all pages----------------------------------------->*/
+header {
+    display: grid;
+    background: rgb(19, 109, 192);
+    color: white;
+    height: auto;
+}
+
+h1 {
+    display: none;
+
+}
+
+header img {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.page-nav ul {
+    display: flex;
+    float: left;
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: none;
+}
+
+.page-nav ul li {
+    margin-right: 10px;
+
+}
+
+.page-nav button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    width: 120px;
+
+}
+
+
+
+/*Header Responsive Styles----------------------------------------------->*/
+@media screen and (min-width: 1100px) {
+    body {
+        grid-template-columns: 230px 1fr;
+        column-gap: 0%;
+        max-width: none;
+        margin-left: 0px;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        left: 15px;
+        display: grid;
+        grid-template-rows: 10px 70px 50px ;
+        border-radius: 30px 0 0 30px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.336);
+        padding-top: 20px;
+        margin-top: 5px;
+        justify-items: flex-end;
+    }
+
+    header a{
+        padding-right: 10px;
+    }
+    
+
+    header img {
+        width: 90%;
+    }
+
+
+    .page-nav ul {
+        display: grid;
+        row-gap: 5px;
+        padding: 0;
+        justify-content: right;
+        margin-left: 10px;
+        justify-items: flex-end;
+
+    }
+
+
+    .page-nav button {
+        border-radius: 20px 0 0 20px;
+        font-size: 1.2em;
+        width: 170px;
+        justify-self: right;
+        padding: 13px;
+        background: none;
+        text-align: left;
+
+    }
+
+    .page-nav :first-child a{
+        color: rgba(245, 245, 245, 0.253);
+    }
+
+    a {
+        color: white;
+    }
+
+    #page-selected {
+        background: white;
+    }
+
+    #page-selected a {
+        color: black;
+
+    }
+
+
+
+
+
+}

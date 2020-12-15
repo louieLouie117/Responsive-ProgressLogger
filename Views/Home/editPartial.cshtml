@@ -1,0 +1,12 @@
+@using ProgressLog.Models
+@model LogRecord
+
+<div class="newLog_containerEdit">
+    <form asp-action="UpdateLog" asp-controller="Home" method="POST" asp-route-id="@Model.LogRecordId">
+        <textarea asp-for="@Model.TextLog" id="newLogEdit" placeholder=" enter log..."></textarea>
+        <div class="logOptions_container">
+            <input type="submit" value="Save">
+        </div>
+    </form>
+
+</div>
