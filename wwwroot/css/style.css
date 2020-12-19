@@ -33,8 +33,20 @@ main  ::-webkit-scrollbar{
     border-bottom: solid 2px rgb(19, 109, 192);
     padding: 0;
     align-items: center;
+    background: white;
+    position: sticky;
+    top: -1px;
+    left: 0;
+    height: 60px;
+    overflow: hidden;
+
+
 }
 
+.logItem_container h3 {
+    font: 1em sans-serif;
+
+}
 
 .editDelete_container{
     display: grid;
@@ -51,7 +63,28 @@ main  ::-webkit-scrollbar{
 
 .logOptions_container{
     display: grid;
-    grid-template-columns: 200px 200px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-right: 10px;
+    /* transform: translate(-50%); */
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 10px;
+    justify-items: right;
+    margin-top: 5px;
+    /* background:white; */
+    z-index: 5;
+
+
+
+}
+
+
+.logOptions_container button{
+     background: rgb(202, 3, 3);
+     border: none;
+     color: white;
+     width: 70px;
 }
 
 
@@ -68,6 +101,7 @@ main  ::-webkit-scrollbar{
     width: 100vw;
     padding-top: 15px;
     background: none;
+
 
 }
 
@@ -90,6 +124,7 @@ main  ::-webkit-scrollbar{
     position: relative;
     padding-bottom: 5px;
 
+
 }
 
 .newLog_container form{
@@ -97,7 +132,7 @@ main  ::-webkit-scrollbar{
     row-gap: 10px;
     grid-template-rows: 1fr;
     height: 40px;
-    width: auto;
+    width: 90vw;
     padding: 0 10px;
     
 }
@@ -105,12 +140,23 @@ main  ::-webkit-scrollbar{
 
 
 .newLog_container form textarea{
-    font: 1em sans-serif;
+    font: 1.1em sans-serif;
     padding-left: 20px;
+    padding-top: 10px;
     border-radius: 20px;
-    border: solid 2px silver;
-    margin: 0 50px ;
+    border: none;
     outline: none;
+    position: fixed;
+    bottom:  25px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 5;
+    height: 30px;
+    width: 80vw;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.508);
+    
+
+
     
 }
 .newLog_container input{
@@ -118,10 +164,11 @@ main  ::-webkit-scrollbar{
     width: 100px;
     background: rgb(19, 109, 192);
     color: white;
-    margin-left: 50px;
-    border: none;
+    /* margin-left: 50px; */
+    border: 2px solid white;
     border-radius: 20px;
     padding: 5px;
+    box-shadow: 0 0 5px black;
 
 }
 
@@ -157,6 +204,7 @@ main  ::-webkit-scrollbar{
     border: none;
     border-radius: 20px;
     padding: 5px;
+    
 
 }
 
@@ -173,21 +221,26 @@ main  ::-webkit-scrollbar{
 
 .content-wrapper {
     display: grid;
-    grid-template-rows: 140px;
+    /* grid-template-rows: 20px 70px;  pull icon */
+    grid-template-rows: 70px;
     background: white;
-    /* margin: 30px; */
+    margin: 7px;
     /*Remove Margins from here for mobile*/
-    padding: 40px;
-    margin: 0px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.096);
-    height: 100%;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.227);
+    height: 110%;
+    
+
+    
+    
 }
 
 .newRecord_container>form{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     height: 50px;
     align-items: center;
+    
 }
 
 
@@ -198,7 +251,7 @@ main  ::-webkit-scrollbar{
     padding: 7px 0;
     padding-left: 9px;
     margin-left: 10px;
-    min-width: 110px;
+    width: 100%;
     border: none;
 
 }
@@ -217,11 +270,14 @@ main  ::-webkit-scrollbar{
 
 
 
+
 }
 .outline {
     display: grid;
     grid-template-rows: 55px;
-    height: 100vh;
+    height: 10vh;
+
+
 }
 
 
@@ -234,9 +290,11 @@ main  ::-webkit-scrollbar{
     overflow-y: hidden;
     overflow-x: scroll;
     scrollbar-width: none;
-    height: 50px;
+    height: 20px;
     padding: 10px;
     background: none;
+
+
 }
 
 .outline ul button {
@@ -248,11 +306,14 @@ main  ::-webkit-scrollbar{
     background: none;
     font-size: 1.1em;
     cursor: pointer;
+
     /* border-bottom: 1px solid rgb(19, 109, 192); */
+
 }
 
 .outline button a {
     color: rgb(19, 109, 192);
+
 
 }
 
@@ -264,17 +325,20 @@ main  ::-webkit-scrollbar{
     overflow-y: scroll;
     scrollbar-width: none;
     margin-bottom: 500px;
+
+
 }
 
 .user-content h3 {
-    position: sticky;
-    top: 0;
-    left: 0;
-    color: rgb(19, 109, 192);
+      color: rgb(19, 109, 192);
     /* border-bottom: 2px solid rgb(19, 109, 192); */
-    font-size: 1.5em;
-    margin-top: 10px;
-    background: white;
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: bold;
+
+    /* background: white; */
+
+
 }
 
 
@@ -297,6 +361,15 @@ main  ::-webkit-scrollbar{
 
 
 
+@media screen and (min-width: 530px) {
+    .content-wrapper{
+        padding: 40px;
+    }
+}
+
+
+
+
 
 /*Main Responsive Layout Styles------------------------------------------------>*/
 @media screen and (min-width: 1100px) {
@@ -306,7 +379,23 @@ main  ::-webkit-scrollbar{
 
     }
 
+.newLog_container form textarea{
+    width: 40vw;
+}
+
+.dateText-container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    justify-items: left;
+}
  
+
+.user-content{
+    padding: 0;
+    padding-right: 40px;
+
+}
 
 
 
@@ -333,17 +422,21 @@ main  ::-webkit-scrollbar{
         margin-bottom: 0;
         grid-template-columns: 65vw;
         margin: 0 2.5%;
-        background: none;
+
+
+
     }
 
     .content-wrapper {
         grid-template-columns: 200px auto;
+
     }
 
     .outline {
         display: grid;
         background: none;
         padding-left: 20px;
+
     }
 
     .outline ul {
@@ -355,6 +448,8 @@ main  ::-webkit-scrollbar{
         padding: 0px;
         background: none;
         scrollbar-width: none;
+
+
     }
 
     .outline ul>:last-child {
@@ -364,6 +459,8 @@ main  ::-webkit-scrollbar{
 
     .outline ul li {
         margin-bottom: 20px;
+
+
     }
 
     .outline h2 {

@@ -22,3 +22,14 @@ function hideNewLog(e){
 
 
 }
+
+
+function showDeleteSection(e){
+    document.getElementById("deleteSection").style.display = "grid";
+
+}
+
+function hideDeleteSection(e){
+    document.getElementById("deleteSection").style.display = "none";
+
+}

@@ -5,8 +5,9 @@
     <form asp-action="CreateLog" asp-controller="Home" method="POST">
         <textarea asp-for="TextLog" id="newLogBTN" onclick="showNewLog()" placeholder=" enter log..."></textarea>
         <div class="logOptions_container">
-            <input onclick="hideNewLog()" id="saveBTN" type="submit" value="Save">
             <button onclick="hideNewLog()" type="button" id="cancleLog">Cancle</button>
+            <input onclick="hideNewLog()" id="saveBTN" type="submit" value="Save">
+
         </div>
     </form>
 
