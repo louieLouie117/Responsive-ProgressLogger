@@ -6,6 +6,22 @@ body{
 }
 
 
+.logo-container{
+    background: none;
+    position: absolute;
+    top: 5px;
+    left: 25px;
+}
+
+.logo-container img {
+    height: 50px;
+    width: auto;
+
+}
+
+
+
+
 form input{
     font: 1em sans-serif;
     height: 20px;
@@ -15,7 +31,7 @@ form input{
 
 .regLogin-container{
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     /* align-items: flex-end; */
     height: 100vh;
 }
@@ -78,5 +94,12 @@ form input{
 
 
 
+
+    .logo-container{
+        background: none;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
 
 }
