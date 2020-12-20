@@ -64,13 +64,13 @@ main  ::-webkit-scrollbar{
 .logOptions_container{
     display: grid;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 5px;
+    left: 50%;
     padding-right: 10px;
-    /* transform: translate(-50%); */
+    transform: translate(-50%);
     grid-template-columns: 1fr 1fr ;
     column-gap: 10px;
-    justify-items: right;
+    justify-items: center;
     margin-top: 5px;
     /* background:white; */
     z-index: 5;
@@ -172,24 +172,30 @@ main  ::-webkit-scrollbar{
 
 }
 
+.newLog_containerEdit {
+    background: white;
+    width: 100vw;
+    padding: 0;
+}
+
 
 .newLog_containerEdit form{
     display: grid;
     row-gap: 10px;
-    grid-template-rows: 1fr;
-    height: 87vh;
-    width: auto;
-    padding: 0 10px;
+    /* grid-template-rows: 1fr; */
+    height: 80vh;
+    width: 100vw;
+    /* padding: 0 10px; */
     
 }
 
 
 .newLog_containerEdit form textarea{
     font: 1em sans-serif;
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px;
     border: solid 2px silver;
-    margin: 0 50px ;
+    /* margin: 0 50px ; */
     outline: none;
 }
 
@@ -200,10 +206,11 @@ main  ::-webkit-scrollbar{
     width: 100px;
     background: rgb(19, 109, 192);
     color: white;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     border: none;
     border-radius: 20px;
     padding: 5px;
+    border: solid white 2px;
     
 
 }
@@ -222,17 +229,24 @@ main  ::-webkit-scrollbar{
 .content-wrapper {
     display: grid;
     /* grid-template-rows: 20px 70px;  pull icon */
-    grid-template-rows: 70px;
+    grid-template-rows:  5px 70px;
     background: white;
-    margin: 7px;
+    margin: 2px;
     /*Remove Margins from here for mobile*/
     padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.227);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.227);
     height: 110%;
     
+    
+}
 
-    
-    
+.readMode-container{
+    position: relative;
+    height: 5px;
+    width: 70px;
+    background: whitesmoke;
+    justify-self: center;
+    border-radius: 20px;
 }
 
 .newRecord_container>form{
@@ -363,7 +377,7 @@ main  ::-webkit-scrollbar{
 
 @media screen and (min-width: 530px) {
     .content-wrapper{
-        padding: 40px;
+        padding: 30px;
     }
 }
 
@@ -378,6 +392,11 @@ main  ::-webkit-scrollbar{
         height: 100vh;
 
     }
+
+.readMode-container{
+    display: none;
+}
+
 
 .newLog_container form textarea{
     width: 40vw;

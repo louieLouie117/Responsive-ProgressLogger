@@ -23,13 +23,13 @@ namespace ProgressLog.Controllers
         [HttpGet("signin")]
         public IActionResult gotoSignin()
         {
-            return RedirectToAction("login");
+            return RedirectToAction("index");
         }
 
         [HttpGet("registration")]
         public IActionResult gotoRegistration()
         {
-            return RedirectToAction("index");
+            return RedirectToAction("login");
         }
 
         // -----------------------------------------------------------end
@@ -55,7 +55,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
 
             // check to see if section id is in session
