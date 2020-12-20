@@ -18,24 +18,51 @@
 <body>
     <header>
         <h1>Progress Log</h1>
-        <a href="/logout">logout</a>
-        <picture>
-            <img src="~/images/logo.png" alt="">
-        </picture>
+        <section>
+            <picture>
+                @* <source media="(min-width: 1100px)" srcset="~/imgages/log.png" /> *@
+                <a href="/logout">
+                    <img src="~/images/logIcon.png" alt="">
+                </a>
 
-        <partial name="sectionFormPartial" model="@Model.Section" />
+            </picture>
 
+            <partial name="sectionFormPartial" model="@Model.Section" />
+        </section>
         <nav class="page-nav">
 
             <ul>
                 @foreach (var item in ViewBag.allSections)
                 {
                     <li>
-                        <a href="/deleteSection/@item.SectionId">O</a>
-                        <button id="page-selected"> <a href="/sectionLink/@item.SectionId">@item.Title</a></button>
+                        <div class="title-container">
+                            <div onclick="showDeleteSection()" class="dotIcon-container">
+                                <div onclick="showDeleteSection()" class="DotIcon"></div>
+                                <div onclick="showDeleteSection()" class="DotIcon"></div>
+                                <div onclick="showDeleteSection()" class="DotIcon"></div>
+                            </div>
+
+                            <button id="page-selected"> <a href="/sectionLink/@item.SectionId">@item.Title
+                                    @item.SectionId</a></button>
+
+                        </div>
+                        <div id="deleteSection" class="deleteSection-container">
+                            <section>
+                                @* <h2>Are you sure you want to delete @item.Title section?</h2> *@
+                                <aside>
+
+                                    <button onclick="hideDeleteSection()"> <a
+                                            href="/deleteSection/@item.SectionId">Delete</a>
+                                    </button>
+                                    <button onclick="hideDeleteSection()">Cancel</button>
+                                </aside>
+                            </section>
+                        </div>
                     </li>
                 }
             </ul>
+
+
 
         </nav>
 
@@ -46,7 +73,7 @@
         @if (ViewBag.passSectionId == 0)
         {
             <div class="welcomeMsg">
-                <p>Welcome @ViewBag.ToDisplay.FirstName :)</p>
+                <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
                 <p>select or + add a new section</p>
 
             </div>
@@ -55,13 +82,18 @@
         {
             <div class="content-container">
 
+
                 <div class="paper-container" id="id">
                     <div class="content-wrapper" id="hide-wapper">
+                        <div class="readMode-container"></div>
+
+                        @* <h4>Pull</h4> *@
+
                         <section class="outline">
                             <ul>
                                 @foreach (var item in ViewBag.allUserLogs)
                                 {
-                                    <li><button>@item.CreatedAt.ToString("dddd")</button></li>
+                                    <li id="@item.LogRecordId"><button>@item.CreatedAt.ToString("dddd")</button></li>
                                 }
                             </ul>
                         </section>
@@ -73,7 +105,10 @@
                             @foreach (var item in ViewBag.allUserLogs)
                             {
                                 <div class="logItem_container">
-                                    <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
+                                    <div class="dateText-container">
+                                        <h3>@item.CreatedAt.ToString("dddd"),</h3>
+                                        <h3>@item.CreatedAt.ToString("MMMM dd, yyyy")</h3>
+                                    </div>
                                     <div class="editDelete_container">
                                         <a href="/edit/@item.LogRecordId">Edit</a>
                                         <a href="/deleteLog/@item.LogRecordId">Delete</a>
