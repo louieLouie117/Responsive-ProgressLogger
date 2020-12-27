@@ -1,7 +1,8 @@
 
 // show the text and button options
 function showNewLog(e) {
-    document.getElementById("newLogBTN").style.height = "45vw";
+    document.getElementById("newLogBTN").style.height = "100vw";
+    document.getElementById("newLogBTN").style.position = "relative";
     document.getElementById("newLogBTN").style.padding = "40px";
     document.getElementById("hide-wapper").style.display = "none";
     document.getElementById("saveBTN").style.display = "block";
@@ -13,6 +14,7 @@ function showNewLog(e) {
 function hideNewLog(e){
     document.getElementById("newLogBTN").style.height = "auto";
     document.getElementById("saveBTN").style.display = "none";
+    document.getElementById("newLogBTN").style.position = "fixed";
     document.getElementById("cancleLog").style.display ="none";
     document.getElementById("hide-wapper").style.display = "grid";
     document.getElementById("newLogBTN").style.padding = "0";

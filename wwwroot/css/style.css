@@ -63,14 +63,18 @@ main  ::-webkit-scrollbar{
 
 .logOptions_container{
     display: grid;
-    position: relative;
     padding-right: 10px;
     grid-template-columns: 1fr 1fr ;
     column-gap: 10px;
     justify-items: center;
     margin-top: 5px;
-    background:none;
+    /* background:gold; */
     z-index: 5;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    /* justify-self: center; */
+    
 
 
 
@@ -117,12 +121,12 @@ main  ::-webkit-scrollbar{
 .newLog_container{
     display: grid;
     position: fixed;
+    grid-template-rows: 30px 1fr;
     top: 0;
-    width: auto;
-    height: 100vw;
     /* position: relative; */
     padding-bottom: 5px;
-    background: none;
+    /* background: green; */
+    width: 100vh;
 
 
 
@@ -131,10 +135,11 @@ main  ::-webkit-scrollbar{
 .newLog_container form{
     display: grid;
     row-gap: 10px;
-    grid-template-rows: 1fr;
-    height: 40px;
-    width: 90vw;
-    padding: 0 10px;
+    grid-template-rows: 40px 1fr;
+    /* padding: 20px; */
+    /* background: red; */
+    width: 100vw;
+    
     
 }
 
@@ -148,14 +153,15 @@ main  ::-webkit-scrollbar{
     border: solid 1px rgba(19, 108, 192, 0.446);
     outline: none;
     position: fixed;
+    /* position: relative; */
     bottom:  25px;
     left: 50%;
     transform: translate(-50%);
     z-index: 5;
     height: 30px;
-    width: 80vw;
     /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.378); */
     box-shadow: 0 0 5px rgba(65, 158, 245, 0.611);
+    width: 80vw;
 
 }
 
@@ -398,6 +404,11 @@ main  ::-webkit-scrollbar{
         display: none;
     }
 
+    .newLog_container form {
+    width: 65vw;
+
+    }
+
 
     .newLog_container form textarea{
         width: 40vw;
@@ -493,12 +504,6 @@ main  ::-webkit-scrollbar{
     }
 
 
-  .logOptions_container{
-    position: fixed;
-    top: 5px;
-    left: 50%;
-    transform: translate(-50%);
-  }
 
    
 
