@@ -1,7 +1,7 @@
 
 // show the text and button options
 function showNewLog(e) {
-    document.getElementById("newLogBTN").style.height = "80vh";
+    document.getElementById("newLogBTN").style.height = "45vw";
     document.getElementById("newLogBTN").style.padding = "40px";
     document.getElementById("hide-wapper").style.display = "none";
     document.getElementById("saveBTN").style.display = "block";
