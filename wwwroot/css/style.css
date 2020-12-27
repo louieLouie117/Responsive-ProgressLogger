@@ -100,7 +100,6 @@ main  ::-webkit-scrollbar{
     scrollbar-width: none;
     width: 100vw;
     padding-top: 15px;
-    background: none;
 
 
 }
@@ -112,8 +111,8 @@ main  ::-webkit-scrollbar{
     gap: 20px;
     margin: 0;
     margin-right: 0px;
-    /* made chages */
-    background: none;
+    width: 100vw;
+    padding: 1px;
 
 }
 
@@ -173,7 +172,7 @@ main  ::-webkit-scrollbar{
 }
 
 .newLog_containerEdit {
-    background: white;
+    background: none;
     width: 100vw;
     padding: 0;
 }
@@ -393,28 +392,28 @@ main  ::-webkit-scrollbar{
 
     }
 
-.readMode-container{
-    display: none;
-}
+    .readMode-container{
+        display: none;
+    }
 
 
-.newLog_container form textarea{
-    width: 40vw;
-}
+    .newLog_container form textarea{
+        width: 40vw;
+    }
 
-.dateText-container{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 10px;
-    justify-items: left;
-}
- 
+    .dateText-container{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 10px;
+        justify-items: left;
+    }
+    
 
-.user-content{
-    padding: 0;
-    padding-right: 40px;
+    .user-content{
+        padding: 0;
+        padding-right: 40px;
 
-}
+    }
 
 
 
@@ -490,4 +489,14 @@ main  ::-webkit-scrollbar{
     .outline button {
         width: auto;
     }
+
+
+
+   
+
+    .newLog_containerEdit form{
+        max-width: 70vw;
+        margin-top: 70px;
+    }
+
 }

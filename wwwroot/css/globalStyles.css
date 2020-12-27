@@ -108,8 +108,9 @@ header img {
     height: auto;
     background: none;
     overflow: scroll;
-    width: 100vw;
+    width: 97vw;
     padding-left: 10px;
+    
 
 }
 
@@ -122,7 +123,7 @@ header img {
     align-items: center;
     justify-items: left;
     padding: 0px;
-    width: 120px;
+    min-width: 120px;
     height: 40px;
     padding-left: 10px;
 
@@ -143,14 +144,15 @@ header img {
     row-gap: 3px;
     background: white;
     align-self: center;
+    padding-left: 3px;
 
 
 }
 
 .DotIcon {
     background: rgb(19, 109, 192);
-    height: 7px;
-    width: 7px;
+    height: 5px;
+    width: 5px;
     border-radius: 10px;
 }
 
