@@ -72,6 +72,7 @@ main  ::-webkit-scrollbar{
     z-index: 5;
     grid-column: 1/2;
     grid-row: 1/2;
+    height: 2px;
 
     /* justify-self: center; */
     
@@ -127,6 +128,8 @@ main  ::-webkit-scrollbar{
     padding-bottom: 5px;
     /* background: green; */
     width: 100vh;
+    height: 2px;
+    
 
 
 
@@ -139,6 +142,7 @@ main  ::-webkit-scrollbar{
     /* padding: 20px; */
     /* background: red; */
     width: 100vw;
+    height: 2px;
     
     
 }
