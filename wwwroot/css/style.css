@@ -63,11 +63,7 @@ main  ::-webkit-scrollbar{
 
 .logOptions_container{
     display: grid;
-    position: fixed;
-    top: 5px;
-    left: 50%;
     padding-right: 10px;
-    transform: translate(-50%);
     grid-template-columns: 1fr 1fr ;
     column-gap: 10px;
     justify-items: center;
@@ -122,6 +118,8 @@ main  ::-webkit-scrollbar{
     height: 40px;
     position: relative;
     padding-bottom: 5px;
+    align-self: center;   
+    /* left here */
 
 
 }
@@ -143,7 +141,7 @@ main  ::-webkit-scrollbar{
     padding-left: 20px;
     padding-top: 10px;
     border-radius: 20px;
-    border: none;
+    border: solid 1px lightgray;
     outline: none;
     position: fixed;
     bottom:  25px;
@@ -152,12 +150,10 @@ main  ::-webkit-scrollbar{
     z-index: 5;
     height: 30px;
     width: 80vw;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.508);
-    
-
-
-    
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.378);
 }
+
+
 .newLog_container input{
     font: 1.3em sans-serif;
     width: 100px;
@@ -243,7 +239,7 @@ main  ::-webkit-scrollbar{
     position: relative;
     height: 5px;
     width: 70px;
-    background: whitesmoke;
+    background: lightgray;
     justify-self: center;
     border-radius: 20px;
 }
@@ -491,6 +487,12 @@ main  ::-webkit-scrollbar{
     }
 
 
+  .logOptions_container{
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+  }
 
    
 
