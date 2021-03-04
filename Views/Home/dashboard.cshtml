@@ -36,25 +36,29 @@
                 {
                     <li>
                         <div class="title-container">
-                            <div onclick="showDeleteSection()" class="dotIcon-container">
-                                <div onclick="showDeleteSection()" class="DotIcon"></div>
-                                <div onclick="showDeleteSection()" class="DotIcon"></div>
-                                <div onclick="showDeleteSection()" class="DotIcon"></div>
+
+                            <div class="dotIcon-container">
+                                <div class="DotIcon"></div>
+                                <div class="DotIcon"></div>
+                                <div class="DotIcon"></div>
                             </div>
+
+
+                            <button id="@item.SectionId" onclick="showDeleteSection(event)"></button>
 
                             <button id="page-selected"> <a href="/sectionLink/@item.SectionId">@item.Title
                                 </a></button>
 
                         </div>
-                        <div id="deleteSection" class="deleteSection-container">
+                        <div id="deleteSection@(item.SectionId)" class="deleteSection-container">
                             <section>
-                                @* <h2>Are you sure you want to delete @item.Title section?</h2> *@
+                                @* <h2>Are you sure you want to delete section?</h2> *@
                                 <aside>
 
-                                    <button onclick="hideDeleteSection()"> <a
-                                            href="/deleteSection/@item.SectionId">Delete</a>
+                                    <button id="@item.SectionId" onclick="hideDeleteSection(event)"> Cancel
                                     </button>
-                                    <button onclick="hideDeleteSection()">Cancel</button>
+                                    <button onclick="hideDeleteSection()"> <a href="/deleteSection/@item.SectionId">Delete
+                                        </a></button>
                                 </aside>
                             </section>
                         </div>

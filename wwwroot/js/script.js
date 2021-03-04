@@ -12,6 +12,8 @@ function showNewLog(e) {
 
 
 function hideNewLog(e){
+
+
     document.getElementById("newLogBTN").style.height = "auto";
     document.getElementById("saveBTN").style.display = "none";
     document.getElementById("newLogBTN").style.position = "fixed";
@@ -27,11 +29,19 @@ function hideNewLog(e){
 
 
 function showDeleteSection(e){
-    document.getElementById("deleteSection").style.display = "grid";
+
+    
+    let deleteSectionItem = "deleteSection" + e.target.id;
+    console.log(deleteSectionItem);
+    document.getElementById(deleteSectionItem).style.display = "grid";
+
 
 }
 
 function hideDeleteSection(e){
-    document.getElementById("deleteSection").style.display = "none";
+    let deleteSectionItem = "deleteSection" + e.target.id;
+    console.log(deleteSectionItem);
+    
+    document.getElementById(deleteSectionItem).style.display = "none";
 
 }
