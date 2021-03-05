@@ -1,7 +1,7 @@
 
 // show the text and button options
 function showNewLog(e) {
-    document.getElementById("newLogBTN").style.height = "100vw";
+    document.getElementById("newLogBTN").style.height = "80vh";
     document.getElementById("newLogBTN").style.position = "relative";
     document.getElementById("newLogBTN").style.padding = "40px";
     document.getElementById("hide-wapper").style.display = "none";
@@ -26,6 +26,41 @@ function hideNewLog(e){
 
 
 }
+
+
+
+const ShowDeleteLog = (e)=>{
+    console.log(e.target.id);
+
+    let itemContainer = e.target.id + "Title"
+    let itemToDelete = e.target.id + "DeleteItem"
+
+
+    document.getElementById(itemContainer).style.display = "none";
+    document.getElementById(itemToDelete).style.display = "grid";
+
+
+
+
+
+
+}
+
+
+
+const HideDeleteLog = (e)=>{
+    console.log(e.target.id);
+
+    let itemContainer = e.target.id + "Title"
+    let itemToDelete = e.target.id + "DeleteItem"
+
+    document.getElementById(itemContainer).style.display = "grid";
+    document.getElementById(itemToDelete).style.display = "none";
+    
+
+
+}
+
 
 
 function showDeleteSection(e){
