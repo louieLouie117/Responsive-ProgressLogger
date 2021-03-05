@@ -150,6 +150,7 @@ main  ::-webkit-scrollbar{
 
 
 .newLog_container form textarea{
+
     font: 1.1em sans-serif;
     padding-left: 20px;
     padding-top: 10px;
@@ -184,7 +185,6 @@ main  ::-webkit-scrollbar{
 }
 
 .newLog_containerEdit {
-    background: none;
     width: 100vw;
     padding: 0;
 }
@@ -193,8 +193,8 @@ main  ::-webkit-scrollbar{
 .newLog_containerEdit form{
     display: grid;
     row-gap: 10px;
-    /* grid-template-rows: 1fr; */
-    height: 80vh;
+    grid-template-rows:  50px 1fr;
+    height: 100%;
     width: 100vw;
     /* padding: 0 10px; */
     
@@ -208,6 +208,7 @@ main  ::-webkit-scrollbar{
     border: solid 2px silver;
     /* margin: 0 50px ; */
     outline: none;
+    height: 70vh;
 }
 
 
@@ -390,6 +391,13 @@ main  ::-webkit-scrollbar{
     .content-wrapper{
         padding: 30px;
     }
+
+    .dateText-container{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 10px;
+        justify-items: left;
+    }
 }
 
 
@@ -418,12 +426,7 @@ main  ::-webkit-scrollbar{
         width: 40vw;
     }
 
-    .dateText-container{
-        display: grid;
-        grid-template-columns: auto 1fr;
-        column-gap: 10px;
-        justify-items: left;
-    }
+  
     
 
     .user-content{
@@ -516,4 +519,45 @@ main  ::-webkit-scrollbar{
         margin-top: 70px;
     }
 
+}
+
+
+.deleteLog-container{
+    display: none;
+    position: relative;
+    grid-template-columns: 1fr 100px;
+    background: white;
+    z-index: 20;
+    align-items: center;
+ 
+  
+}
+
+.deleteLog-container p{
+    color: rgb(19, 109, 192);
+
+}
+
+
+.deleteLog-container a{
+    color: rgb(19, 109, 192);
+    padding: 10px;
+
+
+
+}
+
+.deleteLog-container>aside{
+    display: grid;
+    grid-template-columns: 50px 50px;
+    align-items: center;
+
+}
+
+.deleteLog-container>aside button{
+    background: red;
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
