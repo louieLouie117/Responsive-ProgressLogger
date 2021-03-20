@@ -117,24 +117,45 @@ namespace ProgressLog.Controllers
         }
 
 
-        [HttpPost("CreateSection")]
-        public IActionResult CreateSection(Section FromForm)
+        [HttpPost("NewSectionHandler")]
+        public IActionResult NewSectionHandler(Section FromForm)
         {
 
+            System.Console.WriteLine("you have reach the sections backend.");
 
             // get and set userId
             int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
             FromForm.UserId = GetUserbyId;
 
-            // System.Console.WriteLine(FromForm.Title);
-            // System.Console.WriteLine(FromForm.SectionId);
+            System.Console.WriteLine(FromForm.Title);
+            System.Console.WriteLine(FromForm.SectionId);
 
             _context.Add(FromForm);
             _context.SaveChanges();
 
 
-            System.Console.WriteLine("section button was click");
-            return RedirectToAction("dashboard");
+            // System.Console.WriteLine("section button was click");
+            return Json(new { StatusCode = "Success", FromForm });
+        }
+
+
+        [HttpGet("DisplaySection")]
+        public JsonResult DisplaySection()
+        {
+            int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
+
+            MainWrapper wMode = new MainWrapper();
+
+            List<Section> sectionItems = _context.Sections
+            .Where(us => us.UserId == UserIdInSession)
+            .ToList();
+
+            //     ViewBag.TodoListItems = _context.TodoLists
+            //    .Where(us => us.UserId == UserIdInSession)
+            //    .ToList();
+
+            return Json(new { data = sectionItems });
+
         }
 
 
@@ -215,18 +236,21 @@ namespace ProgressLog.Controllers
         }
 
 
-        [HttpGet("/deleteSection/{SectionId}")]
-        public IActionResult deleteSection(int SectionId)
+        [HttpGet("DeleteSectionHandler")]
+        public IActionResult DeleteSectionHandler(Section DataId)
         {
 
-            Section GetSection = _context.Sections.FirstOrDefault(lr => lr.SectionId == SectionId);
+            System.Console.WriteLine("You have successfully reach the backend of delete section");
+            System.Console.WriteLine($"id: {DataId.SectionId}");
+
+
+            Section GetSection = _context.Sections.FirstOrDefault(lr => lr.SectionId == DataId.SectionId);
 
 
             _context.Sections.Remove(GetSection);
             _context.SaveChanges();
 
-            System.Console.WriteLine("Delete Section button was click");
-            return RedirectToAction("dashboard");
+            return Json(new { StatusCode = "Success", GetSection });
         }
 
 

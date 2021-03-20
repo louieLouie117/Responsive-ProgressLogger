@@ -1,9 +1,186 @@
 @using ProgressLog.Models
 @model Section
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $.get("/DisplaySection", data => {
+            RenderData(data);
+        });
+
+        $("#NewSectionForm").submit(event => {
+            event.preventDefault();
+            alert("New Section is being created!");
+
+            let title = $('#Title').val();
+            var sectionData = {
+                title: title,
+            };
+            console.log("Section data:", sectionData);
+
+            $.ajax({
+                url: '@Url.Action("NewSectionHandler", "Home")',
+                type: "POST",
+                data: sectionData,
+                success: SuccessStatus,
+                error: ErrorStatus,
+                complete: CompleteStatus
+            });
+
+        });
+
+        const SuccessStatus = (result) => {
+            console.log("Success...");
+            LoadData();
+        };
+        const ErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error!");
+        };
+        const CompleteStatus = (xhr, status) => {
+            console.log("Ajax has completed...");
+        };
+
+        const LoadData = () => {
+            $('#sectionItems').load("/DisplaySection #sectionItems", data => {
+                data = JSON.parse(data);
+                console.log("in load", data);
+                RenderData(data);
+            });
+        };
+
+        const RenderData = (data) => {
+            console.log("user Data", data.data)
+
+            $.each(data.data, function (key, value) {
+                console.log(value)
+                console.log("section info:", value.sectionId + value.title)
+
+                let sectionId = value.sectionId;
+                let sectionTitle = value.title;
+
+                $(`<li id="${value.sectionId}">
+                    <div class="title-container">
+
+                      <div class="dotIcon-container">
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                        </div>
+                        <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
+
+                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
+                            </a></button>
+
+                    </div>
+                    <div id="deleteSection${sectionId}" class="deleteSection-container">
+                        <section>
+                            <aside>
+                                <button > <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                                <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
+                            </aside>
+                        </section>
+                    </div>
+
+                    </li>`).appendTo("#sectionItems");
+            });
+        };
+
+    });
+
+    const DeleteSectionHandler = (e) => {
+        console.log("id to select", e.target.id)
+        let idSelected = e.target.id;
+
+        $(`#${idSelected}`).click(function (e) {
+
+            let itemId = e.target.id
+            var jsonData = {
+                sectionId: itemId,
+            };
+            console.log("item id:", itemId)
+            $.ajax({
+                url: '@Url.Action("DeleteSectionHandler", "Home")',
+                type: "GET",
+                data: jsonData,
+                success: SuccessStatus,
+                error: ErrorStatus,
+                complete: CompleteStatus
+            });
+        })
+        const SuccessStatus = (result) => {
+            console.log("Success...");
+            LoadData();
+        };
+        const ErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error!");
+        };
+        const CompleteStatus = (xhr, status) => {
+            console.log("Ajax has completed...");
+        };
+        const LoadData = () => {
+            $('#sectionItems').load("/DisplaySection #sectionItems", data => {
+                data = JSON.parse(data);
+                console.log("in load", data);
+                RenderData(data);
+                @* data = $.parseJSON(data); deprecated*@
+                });
+        };
+        const RenderData = (data) => {
+            console.log("user Data", data.data)
+            $.each(data.data, function (key, value) {
+                console.log(value)
+                console.log("section info:", value.sectionId + value.title)
+
+                let sectionId = value.sectionId;
+                let sectionTitle = value.title;
+
+                $(`<li id="${value.sectionId}">
+                    <div class="title-container">
+
+                      <div class="dotIcon-container">
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                        </div>
+                        <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
+
+                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
+                            </a></button>
+
+                    </div>
+                    <div id="deleteSection${sectionId}" class="deleteSection-container">
+                        <section>
+                            <aside>
+                                <button"> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                                <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
+                            </aside>
+                        </section>
+                    </div>
+
+                    </li>`).appendTo("#sectionItems");
+
+            });
+        };
+    }
+
+</script>
+
 <div class="newRecord_container">
-    <form asp-action="CreateSection" asp-controller="Home" method="POST">
+    <form id="NewSectionForm" asp-action="NewSectionHandler" asp-controller="Home" method="POST">
         <input asp-for="Title">
         <input type="submit" value="+" class="SectionBTN">
     </form>
+
 </div>
+
+<header class="section-container">
+
+    <nav class="page-nav">
+        <ul id="sectionItems"></ul>
+
+</header>
+
+
+</nav>
