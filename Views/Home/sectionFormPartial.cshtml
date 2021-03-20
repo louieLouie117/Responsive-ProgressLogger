@@ -6,6 +6,52 @@
 <script>
     $(document).ready(function () {
 
+        $.get("/DisplaySection", data => {
+            RenderData(data);
+        });
+
+        const RenderData = (data) => {
+            console.log("user Data", data.data)
+
+            $.each(data.data, function (key, value) {
+                console.log(value)
+                console.log("section info:", value.sectionId + value.title)
+
+                let sectionId = value.sectionId;
+                let sectionTitle = value.title;
+
+                $(`<li id="${value.sectionId}">
+                    <div class="title-container">
+
+                      <div class="dotIcon-container">
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                        </div>
+                        <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
+
+                        <button id="page-selected"> <a href="/sectionLink/${sectionId}">${sectionTitle}
+                            </a></button>
+
+                    </div>
+                    <div id="${sectionId}" class="deleteSection-container">
+                        <section>
+                            <aside>
+
+                                <button id="${sectionId}" onclick="hideDeleteSection(event)"> Cancel
+                                </button>
+                                <button onclick="hideDeleteSection()"> <a href="/deleteSection/${sectionId}">Delete
+                                    </a></button>
+                            </aside>
+                        </section>
+                    </div>
+
+                    </li>`).appendTo("#sectionItems");
+
+
+            });
+        };
+
         $("#NewSectionForm").submit(event => {
             event.preventDefault();
             alert("New Section is being created!");
@@ -52,7 +98,8 @@
 <header class="section-container">
 
     <nav class="page-nav">
-
+        <ul id="sectionItems">
+        </ul>
         <ul>
             @foreach (var item in ViewBag.allSections)
             {
