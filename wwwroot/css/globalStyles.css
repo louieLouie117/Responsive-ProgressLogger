@@ -248,11 +248,14 @@ header img {
 
 .deleteSection-container aside button:last-child {
     background: red;
+    color: white;
 }
 
 .deleteSection-container aside button a{
-    color: white;
+    color: grey;
+
 }
+
 
 
 
