@@ -236,18 +236,21 @@ namespace ProgressLog.Controllers
         }
 
 
-        [HttpGet("/deleteSection/{SectionId}")]
-        public IActionResult deleteSection(int SectionId)
+        [HttpGet("DeleteSectionHandler")]
+        public IActionResult DeleteSectionHandler(Section DataId)
         {
 
-            Section GetSection = _context.Sections.FirstOrDefault(lr => lr.SectionId == SectionId);
+            System.Console.WriteLine("You have successfully reach the backend of delete section");
+            System.Console.WriteLine($"id: {DataId.SectionId}");
+
+
+            Section GetSection = _context.Sections.FirstOrDefault(lr => lr.SectionId == DataId.SectionId);
 
 
             _context.Sections.Remove(GetSection);
             _context.SaveChanges();
 
-            System.Console.WriteLine("Delete Section button was click");
-            return RedirectToAction("dashboard");
+            return Json(new { StatusCode = "Success", GetSection });
         }
 
 
