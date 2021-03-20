@@ -95,27 +95,7 @@ namespace ProgressLog.Controllers
 
         // -----------------------------------------------------------end
 
-        // Processing--------------------------------------------------
-        [HttpPost("CreateLog")]
-        public IActionResult CreateLog(LogRecord FromForm)
-        {
-
-
-            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
-            FromForm.UserId = GetUserbyId;
-
-            int SelectedSectionId = (int)HttpContext.Session.GetInt32("SectionId");
-            FromForm.SectionId = SelectedSectionId;
-
-
-            _context.Add(FromForm);
-            _context.SaveChanges();
-
-
-            System.Console.WriteLine("Save button was click");
-            return RedirectToAction("dashboard");
-        }
-
+        // Processing Section Opporations--------------------------------------------------
 
         [HttpPost("NewSectionHandler")]
         public IActionResult NewSectionHandler(Section FromForm)
@@ -138,7 +118,6 @@ namespace ProgressLog.Controllers
             return Json(new { StatusCode = "Success", FromForm });
         }
 
-
         [HttpGet("DisplaySection")]
         public JsonResult DisplaySection()
         {
@@ -158,6 +137,44 @@ namespace ProgressLog.Controllers
 
         }
 
+
+        [HttpGet("DeleteSectionHandler")]
+        public IActionResult DeleteSectionHandler(Section DataId)
+        {
+
+            System.Console.WriteLine("You have successfully reach the backend of delete section");
+            System.Console.WriteLine($"id: {DataId.SectionId}");
+
+
+            Section GetSection = _context.Sections.FirstOrDefault(lr => lr.SectionId == DataId.SectionId);
+
+
+            _context.Sections.Remove(GetSection);
+            _context.SaveChanges();
+
+            return Json(new { StatusCode = "Success", GetSection });
+        }
+
+        // Processing Log Opporations--------------------------------------------------
+
+        [HttpPost("CreateLog")]
+        public IActionResult CreateLog(LogRecord FromForm)
+        {
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+            int SelectedSectionId = (int)HttpContext.Session.GetInt32("SectionId");
+            FromForm.SectionId = SelectedSectionId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+
+            System.Console.WriteLine("Save button was click");
+            return RedirectToAction("dashboard");
+        }
 
 
         [HttpGet("edit/{LogRecordId}")]
@@ -218,6 +235,7 @@ namespace ProgressLog.Controllers
 
 
             System.Console.WriteLine("Section was click");
+
             return RedirectToAction("dashboard");
         }
 
@@ -235,23 +253,6 @@ namespace ProgressLog.Controllers
             return RedirectToAction("dashboard");
         }
 
-
-        [HttpGet("DeleteSectionHandler")]
-        public IActionResult DeleteSectionHandler(Section DataId)
-        {
-
-            System.Console.WriteLine("You have successfully reach the backend of delete section");
-            System.Console.WriteLine($"id: {DataId.SectionId}");
-
-
-            Section GetSection = _context.Sections.FirstOrDefault(lr => lr.SectionId == DataId.SectionId);
-
-
-            _context.Sections.Remove(GetSection);
-            _context.SaveChanges();
-
-            return Json(new { StatusCode = "Success", GetSection });
-        }
 
 
         [HttpPost("update/{LogRecordId}")]
@@ -272,7 +273,6 @@ namespace ProgressLog.Controllers
 
 
 
-        // -----------------------------------------------------------end
 
 
 
