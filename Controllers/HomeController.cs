@@ -139,6 +139,26 @@ namespace ProgressLog.Controllers
         }
 
 
+        [HttpGet("DisplaySection")]
+        public JsonResult DisplaySection()
+        {
+            int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
+
+            MainWrapper wMode = new MainWrapper();
+
+            List<Section> sectionItems = _context.Sections
+            .Where(us => us.UserId == UserIdInSession)
+            .ToList();
+
+            //     ViewBag.TodoListItems = _context.TodoLists
+            //    .Where(us => us.UserId == UserIdInSession)
+            //    .ToList();
+
+            return Json(new { data = sectionItems });
+
+        }
+
+
 
         [HttpGet("edit/{LogRecordId}")]
         public IActionResult editLog(int LogRecordId)
