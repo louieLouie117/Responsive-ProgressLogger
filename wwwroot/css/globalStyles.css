@@ -41,13 +41,18 @@ body ::-webkit-scrollbar {
 
 
 /*Header navigation for all pages----------------------------------------->*/
-header {
+ header {
     display: grid;
     background: rgb(19, 109, 192);
     color: white;
     height: auto;
     padding-top: 5px;
     /* width: 100vw; */
+}
+
+.section-container{
+    background: none;
+    box-shadow: none;
 }
 
 
@@ -275,6 +280,13 @@ header img {
         padding-top: 20px;
         margin-top: 5px;
         justify-items: flex-end;
+
+    }
+
+    .section-container{
+        background:  none;
+        box-shadow: none;
+        height: 90vh;
 
     }
 
