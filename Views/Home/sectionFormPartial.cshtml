@@ -5,15 +5,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        alert("hello ajax");
 
+        $("#NewSectionForm").submit(event => {
+            event.preventDefault();
+            alert("New Section is being created!");
+
+            let title = $('#Title').val();
+            var sectionData = {
+                title: title,
+            };
+            console.log("Section data:", sectionData);
+
+            $.ajax({
+                url: '@Url.Action("NewSectionHandler", "Home")',
+                type: "POST",
+                data: sectionData,
+                success: SuccessStatus,
+                error: ErrorStatus,
+                complete: CompleteStatus
+            });
+
+        });
+
+        const SuccessStatus = (result) => {
+            console.log("Success...");
+        };
+        const ErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error!");
+        };
+        const CompleteStatus = (xhr, status) => {
+            console.log("Ajax has completed...");
+        };
 
     });
 
 </script>
 
 <div class="newRecord_container">
-    <form asp-action="CreateSection" asp-controller="Home" method="POST">
+    <form id="NewSectionForm" asp-action="NewSectionHandler" asp-controller="Home" method="POST">
         <input asp-for="Title">
         <input type="submit" value="+" class="SectionBTN">
     </form>
