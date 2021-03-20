@@ -77,7 +77,7 @@
                     <div id="deleteSection${sectionId}" class="deleteSection-container">
                         <section>
                             <aside>
-                                <button onclick="hideDeleteSection()"> <a href="/deleteSection/${sectionId}">Delete</a></button>
+                                <button > <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
                                 <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
                             </aside>
                         </section>
@@ -88,6 +88,82 @@
         };
 
     });
+
+    const DeleteSectionHandler = (e) => {
+        console.log("id to select", e.target.id)
+        let idSelected = e.target.id;
+
+        $(`#${idSelected}`).click(function (e) {
+
+            let itemId = e.target.id
+            var jsonData = {
+                sectionId: itemId,
+            };
+            console.log("item id:", itemId)
+            $.ajax({
+                url: '@Url.Action("DeleteSectionHandler", "Home")',
+                type: "GET",
+                data: jsonData,
+                success: SuccessStatus,
+                error: ErrorStatus,
+                complete: CompleteStatus
+            });
+        })
+        const SuccessStatus = (result) => {
+            console.log("Success...");
+            LoadData();
+        };
+        const ErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error!");
+        };
+        const CompleteStatus = (xhr, status) => {
+            console.log("Ajax has completed...");
+        };
+        const LoadData = () => {
+            $('#sectionItems').load("/DisplaySection #sectionItems", data => {
+                data = JSON.parse(data);
+                console.log("in load", data);
+                RenderData(data);
+                @* data = $.parseJSON(data); deprecated*@
+                });
+        };
+        const RenderData = (data) => {
+            console.log("user Data", data.data)
+            $.each(data.data, function (key, value) {
+                console.log(value)
+                console.log("section info:", value.sectionId + value.title)
+
+                let sectionId = value.sectionId;
+                let sectionTitle = value.title;
+
+                $(`<li id="${value.sectionId}">
+                    <div class="title-container">
+
+                      <div class="dotIcon-container">
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                            <div class="DotIcon"></div>
+                        </div>
+                        <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
+
+                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
+                            </a></button>
+
+                    </div>
+                    <div id="deleteSection${sectionId}" class="deleteSection-container">
+                        <section>
+                            <aside>
+                                <button"> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                                <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
+                            </aside>
+                        </section>
+                    </div>
+
+                    </li>`).appendTo("#sectionItems");
+
+            });
+        };
+    }
 
 </script>
 
