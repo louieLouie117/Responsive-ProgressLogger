@@ -117,24 +117,25 @@ namespace ProgressLog.Controllers
         }
 
 
-        [HttpPost("CreateSection")]
-        public IActionResult CreateSection(Section FromForm)
+        [HttpPost("NewSectionHandler")]
+        public IActionResult NewSectionHandler(Section FromForm)
         {
 
+            System.Console.WriteLine("you have reach the sections backend.");
 
             // get and set userId
             int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
             FromForm.UserId = GetUserbyId;
 
-            // System.Console.WriteLine(FromForm.Title);
-            // System.Console.WriteLine(FromForm.SectionId);
+            System.Console.WriteLine(FromForm.Title);
+            System.Console.WriteLine(FromForm.SectionId);
 
             _context.Add(FromForm);
             _context.SaveChanges();
 
 
-            System.Console.WriteLine("section button was click");
-            return RedirectToAction("dashboard");
+            // System.Console.WriteLine("section button was click");
+            return Json(new { StatusCode = "Success", FromForm });
         }
 
 
