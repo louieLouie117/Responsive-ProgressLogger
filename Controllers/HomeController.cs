@@ -155,6 +155,23 @@ namespace ProgressLog.Controllers
             return Json(new { StatusCode = "Success", GetSection });
         }
 
+
+
+        [HttpGet("FilterSectionHandler")]
+        public IActionResult FilterSectionHandler(Section DataId)
+        {
+
+            System.Console.WriteLine("You have successfully reach the backend of filtering section");
+
+
+
+
+
+            return Json(new { StatusCode = "Success" });
+        }
+
+
+
         // Processing Log Opporations--------------------------------------------------
 
         [HttpPost("CreateLog")]

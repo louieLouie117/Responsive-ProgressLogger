@@ -12,7 +12,44 @@
     <link rel="stylesheet" href="~/css/globalStyles.css">
     <script src="~/js/script.js" async=""></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
 
+        const FilterSectionHandler = (e) => {
+            alert("filterting data...");
+            console.log("id to select", e.target.id)
+            let idSelected = e.target.id;
+
+            $(`#${idSelected}`).click(function (e) {
+
+                let itemId = e.target.id
+                var jsonData = {
+                    sectionId: itemId,
+                };
+                console.log("item id:", itemId)
+                $.ajax({
+                    url: '@Url.Action("FilterSectionHandler", "Home")',
+                    type: "GET",
+                    data: jsonData,
+                    success: SuccessStatus,
+                    error: ErrorStatus,
+                    complete: CompleteStatus
+                });
+            })
+            const SuccessStatus = (result) => {
+                console.log("Success...");
+            };
+            const ErrorStatus = (xhr, status, strErr) => {
+                console.log("There was an error!");
+            };
+            const CompleteStatus = (xhr, status) => {
+                console.log("Ajax has completed...");
+            };
+
+        }
+
+
+    </script>
 </head>
 
 <body>

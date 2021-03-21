@@ -31,6 +31,7 @@
 
         });
 
+
         const SuccessStatus = (result) => {
             console.log("Success...");
             LoadData();
@@ -70,7 +71,7 @@
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
 
-                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
+                        <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}
                             </a></button>
 
                     </div>
@@ -146,7 +147,7 @@
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
 
-                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
+                        <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)"
                             </a></button>
 
                     </div>
