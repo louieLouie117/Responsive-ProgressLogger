@@ -129,6 +129,7 @@ namespace ProgressLog.Controllers
             .Where(us => us.UserId == UserIdInSession)
             .ToList();
 
+
             //     ViewBag.TodoListItems = _context.TodoLists
             //    .Where(us => us.UserId == UserIdInSession)
             //    .ToList();
@@ -162,12 +163,25 @@ namespace ProgressLog.Controllers
         {
 
             System.Console.WriteLine("You have successfully reach the backend of filtering section");
+            System.Console.WriteLine($"dataid: {DataId.SectionId}");
+
+            MainWrapper wMode = new MainWrapper();
+
+            // filter db by section id 
+            int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
+
+            HttpContext.Session.SetInt32("SectionId", DataId.SectionId);
 
 
+            List<LogRecord> GetUserLogs = _context.LogRecords
+                .Where(ul => ul.SectionId == DataId.SectionId)
+                .ToList();
 
+            System.Console.WriteLine($"users logs: {GetUserLogs}");
 
+            // return RedirectToAction("dashboard");
 
-            return Json(new { StatusCode = "Success" });
+            return Json(new { StatusCode = "Success", GetUserLogs });
         }
 
 
