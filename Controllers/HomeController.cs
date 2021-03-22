@@ -162,12 +162,28 @@ namespace ProgressLog.Controllers
         {
 
             System.Console.WriteLine("You have successfully reach the backend of filtering section");
+            System.Console.WriteLine($"dataid: {DataId.SectionId}");
+
+            MainWrapper wMode = new MainWrapper();
+
+            // filter db by section id 
+
+            List<LogRecord> GetUserLogs = _context.LogRecords
+                .Where(ul => ul.SectionId == DataId.SectionId)
+                .ToList();
+
+            System.Console.WriteLine($"users logs: {GetUserLogs}");
 
 
 
 
 
-            return Json(new { StatusCode = "Success" });
+
+
+
+
+
+            return Json(new { StatusCode = "Success", GetUserLogs });
         }
 
 
