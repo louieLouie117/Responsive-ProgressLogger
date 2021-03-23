@@ -33,14 +33,14 @@
 
 
         const SuccessStatus = (result) => {
-            console.log("Success...");
+            console.log("Success added new Item...");
             LoadData();
         };
         const ErrorStatus = (xhr, status, strErr) => {
-            console.log("There was an error!");
+            console.log("There was an error! When Adding new Item");
         };
         const CompleteStatus = (xhr, status) => {
-            console.log("Ajax has completed...");
+            console.log("Ajax adding new item has completed...");
         };
 
         const LoadData = () => {
@@ -70,9 +70,9 @@
                             <div class="DotIcon"></div>
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
-                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}</a></button>
+                        @* <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}</a></button> *@
 
-                        @* <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}</a></button> *@
+                        <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}</a></button>
 
                     </div>
                     <div id="deleteSection${sectionId}" class="deleteSection-container">
@@ -111,14 +111,14 @@
             });
         })
         const SuccessStatus = (result) => {
-            console.log("Success...");
+            console.log("Successfuly Deleted...");
             LoadData();
         };
         const ErrorStatus = (xhr, status, strErr) => {
-            console.log("There was an error!");
+            console.log("There was an error! when Deleteing");
         };
         const CompleteStatus = (xhr, status) => {
-            console.log("Ajax has completed...");
+            console.log("Ajax Delete has completed...");
         };
         const LoadData = () => {
             $('#sectionItems').load("/DisplaySection #sectionItems", data => {
@@ -146,7 +146,9 @@
                             <div class="DotIcon"></div>
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
-                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}</a></button>
+                        @* <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}</a></button> *@
+
+                            <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}</a></button>
 
                     </div>
                     <div id="deleteSection${sectionId}" class="deleteSection-container">
