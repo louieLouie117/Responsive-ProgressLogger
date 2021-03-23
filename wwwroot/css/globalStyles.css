@@ -356,8 +356,9 @@ header img {
 
     }
 
+}
 
 
-
-
+#paper{
+    display: none;
 }
