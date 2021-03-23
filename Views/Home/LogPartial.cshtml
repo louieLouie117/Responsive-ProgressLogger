@@ -38,7 +38,7 @@
             })
             const SuccessStatus = (result) => {
                 console.log("Success...");
-                LoadData()
+                LoadData();
             };
             const ErrorStatus = (xhr, status, strErr) => {
                 console.log("There was an error!");
@@ -49,9 +49,8 @@
             const LoadData = () => {
                 $('#UserLogsList').load("FilterSectionHandler #UserLogsList", data => {
                     data = JSON.parse(data);
-                    console.log("in load", data);
+                    console.log("You are in load", data);
                     RenderData(data);
-                    @* data = $.parseJSON(data); deprecated*@
                 });
             };
             const RenderData = (data) => {
