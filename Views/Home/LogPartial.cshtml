@@ -75,10 +75,40 @@
 
 
                      $(`<li id="${value.logRecordId}">
-                            <button>${day}</button>
+                            <button>${value.logRecordId}</button>
                     </li>`).appendTo("#UserLogsList");
 
+
                     
+                     $(`<div class="logItem_container" id="${value.logRecordId}"Title">
+                                <div class="dateText-container" id="displayData">
+                                    <h3>${value.createdAt}</h3>
+                                </div>
+                                <div class="editDelete_container">
+                                    <a href="/edit/${value.logRecordId}">Edit</a>
+                                    <button id="item.LogRecordId" onclick="ShowDeleteLog(event)">Delete</button>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="deleteLog-container" id="${value.logRecordId}"DeleteItem">
+                                <p>Delete?</p>
+
+                                <aside>
+                                    <a href="/deleteLog/${value.logRecordId}">Yes</a>
+                                    <button id="item.LogRecordId" onclick="HideDeleteLog(event)">No</button>
+
+                                </aside>
+                            </div>
+
+
+                            @* <input type="text" value="@item.TextLog"> *@
+                            <p>${value.textLog}</p>`).appendTo("#UserLogText");
+                 
+                 
+                   
 
 
                 });
@@ -126,15 +156,9 @@
                 <div class="content-wrapper" id="hide-wapper">
                     <div class="readMode-container"></div>
 
-                    @* <h4>Pull</h4> *@
 
                     <section class="outline">
-                        <ul>
-                            @foreach (var item in ViewBag.allUserLogs)
-                            {
-                                <li id="@item.LogRecordId"><button>@item.CreatedAt.ToString("dddd")</button></li>
-                            }
-                        </ul>
+                 
 
                         <ul id="UserLogsList"></ul>
                     </section>
@@ -142,41 +166,14 @@
 
 
 
-                    <section class="user-content">
-                        @foreach (var item in ViewBag.allUserLogs)
-                        {
-                            <div class="logItem_container" id="@(item.LogRecordId)Title">
-                                <div class="dateText-container">
-                                    <h3>@item.CreatedAt.ToString("dddd"),</h3>
-                                    <h3>@item.CreatedAt.ToString("MMMM dd, yyyy")</h3>
-                                </div>
-                                <div class="editDelete_container">
-                                    <a href="/edit/@item.LogRecordId">Edit</a>
-                                    <button id="@item.LogRecordId" onclick="ShowDeleteLog(event)">Delete</button>
-
-                                </div>
 
 
 
-                            </div>
+                    <section class="user-content" id="UserLogText">
+                     
+                          
 
-                            <div class="deleteLog-container" id="@(item.LogRecordId)DeleteItem">
-                                <p>Delete?</p>
-
-                                <aside>
-                                    <a href="/deleteLog/@item.LogRecordId">Yes</a>
-                                    <button id="@item.LogRecordId" onclick="HideDeleteLog(event)">No</button>
-
-                                </aside>
-                            </div>
-
-
-                            @* <input type="text" value="@item.TextLog"> *@
-                            <p>@item.TextLog</p>
-                        }
-                        <footer>
-                            <p>...end of page</p>
-                        </footer>
+                       
 
                     </section>
 

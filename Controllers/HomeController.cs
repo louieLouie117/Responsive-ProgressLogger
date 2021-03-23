@@ -167,6 +167,7 @@ namespace ProgressLog.Controllers
 
             MainWrapper wMode = new MainWrapper();
 
+
             // filter db by section id 
             int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
 
