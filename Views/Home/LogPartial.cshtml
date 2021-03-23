@@ -28,6 +28,11 @@
         const FilterSectionHandler = (e) => {
             alert("filterting data...");
             console.log("id to select", e.target.id)
+            document.getElementById("welcomeLogMessage").style.display = "none";
+            document.getElementById("paper").style.display = "grid";
+
+
+            
             let idSelected = e.target.id;
 
             $(`#${idSelected}`).click(function (e) {
@@ -154,20 +159,17 @@
 
     <main>
 
-        @* @if (ViewBag.passSectionId == 0)
-            {
-            <div class="welcomeMsg">
+      
+            <div class="welcomeMsg" id="welcomeLogMessage">
             <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
             <p>select or + add a new section</p>
 
             </div>
-            }
-            else
-            { *@
+            
         <div class="content-container">
 
 
-            <div class="paper-container" id="id">
+            <div class="paper-container" id="paper">
                 <div class="content-wrapper" id="hide-wapper">
                     <div class="readMode-container"></div>
 
