@@ -37,26 +37,32 @@
                 });
             })
             const SuccessStatus = (result) => {
-                console.log("Success...");
-                LoadData();
+                console.log("Successfuly filtered items...");
+                console.log("Here is the result:", result)
+
+                let userData = result;
+
+                @* LoadData(userData); *@
+
+                RenderData(userData);
             };
             const ErrorStatus = (xhr, status, strErr) => {
-                console.log("There was an error!");
+                console.log("There was an error! when filtering items");
             };
             const CompleteStatus = (xhr, status) => {
-                console.log("Ajax has completed...");
+                console.log("Ajax filtering has completed...");
             };
             const LoadData = () => {
-                $('#UserLogsList').load("FilterSectionHandler #UserLogsList", data => {
+                $('#UserLogsList').load("/FilterSectionHandler", data => {
                     data = JSON.parse(data);
-                    console.log("You are in load", data);
+                    console.log("You are in load", data.getUserLogs);
                     RenderData(data);
                 });
             };
             const RenderData = (data) => {
-                console.log("user Data", data.data)
-                $.each(data.data, function (key, value) {
-                    console.log(value)
+                console.log("user Data", data.getUserLogs)
+                $.each(data.getUserLogs, function (key, value) {
+                    console.log("Render Data:",value)
 
 
                 });
@@ -87,7 +93,7 @@
 
     <main>
 
-        @if (ViewBag.passSectionId == 0)
+        @* @if (ViewBag.passSectionId == 0)
             {
             <div class="welcomeMsg">
             <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
@@ -96,7 +102,7 @@
             </div>
             }
             else
-            {
+            { *@
         <div class="content-container">
 
 
@@ -210,7 +216,7 @@
 
 
         </div>
-        }
+        @* } *@
 
 
 
