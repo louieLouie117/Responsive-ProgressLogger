@@ -147,7 +147,10 @@
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
 
-                        <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}
+                        @* <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}
+                                </a></button> *@
+
+                             <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
                             </a></button>
 
                     </div>
