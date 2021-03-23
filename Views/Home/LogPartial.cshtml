@@ -15,6 +15,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
 
+
+         $(document).ready(function () {
+
+        $.get("FilterBySession", data => {
+            RenderData(data);
+        });
+    
+        });
+
+
         const FilterSectionHandler = (e) => {
             alert("filterting data...");
             console.log("id to select", e.target.id)
@@ -56,60 +66,65 @@
                 $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
                     data = JSON.parse(data);
                     console.log("You are in load", data.filterBySession);
+                    RenderDataDate(data);
+                });
+
+                 $('#UserLogText').load("FilterBySession #UserLogText", data => {
+                    data = JSON.parse(data);
+                    console.log("You are in load", data.filterBySession);
                     RenderData(data);
                 });
             };
-            const RenderData = (data) => {
+            const RenderDataDate = (data) => {
                 console.log("user Data", data.filterBySession)
                 $.each(data.filterBySession, function (key, value) {
                     console.log("value:",value);
                     console.log("Log id:",value.logRecordId);
                     console.log("log text:",value.textLog);
                     console.log("Log day:",value.createdAt);
-
- 
-
+                    console.log("section Id:",value.sectionId);
                     let day = value.createdAt;
 
                     console.log("day", day)
-
-
-                     $(`<li id="${value.logRecordId}">
+                        
+                 
+                      $(`<li id="${value.logRecordId}">
                             <button>${value.logRecordId}</button>
                     </li>`).appendTo("#UserLogsList");
 
+                });
+            };
+             const RenderData = (data) => {
+                console.log("user Data", data.filterBySession)
+                $.each(data.filterBySession, function (key, value) {
+                    console.log("value:",value);
+                    console.log("Log id:",value.logRecordId);
+                    console.log("log text:",value.textLog);
+                    console.log("Log day:",value.createdAt);
+                    console.log("section Id:",value.sectionId);
+                    let day = value.createdAt;
 
-                    
-                     $(`<div class="logItem_container" id="${value.logRecordId}"Title">
-                                <div class="dateText-container" id="displayData">
+                    console.log("day", day)
+                     $(`<li><div class="logItem_container" id="${value.logRecordId}Title">
+                                <div class="dateText-container" id="${value.logRecordId}">
                                     <h3>${value.createdAt}</h3>
                                 </div>
                                 <div class="editDelete_container">
                                     <a href="/edit/${value.logRecordId}">Edit</a>
-                                    <button id="item.LogRecordId" onclick="ShowDeleteLog(event)">Delete</button>
+                                    <button id="${value.logRecordId}" onclick="ShowDeleteLog(event)">Delete</button>
                                 </div>
-
-
-
-                            </div>
-
-                            <div class="deleteLog-container" id="${value.logRecordId}"DeleteItem">
+                        </div>
+                        <div class="deleteLog-container" id="${value.logRecordId}DeleteItem">
                                 <p>Delete?</p>
-
                                 <aside>
                                     <a href="/deleteLog/${value.logRecordId}">Yes</a>
-                                    <button id="item.LogRecordId" onclick="HideDeleteLog(event)">No</button>
-
+                                    <button id="${value.logRecordId}" onclick="HideDeleteLog(event)">No</button>
                                 </aside>
-                            </div>
+                        </div>
+                            <p>${value.textLog}</p>
 
-
-                            @* <input type="text" value="@item.TextLog"> *@
-                            <p>${value.textLog}</p>`).appendTo("#UserLogText");
-                 
-                 
-                   
-
+                            `).appendTo("#UserLogText");
+                
 
                 });
             };
@@ -158,23 +173,13 @@
 
 
                     <section class="outline">
-                 
-
                         <ul id="UserLogsList"></ul>
                     </section>
 
 
 
-
-
-
-
-                    <section class="user-content" id="UserLogText">
-                     
-                          
-
-                       
-
+                    <section class="user-content">
+                        <ul  id="UserLogText"></ul>
                     </section>
 
 
