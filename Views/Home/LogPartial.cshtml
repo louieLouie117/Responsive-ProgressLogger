@@ -12,7 +12,127 @@
     <link rel="stylesheet" href="~/css/globalStyles.css">
     <script src="~/js/script.js" async=""></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
 
+
+         $(document).ready(function () {
+
+        $.get("FilterBySession", data => {
+            RenderData(data);
+        });
+    
+        });
+
+
+        const FilterSectionHandler = (e) => {
+            alert("filterting data...");
+            console.log("id to select", e.target.id)
+            let idSelected = e.target.id;
+
+            $(`#${idSelected}`).click(function (e) {
+
+                let itemId = e.target.id
+                var jsonData = {
+                    sectionId: itemId,
+                };
+                console.log("item id:", itemId)
+                $.ajax({
+                    url: '@Url.Action("FilterSectionHandler", "Home")',
+                    type: "GET",
+                    data: jsonData,
+                    success: SuccessStatus,
+                    error: ErrorStatus,
+                    complete: CompleteStatus
+                });
+            })
+            const SuccessStatus = (result) => {
+                console.log("Successfuly filtered items...");
+                console.log("Here is the result:", result)
+
+                let userData = result;
+
+                LoadData(userData);
+
+                @* RenderData(userData); *@
+            };
+            const ErrorStatus = (xhr, status, strErr) => {
+                console.log("There was an error! when filtering items");
+            };
+            const CompleteStatus = (xhr, status) => {
+                console.log("Ajax filtering has completed...");
+            };
+            const LoadData = (userData) => {
+                $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
+                    data = JSON.parse(data);
+                    console.log("You are in load", data.filterBySession);
+                    RenderDataDate(data);
+                });
+
+                 $('#UserLogText').load("FilterBySession #UserLogText", data => {
+                    data = JSON.parse(data);
+                    console.log("You are in load", data.filterBySession);
+                    RenderData(data);
+                });
+            };
+            const RenderDataDate = (data) => {
+                console.log("user Data", data.filterBySession)
+                $.each(data.filterBySession, function (key, value) {
+                    console.log("value:",value);
+                    console.log("Log id:",value.logRecordId);
+                    console.log("log text:",value.textLog);
+                    console.log("Log day:",value.createdAt);
+                    console.log("section Id:",value.sectionId);
+                    let day = value.createdAt;
+
+                    console.log("day", day)
+                        
+                 
+                      $(`<li id="${value.logRecordId}">
+                            <button>${value.logRecordId}</button>
+                    </li>`).appendTo("#UserLogsList");
+
+                });
+            };
+             const RenderData = (data) => {
+                console.log("user Data", data.filterBySession)
+                $.each(data.filterBySession, function (key, value) {
+                    console.log("value:",value);
+                    console.log("Log id:",value.logRecordId);
+                    console.log("log text:",value.textLog);
+                    console.log("Log day:",value.createdAt);
+                    console.log("section Id:",value.sectionId);
+                    let day = value.createdAt;
+
+                    console.log("day", day)
+                     $(`<li><div class="logItem_container" id="${value.logRecordId}Title">
+                                <div class="dateText-container" id="${value.logRecordId}">
+                                    <h3>${value.createdAt}</h3>
+                                </div>
+                                <div class="editDelete_container">
+                                    <a href="/edit/${value.logRecordId}">Edit</a>
+                                    <button id="${value.logRecordId}" onclick="ShowDeleteLog(event)">Delete</button>
+                                </div>
+                        </div>
+                        <div class="deleteLog-container" id="${value.logRecordId}DeleteItem">
+                                <p>Delete?</p>
+                                <aside>
+                                    <a href="/deleteLog/${value.logRecordId}">Yes</a>
+                                    <button id="${value.logRecordId}" onclick="HideDeleteLog(event)">No</button>
+                                </aside>
+                        </div>
+                            <p>${value.textLog}</p>
+
+                            `).appendTo("#UserLogText");
+                
+
+                });
+            };
+
+        }
+
+
+    </script>
 </head>
 
 <body>
@@ -34,128 +154,87 @@
 
     <main>
 
-        @if (ViewBag.passSectionId == 0)
-        {
+        @* @if (ViewBag.passSectionId == 0)
+            {
             <div class="welcomeMsg">
-                <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
-                <p>select or + add a new section</p>
+            <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
+            <p>select or + add a new section</p>
 
             </div>
-        }
-        else
-        {
-            <div class="content-container">
+            }
+            else
+            { *@
+        <div class="content-container">
 
 
-                <div class="paper-container" id="id">
-                    <div class="content-wrapper" id="hide-wapper">
-                        <div class="readMode-container"></div>
-
-                        @* <h4>Pull</h4> *@
-
-                        <section class="outline">
-                            <ul>
-                                @foreach (var item in ViewBag.allUserLogs)
-                                {
-                                    <li id="@item.LogRecordId"><button>@item.CreatedAt.ToString("dddd")</button></li>
-                                }
-                            </ul>
-                        </section>
+            <div class="paper-container" id="id">
+                <div class="content-wrapper" id="hide-wapper">
+                    <div class="readMode-container"></div>
 
 
-
-
-                        <section class="user-content">
-                            @foreach (var item in ViewBag.allUserLogs)
-                            {
-                                <div class="logItem_container" id="@(item.LogRecordId)Title">
-                                    <div class="dateText-container">
-                                        <h3>@item.CreatedAt.ToString("dddd"),</h3>
-                                        <h3>@item.CreatedAt.ToString("MMMM dd, yyyy")</h3>
-                                    </div>
-                                    <div class="editDelete_container">
-                                        <a href="/edit/@item.LogRecordId">Edit</a>
-                                        <button id="@item.LogRecordId" onclick="ShowDeleteLog(event)">Delete</button>
-
-                                    </div>
-
-
-
-                                </div>
-
-                                <div class="deleteLog-container" id="@(item.LogRecordId)DeleteItem">
-                                    <p>Delete?</p>
-
-                                    <aside>
-                                        <a href="/deleteLog/@item.LogRecordId">Yes</a>
-                                        <button id="@item.LogRecordId" onclick="HideDeleteLog(event)">No</button>
-
-                                    </aside>
-                                </div>
-
-
-                                @* <input type="text" value="@item.TextLog"> *@
-                                <p>@item.TextLog</p>
-                            }
-                            <footer>
-                                <p>...end of page</p>
-                            </footer>
-
-                        </section>
-
-
-
-
-                    </div>
-                    <partial name="logFormPartial" model="@Model.LogRecord" />
-                </div>
-                @* <div class="paper-container" id="id">
-                    <div class="content-wrapper" id="hide-wapper">
                     <section class="outline">
-                    <ul>
-                    @foreach (var item in ViewBag.allUserLogs)
-                    {
-                    <li><button>@item.CreatedAt.ToString("dddd")</button></li>
-                    }
-                    </ul>
+                        <ul id="UserLogsList"></ul>
                     </section>
 
 
 
-                    @if (ViewBag.passSectionId == 0)
-                    {
-                    <p>Select Sectoin</p>
-                    }
-                    else
-                    {
                     <section class="user-content">
-                    @foreach (var item in ViewBag.allUserLogs)
-                    {
-                    <div class="logItem_container">
-                    <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
-                    <div class="editDelete_container">
-                    <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
-                    <a href="/deleteLog/@item.LogRecordId">Delete</a>
-                    </div>
-                    </div>
-                    <p>@item.TextLog</p>
-                    }
-                    <footer>
-                    <p>...end of page</p>
-                    </footer>
-
+                        <ul  id="UserLogText"></ul>
                     </section>
-                    }
 
 
-                    </div>
-                    <partial name="logFormPartial" model="@Model.LogRecord" />
-
-                    </div> *@
 
 
+                </div>
+                <partial name="logFormPartial" model="@Model.LogRecord" />
             </div>
-        }
+            @* <div class="paper-container" id="id">
+                <div class="content-wrapper" id="hide-wapper">
+                <section class="outline">
+                <ul>
+                @foreach (var item in ViewBag.allUserLogs)
+                {
+                <li><button>@item.CreatedAt.ToString("dddd")</button></li>
+                }
+                </ul>
+                </section>
+
+
+
+                @if (ViewBag.passSectionId == 0)
+                {
+                <p>Select Sectoin</p>
+                }
+                else
+                {
+                <section class="user-content">
+                @foreach (var item in ViewBag.allUserLogs)
+                {
+                <div class="logItem_container">
+                <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
+                <div class="editDelete_container">
+                <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
+                <a href="/deleteLog/@item.LogRecordId">Delete</a>
+                </div>
+                </div>
+                <p>@item.TextLog</p>
+                }
+                <footer>
+                <p>...end of page</p>
+                </footer>
+
+                </section>
+                }
+
+
+                </div>
+                <partial name="logFormPartial" model="@Model.LogRecord" />
+
+                </div> *@
+
+
+        </div>
+        @* } *@
 
 
 
