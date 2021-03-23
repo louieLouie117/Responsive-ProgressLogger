@@ -186,6 +186,29 @@ namespace ProgressLog.Controllers
 
 
 
+        [HttpGet("FilterBySession")]
+        public IActionResult FilterBySession(Section DataId)
+        {
+
+            System.Console.WriteLine("you have reached the filter by session backend");
+
+            int SelectedSectionId = (int)HttpContext.Session.GetInt32("SectionId");
+
+
+
+            List<LogRecord> FilterBySession = _context.LogRecords
+                .Where(ul => ul.SectionId == SelectedSectionId)
+                .ToList();
+
+            System.Console.WriteLine($"users logs: {FilterBySession}");
+
+            // return RedirectToAction("dashboard");
+
+            return Json(new { StatusCode = "Success", FilterBySession });
+        }
+
+
+
         // Processing Log Opporations--------------------------------------------------
 
         [HttpPost("CreateLog")]

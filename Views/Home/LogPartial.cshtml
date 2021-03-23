@@ -42,9 +42,9 @@
 
                 let userData = result;
 
-                @* LoadData(userData); *@
+                LoadData(userData);
 
-                RenderData(userData);
+                @* RenderData(userData); *@
             };
             const ErrorStatus = (xhr, status, strErr) => {
                 console.log("There was an error! when filtering items");
@@ -52,17 +52,33 @@
             const CompleteStatus = (xhr, status) => {
                 console.log("Ajax filtering has completed...");
             };
-            const LoadData = () => {
-                $('#UserLogsList').load("/FilterSectionHandler", data => {
+            const LoadData = (userData) => {
+                $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
                     data = JSON.parse(data);
-                    console.log("You are in load", data.getUserLogs);
+                    console.log("You are in load", data.filterBySession);
                     RenderData(data);
                 });
             };
             const RenderData = (data) => {
-                console.log("user Data", data.getUserLogs)
-                $.each(data.getUserLogs, function (key, value) {
-                    console.log("Render Data:",value)
+                console.log("user Data", data.filterBySession)
+                $.each(data.filterBySession, function (key, value) {
+                    console.log("value:",value);
+                    console.log("Log id:",value.logRecordId);
+                    console.log("log text:",value.textLog);
+                    console.log("Log day:",value.createdAt);
+
+ 
+
+                    let day = value.createdAt;
+
+                    console.log("day", day)
+
+
+                     $(`<li id="${value.logRecordId}">
+                            <button>${day}</button>
+                    </li>`).appendTo("#UserLogsList");
+
+                    
 
 
                 });
