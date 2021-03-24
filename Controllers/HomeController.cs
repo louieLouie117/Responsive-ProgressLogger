@@ -301,11 +301,14 @@ namespace ProgressLog.Controllers
 
 
 
-        [HttpGet("DeleteLogHandler")]
-        public IActionResult DeleteLogHandler(int LogRecordId)
+        [HttpGet("DeleteLogEntryHandler")]
+        public IActionResult DeleteLogEntryHandler(LogRecord DataId)
         {
             System.Console.WriteLine("you have reach the backend of delete Log entry");
-            // LogRecord GetLog = _context.LogRecords.FirstOrDefault(lr => lr.LogRecordId == LogRecordId);
+            System.Console.WriteLine($"this is the id: {DataId.LogRecordId}");
+
+
+            LogRecord GetLog = _context.LogRecords.FirstOrDefault(lr => lr.LogRecordId == DataId.LogRecordId);
 
             // _context.LogRecords.Remove(GetLog);
             // _context.SaveChanges();
