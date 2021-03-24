@@ -310,11 +310,11 @@ namespace ProgressLog.Controllers
 
             LogRecord GetLog = _context.LogRecords.FirstOrDefault(lr => lr.LogRecordId == DataId.LogRecordId);
 
-            // _context.LogRecords.Remove(GetLog);
-            // _context.SaveChanges();
+            _context.LogRecords.Remove(GetLog);
+            _context.SaveChanges();
 
             // return RedirectToAction("dashboard");
-            return Json(new { Status = "Delete Log Success" });
+            return Json(new { Status = "Delete Log Success", GetLog });
         }
 
 
