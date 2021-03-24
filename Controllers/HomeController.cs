@@ -109,6 +109,8 @@ namespace ProgressLog.Controllers
 
             System.Console.WriteLine(FromForm.Title);
             System.Console.WriteLine(FromForm.SectionId);
+            HttpContext.Session.SetInt32("SectionId", FromForm.SectionId);
+
 
             _context.Add(FromForm);
             _context.SaveChanges();
@@ -296,6 +298,22 @@ namespace ProgressLog.Controllers
             System.Console.WriteLine("Delete Button was click");
             return RedirectToAction("dashboard");
         }
+
+
+
+        [HttpGet("DeleteLogHandler")]
+        public IActionResult DeleteLogHandler(int LogRecordId)
+        {
+            System.Console.WriteLine("you have reach the backend of delete Log entry");
+            // LogRecord GetLog = _context.LogRecords.FirstOrDefault(lr => lr.LogRecordId == LogRecordId);
+
+            // _context.LogRecords.Remove(GetLog);
+            // _context.SaveChanges();
+
+            // return RedirectToAction("dashboard");
+            return Json(new { Status = "Delete Log Success" });
+        }
+
 
 
 

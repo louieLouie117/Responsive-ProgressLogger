@@ -30,11 +30,10 @@ function hideNewLog(e){
 
 
 const ShowDeleteLog = (e)=>{
-    console.log(e.target.id);
+    console.log("js File",e.target.id);
 
-    let itemContainer = e.target.id + "Title"
-    let itemToDelete = e.target.id + "DeleteItem"
-
+    let itemContainer = e.target.id + "Title";
+    let itemToDelete = e.target.id + "Box";
 
     document.getElementById(itemContainer).style.display = "none";
     document.getElementById(itemToDelete).style.display = "grid";
@@ -52,7 +51,7 @@ const HideDeleteLog = (e)=>{
     console.log(e.target.id);
 
     let itemContainer = e.target.id + "Title"
-    let itemToDelete = e.target.id + "DeleteItem"
+    let itemToDelete = e.target.id + "Box"
 
     document.getElementById(itemContainer).style.display = "grid";
     document.getElementById(itemToDelete).style.display = "none";

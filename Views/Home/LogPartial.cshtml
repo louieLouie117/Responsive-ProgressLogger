@@ -16,22 +16,12 @@
     <script>
 
 
-         $(document).ready(function () {
-
-        $.get("FilterBySession", data => {
-            RenderData(data);
-        });
-    
-        });
-
 
         const FilterSectionHandler = (e) => {
-            alert("filterting data...");
+            @* alert("filterting data..."); *@
             console.log("id to select", e.target.id)
             document.getElementById("welcomeLogMessage").style.display = "none";
             document.getElementById("paper").style.display = "grid";
-
-
             
             let idSelected = e.target.id;
 
@@ -93,7 +83,7 @@
                     console.log("day", day)
                         
                  
-                      $(`<li id="${value.logRecordId}">
+                      $(`<li id="${value.logRecordId}Date">
                             <button>${value.logRecordId}</button>
                     </li>`).appendTo("#UserLogsList");
 
@@ -110,32 +100,68 @@
                     let day = value.createdAt;
 
                     console.log("day", day)
-                     $(`<li><div class="logItem_container" id="${value.logRecordId}Title">
-                                <div class="dateText-container" id="${value.logRecordId}">
+                     $(`<li><div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                                <div class="dateText-container" >
                                     <h3>${value.createdAt}</h3>
                                 </div>
                                 <div class="editDelete_container">
                                     <a href="/edit/${value.logRecordId}">Edit</a>
-                                    <button id="${value.logRecordId}" onclick="ShowDeleteLog(event)">Delete</button>
+                                    <button id="${value.logRecordId}DeleteWarning" onclick="ShowDeleteLog(event)">Delete</button>
+
                                 </div>
                         </div>
-                        <div class="deleteLog-container" id="${value.logRecordId}DeleteItem">
+                        <div class="deleteLog-container" id="${value.logRecordId}DeleteWarningBox">
                                 <p>Delete?</p>
                                 <aside>
-                                    <a href="/deleteLog/${value.logRecordId}">Yes</a>
-                                    <button id="${value.logRecordId}" onclick="HideDeleteLog(event)">No</button>
+                                    @* <a href="/deleteLog/${value.logRecordId}">Yes</a> *@
+                                    <a id="${value.logRecordId}" onclick="DeleteLogHandler(event)">Yes</a>
+
+                                    <button id="${value.logRecordId}DeleteWarning" onclick="HideDeleteLog(event)">No</button>
+
                                 </aside>
                         </div>
                             <p>${value.textLog}</p>
 
                             `).appendTo("#UserLogText");
-                
-
                 });
             };
 
         }
 
+        
+        const DeleteLogHandler =(e)=>{
+            @* alert("delte button was click"); *@
+            console.log("e.targer id selected", e.target.id)
+             
+            let logIdSelected = e.target.id;
+            console.log("varible", logIdSelected)
+            
+           $(`#${e.target.id}`).click(function (e) {
+                let itemId = e.target.id
+                var jsonData = {
+                    todoListId: itemId,
+                };
+                console.log("item id:", itemId)
+                $.ajax({
+                    url: '@Url.Action("DeleteLogHandler", "Home")',
+                    type: "GET",
+                    data: jsonData,
+                    success: SuccessStatus,
+                    error: ErrorStatus,
+                    complete: CompleteStatus
+                });
+            })
+            const SuccessStatus = (result) => {
+                console.log("Success...");
+                @* LoadData(); *@
+            };
+            const ErrorStatus = (xhr, status, strErr) => {
+                console.log("There was an error!");
+            };
+            const CompleteStatus = (xhr, status) => {
+                console.log("Ajax has completed...");
+            };
+        }
 
     </script>
 </head>
