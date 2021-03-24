@@ -80,8 +80,8 @@
                     <div id="deleteSection${sectionId}" class="deleteSection-container">
                         <section>
                             <aside>
-                                <button > <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
-                                <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
+                        <button> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                        <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
                             </aside>
                         </section>
                     </div>
@@ -95,6 +95,7 @@
     const DeleteSectionHandler = (e) => {
         console.log("id to select", e.target.id)
         let idSelected = e.target.id;
+
 
         $(`#${idSelected}`).click(function (e) {
 
@@ -127,6 +128,7 @@
                 data = JSON.parse(data);
                 console.log("in load", data);
                 RenderData(data);
+
                 @* data = $.parseJSON(data); deprecated*@
                 });
         };
@@ -153,10 +155,10 @@
                             <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}</a></button>
 
                     </div>
-                    <div id="deleteSection${sectionId}"> class="deleteSection-container">
+                    <div id="deleteSection${sectionId}" class="deleteSection-container">
                         <section>
                             <aside>
-                                <button"> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                                <button> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
                                 <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
                             </aside>
                         </section>
