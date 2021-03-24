@@ -136,22 +136,23 @@
             let logIdSelected = e.target.id;
             console.log("varible", logIdSelected)
             
-           $(`#${e.target.id}`).click(function (e) {
                 let itemId = e.target.id
                 var jsonData = {
-                    todoListId: itemId,
+                    logRecordId: itemId,
                 };
                 console.log("item id:", itemId)
                 $.ajax({
-                    url: '@Url.Action("DeleteLogHandler", "Home")',
+                    url: '@Url.Action("DeleteLogEntryHandler", "Home")',
                     type: "GET",
                     data: jsonData,
                     success: SuccessStatus,
                     error: ErrorStatus,
                     complete: CompleteStatus
                 });
-            })
-            const SuccessStatus = (result) => {
+           
+        }
+
+         const SuccessStatus = (result) => {
                 console.log("Success...");
                 @* LoadData(); *@
             };
@@ -161,7 +162,6 @@
             const CompleteStatus = (xhr, status) => {
                 console.log("Ajax has completed...");
             };
-        }
 
     </script>
 </head>
