@@ -63,11 +63,9 @@ const HideDeleteLog = (e)=>{
 
 
 function showDeleteSection(e){
-
-    
     let deleteSectionItem = "deleteSection" + e.target.id;
     console.log(deleteSectionItem);
-    document.getElementById(deleteSectionItem).style.display = "grid";
+    document.getElementById(deleteSectionItem).style.display = "block";
 
 
 }
