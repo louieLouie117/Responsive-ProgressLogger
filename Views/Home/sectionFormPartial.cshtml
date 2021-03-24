@@ -35,6 +35,8 @@
         const SuccessStatus = (result) => {
             console.log("Success added new Item...");
             LoadData();
+            document.getElementById("welcomeLogMessage").style.display = "none";
+            document.getElementById("paper").style.display = "grid";
         };
         const ErrorStatus = (xhr, status, strErr) => {
             console.log("There was an error! When Adding new Item");
