@@ -22,6 +22,10 @@ ul {
 
 }
 
+button{
+    outline: none;
+}
+
 
 
 body ::-webkit-scrollbar {

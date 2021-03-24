@@ -10,6 +10,9 @@ main {
     justify-items: center;
 }
 
+button{
+    outline: none;
+}
 .welcomeMsg{
     align-self: center;
     justify-items: center;
