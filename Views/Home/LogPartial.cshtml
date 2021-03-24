@@ -100,7 +100,7 @@
                     let day = value.createdAt;
 
                     console.log("day", day)
-                     $(`<li><div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" >
                                     <h3>${value.createdAt}</h3>
                                 </div>
@@ -122,7 +122,7 @@
                         </div>
                             <p>${value.textLog}</p>
 
-                            `).appendTo("#UserLogText");
+                    `).appendTo("#UserLogText");
                 });
             };
 
@@ -154,13 +154,84 @@
 
          const SuccessStatus = (result) => {
                 console.log("Success...");
-                @* LoadData(); *@
+                LoadData();
             };
             const ErrorStatus = (xhr, status, strErr) => {
                 console.log("There was an error!");
             };
             const CompleteStatus = (xhr, status) => {
                 console.log("Ajax has completed...");
+            };
+
+    const LoadData = (userData) => {
+                $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
+                    data = JSON.parse(data);
+                    console.log("You are in load", data.filterBySession);
+                    RenderDataDate(data);
+                });
+
+                 $('#UserLogText').load("FilterBySession #UserLogText", data => {
+                    data = JSON.parse(data);
+                    console.log("You are in load", data.filterBySession);
+                    RenderData(data);
+                });
+            };
+
+            
+            const RenderDataDate = (data) => {
+                console.log("user Data", data.filterBySession)
+                $.each(data.filterBySession, function (key, value) {
+                    console.log("value:",value);
+                    console.log("Log id:",value.logRecordId);
+                    console.log("log text:",value.textLog);
+                    console.log("Log day:",value.createdAt);
+                    console.log("section Id:",value.sectionId);
+                    let day = value.createdAt;
+
+                    console.log("day", day)
+                        
+                 
+                      $(`<li id="${value.logRecordId}Date">
+                            <button>${value.logRecordId}</button>
+                    </li>`).appendTo("#UserLogsList");
+
+                });
+            };
+             const RenderData = (data) => {
+                console.log("user Data", data.filterBySession)
+                $.each(data.filterBySession, function (key, value) {
+                    console.log("value:",value);
+                    console.log("Log id:",value.logRecordId);
+                    console.log("log text:",value.textLog);
+                    console.log("Log day:",value.createdAt);
+                    console.log("section Id:",value.sectionId);
+                    let day = value.createdAt;
+
+                    console.log("day", day)
+                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                                <div class="dateText-container" >
+                                    <h3>${value.createdAt}</h3>
+                                </div>
+                                <div class="editDelete_container">
+                                    <a href="/edit/${value.logRecordId}">Edit</a>
+                                    <button id="${value.logRecordId}DeleteWarning" onclick="ShowDeleteLog(event)">Delete</button>
+
+                                </div>
+                        </div>
+                        <div class="deleteLog-container" id="${value.logRecordId}DeleteWarningBox">
+                                <p>Delete?</p>
+                                <aside>
+                                    @* <a href="/deleteLog/${value.logRecordId}">Yes</a> *@
+                                    <a id="${value.logRecordId}" onclick="DeleteLogHandler(event)">Yes</a>
+
+                                    <button id="${value.logRecordId}DeleteWarning" onclick="HideDeleteLog(event)">No</button>
+
+                                </aside>
+                        </div>
+                            <p>${value.textLog}</p>
+
+                    `).appendTo("#UserLogText");
+                });
             };
 
     </script>
