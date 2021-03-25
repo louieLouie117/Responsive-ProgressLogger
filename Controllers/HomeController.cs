@@ -203,24 +203,24 @@ namespace ProgressLog.Controllers
 
         // Processing Log Opporations--------------------------------------------------
 
-        [HttpPost("CreateLog")]
-        public IActionResult CreateLog(LogRecord FromForm)
-        {
+        // [HttpPost("CreateLog")]
+        // public IActionResult CreateLog(LogRecord FromForm)
+        // {
 
-            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
-            FromForm.UserId = GetUserbyId;
+        //     int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+        //     FromForm.UserId = GetUserbyId;
 
-            int SelectedSectionId = (int)HttpContext.Session.GetInt32("SectionId");
-            FromForm.SectionId = SelectedSectionId;
-
-
-            _context.Add(FromForm);
-            _context.SaveChanges();
+        //     int SelectedSectionId = (int)HttpContext.Session.GetInt32("SectionId");
+        //     FromForm.SectionId = SelectedSectionId;
 
 
-            System.Console.WriteLine("Save button was click");
-            return RedirectToAction("dashboard");
-        }
+        //     _context.Add(FromForm);
+        //     _context.SaveChanges();
+
+
+        //     System.Console.WriteLine("Save button was click");
+        //     return RedirectToAction("dashboard");
+        // }
 
         [HttpPost("CreateNewLog")]
         public IActionResult CreateNewLog(LogRecord FromForm)
@@ -240,7 +240,7 @@ namespace ProgressLog.Controllers
             _context.SaveChanges();
 
 
-            return Json(new { StatusCode = "Success" });
+            return Json(new { StatusCode = "Success", FromForm });
 
         }
 
