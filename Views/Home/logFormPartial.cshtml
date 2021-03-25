@@ -32,7 +32,6 @@
             console.log("Section data:", logEntryData);
 
             if (BTNtext === "Save Changes") {
-                alert("saving changes....")
                 $.ajax({
                     url: '@Url.Action("EditLogHandler", "Home")',
                     type: "POST",
