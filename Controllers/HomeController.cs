@@ -246,17 +246,38 @@ namespace ProgressLog.Controllers
 
 
         [HttpPost("EditLogHandler")]
-        public IActionResult EditLogHandler(LogRecord FromForm)
+        public IActionResult EditLogHandler(LogRecord DataId)
         {
             System.Console.WriteLine("You have reached the backend of editing log.");
+            System.Console.WriteLine($"*** id to edit here {DataId.LogRecordId}");
+            System.Console.WriteLine($"*** New Text {DataId.TextLog}");
 
 
 
+            // block pages is not in session
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("login");
+            }
 
 
 
+            // get user in session
+            int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
+            // get section in session
+            int SectionInSession = (int)HttpContext.Session.GetInt32("SectionId");
 
-            return Json(new { StatusCode = "Success", FromForm });
+
+            LogRecord GetLog = _context.LogRecords.SingleOrDefault(l => l.LogRecordId == DataId.LogRecordId);
+
+
+            GetLog.LogRecordId = DataId.LogRecordId;
+            GetLog.TextLog = DataId.TextLog;
+
+            _context.SaveChanges();
+
+
+            return Json(new { StatusCode = "Success", DataId });
 
         }
 
