@@ -31,7 +31,7 @@
         const LogEntrySuccessStatus = (result) => {
             console.log("Success added new Item...");
             document.getElementById("newLogBTN").value = "";
-            LoadData();
+            LoadData(result);
         };
         const LogEntryErrorStatus = (xhr, status, strErr) => {
             console.log("There was an error! When Adding new Item");
