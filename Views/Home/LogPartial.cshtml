@@ -114,7 +114,8 @@
                                     <h3 >${jsonDate}</h3>
                                 </div>
                                 <div class="editDelete_container">
-                                    <a href="/edit/${value.logRecordId}">Edit</a>
+                                    @* <a href="/edit/${value.logRecordId}">Edit</a> *@
+                                    <a id="${value.logRecordId}" onclick="EditLogHandler(event)">Edit</a>
                                     <button id="${value.logRecordId}DeleteWarning" onclick="ShowDeleteLog(event)">Delete</button>
 
                                 </div>
@@ -129,9 +130,11 @@
 
                                 </aside>
                         </div>
-                            <p>${value.textLog}</p>
+                            <p id="${value.logRecordId}LogToEdit">${value.textLog}</p>
+                        
 
-                    `).appendTo("#UserLogText");
+
+                    `).prependTo("#UserLogText");
                 });
             };
 
@@ -230,7 +233,8 @@
                                     <h3 >${jsonDate}</h3>
                                 </div>
                                 <div class="editDelete_container">
-                                    <a href="/edit/${value.logRecordId}">Edit</a>
+                                    @* <a href="/edit/${value.logRecordId}">Edit</a> *@
+                                    <a id="${value.logRecordId}" onclick="EditLogHandler(event)">Edit</a>
                                     <button id="${value.logRecordId}DeleteWarning" onclick="ShowDeleteLog(event)">Delete</button>
 
                                 </div>
@@ -245,9 +249,9 @@
 
                                 </aside>
                         </div>
-                            <p>${value.textLog}</p>
+                            <p id="${value.logRecordId}LogToEdit">${value.textLog}</p>
 
-                    `).appendTo("#UserLogText");
+                    `).prependTo("#UserLogText");
             });
         };
 

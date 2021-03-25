@@ -245,6 +245,22 @@ namespace ProgressLog.Controllers
         }
 
 
+        [HttpPost("EditLogHandler")]
+        public IActionResult EditLogHandler(LogRecord FromForm)
+        {
+            System.Console.WriteLine("You have reached the backend of editing log.");
+
+
+
+
+
+
+
+            return Json(new { StatusCode = "Success", FromForm });
+
+        }
+
+
         [HttpGet("edit/{LogRecordId}")]
         public IActionResult editLog(int LogRecordId)
         {
