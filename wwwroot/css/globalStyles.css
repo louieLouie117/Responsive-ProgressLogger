@@ -8,6 +8,10 @@ body {
 
 }
 
+#logItemBeingEdited{
+    display: none;
+}
+
 ul {
     list-style: none;
 }
