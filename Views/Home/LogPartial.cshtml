@@ -47,7 +47,7 @@
 
                 let userData = result;
 
-                LoadData(userData);
+                LoadDataLogs(userData);
 
                 @* RenderData(userData); *@
             };
@@ -57,7 +57,7 @@
             const CompleteStatus = (xhr, status) => {
                 console.log("Ajax filtering has completed...");
             };
-            const LoadData = (userData) => {
+            const LoadDataLogs = (userData) => {
                 $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
                     data = JSON.parse(data);
                     console.log("You are in load", data.filterBySession);
@@ -73,19 +73,23 @@
             const RenderDataDate = (data) => {
                 console.log("user Data", data.filterBySession)
                 $.each(data.filterBySession, function (key, value) {
-                    console.log("value:", value);
-                    console.log("Log id:", value.logRecordId);
-                    console.log("log text:", value.textLog);
+                    @* console.log("value:", value); *@
+                    @* console.log("Log id:", value.logRecordId); *@
+                    @* console.log("log text:", value.textLog); *@
                     console.log("Log day:", value.createdAt);
-                    console.log("section Id:", value.sectionId);
+                    @* console.log("section Id:", value.sectionId); *@
                     let day = value.createdAt;
+                    
+                    
 
-                    console.log("day", day)
 
+                let jsonDate = new Date(day).toDateString();
+
+            
 
                     $(`<li id="${value.logRecordId}Date">
-                            <button>${value.logRecordId}</button>
-                    </li>`).appendTo("#UserLogsList");
+                            <button><a href="#goTo${value.logRecordId}">${jsonDate}</a></button>
+                    </li>`).prependTo("#UserLogsList");
 
                 });
             };
@@ -99,10 +103,15 @@
                     console.log("section Id:", value.sectionId);
                     let day = value.createdAt;
 
-                    console.log("day", day)
+                let jsonDate = new Date(day).toDateString();
+
+
+
+                console.log("new Data here:", jsonDate);
+                    @* console.log("day", day) *@
                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
-                                <div class="dateText-container" >
-                                    <h3>${value.createdAt}</h3>
+                                <div class="dateText-container" id="goTo${value.logRecordId}">
+                                    <h3 >${jsonDate}</h3>
                                 </div>
                                 <div class="editDelete_container">
                                     <a href="/edit/${value.logRecordId}">Edit</a>
@@ -190,10 +199,13 @@
 
                 console.log("day", day)
 
+                let jsonDate = new Date(day).toDateString();
 
-                $(`<li id="${value.logRecordId}Date">
-                            <button>${value.logRecordId}</button>
-                    </li>`).appendTo("#UserLogsList");
+            
+
+                    $(`<li id="${value.logRecordId}Date">
+                            <button><a href="#goTo${value.logRecordId}">${jsonDate}</a></button>
+                    </li>`).prependTo("#UserLogsList");
 
             });
         };
@@ -207,10 +219,15 @@
                 console.log("section Id:", value.sectionId);
                 let day = value.createdAt;
 
-                console.log("day", day)
-                $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
-                                <div class="dateText-container" >
-                                    <h3>${value.createdAt}</h3>
+               let jsonDate = new Date(day).toDateString();
+
+
+
+                console.log("new Data here:", jsonDate);
+                    @* console.log("day", day) *@
+                    $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                                <div class="dateText-container" id="goTo${value.logRecordId}">
+                                    <h3 >${jsonDate}</h3>
                                 </div>
                                 <div class="editDelete_container">
                                     <a href="/edit/${value.logRecordId}">Edit</a>
