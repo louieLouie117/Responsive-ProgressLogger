@@ -7,10 +7,24 @@
     $(document).ready(function () {
         $("#LogForm").submit(event => {
             event.preventDefault();
-            @* alert("New new log..."); *@
-                let BTNtext = document.getElementById("saveBTN").value;
+            let BTNtext = document.getElementById("saveBTN").value;
+            console.log("EVENT", event.target.id)
+
+
 
             let logEntry = $('#newLogBTN').val();
+
+
+            let LogItemEditId = document.getElementById("logItemBeingEdited").innerText;
+
+            var jsonEditData = {
+                textLog: logEntry,
+                logRecordId: LogItemEditId,
+            };
+
+            console.log("editting data:", jsonEditData);
+
+
             console.log(logEntry);
             var logEntryData = {
                 textLog: logEntry,
@@ -22,7 +36,7 @@
                 $.ajax({
                     url: '@Url.Action("EditLogHandler", "Home")',
                     type: "POST",
-                    data: logEntryData,
+                    data: jsonEditData,
                     success: LogEntrySuccessStatus,
                     error: LogEntryErrorStatus,
                     complete: LogEntryCompleteStatus
@@ -45,6 +59,7 @@
         const LogEntrySuccessStatus = (result) => {
             console.log("Success added new Item...");
             document.getElementById("newLogBTN").value = "";
+            document.getElementById("saveBTN").value = "Save";
             LoadData();
         };
         const LogEntryErrorStatus = (xhr, status, strErr) => {
@@ -67,6 +82,8 @@
 
         console.log(e.target.id)
 
+
+        document.getElementById("logItemBeingEdited").innerText = e.target.id;
         let logId = e.target.id + "LogToEdit";
 
         let logTextToEdit = document.getElementById(logId).innerText;
@@ -85,6 +102,7 @@
 
 <div class="newLog_container">
     <form id="LogForm" asp-action="CreateLog" asp-controller="Home" method="POST">
+        <label id="logItemBeingEdited"></label>
         <textarea asp-for="TextLog" id="newLogBTN" onclick="showNewLog()" placeholder=" enter log..."></textarea>
         <div class="logOptions_container">
             <button onclick="hideNewLog()" type="button" id="cancleLog">Cancel</button>
