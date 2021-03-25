@@ -222,6 +222,28 @@ namespace ProgressLog.Controllers
             return RedirectToAction("dashboard");
         }
 
+        [HttpPost("CreateNewLog")]
+        public IActionResult CreateNewLog(LogRecord FromForm)
+        {
+            System.Console.WriteLine("You have reached the backend of new log.");
+            System.Console.WriteLine($"Data from user: {FromForm.TextLog}");
+
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+            int SelectedSectionId = (int)HttpContext.Session.GetInt32("SectionId");
+            FromForm.SectionId = SelectedSectionId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+
+            return Json(new { StatusCode = "Success" });
+
+        }
+
 
         [HttpGet("edit/{LogRecordId}")]
         public IActionResult editLog(int LogRecordId)

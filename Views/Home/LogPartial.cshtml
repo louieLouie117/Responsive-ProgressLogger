@@ -19,10 +19,10 @@
 
         const FilterSectionHandler = (e) => {
             @* alert("filterting data..."); *@
-            console.log("id to select", e.target.id)
+                console.log("id to select", e.target.id)
             document.getElementById("welcomeLogMessage").style.display = "none";
             document.getElementById("paper").style.display = "grid";
-            
+
             let idSelected = e.target.id;
 
             $(`#${idSelected}`).click(function (e) {
@@ -64,7 +64,7 @@
                     RenderDataDate(data);
                 });
 
-                 $('#UserLogText').load("FilterBySession #UserLogText", data => {
+                $('#UserLogText').load("FilterBySession #UserLogText", data => {
                     data = JSON.parse(data);
                     console.log("You are in load", data.filterBySession);
                     RenderData(data);
@@ -73,34 +73,34 @@
             const RenderDataDate = (data) => {
                 console.log("user Data", data.filterBySession)
                 $.each(data.filterBySession, function (key, value) {
-                    console.log("value:",value);
-                    console.log("Log id:",value.logRecordId);
-                    console.log("log text:",value.textLog);
-                    console.log("Log day:",value.createdAt);
-                    console.log("section Id:",value.sectionId);
+                    console.log("value:", value);
+                    console.log("Log id:", value.logRecordId);
+                    console.log("log text:", value.textLog);
+                    console.log("Log day:", value.createdAt);
+                    console.log("section Id:", value.sectionId);
                     let day = value.createdAt;
 
                     console.log("day", day)
-                        
-                 
-                      $(`<li id="${value.logRecordId}Date">
+
+
+                    $(`<li id="${value.logRecordId}Date">
                             <button>${value.logRecordId}</button>
                     </li>`).appendTo("#UserLogsList");
 
                 });
             };
-             const RenderData = (data) => {
+            const RenderData = (data) => {
                 console.log("user Data", data.filterBySession)
                 $.each(data.filterBySession, function (key, value) {
-                    console.log("value:",value);
-                    console.log("Log id:",value.logRecordId);
-                    console.log("log text:",value.textLog);
-                    console.log("Log day:",value.createdAt);
-                    console.log("section Id:",value.sectionId);
+                    console.log("value:", value);
+                    console.log("Log id:", value.logRecordId);
+                    console.log("log text:", value.textLog);
+                    console.log("Log day:", value.createdAt);
+                    console.log("section Id:", value.sectionId);
                     let day = value.createdAt;
 
                     console.log("day", day)
-                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                    $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" >
                                     <h3>${value.createdAt}</h3>
                                 </div>
@@ -128,87 +128,87 @@
 
         }
 
-        
-        const DeleteLogHandler =(e)=>{
+
+        const DeleteLogHandler = (e) => {
             @* alert("delte button was click"); *@
-            console.log("e.targer id selected", e.target.id)
-             
+                console.log("e.targer id selected", e.target.id)
+
             let logIdSelected = e.target.id;
             console.log("varible", logIdSelected)
-            
-                let itemId = e.target.id
-                var jsonData = {
-                    logRecordId: itemId,
-                };
-                console.log("item id:", itemId)
-                $.ajax({
-                    url: '@Url.Action("DeleteLogEntryHandler", "Home")',
-                    type: "GET",
-                    data: jsonData,
-                    success: SuccessStatus,
-                    error: ErrorStatus,
-                    complete: CompleteStatus
-                });
-           
+
+            let itemId = e.target.id
+            var jsonData = {
+                logRecordId: itemId,
+            };
+            console.log("item id:", itemId)
+            $.ajax({
+                url: '@Url.Action("DeleteLogEntryHandler", "Home")',
+                type: "GET",
+                data: jsonData,
+                success: SuccessStatus,
+                error: ErrorStatus,
+                complete: CompleteStatus
+            });
+
         }
 
-         const SuccessStatus = (result) => {
-                console.log("Success...");
-                LoadData();
-            };
-            const ErrorStatus = (xhr, status, strErr) => {
-                console.log("There was an error!");
-            };
-            const CompleteStatus = (xhr, status) => {
-                console.log("Ajax has completed...");
-            };
+        const SuccessStatus = (result) => {
+            console.log("Success...");
+            LoadData();
+        };
+        const ErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error!");
+        };
+        const CompleteStatus = (xhr, status) => {
+            console.log("Ajax has completed...");
+        };
 
-    const LoadData = (userData) => {
-                $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
-                    data = JSON.parse(data);
-                    console.log("You are in load", data.filterBySession);
-                    RenderDataDate(data);
-                });
+        const LoadData = (userData) => {
+            $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
+                data = JSON.parse(data);
+                console.log("You are in load", data.filterBySession);
+                RenderDataDate(data);
+            });
 
-                 $('#UserLogText').load("FilterBySession #UserLogText", data => {
-                    data = JSON.parse(data);
-                    console.log("You are in load", data.filterBySession);
-                    RenderData(data);
-                });
-            };
+            $('#UserLogText').load("FilterBySession #UserLogText", data => {
+                data = JSON.parse(data);
+                console.log("You are in load", data.filterBySession);
+                RenderData(data);
+            });
+        };
 
-            
-            const RenderDataDate = (data) => {
-                console.log("user Data", data.filterBySession)
-                $.each(data.filterBySession, function (key, value) {
-                    console.log("value:",value);
-                    console.log("Log id:",value.logRecordId);
-                    console.log("log text:",value.textLog);
-                    console.log("Log day:",value.createdAt);
-                    console.log("section Id:",value.sectionId);
-                    let day = value.createdAt;
 
-                    console.log("day", day)
-                        
-                 
-                      $(`<li id="${value.logRecordId}Date">
+        const RenderDataDate = (data) => {
+            console.log("user Data", data.filterBySession)
+            $.each(data.filterBySession, function (key, value) {
+                console.log("value:", value);
+                console.log("Log id:", value.logRecordId);
+                console.log("log text:", value.textLog);
+                console.log("Log day:", value.createdAt);
+                console.log("section Id:", value.sectionId);
+                let day = value.createdAt;
+
+                console.log("day", day)
+
+
+                $(`<li id="${value.logRecordId}Date">
                             <button>${value.logRecordId}</button>
                     </li>`).appendTo("#UserLogsList");
 
-                });
-            };
-             const RenderData = (data) => {
-                console.log("user Data", data.filterBySession)
-                $.each(data.filterBySession, function (key, value) {
-                    console.log("value:",value);
-                    console.log("Log id:",value.logRecordId);
-                    console.log("log text:",value.textLog);
-                    console.log("Log day:",value.createdAt);
-                    console.log("section Id:",value.sectionId);
-                    let day = value.createdAt;
+            });
+        };
+        const RenderData = (data) => {
+            console.log("user Data", data.filterBySession)
+            $.each(data.filterBySession, function (key, value) {
+                console.log("value:", value);
+                console.log("Log id:", value.logRecordId);
+                console.log("log text:", value.textLog);
+                console.log("Log day:", value.createdAt);
+                console.log("section Id:", value.sectionId);
+                let day = value.createdAt;
 
-                    console.log("day", day)
-                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                console.log("day", day)
+                $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" >
                                     <h3>${value.createdAt}</h3>
                                 </div>
@@ -231,8 +231,8 @@
                             <p>${value.textLog}</p>
 
                     `).appendTo("#UserLogText");
-                });
-            };
+            });
+        };
 
     </script>
 </head>
@@ -256,13 +256,13 @@
 
     <main>
 
-      
-            <div class="welcomeMsg" id="welcomeLogMessage">
+
+        <div class="welcomeMsg" id="welcomeLogMessage">
             <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
             <p>select or + add a new section</p>
 
-            </div>
-            
+        </div>
+
         <div class="content-container">
 
 
@@ -278,7 +278,7 @@
 
 
                     <section class="user-content">
-                        <ul  id="UserLogText"></ul>
+                        <ul id="UserLogText"></ul>
                     </section>
 
 
@@ -288,48 +288,48 @@
                 <partial name="logFormPartial" model="@Model.LogRecord" />
             </div>
             @* <div class="paper-container" id="id">
-                <div class="content-wrapper" id="hide-wapper">
-                <section class="outline">
-                <ul>
-                @foreach (var item in ViewBag.allUserLogs)
-                {
-                <li><button>@item.CreatedAt.ToString("dddd")</button></li>
-                }
-                </ul>
-                </section>
+                    <div class="content-wrapper" id="hide-wapper">
+                    <section class="outline">
+                    <ul>
+                    @foreach (var item in ViewBag.allUserLogs)
+                    {
+                    <li><button>@item.CreatedAt.ToString("dddd")</button></li>
+                    }
+                    </ul>
+                    </section>
 
 
 
-                @if (ViewBag.passSectionId == 0)
-                {
-                <p>Select Sectoin</p>
-                }
-                else
-                {
-                <section class="user-content">
-                @foreach (var item in ViewBag.allUserLogs)
-                {
-                <div class="logItem_container">
-                <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
-                <div class="editDelete_container">
-                <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
-                <a href="/deleteLog/@item.LogRecordId">Delete</a>
-                </div>
-                </div>
-                <p>@item.TextLog</p>
-                }
-                <footer>
-                <p>...end of page</p>
-                </footer>
+                    @if (ViewBag.passSectionId == 0)
+                    {
+                    <p>Select Sectoin</p>
+                    }
+                    else
+                    {
+                    <section class="user-content">
+                    @foreach (var item in ViewBag.allUserLogs)
+                    {
+                    <div class="logItem_container">
+                    <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
+                    <div class="editDelete_container">
+                    <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
+                    <a href="/deleteLog/@item.LogRecordId">Delete</a>
+                    </div>
+                    </div>
+                    <p>@item.TextLog</p>
+                    }
+                    <footer>
+                    <p>...end of page</p>
+                    </footer>
 
-                </section>
-                }
+                    </section>
+                    }
 
 
-                </div>
-                <partial name="logFormPartial" model="@Model.LogRecord" />
+                    </div>
+                    <partial name="logFormPartial" model="@Model.LogRecord" />
 
-                </div> *@
+                    </div> *@
 
 
         </div>

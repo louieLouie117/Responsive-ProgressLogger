@@ -1,8 +1,55 @@
 @using ProgressLog.Models
 @model LogRecord
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#LogForm").submit(event => {
+            event.preventDefault();
+            alert("New new log...");
+
+            let logEntry = $('#newLogBTN').val();
+            console.log(logEntry);
+            var logEntryData = {
+                textLog: logEntry,
+            };
+            console.log("Section data:", logEntryData);
+
+            $.ajax({
+                url: '@Url.Action("CreateNewLog", "Home")',
+                type: "POST",
+                data: logEntryData,
+                success: LogEntrySuccessStatus,
+                error: LogEntryErrorStatus,
+                complete: LogEntryCompleteStatus
+            });
+
+        });
+
+
+        const LogEntrySuccessStatus = (result) => {
+            console.log("Success added new Item...");
+            document.getElementById("newLogBTN").value = "";
+            LoadData();
+        };
+        const LogEntryErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error! When Adding new Item");
+        };
+        const LogEntryCompleteStatus = (xhr, status) => {
+            console.log("Ajax adding new item has completed...");
+        };
+
+    })
+
+
+
+
+</script>
+
+
 <div class="newLog_container">
-    <form asp-action="CreateLog" asp-controller="Home" method="POST">
+    <form id="LogForm" asp-action="CreateLog" asp-controller="Home" method="POST">
         <textarea asp-for="TextLog" id="newLogBTN" onclick="showNewLog()" placeholder=" enter log..."></textarea>
         <div class="logOptions_container">
             <button onclick="hideNewLog()" type="button" id="cancleLog">Cancel</button>
