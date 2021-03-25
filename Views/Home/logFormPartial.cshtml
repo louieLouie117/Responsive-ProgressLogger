@@ -7,7 +7,8 @@
     $(document).ready(function () {
         $("#LogForm").submit(event => {
             event.preventDefault();
-            alert("New new log...");
+            @* alert("New new log..."); *@
+                let BTNtext = document.getElementById("saveBTN").value;
 
             let logEntry = $('#newLogBTN').val();
             console.log(logEntry);
@@ -16,14 +17,27 @@
             };
             console.log("Section data:", logEntryData);
 
-            $.ajax({
-                url: '@Url.Action("CreateNewLog", "Home")',
-                type: "POST",
-                data: logEntryData,
-                success: LogEntrySuccessStatus,
-                error: LogEntryErrorStatus,
-                complete: LogEntryCompleteStatus
-            });
+            if (BTNtext === "Save Changes") {
+                alert("saving changes....")
+                $.ajax({
+                    url: '@Url.Action("EditLogHandler", "Home")',
+                    type: "POST",
+                    data: logEntryData,
+                    success: LogEntrySuccessStatus,
+                    error: LogEntryErrorStatus,
+                    complete: LogEntryCompleteStatus
+                });
+            } else {
+                $.ajax({
+                    url: '@Url.Action("CreateNewLog", "Home")',
+                    type: "POST",
+                    data: logEntryData,
+                    success: LogEntrySuccessStatus,
+                    error: LogEntryErrorStatus,
+                    complete: LogEntryCompleteStatus
+                });
+            }
+
 
         });
 
@@ -31,7 +45,7 @@
         const LogEntrySuccessStatus = (result) => {
             console.log("Success added new Item...");
             document.getElementById("newLogBTN").value = "";
-            LoadData(result);
+            LoadData();
         };
         const LogEntryErrorStatus = (xhr, status, strErr) => {
             console.log("There was an error! When Adding new Item");
@@ -40,7 +54,28 @@
             console.log("Ajax adding new item has completed...");
         };
 
-    })
+    });
+
+    const EditLogHandler = (e) => {
+        document.getElementById("saveBTN").value = "Save Changes";
+        document.getElementById("newLogBTN").style.height = "80vh";
+        document.getElementById("newLogBTN").style.position = "relative";
+        document.getElementById("newLogBTN").style.padding = "40px";
+        document.getElementById("hide-wapper").style.display = "none";
+        document.getElementById("saveBTN").style.display = "block";
+        document.getElementById("cancleLog").style.display = "block";
+
+        console.log(e.target.id)
+
+        let logId = e.target.id + "LogToEdit";
+
+        let logTextToEdit = document.getElementById(logId).innerText;
+        console.log("this is the text:", logTextToEdit);
+
+        document.getElementById("newLogBTN").value = logTextToEdit;
+
+
+    }
 
 
 

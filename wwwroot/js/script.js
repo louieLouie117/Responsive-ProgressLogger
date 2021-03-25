@@ -12,8 +12,6 @@ function showNewLog(e) {
 
 
 function hideNewLog(e){
-
-
     document.getElementById("newLogBTN").style.height = "auto";
     document.getElementById("saveBTN").style.display = "none";
     document.getElementById("newLogBTN").style.position = "fixed";
@@ -22,6 +20,7 @@ function hideNewLog(e){
     document.getElementById("newLogBTN").style.padding = "0";
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
     document.getElementById("newLogBTN").innerHTML = "";
+
 
 
 
