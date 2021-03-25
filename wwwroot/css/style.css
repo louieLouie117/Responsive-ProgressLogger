@@ -10,6 +10,9 @@ main {
     justify-items: center;
 }
 
+button{
+    outline: none;
+}
 .welcomeMsg{
     align-self: center;
     justify-items: center;
@@ -173,14 +176,14 @@ main  ::-webkit-scrollbar{
 
 .newLog_container input{
     font: 1.3em sans-serif;
-    width: 100px;
+    min-width: 100px;
     background: rgb(19, 109, 192);
     color: white;
     /* margin-left: 50px; */
     border: 2px solid white;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.562);
 
 }
 

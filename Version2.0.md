@@ -3,14 +3,14 @@
 ## In this version I will update/add the following features.
 
 # Updates
-- [ ] Implement Ajax on all CRUD Opps.  
 - [ ] New Landing page.
 - [ ] Apprentice page.
 - [ ] Mentor page.
 - [ ] Services Page.
-- [ ] Partials and wrappers.
+- [ ] Create Partials for all tools.
 
 # New Features
+- [x] Ajax on all CRUD Opps.  
 - [ ] The wall.
 - [ ] Mentors account/users oops.
 - [ ] Add Pages to daily log.
@@ -20,27 +20,31 @@
 - [ ] Stick notes.
 - [ ] BookMarks.
 
-# v2.1 updates.
-### Saturday, March 20, 2021.
-Today I was able to start planning the updating and new features for version 2.0. I will be implementing Agile with the scrum framework for this version.
+
+# v2.1 Ajax Development.
+For this version I want to update all the CRUD up from Section and Log entry to use Ajax for SPA development, a better user experience and no refresh on the page.
 
 
-# v2.2 mentors and apprentice.
-I will work on getting the Mentors account working. I need figure out how this is going to work with the apprentice users. The question is show update the current model or show I create a new model for mentors. I also need to figuer out the relationships between the apprenticed and mentors.
+# v2.2 update.
+My focus on v2.2 will be to update the lading page and add the apprentice, mentor, and services page.
 
 - [ ] Followers/connects.
 - [ ] Dashboard page layout.
 
-
-# v2.3 The Wall
-# v2.4 Pages for daily log.
-# v2.5 TodoList.
-# v2.6 Job Tracker.
-# v2.7 Bookmarks.
-# v2.8 Activity Tracker.
-# v2.9 NookMarks.
-
-
+# The Wall v2.3
+# Pages for daily log v2.4
+# TodoList v2.5
+# Job Tracker v2.6
+# Bookmarks v2.7
+# Activity Tracker v2.8
+# NookMarks v2.9
+# Apprentice
 
 
+
+### Saturday, March 20, 2021.
+Today I was able to start planning the updating and new features for version 2.0. I will be implementing Agile with the scrum framework for this version.
+
+### Thursday, March 25, 2021.
+Today day was able to get all the CRUD OPPs to use Ajax to communicate from the frontend to the backend and vis versa. Things to save for recall is saving to session for filter, Ajax load() can be use to render different related data and use labels for edit handler.
 

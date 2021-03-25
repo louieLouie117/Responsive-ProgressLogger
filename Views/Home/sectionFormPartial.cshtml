@@ -31,15 +31,20 @@
 
         });
 
+
         const SuccessStatus = (result) => {
-            console.log("Success...");
+            console.log("Success added new Item...");
             LoadData();
+            document.getElementById("welcomeLogMessage").style.display = "none";
+            document.getElementById("paper").style.display = "grid";
+            document.getElementById("Title").value = "";
+
         };
         const ErrorStatus = (xhr, status, strErr) => {
-            console.log("There was an error!");
+            console.log("There was an error! When Adding new Item");
         };
         const CompleteStatus = (xhr, status) => {
-            console.log("Ajax has completed...");
+            console.log("Ajax adding new item has completed...");
         };
 
         const LoadData = () => {
@@ -69,16 +74,16 @@
                             <div class="DotIcon"></div>
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
+                        @* <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}</a></button> *@
 
-                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
-                            </a></button>
+                        <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}</a></button>
 
                     </div>
                     <div id="deleteSection${sectionId}" class="deleteSection-container">
                         <section>
                             <aside>
-                                <button > <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
-                                <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
+                        <button> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                        <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
                             </aside>
                         </section>
                     </div>
@@ -92,6 +97,7 @@
     const DeleteSectionHandler = (e) => {
         console.log("id to select", e.target.id)
         let idSelected = e.target.id;
+
 
         $(`#${idSelected}`).click(function (e) {
 
@@ -110,20 +116,21 @@
             });
         })
         const SuccessStatus = (result) => {
-            console.log("Success...");
+            console.log("Successfuly Deleted...");
             LoadData();
         };
         const ErrorStatus = (xhr, status, strErr) => {
-            console.log("There was an error!");
+            console.log("There was an error! when Deleteing");
         };
         const CompleteStatus = (xhr, status) => {
-            console.log("Ajax has completed...");
+            console.log("Ajax Delete has completed...");
         };
         const LoadData = () => {
             $('#sectionItems').load("/DisplaySection #sectionItems", data => {
                 data = JSON.parse(data);
                 console.log("in load", data);
                 RenderData(data);
+
                 @* data = $.parseJSON(data); deprecated*@
                 });
         };
@@ -145,15 +152,15 @@
                             <div class="DotIcon"></div>
                         </div>
                         <button id="${sectionId}" onclick="showDeleteSection(event)"></button>
+                        @* <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}</a></button> *@
 
-                        <button id="${sectionId}"> <a href="/sectionLink/${sectionId}">${sectionTitle}
-                            </a></button>
+                            <button id="${sectionId}"> <a id="${sectionId}" onclick="FilterSectionHandler(event)">${sectionTitle}</a></button>
 
                     </div>
                     <div id="deleteSection${sectionId}" class="deleteSection-container">
                         <section>
                             <aside>
-                                <button"> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
+                                <button> <a id="${sectionId}" onClick="DeleteSectionHandler(event)">Delete</a></button>
                                 <button id="${sectionId}" onclick="hideDeleteSection(event)">No</button>
                             </aside>
                         </section>

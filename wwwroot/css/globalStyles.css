@@ -8,6 +8,10 @@ body {
 
 }
 
+#logItemBeingEdited{
+    display: none;
+}
+
 ul {
     list-style: none;
 }
@@ -20,6 +24,10 @@ a {
 ul {
     padding: 0px;
 
+}
+
+button{
+    outline: none;
 }
 
 
@@ -345,6 +353,7 @@ header img {
 
     a {
         color: black;
+        cursor: pointer;
     }
 
     #page-selected {
@@ -356,8 +365,9 @@ header img {
 
     }
 
+}
 
 
-
-
+#paper{
+    display: none;
 }

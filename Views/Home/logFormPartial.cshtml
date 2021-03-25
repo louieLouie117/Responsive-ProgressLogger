@@ -1,8 +1,107 @@
 @using ProgressLog.Models
 @model LogRecord
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#LogForm").submit(event => {
+            event.preventDefault();
+            let BTNtext = document.getElementById("saveBTN").value;
+            console.log("EVENT", event.target.id)
+
+
+
+            let logEntry = $('#newLogBTN').val();
+
+
+            let LogItemEditId = document.getElementById("logItemBeingEdited").innerText;
+
+            var jsonEditData = {
+                textLog: logEntry,
+                logRecordId: LogItemEditId,
+            };
+
+            console.log("editting data:", jsonEditData);
+
+
+            console.log(logEntry);
+            var logEntryData = {
+                textLog: logEntry,
+            };
+            console.log("Section data:", logEntryData);
+
+            if (BTNtext === "Save Changes") {
+                $.ajax({
+                    url: '@Url.Action("EditLogHandler", "Home")',
+                    type: "POST",
+                    data: jsonEditData,
+                    success: LogEntrySuccessStatus,
+                    error: LogEntryErrorStatus,
+                    complete: LogEntryCompleteStatus
+                });
+            } else {
+                $.ajax({
+                    url: '@Url.Action("CreateNewLog", "Home")',
+                    type: "POST",
+                    data: logEntryData,
+                    success: LogEntrySuccessStatus,
+                    error: LogEntryErrorStatus,
+                    complete: LogEntryCompleteStatus
+                });
+            }
+
+
+        });
+
+
+        const LogEntrySuccessStatus = (result) => {
+            console.log("Success added new Item...");
+            document.getElementById("newLogBTN").value = "";
+            document.getElementById("saveBTN").value = "Save";
+            LoadData();
+        };
+        const LogEntryErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error! When Adding new Item");
+        };
+        const LogEntryCompleteStatus = (xhr, status) => {
+            console.log("Ajax adding new item has completed...");
+        };
+
+    });
+
+    const EditLogHandler = (e) => {
+        document.getElementById("saveBTN").value = "Save Changes";
+        document.getElementById("newLogBTN").style.height = "80vh";
+        document.getElementById("newLogBTN").style.position = "relative";
+        document.getElementById("newLogBTN").style.padding = "40px";
+        document.getElementById("hide-wapper").style.display = "none";
+        document.getElementById("saveBTN").style.display = "block";
+        document.getElementById("cancleLog").style.display = "block";
+
+        console.log(e.target.id)
+
+
+        document.getElementById("logItemBeingEdited").innerText = e.target.id;
+        let logId = e.target.id + "LogToEdit";
+
+        let logTextToEdit = document.getElementById(logId).innerText;
+        console.log("this is the text:", logTextToEdit);
+
+        document.getElementById("newLogBTN").value = logTextToEdit;
+
+
+    }
+
+
+
+
+</script>
+
+
 <div class="newLog_container">
-    <form asp-action="CreateLog" asp-controller="Home" method="POST">
+    <form id="LogForm" asp-action="CreateLog" asp-controller="Home" method="POST">
+        <label id="logItemBeingEdited"></label>
         <textarea asp-for="TextLog" id="newLogBTN" onclick="showNewLog()" placeholder=" enter log..."></textarea>
         <div class="logOptions_container">
             <button onclick="hideNewLog()" type="button" id="cancleLog">Cancel</button>
