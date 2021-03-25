@@ -101,6 +101,11 @@ namespace ProgressLog.Controllers
         public IActionResult NewSectionHandler(Section FromForm)
         {
 
+            // block pages is not in session
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("login");
+            }
             System.Console.WriteLine("you have reach the sections backend.");
 
             // get and set userId
@@ -145,6 +150,12 @@ namespace ProgressLog.Controllers
         public IActionResult DeleteSectionHandler(Section DataId)
         {
 
+
+            // block pages is not in session
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("login");
+            }
             System.Console.WriteLine("You have successfully reach the backend of delete section");
             System.Console.WriteLine($"id: {DataId.SectionId}");
 
@@ -163,6 +174,12 @@ namespace ProgressLog.Controllers
         [HttpGet("FilterSectionHandler")]
         public IActionResult FilterSectionHandler(Section DataId)
         {
+
+            // block pages is not in session
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("login");
+            }
 
             System.Console.WriteLine("You have successfully reach the backend of filtering section");
             System.Console.WriteLine($"dataid: {DataId.SectionId}");
@@ -225,6 +242,12 @@ namespace ProgressLog.Controllers
         [HttpPost("CreateNewLog")]
         public IActionResult CreateNewLog(LogRecord FromForm)
         {
+
+            // block pages is not in session
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("login");
+            }
             System.Console.WriteLine("You have reached the backend of new log.");
             System.Console.WriteLine($"Data from user: {FromForm.TextLog}");
 
@@ -248,11 +271,6 @@ namespace ProgressLog.Controllers
         [HttpPost("EditLogHandler")]
         public IActionResult EditLogHandler(LogRecord DataId)
         {
-            System.Console.WriteLine("You have reached the backend of editing log.");
-            System.Console.WriteLine($"*** id to edit here {DataId.LogRecordId}");
-            System.Console.WriteLine($"*** New Text {DataId.TextLog}");
-
-
 
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
@@ -260,6 +278,9 @@ namespace ProgressLog.Controllers
                 return RedirectToAction("login");
             }
 
+            System.Console.WriteLine("You have reached the backend of editing log.");
+            System.Console.WriteLine($"*** id to edit here {DataId.LogRecordId}");
+            System.Console.WriteLine($"*** New Text {DataId.TextLog}");
 
 
             // get user in session
@@ -282,8 +303,86 @@ namespace ProgressLog.Controllers
         }
 
 
-        [HttpGet("edit/{LogRecordId}")]
-        public IActionResult editLog(int LogRecordId)
+        // [HttpGet("edit/{LogRecordId}")]
+        // public IActionResult editLog(int LogRecordId)
+        // {
+
+        //     // block pages is not in session
+        //     if (HttpContext.Session.GetInt32("UserId") == null)
+        //     {
+        //         return RedirectToAction("login");
+        //     }
+
+        //     // check to see if section id is in session
+        //     if (HttpContext.Session.GetInt32("SectionId") == null)
+        //     {
+        //         HttpContext.Session.SetInt32("SectionId", 0);
+        //     }
+
+
+        //     // get user in session
+        //     int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
+        //     // get section in session
+        //     int SectionInSession = (int)HttpContext.Session.GetInt32("SectionId");
+        //     ViewBag.passSectionId = SectionInSession;
+
+
+
+        //     // filter db set section by user
+        //     ViewBag.allSections = _context.Sections
+        //         .Where(us => us.UserId == UserIdInSession)
+        //         .ToList();
+
+        //     // filter db by section id 
+        //     ViewBag.allUserLogs = _context.LogRecords
+        //         .Where(ul => ul.SectionId == SectionInSession)
+        //         .ToList();
+
+        //     LogRecord GetLog = _context.LogRecords.SingleOrDefault(l => l.LogRecordId == LogRecordId);
+
+
+        //     MainWrapper wMod = new MainWrapper();
+        //     wMod.LogRecord = GetLog;
+
+        //     System.Console.WriteLine("edit button was click");
+        //     return View("edit", wMod);
+        // }
+
+
+
+
+        // [HttpGet("sectionLink/{SectionId}")]
+        // public IActionResult sectionLink(int SectionId)
+        // {
+
+
+        //     HttpContext.Session.SetInt32("SectionId", SectionId);
+        //     System.Console.WriteLine(SectionId);
+
+
+        //     System.Console.WriteLine("Section was click");
+
+        //     return RedirectToAction("dashboard");
+        // }
+
+
+
+        // [HttpGet("deleteLog/{LogRecordId}")]
+        // public IActionResult deleteLog(int LogRecordId)
+        // {
+        //     LogRecord GetLog = _context.LogRecords.FirstOrDefault(lr => lr.LogRecordId == LogRecordId);
+
+        //     _context.LogRecords.Remove(GetLog);
+        //     _context.SaveChanges();
+
+        //     System.Console.WriteLine("Delete Button was click");
+        //     return RedirectToAction("dashboard");
+        // }
+
+
+
+        [HttpGet("DeleteLogEntryHandler")]
+        public IActionResult DeleteLogEntryHandler(LogRecord DataId)
         {
 
             // block pages is not in session
@@ -291,78 +390,6 @@ namespace ProgressLog.Controllers
             {
                 return RedirectToAction("login");
             }
-
-            // check to see if section id is in session
-            if (HttpContext.Session.GetInt32("SectionId") == null)
-            {
-                HttpContext.Session.SetInt32("SectionId", 0);
-            }
-
-
-            // get user in session
-            int UserIdInSession = (int)HttpContext.Session.GetInt32("UserId");
-            // get section in session
-            int SectionInSession = (int)HttpContext.Session.GetInt32("SectionId");
-            ViewBag.passSectionId = SectionInSession;
-
-
-
-            // filter db set section by user
-            ViewBag.allSections = _context.Sections
-                .Where(us => us.UserId == UserIdInSession)
-                .ToList();
-
-            // filter db by section id 
-            ViewBag.allUserLogs = _context.LogRecords
-                .Where(ul => ul.SectionId == SectionInSession)
-                .ToList();
-
-            LogRecord GetLog = _context.LogRecords.SingleOrDefault(l => l.LogRecordId == LogRecordId);
-
-
-            MainWrapper wMod = new MainWrapper();
-            wMod.LogRecord = GetLog;
-
-            System.Console.WriteLine("edit button was click");
-            return View("edit", wMod);
-        }
-
-
-
-
-        [HttpGet("sectionLink/{SectionId}")]
-        public IActionResult sectionLink(int SectionId)
-        {
-
-
-            HttpContext.Session.SetInt32("SectionId", SectionId);
-            System.Console.WriteLine(SectionId);
-
-
-            System.Console.WriteLine("Section was click");
-
-            return RedirectToAction("dashboard");
-        }
-
-
-
-        [HttpGet("deleteLog/{LogRecordId}")]
-        public IActionResult deleteLog(int LogRecordId)
-        {
-            LogRecord GetLog = _context.LogRecords.FirstOrDefault(lr => lr.LogRecordId == LogRecordId);
-
-            _context.LogRecords.Remove(GetLog);
-            _context.SaveChanges();
-
-            System.Console.WriteLine("Delete Button was click");
-            return RedirectToAction("dashboard");
-        }
-
-
-
-        [HttpGet("DeleteLogEntryHandler")]
-        public IActionResult DeleteLogEntryHandler(LogRecord DataId)
-        {
             System.Console.WriteLine("you have reach the backend of delete Log entry");
             System.Console.WriteLine($"this is the id: {DataId.LogRecordId}");
 
@@ -379,21 +406,21 @@ namespace ProgressLog.Controllers
 
 
 
-        [HttpPost("update/{LogRecordId}")]
-        public IActionResult updateLog(LogRecord FromForm, int LogRecordId)
-        {
+        // [HttpPost("update/{LogRecordId}")]
+        // public IActionResult updateLog(LogRecord FromForm, int LogRecordId)
+        // {
 
-            LogRecord GetLog = _context.LogRecords.SingleOrDefault(l => l.LogRecordId == LogRecordId);
+        //     LogRecord GetLog = _context.LogRecords.SingleOrDefault(l => l.LogRecordId == LogRecordId);
 
 
-            GetLog.LogRecordId = LogRecordId;
-            GetLog.TextLog = FromForm.TextLog;
+        //     GetLog.LogRecordId = LogRecordId;
+        //     GetLog.TextLog = FromForm.TextLog;
 
-            _context.SaveChanges();
+        //     _context.SaveChanges();
 
-            System.Console.WriteLine("Saved changes button was click");
-            return RedirectToAction("dashboard");
-        }
+        //     System.Console.WriteLine("Saved changes button was click");
+        //     return RedirectToAction("dashboard");
+        // }
 
 
 
