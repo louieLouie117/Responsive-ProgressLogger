@@ -1,0 +1,49 @@
+@using ProgressLog.Models
+@model LoginUser
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/regLogin.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HB0NHJ3FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6HB0NHJ3FD');
+    </script>
+
+</head>
+
+<body>
+
+    <div class="regLogin-container">
+
+        <div class="form-container">
+            <form asp-action="Login" asp-controller="Home">
+                <h1>Access Account</h1>
+
+                <a href="/registration">Start a free account</a>
+
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email" placeholder="Email">
+                <input asp-for="Password" placeholder="Password">
+
+                @* <input type="submit" value="submit"> *@
+                <button type="submit">log in</button>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

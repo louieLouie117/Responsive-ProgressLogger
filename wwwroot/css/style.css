@@ -5,7 +5,7 @@
 main {
     display: grid;
     background: none;
-    height: 105vh;
+    /* height: 105vh; */
     width: auto;
     justify-items: center;
 }
@@ -411,7 +411,7 @@ main  ::-webkit-scrollbar{
 @media screen and (min-width: 1100px) {
     main {
         margin-left: 0vw;
-        height: 100vh;
+        /* height: 100vh; */
 
     }
 

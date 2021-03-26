@@ -33,7 +33,6 @@ form input{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     /* align-items: flex-end; */
-    height: 100vh;
 }
 
 .regLogin-container svg:last-of-type{
