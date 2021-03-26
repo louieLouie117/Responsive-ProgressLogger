@@ -76,3 +76,8 @@ function hideDeleteSection(e){
     document.getElementById(deleteSectionItem).style.display = "none";
 
 }
+
+
+const showSignIn= (e)=>{
+    document.getElementById("signInContainer").style.marginTop = "0px"
+}

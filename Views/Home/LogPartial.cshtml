@@ -74,18 +74,18 @@
                 console.log("user Data", data.filterBySession)
                 $.each(data.filterBySession, function (key, value) {
                     @* console.log("value:", value); *@
-                    @* console.log("Log id:", value.logRecordId); *@
-                    @* console.log("log text:", value.textLog); *@
-                    console.log("Log day:", value.createdAt);
+                        @* console.log("Log id:", value.logRecordId); *@
+                        @* console.log("log text:", value.textLog); *@
+                        console.log("Log day:", value.createdAt);
                     @* console.log("section Id:", value.sectionId); *@
-                    let day = value.createdAt;
-                    
-                    
+                        let day = value.createdAt;
 
 
-                let jsonDate = new Date(day).toDateString();
 
-            
+
+                    let jsonDate = new Date(day).toDateString();
+
+
 
                     $(`<li id="${value.logRecordId}Date">
                             <button><a href="#goTo${value.logRecordId}">${jsonDate}</a></button>
@@ -103,13 +103,13 @@
                     console.log("section Id:", value.sectionId);
                     let day = value.createdAt;
 
-                let jsonDate = new Date(day).toDateString();
+                    let jsonDate = new Date(day).toDateString();
 
 
 
-                console.log("new Data here:", jsonDate);
+                    console.log("new Data here:", jsonDate);
                     @* console.log("day", day) *@
-                    $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                        $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" id="goTo${value.logRecordId}">
                                     <h3 >${jsonDate}</h3>
                                 </div>
@@ -131,7 +131,7 @@
                                 </aside>
                         </div>
                             <p id="${value.logRecordId}LogToEdit">${value.textLog}</p>
-                        
+
 
 
                     `).prependTo("#UserLogText");
@@ -204,9 +204,9 @@
 
                 let jsonDate = new Date(day).toDateString();
 
-            
 
-                    $(`<li id="${value.logRecordId}Date">
+
+                $(`<li id="${value.logRecordId}Date">
                             <button><a href="#goTo${value.logRecordId}">${jsonDate}</a></button>
                     </li>`).prependTo("#UserLogsList");
 
@@ -222,12 +222,12 @@
                 console.log("section Id:", value.sectionId);
                 let day = value.createdAt;
 
-               let jsonDate = new Date(day).toDateString();
+                let jsonDate = new Date(day).toDateString();
 
 
 
                 console.log("new Data here:", jsonDate);
-                    @* console.log("day", day) *@
+                @* console.log("day", day) *@
                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" id="goTo${value.logRecordId}">
                                     <h3 >${jsonDate}</h3>
@@ -264,7 +264,7 @@
         <section>
             <picture>
                 @* <source media="(min-width: 1100px)" srcset="~/imgages/log.png" /> *@
-                <a href="/logout">
+                <a href="/">
                     <img src="~/images/logIcon.png" alt="">
                 </a>
 
@@ -309,48 +309,48 @@
                 <partial name="logFormPartial" model="@Model.LogRecord" />
             </div>
             @* <div class="paper-container" id="id">
-                    <div class="content-wrapper" id="hide-wapper">
-                    <section class="outline">
-                    <ul>
-                    @foreach (var item in ViewBag.allUserLogs)
-                    {
-                    <li><button>@item.CreatedAt.ToString("dddd")</button></li>
-                    }
-                    </ul>
-                    </section>
+                <div class="content-wrapper" id="hide-wapper">
+                <section class="outline">
+                <ul>
+                @foreach (var item in ViewBag.allUserLogs)
+                {
+                <li><button>@item.CreatedAt.ToString("dddd")</button></li>
+                }
+                </ul>
+                </section>
 
 
 
-                    @if (ViewBag.passSectionId == 0)
-                    {
-                    <p>Select Sectoin</p>
-                    }
-                    else
-                    {
-                    <section class="user-content">
-                    @foreach (var item in ViewBag.allUserLogs)
-                    {
-                    <div class="logItem_container">
-                    <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
-                    <div class="editDelete_container">
-                    <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
-                    <a href="/deleteLog/@item.LogRecordId">Delete</a>
-                    </div>
-                    </div>
-                    <p>@item.TextLog</p>
-                    }
-                    <footer>
-                    <p>...end of page</p>
-                    </footer>
+                @if (ViewBag.passSectionId == 0)
+                {
+                <p>Select Sectoin</p>
+                }
+                else
+                {
+                <section class="user-content">
+                @foreach (var item in ViewBag.allUserLogs)
+                {
+                <div class="logItem_container">
+                <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
+                <div class="editDelete_container">
+                <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
+                <a href="/deleteLog/@item.LogRecordId">Delete</a>
+                </div>
+                </div>
+                <p>@item.TextLog</p>
+                }
+                <footer>
+                <p>...end of page</p>
+                </footer>
 
-                    </section>
-                    }
+                </section>
+                }
 
 
-                    </div>
-                    <partial name="logFormPartial" model="@Model.LogRecord" />
+                </div>
+                <partial name="logFormPartial" model="@Model.LogRecord" />
 
-                    </div> *@
+                </div> *@
 
 
         </div>

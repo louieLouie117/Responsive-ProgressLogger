@@ -8,16 +8,32 @@
     <title>Progressly Page</title>
     <link rel="stylesheet" href="~/css/landingPage.css">
     <script src="~/js/landingPage.js" async=""></script>
+    <script src="~/js/script.js" async=""></script>
+
 
 </head>
 
 <body>
 
-    @* <partial name="_signIn" /> *@
+
+
+    <div id="signInContainer" class="signIn-container">
+        <partial name="_signIn" />
+    </div>
     <div class="landingPage-container">
+
+
+
+        <nav>
+            <button onclick="showSignIn(event)">sign in</button>
+        </nav>
+
+
 
         <div class="background-container">
             <picture>
+                <source media="(min-width: 1100px)" srcset="/assets/landingPageDesktop.png" />
+                <source media="(min-width: 500px)" srcset="/assets/landingPageTablet.png" />
                 <img src="/assets/landingPageMobile.png" alt="">
             </picture>
         </div>
@@ -26,9 +42,10 @@
         <div class="options-container">
             <header>
                 <picture>
+                    <source media="(min-width: 1100px)" srcset="/assets/logoLarge.png" />
                     <img src="/assets/logoSmall.png" alt="">
                 </picture>
-                <p>Connecting people together to help businesses get online. </p>
+                <p>Connecting people together to <b>help businesses</b> get online. </p>
             </header>
             <main>
                 <button>Website Services</button>
@@ -41,8 +58,10 @@
         <div class="mentorPage-container"></div>
 
 
-
     </div>
+
+
+
 
 </body>
 
