@@ -80,4 +80,8 @@ function hideDeleteSection(e){
 
 const showSignIn= (e)=>{
     document.getElementById("signInContainer").style.marginTop = "0px"
+    document.getElementById("signInContainer").style.transform = "smooth"
+    document.getElementById("signInContainer").style.transition = ".5s"
+
+
 }
