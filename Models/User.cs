@@ -10,11 +10,15 @@ namespace ProgressLog.Models
         [Key]
         public int UserId { get; set; }
 
+
+        public string AccountType { get; set; }
+
+        public string UserTitle { get; set; }
+
         [Display]
         [Required(ErrorMessage = "Can not be empty")]
         [MinLength(2, ErrorMessage = "That is to short")]
         public string FirstName { get; set; }
-
 
         [Display]
         [Required(ErrorMessage = "Can not be empty")]
@@ -26,6 +30,13 @@ namespace ProgressLog.Models
         [EmailAddress]
         [Required]
         public string Email { get; set; }
+
+
+        public string ProfileImg { get; set; }
+
+        public string ProfileBackground { get; set; }
+
+        public string MeetUpLink { get; set; }
 
 
         [DataType(DataType.Password)]
