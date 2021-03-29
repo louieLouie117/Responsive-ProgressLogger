@@ -78,6 +78,10 @@ form input{
 
 }
 
+.hidden{
+    display: none;
+}
+
 
 
 .regHeader_container{

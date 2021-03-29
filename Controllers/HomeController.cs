@@ -49,6 +49,19 @@ namespace ProgressLog.Controllers
         }
 
 
+        [HttpGet("regApprentice")]
+        public IActionResult regApprentice()
+        {
+            return View("_regApprentice");
+        }
+
+        [HttpGet("regMentor")]
+        public IActionResult regMentor()
+        {
+            return View("_regMentor");
+        }
+
+
         [HttpGet("dashboard")]
         public IActionResult dashboard()
         {
@@ -427,7 +440,7 @@ namespace ProgressLog.Controllers
 
 
 
-        // Registertion Login-------------------------------------------------
+        // User registration Login-------------------------------------------------
         [HttpPost("Redgister")]
         public IActionResult Redgister(User FromForm)
         {
@@ -460,6 +473,91 @@ namespace ProgressLog.Controllers
                 return View("index");
 
             }
+
+        }
+
+
+        [HttpPost("RegisterApprentice")]
+        public IActionResult RegisterApprentice(User FromForm)
+        {
+            // Check if email is already in db
+            if (_context.Users.Any(u => u.Email == FromForm.Email))
+            {
+                ModelState.AddModelError("Email", "Email already in use!");
+            }
+
+            // Validations
+            if (ModelState.IsValid)
+            {
+                // #hash password
+                PasswordHasher<User> Hasher = new PasswordHasher<User>();
+                FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
+
+                FromForm.AccountType = "Apprentice";
+                FromForm.UserTitle = "New Developer";
+                FromForm.ProfileImg = "profilePlaceholder.png";
+                FromForm.MeetUpLink = "http://www.progresslypage.com/";
+                FromForm.ProfileBackground = "136DC0";
+
+
+                // Add to db
+                _context.Add(FromForm);
+                _context.SaveChanges();
+
+                // Session
+                HttpContext.Session.SetInt32("UserId", _context.Users.FirstOrDefault(i => i.UserId == FromForm.UserId).UserId);
+                // Redirect
+                System.Console.WriteLine("You may contine!");
+                return RedirectToAction("dashboard");
+            }
+            else
+            {
+                System.Console.WriteLine("Fix your erros!");
+                return View("index");
+
+            }
+
+
+        }
+
+        [HttpPost("RegisterMentor")]
+        public IActionResult RegisterMentor(User FromForm)
+        {
+            // Check if email is already in db
+            if (_context.Users.Any(u => u.Email == FromForm.Email))
+            {
+                ModelState.AddModelError("Email", "Email already in use!");
+            }
+
+            // Validations
+            if (ModelState.IsValid)
+            {
+                // #hash password
+                PasswordHasher<User> Hasher = new PasswordHasher<User>();
+                FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
+
+                FromForm.AccountType = "Mentor";
+                FromForm.ProfileImg = "profilePlaceholder.png";
+                FromForm.ProfileBackground = "136DC0";
+
+
+                // Add to db
+                _context.Add(FromForm);
+                _context.SaveChanges();
+
+                // Session
+                HttpContext.Session.SetInt32("UserId", _context.Users.FirstOrDefault(i => i.UserId == FromForm.UserId).UserId);
+                // Redirect
+                System.Console.WriteLine("You may contine!");
+                return RedirectToAction("dashboard");
+            }
+            else
+            {
+                System.Console.WriteLine("Fix your erros!");
+                return View("index");
+
+            }
+
 
         }
 
