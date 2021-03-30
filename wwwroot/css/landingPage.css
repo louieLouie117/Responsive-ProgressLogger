@@ -7,6 +7,12 @@ body{
 
 }
 
+
+button{
+    outline: none;
+    cursor: pointer;
+}
+
 .landingPage-container{
     display: grid;
     height: 100vh;
@@ -72,7 +78,7 @@ body{
 
 
 .options-container header p {
-    background: rgba(255, 255, 255, 0.185);
+    background: rgba(237, 237, 237, 0.185);
     font: 1.5em sans-serif;
     margin: 40px 0;
     padding: 40px;
@@ -83,7 +89,7 @@ body{
 }
 
 .options-container header p b{
-    color: #136DC0;
+    color: #187ddc;
 }
 
 
@@ -145,6 +151,10 @@ body{
     padding: 0;
 
 
+}
+
+.options-container header p b{
+    color: #136DC0;
 }
 
 }

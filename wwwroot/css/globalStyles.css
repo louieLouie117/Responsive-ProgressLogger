@@ -28,6 +28,7 @@ ul {
 
 button{
     outline: none;
+    cursor: pointer;
 }
 
 
