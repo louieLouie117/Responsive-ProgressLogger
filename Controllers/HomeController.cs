@@ -441,40 +441,40 @@ namespace ProgressLog.Controllers
 
 
         // User registration Login-------------------------------------------------
-        [HttpPost("Redgister")]
-        public IActionResult Redgister(User FromForm)
-        {
-            // Check if email is already in db
-            if (_context.Users.Any(u => u.Email == FromForm.Email))
-            {
-                ModelState.AddModelError("Email", "Email already in use!");
-            }
+        // [HttpPost("Redgister")]
+        // public IActionResult Redgister(User FromForm)
+        // {
+        //     // Check if email is already in db
+        //     if (_context.Users.Any(u => u.Email == FromForm.Email))
+        //     {
+        //         ModelState.AddModelError("Email", "Email already in use!");
+        //     }
 
-            // Validations
-            if (ModelState.IsValid)
-            {
-                // #hash password
-                PasswordHasher<User> Hasher = new PasswordHasher<User>();
-                FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
+        //     // Validations
+        //     if (ModelState.IsValid)
+        //     {
+        //         // #hash password
+        //         PasswordHasher<User> Hasher = new PasswordHasher<User>();
+        //         FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
 
-                // Add to db
-                _context.Add(FromForm);
-                _context.SaveChanges();
+        //         // Add to db
+        //         _context.Add(FromForm);
+        //         _context.SaveChanges();
 
-                // Session
-                HttpContext.Session.SetInt32("UserId", _context.Users.FirstOrDefault(i => i.UserId == FromForm.UserId).UserId);
-                // Redirect
-                System.Console.WriteLine("You may contine!");
-                return RedirectToAction("dashboard");
-            }
-            else
-            {
-                System.Console.WriteLine("Fix your erros!");
-                return View("index");
+        //         // Session
+        //         HttpContext.Session.SetInt32("UserId", _context.Users.FirstOrDefault(i => i.UserId == FromForm.UserId).UserId);
+        //         // Redirect
+        //         System.Console.WriteLine("You may contine!");
+        //         return RedirectToAction("dashboard");
+        //     }
+        //     else
+        //     {
+        //         System.Console.WriteLine("Fix your erros!");
+        //         return View("index");
 
-            }
+        //     }
 
-        }
+        // }
 
 
         [HttpPost("RegisterApprentice")]
@@ -606,7 +606,7 @@ namespace ProgressLog.Controllers
         }
 
 
-        // ------------------------------------------end of regitration and login
+        // ------------------------------------------end of registration and login
 
 
 
