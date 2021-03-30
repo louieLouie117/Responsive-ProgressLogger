@@ -250,7 +250,7 @@ main  ::-webkit-scrollbar{
     /*Remove Margins from here for mobile*/
     padding: 20px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.227);
-    height: 110%;
+    height: 110vh;
     
     
 }
@@ -322,6 +322,7 @@ main  ::-webkit-scrollbar{
     height: 20px;
     padding: 10px;
     background: none;
+    width: 100%;
 
 
 }
@@ -342,6 +343,7 @@ main  ::-webkit-scrollbar{
 
 .outline button a {
     color: rgb(19, 109, 192);
+    white-space: nowrap;
 
 
 }

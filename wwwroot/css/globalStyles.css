@@ -53,7 +53,7 @@ body ::-webkit-scrollbar {
     display: grid;
     background: rgb(19, 109, 192);
     color: white;
-    height: auto;
+    max-height: 150px;
     padding-top: 5px;
     /* width: 100vw; */
 }
@@ -291,7 +291,7 @@ header img {
         padding-top: 20px;
         margin-top: 5px;
         justify-items: flex-end;
-
+        max-height: none;
     }
 
     .section-container{
