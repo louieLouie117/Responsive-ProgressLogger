@@ -250,7 +250,7 @@ main  ::-webkit-scrollbar{
     /*Remove Margins from here for mobile*/
     padding: 20px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.227);
-    height: 110vh;
+    height: auto;
     
     
 }
