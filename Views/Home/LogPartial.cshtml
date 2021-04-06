@@ -73,22 +73,15 @@
             const RenderDataDate = (data) => {
                 console.log("user Data", data.filterBySession)
                 $.each(data.filterBySession, function (key, value) {
-                    @* console.log("value:", value); *@
-                        @* console.log("Log id:", value.logRecordId); *@
-                        @* console.log("log text:", value.textLog); *@
-                        console.log("Log day:", value.createdAt);
-                    @* console.log("section Id:", value.sectionId); *@
-                        let day = value.createdAt;
+                    const DateFormat = {
+                        weekday: "long",
 
+                    };
 
-
-
-                    let jsonDate = new Date(day).toDateString();
-
-
+                    let WeekDayFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
 
                     $(`<li id="${value.logRecordId}Date">
-                            <button><a href="#goTo${value.logRecordId}">${jsonDate}</a></button>
+                            <button><a href="#goTo${value.logRecordId}">${WeekDayFormated}</a></button>
                     </li>`).prependTo("#UserLogsList");
 
                 });
@@ -103,15 +96,21 @@
                     console.log("section Id:", value.sectionId);
                     let day = value.createdAt;
 
-                    let jsonDate = new Date(day).toDateString();
+                    const DateFormat = {
+                        weekday: "long",
+                        month: "long",
+                        day: "numeric"
+                    };
+
+                    let dateFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
 
 
 
-                    console.log("new Data here:", jsonDate);
+                    console.log("new Data here:", dateFormated);
                     @* console.log("day", day) *@
                         $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" id="goTo${value.logRecordId}">
-                                    <h3 >${jsonDate}</h3>
+                                    <h3 >${dateFormated}</h3>
                                 </div>
                                 <div class="editDelete_container">
                                     @* <a href="/edit/${value.logRecordId}">Edit</a> *@
@@ -198,16 +197,18 @@
                 console.log("log text:", value.textLog);
                 console.log("Log day:", value.createdAt);
                 console.log("section Id:", value.sectionId);
-                let day = value.createdAt;
 
-                console.log("day", day)
+                const DateFormat = {
+                    weekday: "long",
 
-                let jsonDate = new Date(day).toDateString();
+                };
+
+                let WeekDayFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
 
 
 
                 $(`<li id="${value.logRecordId}Date">
-                            <button><a href="#goTo${value.logRecordId}">${jsonDate}</a></button>
+                            <button><a href="#goTo${value.logRecordId}">${WeekDayFormated}</a></button>
                     </li>`).prependTo("#UserLogsList");
 
             });
@@ -222,15 +223,22 @@
                 console.log("section Id:", value.sectionId);
                 let day = value.createdAt;
 
-                let jsonDate = new Date(day).toDateString();
+
+                const DateFormat = {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric"
+                };
+
+                let dateFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
 
 
 
-                console.log("new Data here:", jsonDate);
+                console.log("new Data here:", dateFormated);
                 @* console.log("day", day) *@
                     $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" id="goTo${value.logRecordId}">
-                                    <h3 >${jsonDate}</h3>
+                                    <h3 >${dateFormated}</h3>
                                 </div>
                                 <div class="editDelete_container">
                                     @* <a href="/edit/${value.logRecordId}">Edit</a> *@
