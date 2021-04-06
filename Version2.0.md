@@ -3,7 +3,7 @@
 ## In this version I will update/add the following features.
 
 # Updates
-- [ ] New Landing page.
+- [x] New Landing page.
 - [ ] Apprentice page.
 - [ ] Mentor page.
 - [ ] Services Page.
@@ -47,4 +47,8 @@ Today I was able to start planning the updating and new features for version 2.0
 
 ### Thursday, March 25, 2021.
 Today day was able to get all the CRUD OPPs to use Ajax to communicate from the frontend to the backend and vis versa. Things to save for recall is saving to session for filter, Ajax load() can be use to render different related data and use labels for edit handler.
+
+
+### Tuesday, April 06 2021
+Today I created version 2.3 that will focus on the high value items to get version 2.0 deployed. I will also be moving all the todo items to Trello. Version 2.3 is curently 
 
