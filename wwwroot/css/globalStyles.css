@@ -28,6 +28,7 @@ ul {
 
 button{
     outline: none;
+    cursor: pointer;
 }
 
 
@@ -222,6 +223,7 @@ header img {
     padding: 0;
     margin: 0;
     z-index: 100;
+    border-radius: 20px;    
 
 
 }
@@ -249,14 +251,21 @@ header img {
     /* background: rgb(19, 109, 192); */
     text-align: center;
     border: none;
-    color: blue;
     padding: 5px;
 
 }
 
+.deleteSection-container aside button:first-child {
+    border-radius: 20px;    
+
+}
+
+
 .deleteSection-container aside button:last-child {
     background: red;
     color: white;
+    cursor: pointer;
+
 }
 
 .deleteSection-container aside button a{
@@ -292,6 +301,7 @@ header img {
         margin-top: 5px;
         justify-items: flex-end;
         max-height: none;
+        height: auto;
     }
 
     .section-container{
