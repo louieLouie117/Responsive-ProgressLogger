@@ -29,14 +29,11 @@
 
         <div class="form-container">
 
-            <form asp-action="Redgister" asp-controller="Home" method="POST">
-                <h1>Register</h1>
+            <form asp-action="RegisterMentor" asp-controller="Home" method="POST">
+                <h1>Become a Mentor</h1>
                 <a href="/signin">Sign in.</a>
-                <span asp-validation-for="FirstName"></span>
-                <input asp-for="FirstName" placeholder="First Name">
 
-                <span asp-validation-for="LastName"></span>
-                <input asp-for="LastName" placeholder="Last Name">
+                <input class="hidden" asp-for="AccountType" placeholder="AccountType">
 
                 <span asp-validation-for="Email"></span>
                 <input asp-for="Email" placeholder="Email">
@@ -47,8 +44,21 @@
                 <span asp-validation-for="Confirm"></span>
                 <input asp-for="Confirm" placeholder="Confirm Password">
 
+                <span asp-validation-for="FirstName"></span>
+                <input asp-for="FirstName" placeholder="First Name">
+
+                <span asp-validation-for="LastName"></span>
+                <input asp-for="LastName" placeholder="Last Name">
+
+                <input asp-for="UserTitle" placeholder="Title: Full Stack Developer, Frontend, Backend ect..">
+                <input asp-for="MeetUpLink" placeholder="MeetUpLink">
+
+                <input class="hidden" asp-for="ProfileImg" placeholder="Profile Img">
+                <input class="hidden" asp-for="ProfileBackground" placeholder="ProfileBackground">
+
                 @* <input type="submit" value="submit"> *@
                 <button type="submit">Create Account</button>
+                
 
             </form>
         </div>
