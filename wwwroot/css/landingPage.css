@@ -20,7 +20,7 @@ button{
 
 .landingPage-container nav{
     display: grid;
-    grid-template-columns: 100px 100px;
+    grid-template-columns:  100px;
     grid-column: 1/2;
     grid-row: 1/2;
     z-index: 1;
@@ -30,10 +30,10 @@ button{
     max-width: 105em;
 }
 
-.landingPage-container nav :first-child{
+/* .landingPage-container nav :first-child{
     background: none;
     color: #136DC0;
-}
+} */
 
 .landingPage-container nav button{
     background: #136DC0;
