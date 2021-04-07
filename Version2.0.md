@@ -18,5 +18,9 @@ Today day was able to get all the CRUD OPPs to use Ajax to communicate from the 
 # v2.3
 
 ### Tuesday, April 06 2021
-Today I created version 2.3 that will focus on the high value items to get version 2.0 deployed. I will also be moving all the todo items to Trello. Version 2.3 is curently 
+Today I created version 2.3 and stable will be use if need as a backup. I will also be moving all the todo items to Trello for all my Sprints. I will also create Version 2.4 to continue my development.
+
+# v2.4
+### Wednesday, April 06 2021
+I will start version 2.4 to get the Progressly Page ready for deployment.
 
