@@ -15,7 +15,7 @@
 
 <body>
 
-
+    <partial name="_headerBanner" />
 
     <div id="signInContainer" class="signIn-container">
         <partial name="_signIn" />
@@ -32,7 +32,7 @@
 
 
         <div class="background-container">
-            <picture>
+            <picture id="blurImage">
                 <source media="(min-width: 1100px)" srcset="/assets/landingPageDesktop.png" />
                 <source media="(min-width: 500px)" srcset="/assets/landingPageTablet.png" />
                 <img src="/assets/landingPageMobile.png" alt="">
@@ -48,10 +48,10 @@
                 </picture>
                 <p>Connecting people together to <b>help businesses</b> get online. </p>
             </header>
-            <main>
-                <button>Website Services</button>
-                <button>Apprentice</button>
-                <button>Mentor</button>
+            <main id="mainOptions">
+                <button onclick="HeaderBannerHandler(event)">Website Services</button>
+                <button onclick="HeaderBannerHandler(event)">Apprentice</button>
+                <button onclick="HeaderBannerHandler(event)">Mentor</button>
             </main>
         </div>
 
