@@ -85,6 +85,10 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("blurImage").style.filter = 'blur(0px)';
         document.getElementById("blurImage").style.transform = "smooth";
         document.getElementById("blurImage").style.transition = ".5s";
+        document.getElementById("regApprentice").style.display = "none";
+        document.getElementById("regMentor").style.display = "none";       
+
+        
     return (HeaderBannerStatus = "close");
 
     }
@@ -92,3 +96,15 @@ const HeaderBannerHandler =(e)=>{
 
 }
 console.log(HeaderBannerStatus)
+
+
+
+const HeaderEventHandler = (e) =>{
+    if(e.target.innerText === "Become an Apprentice"){
+        document.getElementById("regApprentice").style.display = "grid";
+    }
+    if(e.target.innerText === "Become a Mentor"){
+        document.getElementById("regMentor").style.display = "grid";       
+
+    }
+} 
