@@ -292,13 +292,13 @@ header img {
     header {
         position: sticky;
         top: 0;
-        left: 15px;
+        left: 0;
         display: grid;
         grid-template-rows: 70px 50px;
-        border-radius: 30px 0 0 30px;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.336);
+        /* border-radius: 30px 0 0 30px; */
+        /* box-shadow: -5px 0 20px rgba(0, 0, 0, 0.336); */
         padding-top: 20px;
-        margin-top: 5px;
+        /* margin-top: 5px; */
         justify-items: flex-end;
         max-height: none;
         height: auto;

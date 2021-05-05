@@ -14,9 +14,14 @@ namespace ProgressLog.Migrations
                 {
                     UserId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(nullable: false),
-                    LastName = table.Column<string>(nullable: false),
+                    AccountType = table.Column<string>(nullable: true),
+                    UserTitle = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: false),
+                    ProfileImg = table.Column<string>(nullable: true),
+                    ProfileBackground = table.Column<string>(nullable: true),
+                    MeetUpLink = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)

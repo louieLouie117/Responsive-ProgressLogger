@@ -181,7 +181,7 @@ button{
 .headerBanner-container{
     display: grid;
     grid-template-rows:  200px auto auto 1fr 1fr;
-    position: fixed;
+    position: absolute;
     top: -800px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -194,7 +194,7 @@ button{
 
 }
 
-.headerBanner-container h1 {
+.headerBanner-container>h1 {
     font: 2.2em sans-serif;
     color: white;
     margin: 0;
@@ -207,8 +207,13 @@ button{
     padding-bottom: 15px;
 }
 
-.headerBanner-container a {
+.headerBanner-container>button{
     font: 1.5em sans-serif;
+    background: none;
+    height: 50px;
+    border: none;
+    padding: 5px;
+    text-decoration: underline;
     color: white;
     justify-self: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

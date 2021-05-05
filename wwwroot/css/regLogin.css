@@ -1,107 +1,13 @@
-body{
-    margin: 0 auto;
-    background: whitesmoke;
+.signIn-container form{
     display: grid;
-    
+    padding: 50px;
 }
 
-
-.logo-container{
-    background: none;
-    position: absolute;
-    top: 5px;
-    left: 25px;
-}
-
-.logo-container img {
-    height: 50px;
-    width: auto;
-
-}
-
-
-
-
-form input{
-    font: 1em sans-serif;
-    height: 20px;
-    padding: 5px;
-
-}
-
-.regLogin-container{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    /* align-items: flex-end; */
-}
-
-.regLogin-container svg:last-of-type{
-    align-self: flex-end;
-}
-
-
-
-.form-container{
-    /* padding: 10px; */
-    margin: 0 auto;
-    z-index: 4px;
-    align-self: start;
-}
-
-
-.form-container>form>button{
-    font: 1em sans-serif;
-    width: 150px;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    background: #136DC0;
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.343);
-
-}
-
-
-.form-container form {
-    position: relative;
-    display: grid;
-    row-gap: 5px;
-    min-width: 300px;
-    height: 60vh;
-    background: white;
-    padding: 30px;
-    align-content: center;
-    border-radius: 10px;
-    /* margin: 10px; */
-    /* z-index: 5; */
-
-
-}
-
-.hidden{
+.reg-container{
     display: none;
 }
 
-
-
-.regHeader_container{
+.reg-container form{
     display: grid;
-    grid-template-columns: 4fr 1fr;
-    align-items: center;
-}
-
-
-
-@media screen and (min-width: 1100px) {
-
-
-
-
-    .logo-container{
-        background: none;
-        position: absolute;
-        top: 25px;
-        left: 25px;
-    }
 
 }

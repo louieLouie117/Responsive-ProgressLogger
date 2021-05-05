@@ -16,12 +16,10 @@ namespace ProgressLog.Models
         public string UserTitle { get; set; }
 
         [Display]
-        [Required(ErrorMessage = "Can not be empty")]
         [MinLength(2, ErrorMessage = "That is to short")]
         public string FirstName { get; set; }
 
         [Display]
-        [Required(ErrorMessage = "Can not be empty")]
         [MinLength(2, ErrorMessage = "That is to short")]
         public string LastName { get; set; }
 
