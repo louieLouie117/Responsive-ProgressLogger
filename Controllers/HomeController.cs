@@ -553,7 +553,7 @@ namespace ProgressLog.Controllers
             }
             else
             {
-                System.Console.WriteLine("Fix your erros!");
+                System.Console.WriteLine("Fix your errors mentor!");
                 return View("index");
 
             }
