@@ -24,34 +24,32 @@
 </head>
 
 <body>
-    <div class="regLogin-container">
+    <div class="singIn-container">
 
 
-        <div class="form-container">
 
-            <form asp-action="Redgister" asp-controller="Home" method="POST">
-                <h1>Register</h1>
-                <a href="/signin">Sign in.</a>
-                <span asp-validation-for="FirstName"></span>
-                <input asp-for="FirstName" placeholder="First Name">
+        <form asp-action="Redgister" asp-controller="Home" method="POST">
+            <h1>Register</h1>
+            <a href="/signin">Sign in.</a>
+            <span asp-validation-for="FirstName"></span>
+            <input asp-for="FirstName" placeholder="First Name">
 
-                <span asp-validation-for="LastName"></span>
-                <input asp-for="LastName" placeholder="Last Name">
+            <span asp-validation-for="LastName"></span>
+            <input asp-for="LastName" placeholder="Last Name">
 
-                <span asp-validation-for="Email"></span>
-                <input asp-for="Email" placeholder="Email">
+            <span asp-validation-for="Email"></span>
+            <input asp-for="Email" placeholder="Email">
 
-                <span asp-validation-for="Password"></span>
-                <input asp-for="Password" placeholder="Password">
+            <span asp-validation-for="Password"></span>
+            <input asp-for="Password" placeholder="Password">
 
-                <span asp-validation-for="Confirm"></span>
-                <input asp-for="Confirm" placeholder="Confirm Password">
+            <span asp-validation-for="Confirm"></span>
+            <input asp-for="Confirm" placeholder="Confirm Password">
 
-                @* <input type="submit" value="submit"> *@
-                <button type="submit">Create Account</button>
+            @* <input type="submit" value="submit"> *@
+            <button type="submit">Create Account</button>
 
-            </form>
-        </div>
+        </form>
 
 
     </div>
