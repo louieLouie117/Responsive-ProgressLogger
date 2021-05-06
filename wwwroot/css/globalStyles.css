@@ -52,9 +52,9 @@ body ::-webkit-scrollbar {
 /*Header navigation for all pages----------------------------------------->*/
  header {
     display: grid;
-    background: rgb(19, 109, 192);
+    background: #136DC0;
     color: white;
-    max-height: 150px;
+    max-height: 120px;
     padding-top: 5px;
     /* width: 100vw; */
 }
@@ -83,7 +83,7 @@ header>a {
 
 header>section {
     display: grid;
-    grid-template-columns: 50px 1fr ;
+    grid-template-columns: 1fr ;
     justify-content: center;
     align-items: center;
 
@@ -302,6 +302,7 @@ header img {
         justify-items: flex-end;
         max-height: none;
         height: auto;
+        min-width: 200px;
     }
 
     .section-container{

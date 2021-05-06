@@ -10,32 +10,38 @@ namespace ProgressLog.Models
         [Key]
         public int UserId { get; set; }
 
-
-        public string AccountType { get; set; }
-
+        // About User---------------------------
         public string UserTitle { get; set; }
 
-        [Display]
-        [MinLength(2, ErrorMessage = "That is to short")]
         public string FirstName { get; set; }
 
-        [Display]
-        [MinLength(2, ErrorMessage = "That is to short")]
         public string LastName { get; set; }
+        public string UserMessage { get; set; }
 
+        // address------------------------------
+        public string City { get; set; }
+        public string State { get; set; }
 
-        [Display]
-        [EmailAddress]
-        [Required]
-        public string Email { get; set; }
+        // Users tools and technologies
+        public string Languages { get; set; }
+        public string Database { get; set; }
+        public string VersionControl { get; set; }
+        public string FrameworksLibraries { get; set; }
 
+        // Profile-----------------------------
+        public string AccountType { get; set; }
 
         public string ProfileImg { get; set; }
 
-        public string ProfileBackground { get; set; }
+        public string ProfileColor { get; set; }
 
         public string MeetUpLink { get; set; }
+        public string MeetUpCost { get; set; }
 
+        // email and password---------------------------
+        [EmailAddress]
+        [Required]
+        public string Email { get; set; }
 
         [DataType(DataType.Password)]
         [Required]
@@ -52,7 +58,7 @@ namespace ProgressLog.Models
         [DataType(DataType.Password)]
         public string Confirm { get; set; }
 
-        // nav propertys
+        // nav properties
         List<LogRecord> LogRecords { get; set; }
 
         List<Section> Sections { get; set; }
