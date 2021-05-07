@@ -9,5 +9,35 @@
 
 .reg-container form{
     display: grid;
+    row-gap: 5px;}
 
+.reg-container form section{
+    min-width: 350px;
+    display: grid;
+    justify-self: center;
+
+}
+
+#regMentorStep2, #regMentorStep3{
+    display: none;
+}
+
+#regApprenticeStep2, #regApprenticeStep3{
+    display: none;
+}
+
+input, 
+select{
+    font: 1em sans-serif;
+    height: 30px;
+
+}
+
+.hidden{
+    display: none;
+}
+
+.reg-container form section footer{
+    display: grid;
+    grid-template-columns: 100px auto;
 }

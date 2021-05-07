@@ -602,7 +602,7 @@ namespace ProgressLog.Controllers
         {
             // Clear Session
             HttpContext.Session.Clear();
-            return RedirectToAction("login");
+            return RedirectToAction("index");
         }
 
 
