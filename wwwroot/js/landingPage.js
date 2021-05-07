@@ -85,6 +85,10 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("blurImage").style.filter = 'blur(0px)';
         document.getElementById("blurImage").style.transform = "smooth";
         document.getElementById("blurImage").style.transition = ".5s";
+        document.getElementById("regApprentice").style.display = "none";
+        document.getElementById("regMentor").style.display = "none";       
+
+        
     return (HeaderBannerStatus = "close");
 
     }
@@ -92,3 +96,135 @@ const HeaderBannerHandler =(e)=>{
 
 }
 console.log(HeaderBannerStatus)
+
+
+
+const HeaderEventHandler = (e) =>{
+    if(e.target.innerText === "Become an Apprentice"){
+        document.getElementById("regApprentice").style.display = "grid";
+    }
+    if(e.target.innerText === "Become a Mentor"){
+        document.getElementById("regMentor").style.display = "grid";       
+
+    }
+} 
+
+
+// Mentor Registration------------------------------------------------
+const StateSelectedHandlerMentor = (e) => {
+    let stateSelected = document.getElementById("MentorStateSelectionList").value;
+    console.log(stateSelected)
+
+    document.getElementById("MentorState").value = stateSelected;
+    // document.getElementById("ApprenticeState").value = stateSelected;
+}
+
+let mentorStep = "step1"
+
+const RegMentorHandler = (e) =>{
+
+    mentorStep = mentorStep + e.target.innerText;
+    console.log(mentorStep)
+    
+    if(mentorStep === "step1next"){
+        document.getElementById('regMentorStep1').style.display = "none";
+        document.getElementById('regMentorStep2').style.display = "grid";
+        document.getElementById('regMentorStep3').style.display = "none";
+
+        mentorStep = "step2";    
+        return (mentorStep)
+    
+    }
+
+    if(mentorStep === "step2back"){
+        document.getElementById('regMentorStep1').style.display = "grid";   
+        document.getElementById('regMentorStep2').style.display = "none";
+        document.getElementById('regMentorStep3').style.display = "none";
+
+        mentorStep = "step1";
+        return (mentorStep)
+    
+    }
+
+    if(mentorStep === "step2next"){
+        document.getElementById('regMentorStep1').style.display = "none";
+        document.getElementById('regMentorStep2').style.display = "none";
+        document.getElementById('regMentorStep3').style.display = "grid";
+
+        mentorStep = "step3"; 
+        return (mentorStep)
+    
+    }
+
+    
+    if(mentorStep === "step3back"){
+        document.getElementById('regMentorStep1').style.display = "none";   
+        document.getElementById('regMentorStep2').style.display = "grid";
+        document.getElementById('regMentorStep3').style.display = "none";
+
+        mentorStep = "step2";
+        return (mentorStep)
+    
+    }
+
+}
+
+
+// Apprentice Registration---------------------------------------------------------
+const StateSelectedHandlerApprentice = (e) => {
+    let stateSelected = document.getElementById("ApprenticeStateSelectionList").value;
+    console.log(stateSelected)
+
+    document.getElementById("ApprenticeState").value = stateSelected;
+}
+
+
+let ApprenticeStep = "step1"
+
+const RegApprenticeHandler = (e) =>{
+
+    ApprenticeStep = ApprenticeStep + e.target.innerText;
+    console.log(ApprenticeStep)
+    
+    if(ApprenticeStep === "step1next"){
+        document.getElementById('regApprenticeStep1').style.display = "none";
+        document.getElementById('regApprenticeStep2').style.display = "grid";
+        document.getElementById('regApprenticeStep3').style.display = "none";
+
+        ApprenticeStep = "step2";    
+        return (ApprenticeStep)
+    
+    }
+
+    if(ApprenticeStep === "step2back"){
+        document.getElementById('regApprenticeStep1').style.display = "grid";   
+        document.getElementById('regApprenticeStep2').style.display = "none";
+        document.getElementById('regApprenticeStep3').style.display = "none";
+
+        ApprenticeStep = "step1";
+        return (ApprenticeStep)
+    
+    }
+
+    if(ApprenticeStep === "step2next"){
+        document.getElementById('regApprenticeStep1').style.display = "none";
+        document.getElementById('regApprenticeStep2').style.display = "none";
+        document.getElementById('regApprenticeStep3').style.display = "grid";
+
+        ApprenticeStep = "step3"; 
+        return (ApprenticeStep)
+    
+    }
+
+    
+    if(ApprenticeStep === "step3back"){
+        document.getElementById('regApprenticeStep1').style.display = "none";   
+        document.getElementById('regApprenticeStep2').style.display = "grid";
+        document.getElementById('regApprenticeStep3').style.display = "none";
+
+        ApprenticeStep = "step2";
+        return (ApprenticeStep)
+    
+    }
+
+}

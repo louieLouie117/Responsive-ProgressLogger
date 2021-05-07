@@ -8,6 +8,9 @@ appsettings.json
 *.user
 *.userosscache
 *.sln.docstates
+/Migrations
+/Migrations.MyContextModelSnapshot
+
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)

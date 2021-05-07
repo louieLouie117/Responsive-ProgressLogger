@@ -497,7 +497,7 @@ namespace ProgressLog.Controllers
                 FromForm.UserTitle = "New Developer";
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.MeetUpLink = "http://www.progresslypage.com/";
-                FromForm.ProfileBackground = "136DC0";
+                FromForm.ProfileColor = "136DC0";
 
 
                 // Add to db
@@ -538,7 +538,7 @@ namespace ProgressLog.Controllers
 
                 FromForm.AccountType = "Mentor";
                 FromForm.ProfileImg = "profilePlaceholder.png";
-                FromForm.ProfileBackground = "136DC0";
+                FromForm.ProfileColor = "136DC0";
 
 
                 // Add to db
@@ -553,7 +553,7 @@ namespace ProgressLog.Controllers
             }
             else
             {
-                System.Console.WriteLine("Fix your erros!");
+                System.Console.WriteLine("Fix your errors mentor!");
                 return View("index");
 
             }
@@ -602,7 +602,7 @@ namespace ProgressLog.Controllers
         {
             // Clear Session
             HttpContext.Session.Clear();
-            return RedirectToAction("login");
+            return RedirectToAction("index");
         }
 
 
