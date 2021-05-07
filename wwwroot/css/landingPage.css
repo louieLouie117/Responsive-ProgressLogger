@@ -180,14 +180,15 @@ button{
 
 .headerBanner-container{
     display: grid;
-    grid-template-rows:  200px auto auto 1fr 1fr;
+    grid-template-rows:  200px 50px 50px 150px auto;
     position: absolute;
+    row-gap: 20px;
     top: -800px;
     left: 50%;
     transform: translate(-50%, 0);
     background: #136DC0;
     width: 90%;
-    height: 500px;
+    height: auto;
     border-radius: 0 0  40px 40px;
     z-index: 3;
     padding: 20px;
@@ -239,6 +240,8 @@ button{
         height: 650px;
         border-radius: 0 0  180px 180px;
         padding: 40px;
+        row-gap: 0px;
+
 
     }
 
