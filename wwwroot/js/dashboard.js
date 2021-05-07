@@ -21,7 +21,12 @@ const showMainMenu =(e) => {
     }else {      
         document.getElementById("mainMenu").style.height = "40px";
         document.getElementById("mainMenu").style.width = "40px";
-        document.getElementById("mainMenu").style.margin = "20px";
+
+        document.getElementById("mainMenu").style.marginTop = "20px";
+        document.getElementById("mainMenu").style.marginBottom = "20px";
+        document.getElementById("mainMenu").style.marginLeft = "10px";
+        document.getElementById("mainMenu").style.marginRight = "10px";
+
         document.getElementById("mainMenu").style.borderColor = "white";
         document.getElementById("mainMenu").style.borderRadius = "40px";
         document.getElementById("mainMenu").style.transform = "smooth";
