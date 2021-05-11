@@ -34,11 +34,14 @@ const showMainMenu =(e) => {
         document.getElementById("mainMenu").style.padding = "10px";
         document.getElementById("mainMenu").style.boxShadow = "none";
 
-
-    
-
         return (menu = "close");
 
     }
 
 };
+
+
+const PartialHandler = (e) =>{
+    showMainMenu()
+    console.log(e.target.innerText)
+}
