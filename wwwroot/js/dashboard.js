@@ -34,11 +34,105 @@ const showMainMenu =(e) => {
         document.getElementById("mainMenu").style.padding = "10px";
         document.getElementById("mainMenu").style.boxShadow = "none";
 
-
-    
-
         return (menu = "close");
 
     }
 
 };
+
+
+const PartialHandler = (e) =>{
+    showMainMenu()
+    console.log(e.target.innerText)
+
+    if(e.target.innerText === "Profile"){
+        document.getElementById("profilePartial").style.display = "grid"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+
+    }
+
+    if(e.target.innerText === "Daily Log"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "grid"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+
+    }
+
+    if(e.target.innerText === "Network"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "grid"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+    }
+
+    if(e.target.innerText === "Activity Tracker"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "grid"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+    }
+
+    if(e.target.innerText === "Stickynotes"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "grid"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+    }
+
+    if(e.target.innerText === "Bookmarks"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "grid"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+    }
+
+    if(e.target.innerText === "Todo-list"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "grid"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+    }
+
+    if(e.target.innerText === "Job Tracker"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "grid"
+    }
+
+
+}

@@ -271,103 +271,104 @@
 </head>
 
 <body>
-    <header>
-        <h1>Progress Log</h1>
-        <section>
+    <div class="dailyLog-container" id="dailyLogPartial">
+        <header>
+            <h1>Progress Log</h1>
+            <section>
 
-            <partial name="sectionFormPartial" model="@Model.Section" />
-        </section>
-
-
-    </header>
-
-    <main>
+                <partial name="sectionFormPartial" model="@Model.Section" />
+            </section>
 
 
-        <div class="welcomeMsg" id="welcomeLogMessage">
-            <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
-            <p>select or + add a new section</p>
+        </header>
 
-        </div>
-
-        <div class="content-container">
+        <main>
 
 
-            <div class="paper-container" id="paper">
-                <div class="content-wrapper" id="hide-wapper">
-                    <div class="readMode-container"></div>
+            <div class="welcomeMsg" id="welcomeLogMessage">
+                <p>Welcome back @ViewBag.ToDisplay.FirstName :)</p>
+                <p>select or + add a new section</p>
 
-
-                    <section class="outline">
-                        <ul id="UserLogsList"></ul>
-                    </section>
-
-
-
-                    <section class="user-content">
-                        <ul id="UserLogText"></ul>
-                    </section>
-
-
-
-
-                </div>
-                <partial name="logFormPartial" model="@Model.LogRecord" />
             </div>
-            @* <div class="paper-container" id="id">
-                <div class="content-wrapper" id="hide-wapper">
-                <section class="outline">
-                <ul>
-                @foreach (var item in ViewBag.allUserLogs)
-                {
-                <li><button>@item.CreatedAt.ToString("dddd")</button></li>
-                }
-                </ul>
-                </section>
+
+            <div class="content-container">
+
+
+                <div class="paper-container" id="paper">
+                    <div class="content-wrapper" id="hide-wapper">
+                        <div class="readMode-container"></div>
+
+
+                        <section class="outline">
+                            <ul id="UserLogsList"></ul>
+                        </section>
 
 
 
-                @if (ViewBag.passSectionId == 0)
-                {
-                <p>Select Sectoin</p>
-                }
-                else
-                {
-                <section class="user-content">
-                @foreach (var item in ViewBag.allUserLogs)
-                {
-                <div class="logItem_container">
-                <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
-                <div class="editDelete_container">
-                <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
-                <a href="/deleteLog/@item.LogRecordId">Delete</a>
+                        <section class="user-content">
+                            <ul id="UserLogText"></ul>
+                        </section>
+
+
+
+
+                    </div>
+                    <partial name="logFormPartial" model="@Model.LogRecord" />
                 </div>
-                </div>
-                <p>@item.TextLog</p>
-                }
-                <footer>
-                <p>...end of page</p>
-                </footer>
-
-                </section>
-                }
-
-
-                </div>
-                <partial name="logFormPartial" model="@Model.LogRecord" />
-
-                </div> *@
-
-
-        </div>
-        @* } *@
+                @* <div class="paper-container" id="id">
+                    <div class="content-wrapper" id="hide-wapper">
+                    <section class="outline">
+                    <ul>
+                    @foreach (var item in ViewBag.allUserLogs)
+                    {
+                    <li><button>@item.CreatedAt.ToString("dddd")</button></li>
+                    }
+                    </ul>
+                    </section>
 
 
 
+                    @if (ViewBag.passSectionId == 0)
+                    {
+                    <p>Select Sectoin</p>
+                    }
+                    else
+                    {
+                    <section class="user-content">
+                    @foreach (var item in ViewBag.allUserLogs)
+                    {
+                    <div class="logItem_container">
+                    <h3>@item.CreatedAt.ToString("dddd MMMM dd, yyyy")</h3>
+                    <div class="editDelete_container">
+                    <a href="/update/@item.LogRecordId" onclick="showNewLog()">Edit</a>
+                    <a href="/deleteLog/@item.LogRecordId">Delete</a>
+                    </div>
+                    </div>
+                    <p>@item.TextLog</p>
+                    }
+                    <footer>
+                    <p>...end of page</p>
+                    </footer>
+
+                    </section>
+                    }
 
 
-    </main>
+                    </div>
+                    <partial name="logFormPartial" model="@Model.LogRecord" />
 
+                    </div> *@
+
+
+            </div>
+            @* } *@
+
+
+
+
+
+        </main>
+    </div>
 </body>
 
 </html>
