@@ -169,3 +169,10 @@ body{margin: 0;}
 #dailyLogPartial{
 	display: grid;
 }
+
+#profilePartial, #networkPartial, 
+#activityTrackerPartial, #stickyNotesPartial,
+#bookmarksPartial, #todoListPartial,
+#jobTrackerPartial{
+	display: none;
+}
