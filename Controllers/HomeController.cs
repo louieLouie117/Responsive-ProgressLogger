@@ -493,7 +493,7 @@ namespace ProgressLog.Controllers
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
 
-                FromForm.AccountType = "Apprentice";
+                FromForm.AccountType = AccountType.Apprentice;
                 FromForm.UserTitle = "New Developer";
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.MeetUpLink = "http://www.progresslypage.com/";
@@ -536,7 +536,7 @@ namespace ProgressLog.Controllers
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
 
-                FromForm.AccountType = "Mentor";
+                FromForm.AccountType = AccountType.Mentor;
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.ProfileColor = "136DC0";
 
