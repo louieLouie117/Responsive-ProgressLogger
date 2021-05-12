@@ -1,15 +1,19 @@
 body{
     display: grid;
     background: whitesmoke;
-    margin: 0 auto;
+    margin: 0;
     max-width: 65em;
     font: 1em sans-serif;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
 }
 
-h1{
+h1, h2,p{
     margin: 0;
 }
+
+
 
 
 button{
@@ -19,8 +23,9 @@ button{
 
 .landingPage-container{
     display: grid;
-    height: 100vh;
+    height: 100.1vh;
 }
+
 
 .landingPage-container nav{
     display: grid;
@@ -45,6 +50,7 @@ button{
     color: white;
     font: 1em sans-serif;
     border: none;
+    
 }
 
 .background-container{
@@ -261,5 +267,84 @@ button{
     }
 
 }
+
+
+body ::-webkit-scrollbar {
+    width: 1px;
+    height: 0px;
+    display: none;
+  }
+
+body ::-webkit-scrollbar {
+    display: none;
+  }
+
+/* apprentice page style------------------------------------------- */
+
+.apprenticePage-container{
+    margin-top: -150px;
+    display: none;
+    background: none;
+    width: 100%;
+    height: 1300px;
+    z-index: 50px;
+
+}
+
+.apprenticePage-container header{
+    display: grid;
+    grid-template-rows: 50px;
+    justify-items: center;
+}
+
+.apprenticePage-container header ul {
+    background: none;
+    display: flex;
+    overflow: scroll;
+    width: auto;
+    column-gap: 10px;
+    height: 230px;
+}
+
+.apprenticePage-container header ul li{
+    display: grid;
+    justify-items: center;
+
+}
+
+.apprenticePage-container header ul li h2,
+.apprenticePage-container header ul li p{
+    font: 1em sans-serif;
+    color: #187ddc;
+}
+
+
+.apprenticePage-container h1{
+    margin: 0;
+    font: 1.3em sans-serif;
+    color: white;
+}
+
+.apprenticePage-container img{
+    height: 150px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.345);
+    border-radius: 80px;
+}
+
+.apprenticePage-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 1000px) {
+
+    
+.apprenticePage-container h1{
+    font: 1.7em sans-serif;
+}
+
+
+}
+
 
 

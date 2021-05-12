@@ -40,6 +40,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("BannerOverview").innerText = "Connect with mentors and learn to develop website and webapps. ";
         document.getElementById("BannerSummery").innerText ="With a higher increases in web development. We are dedicated to connect you with mentors and give you the tools you need to start your programing journey.";
         document.getElementById("BannerLinkTag").innerText ="Become an Apprentice";
+        document.getElementById("apprenticePagePartial").style.display = "grid";
+
 
         console.log("Apprentice")
     }
@@ -69,6 +71,7 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("blurImage").style.transform = "smooth";
         document.getElementById("blurImage").style.transition = ".5s";
 
+
     return (HeaderBannerStatus = "open");
 
     }
@@ -86,7 +89,9 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("blurImage").style.transform = "smooth";
         document.getElementById("blurImage").style.transition = ".5s";
         document.getElementById("regApprentice").style.display = "none";
-        document.getElementById("regMentor").style.display = "none";       
+        document.getElementById("regMentor").style.display = "none";     
+        document.getElementById("apprenticePagePartial").style.display = "none";
+
 
         
     return (HeaderBannerStatus = "close");
