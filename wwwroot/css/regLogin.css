@@ -1,3 +1,9 @@
+h2{
+    margin: 0;
+    font: 1em sans-serif;
+    color: white;
+}
+
 .signIn-container form{
     display: grid;
     padding: 50px;
@@ -15,6 +21,7 @@
     min-width: 350px;
     display: grid;
     justify-self: center;
+    row-gap: 3px;
 
 }
 
@@ -40,4 +47,22 @@ select{
 .reg-container form section footer{
     display: grid;
     grid-template-columns: 100px auto;
+    column-gap: 5px;
 }
+
+.reg-container form button{
+    font: 1.3em sans-serif;
+    background: none;
+    border: solid 1px white;
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+
+}
+
+.reg-container form section footer :first-child{
+    background: none;
+    border: none;
+
+}
+

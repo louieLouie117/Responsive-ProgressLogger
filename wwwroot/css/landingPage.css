@@ -180,7 +180,7 @@ button{
 
 .headerBanner-container{
     display: grid;
-    grid-template-rows:  200px 50px 50px 150px auto;
+    grid-template-rows:  100px 50px 50px 150px auto;
     position: absolute;
     row-gap: 20px;
     top: -800px;
@@ -202,7 +202,7 @@ button{
 }
 
 .headerBanner-container p {
-    font: 1.5em sans-serif;
+    font: 1.3em sans-serif;
     color: white;
     margin: 0;
     padding-bottom: 15px;
@@ -236,6 +236,8 @@ button{
 
 @media screen and (min-width: 1000px) {
     .headerBanner-container{
+    grid-template-rows:  200px 50px 50px 150px auto;
+
         width: 50%;
         height: 650px;
         border-radius: 0 0  180px 180px;

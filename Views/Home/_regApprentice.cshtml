@@ -35,6 +35,7 @@
             </section>
 
             <section id="regApprenticeStep2">
+                <h2>Login to your accuont anytime.</h2>
                 <span asp-validation-for="Password"></span>
                 <input asp-for="Password" placeholder="Password">
 
@@ -48,6 +49,8 @@
             </section>
 
             <section id="regApprenticeStep3">
+                <h2>Connect with mentors.</h2>
+
                 <partial name="_stateListApprentice" />
 
                 <span asp-validation-for="State"></span>
@@ -58,7 +61,7 @@
 
                 <footer>
                     <button type="button" onclick="RegApprenticeHandler(event)">back</button>
-                    <button type="submit">Finnish</button>
+                    <button type="submit">finish</button>
 
 
                 </footer>
