@@ -12,7 +12,6 @@
 
         $("#NewSectionForm").submit(event => {
             event.preventDefault();
-            alert("New Section is being created!");
 
             let title = $('#Title').val();
             var sectionData = {
@@ -35,8 +34,6 @@
         const SuccessStatus = (result) => {
             console.log("Success added new Item...");
             LoadData();
-            document.getElementById("welcomeLogMessage").style.display = "none";
-            document.getElementById("paper").style.display = "grid";
             document.getElementById("Title").value = "";
 
         };

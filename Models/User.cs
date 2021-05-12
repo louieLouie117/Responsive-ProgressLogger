@@ -5,12 +5,15 @@ using System.Collections.Generic;
 
 namespace ProgressLog.Models
 {
+
+    public enum AccountType { Apprentice = 0, Mentor = 1, Admin = 2 }
     public class User
     {
         [Key]
         public int UserId { get; set; }
 
         // About User---------------------------
+
         public string UserTitle { get; set; }
 
         public string FirstName { get; set; }
@@ -29,8 +32,9 @@ namespace ProgressLog.Models
         public string FrameworksLibraries { get; set; }
 
         // Profile-----------------------------
-        public string AccountType { get; set; }
-
+        [Column(TypeName = "nvarchar(24)")]
+        [EnumDataType(typeof(AccountType))]
+        public AccountType AccountType { get; set; }
         public string ProfileImg { get; set; }
 
         public string ProfileColor { get; set; }
