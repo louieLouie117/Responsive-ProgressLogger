@@ -342,7 +342,17 @@ body ::-webkit-scrollbar {
 
 
 /* getting started ---------------------------------------------- */
+#getStarted{
+    display: none;
+}
 
+#newApprenticeList{
+    display: none;
+}
+
+#newMentorList{
+    display: none;
+}
 
 .gettingStarted-container{
     display: grid;
