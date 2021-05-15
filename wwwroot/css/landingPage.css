@@ -2,7 +2,7 @@ body{
     display: grid;
     background: whitesmoke;
     margin: 0;
-    max-width: 65em;
+    /* max-width: 65em; */
     font: 1em sans-serif;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -195,9 +195,8 @@ button{
     background: #136DC0;
     width: 95%;
     height: auto;
-    border-radius: 0 0  40px 40px;
-    z-index: 3;
-    padding: 20px;
+    border-radius: 0 0  30px 30px;
+    padding: 15px;
 
 }
 
@@ -301,7 +300,7 @@ body ::-webkit-scrollbar {
     display: flex;
     overflow: scroll;
     width: 99%;
-    column-gap: 20px;
+    column-gap: 30px;
     height: 230px;
 }
 
@@ -335,28 +334,48 @@ body ::-webkit-scrollbar {
 .apprenticePage-container ul {
     list-style: none;
     padding: 0;
-    max-width: 65em;
+    max-width: 85em;
     margin: 0 auto;
 
 }
 
+
+
+/* getting started ---------------------------------------------- */
+#getStarted{
+    display: none;
+}
+
+#newApprenticeList{
+    display: none;
+}
+
+#newMentorList{
+    display: none;
+}
+
+.gettingStarted-container{
+    display: grid;
+    row-gap: 30px;
+}
+
 .gettingStarted-container header{
     display: grid;
-    row-gap: 20px;
+    row-gap: 5px;
     margin: 0 auto;
-    padding: 10px;
-    max-width: 65em;
+    padding: 50px 10px;
+    max-width: 85em;
 
 }
 
 .gettingStarted-container header h2{
     font: 3em sans-serif;
-    color: #136DC0;
+    color: rgb(148, 148, 148);
     align-self: flex-end;
 }
 .gettingStarted-container header p{
     font: 1.5em sans-serif;
-    color: #136DC0;
+    color: rgb(148, 148, 148);
 }
 
 .gettingStarted-container header button{
@@ -375,10 +394,122 @@ body ::-webkit-scrollbar {
     display: grid;
 }
 
-.gettingStarted-container main picture img{
+.gettingStarted-container picture{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -1;
+
+}
+
+.gettingStarted-container>picture img{
     width: 100%;
     height: auto;
+   
 }
+
+.gettingStarted-container>main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: grid;
+    row-gap: 20px;
+    max-width: 85em;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.gettingStarted-container main h2{
+    color: white;
+    font: 2em sans-serif;
+}
+
+.gettingStarted-container main p{
+    font: 1.7em sans-serif;
+    color: white;
+}
+
+.gettingStarted-container section{
+    padding: 0 20px;
+}
+
+.gettingStarted-container main section h2,
+.gettingStarted-container main section p {
+    text-shadow: 0 0 20px black;
+
+}
+
+.gettingStarted-container main section h2{
+    font: 2.3em sans-serif;
+}
+
+.gettingStarted-container main section p{
+    font: 1.5em sans-serif;
+}
+.gettingStarted-container aside{
+    display: grid;
+
+}
+.gettingStarted-container aside nav{
+    background: #187ddc;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 30px;
+
+}
+
+
+.gettingStarted-container aside nav ul{
+    display: grid;
+    row-gap: 10px;
+    padding: 30px;
+    justify-content: center;
+    width: 300px;
+}
+
+
+.gettingStarted-container aside nav ul h2{
+    font: 1.5em sans-serif;
+    text-decoration: underline;
+    
+}
+.gettingStarted-container aside nav ul li{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    justify-items: left;
+}
+
+.gettingStarted-container aside nav ul li h3{
+    font: 1.3em sans-serif;
+    color: white;
+}
+
+
+
+.gettingStarted-container aside nav ul li img{
+    height: 50px;
+    width: auto;
+}
+
+.gettingStarted-container main footer header{
+    background: #187ddc;
+    border-radius: 30px 30px 0 0;
+    padding: 20px;
+
+}
+
+.gettingStarted-container main footer{
+    background: none;
+    height: 700px;
+}
+
+.gettingStarted-container>main>footer>main{
+    background: white;
+    height: 600px;
+}
+
+
 
 
 @media screen and (min-width: 1000px) {
@@ -391,8 +522,7 @@ body ::-webkit-scrollbar {
     background: none;
     display: flex;
     overflow: scroll;
-    max-width: 65em;
-    column-gap: 50px;
+    max-width: 85em;
     height: 230px;
 }
 
@@ -402,6 +532,34 @@ body ::-webkit-scrollbar {
     font: 1.7em sans-serif;
     color: white;
     text-shadow: 0 0 5px black;
+
+}
+
+
+.gettingStarted-container main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    grid-template-rows: 700px auto;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 150px;
+
+}
+
+
+.gettingStarted-container main section{
+    align-self: center;
+}
+
+.gettingStarted-container main aside{
+    justify-self: flex-end;
+}
+
+.gettingStarted-container aside nav{
+    width: 450px;
+}
+
+.gettingStarted-container main footer{
+    grid-column: 1/3;
 
 }
 

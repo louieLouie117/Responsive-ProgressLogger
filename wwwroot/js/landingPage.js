@@ -40,9 +40,13 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("BannerOverview").innerText = "Connect with mentors and learn to develop website and webapps. ";
         document.getElementById("BannerSummery").innerText ="With a higher increases in web development. We are dedicated to connect you with mentors and give you the tools you need to start your programing journey.";
         document.getElementById("BannerLinkTag").innerText ="Become an Apprentice";
-        document.getElementById("apprenticePagePartial").style.display = "grid";
         document.getElementById("regApprentice").style.display = "grid";
         document.getElementById("regApprenticeStep1").style.display = "grid";
+
+        document.getElementById("apprenticePagePartial").style.display = "grid";
+        document.getElementById("getStarted").style.display = "grid";
+        document.getElementById("newApprenticeList").style.display = "flex";
+       document.getElementById("newMentorList").style.display = "none";
 
 
         console.log("Apprentice")
@@ -56,7 +60,10 @@ const HeaderBannerHandler =(e)=>{
        document.getElementById("regMentor").style.display = "grid";    
        document.getElementById("regMentorStep1").style.display = "grid";
 
-
+       document.getElementById("apprenticePagePartial").style.display = "grid";
+       document.getElementById("getStarted").style.display = "grid";
+       document.getElementById("newMentorList").style.display = "flex";
+       document.getElementById("newApprenticeList").style.display = "none";
 
 
         console.log("Mentor")

@@ -21,6 +21,11 @@
 
 }
 
+.reg-container form section h2{
+    color: white;
+    font: 1em sans-serif;
+}
+
 
 #regMentorStep2, #regMentorStep3{
     display: none;
