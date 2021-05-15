@@ -9,7 +9,10 @@ function showNewLog(e) {
     document.getElementById("newLogBTN").style.padding = "40px";
     document.getElementById("saveBTN").style.display = "block";
     document.getElementById("cancleLog").style.display ="block";
-    
+    if(menu ==="open"){
+        showMainMenu()
+
+    }
     
 };
 
