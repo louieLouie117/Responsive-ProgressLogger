@@ -351,9 +351,9 @@ body ::-webkit-scrollbar {
 
 .gettingStarted-container header{
     display: grid;
-    row-gap: 20px;
+    row-gap: 5px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 50px 10px;
     max-width: 85em;
 
 }
@@ -403,7 +403,6 @@ body ::-webkit-scrollbar {
     grid-row: 2/3;
     grid-column: 1/2;
     display: grid;
-    grid-template-rows: 1fr 2fr ;
     row-gap: 20px;
     max-width: 85em;
     margin: 0 auto;
@@ -431,9 +430,12 @@ body ::-webkit-scrollbar {
 }
 
 .gettingStarted-container main section h2{
-    font: 3em sans-serif;
+    font: 2.3em sans-serif;
 }
 
+.gettingStarted-container main section p{
+    font: 1.5em sans-serif;
+}
 .gettingStarted-container aside{
     display: grid;
 
@@ -487,8 +489,14 @@ body ::-webkit-scrollbar {
 
 }
 
+.gettingStarted-container main footer{
+    background: none;
+    height: 700px;
+}
+
 .gettingStarted-container>main>footer>main{
     background: white;
+    height: 600px;
 }
 
 
@@ -521,6 +529,7 @@ body ::-webkit-scrollbar {
 .gettingStarted-container main {
     grid-row: 2/3;
     grid-column: 1/2;
+    grid-template-rows: 700px auto;
     grid-template-columns: 1fr 1fr;
     row-gap: 150px;
 
