@@ -1,0 +1,75 @@
+@using ProgressLog.Models
+@model User
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Loger</title>
+    <link rel="stylesheet" href="~/css/regLogin.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HB0NHJ3FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6HB0NHJ3FD');
+    </script>
+
+</head>
+
+<body>
+    <div class="reg-container" id="regApprenticeFooter">
+
+        <form asp-action="RegisterApprentice" asp-controller="Home" method="POST">
+            <section id="regApprenticeStep1">
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email" placeholder="Email">
+                <button type="button" onclick="RegApprenticeHandler(event)">next</button>
+
+            </section>
+
+            <section id="regApprenticeStep2">
+                <h2>Login to your account anytime.</h2>
+                <span asp-validation-for="Password"></span>
+                <input asp-for="Password" placeholder="Password">
+
+                <span asp-validation-for="Confirm"></span>
+                <input asp-for="Confirm" placeholder="Confirm Password">
+                <footer>
+                    <button type="button" onclick="RegApprenticeHandler(event)">back</button>
+                    <button type="button" onclick="RegApprenticeHandler(event)">next</button>
+                </footer>
+
+            </section>
+
+            <section id="regApprenticeStep3">
+                <h2>Connect with mentors.</h2>
+
+                <span class="span2" asp-validation-for="FirstName"></span>
+                <input class="span2" asp-for="FirstName" placeholder="First Name:">
+
+                <partial name="_stateListApprentice" />
+
+                <input asp-for="State" placeholder="State" id="ApprenticeState" class="hidden">
+
+                <input asp-for="City" placeholder="City">
+
+                <footer class="span2">
+                    <button type="button" onclick="RegApprenticeHandler(event)">back</button>
+                    <button type="submit">finish</button>
+
+                </footer>
+
+            </section>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

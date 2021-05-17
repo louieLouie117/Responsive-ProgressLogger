@@ -37,28 +37,40 @@ const HeaderBannerHandler =(e)=>{
 
     if(e.target.innerText === "Apprentice"){
         document.getElementById("BannerTitle").innerText ="Apprentice";
-        document.getElementById("BannerOverview").innerText = "Connect with mentors and learn to develop website and webapps. ";
+        document.getElementById("BannerOverview").innerText = "Connect with mentors and learn to develop websites and web apps. ";
         document.getElementById("BannerSummery").innerText ="With a higher increases in web development. We are dedicated to connect you with mentors and give you the tools you need to start your programing journey.";
         document.getElementById("BannerLinkTag").innerText ="Become an Apprentice";
         document.getElementById("regApprentice").style.display = "grid";
         document.getElementById("regApprenticeStep1").style.display = "grid";
 
+        document.getElementById("regApprenticeFooter").style.display = "grid";
+
+
         document.getElementById("apprenticePagePartial").style.display = "grid";
         document.getElementById("getStarted").style.display = "grid";
+        document.getElementById("newMentorList").style.display = "none";
         document.getElementById("newApprenticeList").style.display = "flex";
-       document.getElementById("newMentorList").style.display = "none";
+        
+        document.getElementById("getStartedJustAdded").innerText = "People that just became an apprentice.";
+        document.getElementById("getStartedTitle").innerText = "Get Started";
+        document.getElementById("getStartedInfo").innerText = "Are you looking to learn how to code websites and web apps and don't know where to start or have not progressed as much as you wanted? Well, we are here to help you connect with mentors that have been where you are and can guide you motivate you to become a website and web app developer.";
+        document.getElementById("connectWithBTN").innerText = "Connect with Mentors";
+        document.getElementById("getToolsInfo").innerText = "When you become an apprentice not only will you start connecting with mentors, but you also will have access to your dashboard and tools to help you on your new journey.  ";
+        document.getElementById("becomeUserTitle").innerText = "Become an apprentice. Get paid to learn.";
+        document.getElementById("becomeUserInfo").innerText = "If you are interested in developing websites or web apps, why not get paid while learning as an apprentice? When you find a business that needs a website or web app, you can connect with a mentor and share the bacon. Once you are ready, you can become a mentor for others.";
 
-
-        console.log("Apprentice")
     }
     
     if(e.target.innerText === "Mentor"){
        document.getElementById("BannerTitle").innerText ="Mentor";
        document.getElementById("BannerOverview").innerText = "Help business get online and mentor others.";
-       document.getElementById("BannerSummery").innerText ="Do you have web development skills and want to helping business get online and at the same time be a mentor for someone. Than get started become a Mentor today.";
+       document.getElementById("BannerSummery").innerText ="Do you have the skills to code websites or web apps? Do you want to help businesses get online and at the same time be a mentor for someone? Then get started become a mentor today.";
        document.getElementById("BannerLinkTag").innerText ="Become a Mentor";
        document.getElementById("regMentor").style.display = "grid";    
        document.getElementById("regMentorStep1").style.display = "grid";
+
+       document.getElementById("regMentorFooter").style.display = "grid";    
+
 
        document.getElementById("apprenticePagePartial").style.display = "grid";
        document.getElementById("getStarted").style.display = "grid";
@@ -66,7 +78,14 @@ const HeaderBannerHandler =(e)=>{
        document.getElementById("newApprenticeList").style.display = "none";
 
 
-        console.log("Mentor")
+       document.getElementById("getStartedJustAdded").innerText = "People that just became mentors.";
+       document.getElementById("getStartedTitle").innerText = "Help others";
+       document.getElementById("getStartedInfo").innerText = "There are many people that need help starting their developer journey. Help others discover the wonderful world of programming. Become a mentor become a leader for someone in need.";
+       document.getElementById("connectWithBTN").innerText = "Start helping others";
+       document.getElementById("getToolsInfo").innerText = "When you become a mentor you can connect with an apprentice that needs help programming a website or web app. You also get access to your dashboard with tools to help you stay organized.";
+       document.getElementById("becomeUserTitle").innerText = "Become a mentor. Help others learn.";
+       document.getElementById("becomeUserInfo").innerText = "Do you have the skills to code websites or web apps? Do you want to help businesses get online and at the same time be a mentor for someone? Then get started become a mentor today.";
+
 
     }
 
@@ -104,6 +123,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("regApprentice").style.display = "none";
         document.getElementById("regMentor").style.display = "none";     
         document.getElementById("apprenticePagePartial").style.display = "none";
+        
+        document.getElementById("getStarted").style.display = "none";
         
 
 

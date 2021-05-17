@@ -4,149 +4,12 @@
 
 <body>
     <div class="apprenticePage-container" id="apprenticePagePartial">
-        <header>
-            <h1>People that just became an apprentice.</h1>
-            <ul id="newApprenticeList">
-                <h2>New apprentice</h2>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
+        <header id="gettingStartedHeader">
+            <h1 id="getStartedJustAdded"></h1>
 
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <button>Get Tools</button>
-            </ul>
+            <partial name="_listApprentice" />
+            <partial name="_listMentor" />
 
-            <ul id="newMentorList">
-                <h2>New Mentors</h2>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <li>
-                    <img src="assets/profilePlaceholder.png" alt="">
-                    <h2>Luis</h2>
-                    <p>From: CA</p>
-                </li>
-                <button>Get Tools</button>
-            </ul>
 
         </header>
 
@@ -154,11 +17,12 @@
 
     <div class="gettingStarted-container" id='getStarted'>
         <header>
-            <h2>Get Started</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit libero ea iusto odio? Magni provident
+            <h2 id="getStartedTitle">Get Started</h2>
+            <p id="getStartedInfo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit libero ea iusto
+                odio? Magni provident
                 aliquam dolorum dolor doloremque, omnis illum animi minus, libero unde, illo tempore voluptates repellat
                 quibusdam!</p>
-            <button>Connect with Mentors</button>
+            <button id="connectWithBTN">Connect with Mentors</button>
         </header>
         <picture id="blurImage">
             <source media="(min-width: 1100px)" srcset="/assets/gettingStartedL.png" />
@@ -169,7 +33,8 @@
 
             <section>
                 <h2>Dashboard & Tools</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam perspiciatis nihil debitis autem ut
+                <p id="getToolsInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam perspiciatis nihil
+                    debitis autem ut
                     facilis. Quaerat incidunt dolorum sunt expedita doloremque quam deleniti, impedit placeat vel.
                     Deserunt officiis sed quam!</p>
             </section>
@@ -213,6 +78,7 @@
                             <h3 onclick="PartialHandler(event)"> Job Traker </h3>
                         </li>
 
+                        <button>Get Tools</button>
 
                     </ul>
                 </nav>
@@ -220,16 +86,17 @@
 
             <footer>
                 <header>
-                    <h2>Become an apprentice. Get paid to learn.</h2>
-                    <p>If you are interested in developing websites or webapps, why not get paid at the same time you
+                    <h2 id="becomeUserTitle">Become an apprentice. Get paid to learn.</h2>
+                    <p id="becomeUserInfo">If you are interested in developing websites or webapps, why not get paid at
+                        the same time you
                         are
                         learning as an apprentice when you find a buisness that needs a website you can connect with a
                         mentor and share the bacon. Once you are ready you can become a mentor for others.</p>
                 </header>
                 <main>
                     <h2>Testing</h2>
-                    <partial name="_regApprentice" />
-                    <partial name="_regMentor" />
+                    <partial name="_regApprenticeFooter" />
+                    <partial name="_regMentorFooter" />
 
                 </main>
             </footer>

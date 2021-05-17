@@ -6,6 +6,7 @@ body{
     font: 1em sans-serif;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    overflow-x: hidden;
 
 }
 
@@ -348,10 +349,14 @@ body ::-webkit-scrollbar {
 
 #newApprenticeList{
     display: none;
+    /* background: red;
+    margin-right: -1500px; */
 }
 
 #newMentorList{
     display: none;
+    /* background: red;
+    margin-right: -1500px; */
 }
 
 .gettingStarted-container{
@@ -363,18 +368,18 @@ body ::-webkit-scrollbar {
     display: grid;
     row-gap: 5px;
     margin: 0 auto;
-    padding: 50px 10px;
+    padding: 30px;
     max-width: 85em;
 
 }
 
 .gettingStarted-container header h2{
-    font: 3em sans-serif;
+    font: 2em sans-serif;
     color: rgb(148, 148, 148);
     align-self: flex-end;
 }
 .gettingStarted-container header p{
-    font: 1.5em sans-serif;
+    font: 1.3em sans-serif;
     color: rgb(148, 148, 148);
 }
 
@@ -448,9 +453,10 @@ body ::-webkit-scrollbar {
 }
 .gettingStarted-container aside{
     display: grid;
-
+    
 }
 .gettingStarted-container aside nav{
+    display: grid;
     background: #187ddc;
     width: 350px;
     margin: 0 auto;
@@ -463,8 +469,9 @@ body ::-webkit-scrollbar {
     display: grid;
     row-gap: 10px;
     padding: 30px;
-    justify-content: center;
     width: 300px;
+    justify-self: center;
+
 }
 
 
@@ -492,6 +499,15 @@ body ::-webkit-scrollbar {
     width: auto;
 }
 
+.gettingStarted-container main aside nav ul button{
+    background: none;
+    height: 40px;
+    font: 1em sans-serif;
+    border: white 1px solid;
+    border-radius: 20px;
+    color: white;
+}
+
 .gettingStarted-container main footer header{
     background: #187ddc;
     border-radius: 30px 30px 0 0;
@@ -505,66 +521,81 @@ body ::-webkit-scrollbar {
 }
 
 .gettingStarted-container>main>footer>main{
-    background: white;
-    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 450px;
+    row-gap: 20px;
+    background: #187ddc;
 }
+
+.gettingStarted-container main footer header h2{
+    font: 2em sans-serif;
+}
+
+.gettingStarted-container main footer header p{
+    font: 1.3em sans-serif;
+}
+
 
 
 
 
 @media screen and (min-width: 1000px) {
-    
-.apprenticePage-container{
-    margin-top: -200px;
- }
+    .apprenticePage-container{
+        margin-top: -200px;
+    }
 
- .apprenticePage-container header ul {
-    background: none;
-    display: flex;
-    overflow: scroll;
-    max-width: 85em;
-    height: 230px;
+    .apprenticePage-container header ul {
+        background: none;
+        display: flex;
+        overflow: scroll;
+        max-width: 85em;
+        height: 230px;
+    }
+
+
+        
+    .apprenticePage-container h1{
+        font: 1.7em sans-serif;
+        color: white;
+        text-shadow: 0 0 5px black;
+
+    }
+
+
+    .gettingStarted-container main {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        grid-template-rows: 850px auto;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+
+    }
+
+
+    .gettingStarted-container main section{
+        align-self: center;
+    }
+
+    .gettingStarted-container main aside{
+        justify-self: flex-end;
+    }
+
+    .gettingStarted-container aside nav{
+        width: 450px;
+        height: 800px;
+    }
+
+    .gettingStarted-container main footer{
+        grid-column: 1/3;
+
+    }
+
+
 }
 
 
-    
-.apprenticePage-container h1{
-    font: 1.7em sans-serif;
-    color: white;
-    text-shadow: 0 0 5px black;
 
-}
-
-
-.gettingStarted-container main {
-    grid-row: 2/3;
-    grid-column: 1/2;
-    grid-template-rows: 700px auto;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 150px;
-
-}
-
-
-.gettingStarted-container main section{
-    align-self: center;
-}
-
-.gettingStarted-container main aside{
-    justify-self: flex-end;
-}
-
-.gettingStarted-container aside nav{
-    width: 450px;
-}
-
-.gettingStarted-container main footer{
-    grid-column: 1/3;
-
-}
-
-
-}
 
 
 
