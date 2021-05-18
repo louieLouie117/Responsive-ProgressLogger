@@ -40,6 +40,9 @@
     display: none;
 }
 
+#regMentorStep2Footer, #regMentorStep3Footer{
+    display: none;
+}
 
 #regApprenticeStep2, #regApprenticeStep3{
     display: none;
@@ -87,8 +90,7 @@ select{
 
 }
 
-.reg-container form section footer :first-child,
-.reg-containerFooter  form section footer :first-child{
+.reg-container form section footer :first-child{
     background: none;
     border: none;
 
@@ -97,6 +99,7 @@ select{
 .reg-containerFooter form{
     background: white;    
     height: 500px;
+    align-content: center;
 }
 
 .reg-containerFooter form button{
@@ -108,3 +111,5 @@ select{
     height: 40px;
 
 }
+
+

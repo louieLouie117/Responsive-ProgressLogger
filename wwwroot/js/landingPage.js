@@ -213,6 +213,58 @@ const RegMentorHandler = (e) =>{
 }
 
 
+let mentorStepFooter = "step1"
+
+const RegMentorHandlerFooter = (e) =>{
+
+    mentorStepFooter = mentorStepFooter + e.target.innerText;
+    console.log(mentorStepFooter)
+    
+    if(mentorStepFooter === "step1next"){
+        document.getElementById('regMentorStep1Footer').style.display = "none";
+        document.getElementById('regMentorStep2Footer').style.display = "grid";
+        document.getElementById('regMentorStep3Footer').style.display = "none";
+
+        mentorStepFooter = "step2";    
+        return (mentorStepFooter)
+    
+    }
+
+    if(mentorStepFooter === "step2back"){
+        document.getElementById('regMentorStep1Footer').style.display = "grid";   
+        document.getElementById('regMentorStep2Footer').style.display = "none";
+        document.getElementById('regMentorStep3Footer').style.display = "none";
+
+        mentorStepFooter = "step1";
+        return (mentorStepFooter)
+    
+    }
+
+    if(mentorStepFooter === "step2next"){
+        document.getElementById('regMentorStep1Footer').style.display = "none";
+        document.getElementById('regMentorStep2Footer').style.display = "none";
+        document.getElementById('regMentorStep3Footer').style.display = "grid";
+
+        mentorStepFooter = "step3"; 
+        return (mentorStepFooter)
+    
+    }
+
+    
+    if(mentorStepFooter === "step3back"){
+        document.getElementById('regMentorStep1Footer').style.display = "none";   
+        document.getElementById('regMentorStep2Footer').style.display = "grid";
+        document.getElementById('regMentorStep3Footer').style.display = "none";
+
+        mentorStepFooter = "step2";
+        return (mentorStepFooter)
+    
+    }
+
+}
+
+
+
 // Apprentice Registration---------------------------------------------------------
 const StateSelectedHandlerApprentice = (e) => {
     let stateSelected = document.getElementById("ApprenticeStateSelectionList").value;

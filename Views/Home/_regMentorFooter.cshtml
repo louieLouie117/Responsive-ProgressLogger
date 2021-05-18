@@ -33,18 +33,18 @@
 </head>
 
 <body>
-    <div class="reg-container" id="regMentorFooter">
+    <div class="reg-containerFooter" id="regMentorFooter">
 
         <form asp-action="RegisterMentor" asp-controller="Home" method="POST">
 
-            <section id="regMentorStep1">
+            <section id="regMentorStep1Footer">
                 <span asp-validation-for="Email"></span>
                 <input asp-for="Email" placeholder="Email">
-                <button type="button" onclick="RegMentorHandler(event)">next</button>
+                <button type="button" onclick="RegMentorHandlerFooter(event)">next</button>
 
             </section>
 
-            <section id="regMentorStep2">
+            <section id="regMentorStep2Footer">
                 <h2>Login to your accuont anytime.</h2>
 
                 <span asp-validation-for="Password"></span>
@@ -53,13 +53,13 @@
                 <span asp-validation-for="Confirm"></span>
                 <input asp-for="Confirm" placeholder="Confirm Password">
                 <footer>
-                    <button type="button" onclick="RegMentorHandler(event)">back</button>
-                    <button type="button" onclick="RegMentorHandler(event)">next</button>
+                    <button type="button" onclick="RegMentorHandlerFooter(event)">back</button>
+                    <button type="button" onclick="RegMentorHandlerFooter(event)">next</button>
 
                 </footer>
             </section>
 
-            <section id="regMentorStep3">
+            <section id="regMentorStep3Footer">
                 <h2>Connect with others.</h2>
 
                 <partial name="_stateListMentor" />
