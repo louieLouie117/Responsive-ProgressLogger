@@ -125,6 +125,9 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("apprenticePagePartial").style.display = "none";
         
         document.getElementById("getStarted").style.display = "none";
+        document.getElementById("regApprenticeFooter").style.display = "none";
+        document.getElementById("regMentorFooter").style.display = "none";
+
         
 
 
@@ -264,6 +267,57 @@ const RegApprenticeHandler = (e) =>{
 
         ApprenticeStep = "step2";
         return (ApprenticeStep)
+    
+    }
+
+}
+
+
+let ApprenticeStepFooter = "step1"
+
+const RegApprenticeHandlerFooter = (e) =>{
+
+    ApprenticeStepFooter = ApprenticeStepFooter + e.target.innerText;
+    console.log(ApprenticeStepFooter)
+    
+    if(ApprenticeStepFooter === "step1next"){
+        document.getElementById('regApprenticeStep1Footer').style.display = "none";
+        document.getElementById('regApprenticeStep2Footer').style.display = "grid";
+        document.getElementById('regApprenticeStep3').style.display = "none";
+
+        ApprenticeStepFooter = "step2";    
+        return (ApprenticeStepFooter)
+    
+    }
+
+    if(ApprenticeStepFooter === "step2back"){
+        document.getElementById('regApprenticeStep1Footer').style.display = "grid";   
+        document.getElementById('regApprenticeStep2Footer').style.display = "none";
+        document.getElementById('regApprenticeStep3Footer').style.display = "none";
+
+        ApprenticeStepFooter = "step1";
+        return (ApprenticeStepFooter)
+    
+    }
+
+    if(ApprenticeStepFooter === "step2next"){
+        document.getElementById('regApprenticeStep1Footer').style.display = "none";
+        document.getElementById('regApprenticeStep2Footer').style.display = "none";
+        document.getElementById('regApprenticeStep3Footer').style.display = "grid";
+
+        ApprenticeStepFooter = "step3"; 
+        return (ApprenticeStepFooter)
+    
+    }
+
+    
+    if(ApprenticeStepFooter === "step3back"){
+        document.getElementById('regApprenticeStep1Footer').style.display = "none";   
+        document.getElementById('regApprenticeStep2Footer').style.display = "grid";
+        document.getElementById('regApprenticeStep3Footer').style.display = "none";
+
+        ApprenticeStepFooter = "step2";
+        return (ApprenticeStepFooter)
     
     }
 

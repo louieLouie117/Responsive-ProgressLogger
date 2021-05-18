@@ -515,7 +515,7 @@ body ::-webkit-scrollbar {
 
 }
 
-.gettingStarted-container main footer{
+.gettingStarted-container>main>footer{
     background: none;
     height: 700px;
 }
@@ -523,7 +523,6 @@ body ::-webkit-scrollbar {
 .gettingStarted-container>main>footer>main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 450px;
     row-gap: 20px;
     background: #187ddc;
 }
@@ -586,7 +585,7 @@ body ::-webkit-scrollbar {
         height: 800px;
     }
 
-    .gettingStarted-container main footer{
+    .gettingStarted-container>main>footer{
         grid-column: 1/3;
 
     }

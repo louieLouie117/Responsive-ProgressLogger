@@ -36,6 +36,11 @@
     display: none;
 }
 
+#regApprenticeStep2Footer, #regApprenticeStep3Footer{
+    display: none;
+}
+
+
 
 .span2{
     grid-column: 1/3;
@@ -56,7 +61,7 @@ select{
     display: none;
 }
 
-.reg-container form section footer{
+.reg-container form section>footer{
     display: grid;
     grid-template-columns: 100px auto;
     column-gap: 5px;
@@ -76,5 +81,21 @@ select{
     background: none;
     border: none;
 
+}
+
+
+.reg-containerFooter{
+    background: red;
+    margin: 0 auto;
+    height: auto;
+}
+
+.reg-containerFooter form{
+    display: grid;
+
+}
+
+.reg-containerFooter form section{
+    display: grid;
 }
 
