@@ -152,7 +152,7 @@ button{
 
 
 
-.options-container header p {
+.options-container>header p {
     background: none;
     border: none;
     font: 1.5em sans-serif;
@@ -511,11 +511,11 @@ body ::-webkit-scrollbar {
 .gettingStarted-container main footer header{
     background: #187ddc;
     border-radius: 30px 30px 0 0;
-    padding: 20px;
+    padding: 40px;
 
 }
 
-.gettingStarted-container main footer{
+.gettingStarted-container>main>footer{
     background: none;
     height: 700px;
 }
@@ -523,7 +523,6 @@ body ::-webkit-scrollbar {
 .gettingStarted-container>main>footer>main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 450px;
     row-gap: 20px;
     background: #187ddc;
 }
@@ -563,7 +562,7 @@ body ::-webkit-scrollbar {
     }
 
 
-    .gettingStarted-container main {
+    .gettingStarted-container>main {
         grid-row: 2/3;
         grid-column: 1/2;
         grid-template-rows: 850px auto;
@@ -586,7 +585,7 @@ body ::-webkit-scrollbar {
         height: 800px;
     }
 
-    .gettingStarted-container main footer{
+    .gettingStarted-container>main>footer{
         grid-column: 1/3;
 
     }

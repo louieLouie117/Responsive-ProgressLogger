@@ -64,11 +64,12 @@
 
                 <partial name="_stateListMentor" />
 
+                <span asp-validation-for="FirstName"></span>
+                <input asp-for="FirstName" placeholder="First Name:">
+
                 <span asp-validation-for="State"></span>
                 <input asp-for="State" placeholder="State" id="MentorState" class="hidden">
 
-                <span asp-validation-for="City"></span>
-                <input asp-for="City" placeholder="City">
 
 
                 @* <input asp-for="UserTitle" placeholder="Title: Full Stack Developer, Frontend, Backend ect.."> *@

@@ -50,16 +50,15 @@
             <section id="regApprenticeStep3">
                 <h2>Connect with mentors.</h2>
 
-                <span class="span2" asp-validation-for="FirstName"></span>
-                <input class="span2" asp-for="FirstName" placeholder="First Name:">
+                <span asp-validation-for="FirstName"></span>
+                <input asp-for="FirstName" placeholder="First Name:">
 
                 <partial name="_stateListApprentice" />
 
                 <input asp-for="State" placeholder="State" id="ApprenticeState" class="hidden">
 
-                <input asp-for="City" placeholder="City">
 
-                <footer class="span2">
+                <footer>
                     <button type="button" onclick="RegApprenticeHandler(event)">back</button>
                     <button type="submit">finish</button>
 

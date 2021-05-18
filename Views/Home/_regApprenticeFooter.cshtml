@@ -23,17 +23,17 @@
 </head>
 
 <body>
-    <div class="reg-container" id="regApprenticeFooter">
+    <div class="reg-containerFooter" id="regApprenticeFooter">
 
         <form asp-action="RegisterApprentice" asp-controller="Home" method="POST">
-            <section id="regApprenticeStep1">
+            <section id="regApprenticeStep1Footer">
                 <span asp-validation-for="Email"></span>
                 <input asp-for="Email" placeholder="Email">
-                <button type="button" onclick="RegApprenticeHandler(event)">next</button>
+                <button type="button" onclick="RegApprenticeHandlerFooter(event)">next</button>
 
             </section>
 
-            <section id="regApprenticeStep2">
+            <section id="regApprenticeStep2Footer">
                 <h2>Login to your account anytime.</h2>
                 <span asp-validation-for="Password"></span>
                 <input asp-for="Password" placeholder="Password">
@@ -41,26 +41,25 @@
                 <span asp-validation-for="Confirm"></span>
                 <input asp-for="Confirm" placeholder="Confirm Password">
                 <footer>
-                    <button type="button" onclick="RegApprenticeHandler(event)">back</button>
-                    <button type="button" onclick="RegApprenticeHandler(event)">next</button>
+                    <button type="button" onclick="RegApprenticeHandlerFooter(event)">back</button>
+                    <button type="button" onclick="RegApprenticeHandlerFooter(event)">next</button>
                 </footer>
 
             </section>
 
-            <section id="regApprenticeStep3">
+            <section id="regApprenticeStep3Footer">
                 <h2>Connect with mentors.</h2>
 
-                <span class="span2" asp-validation-for="FirstName"></span>
-                <input class="span2" asp-for="FirstName" placeholder="First Name:">
+                <span asp-validation-for="FirstName"></span>
+                <input asp-for="FirstName" placeholder="First Name:">
 
                 <partial name="_stateListApprentice" />
 
                 <input asp-for="State" placeholder="State" id="ApprenticeState" class="hidden">
 
-                <input asp-for="City" placeholder="City">
 
-                <footer class="span2">
-                    <button type="button" onclick="RegApprenticeHandler(event)">back</button>
+                <footer>
+                    <button type="button" onclick="RegApprenticeHandlerFooter(event)">back</button>
                     <button type="submit">finish</button>
 
                 </footer>
