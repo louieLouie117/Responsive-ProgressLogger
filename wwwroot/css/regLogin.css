@@ -5,15 +5,18 @@
     padding: 50px;
 }
 
-.reg-container{
+.reg-container,
+.reg-containerFooter {
     display: none;
 }
 
-.reg-container form{
+.reg-container form,
+.reg-containerFooter form{
     display: grid;
     row-gap: 5px;}
 
-.reg-container form section{
+.reg-container form section,
+.reg-containerFooter form section{
     min-width: 350px;
     display: grid;
     justify-self: center;
@@ -24,6 +27,12 @@
 .reg-container form section h2{
     color: white;
     font: 1em sans-serif;
+}
+
+.reg-containerFooter  form section h2{
+    color: #187ddc;
+    font: 1em sans-serif;
+    text-shadow: none;
 }
 
 
@@ -61,7 +70,8 @@ select{
     display: none;
 }
 
-.reg-container form section>footer{
+.reg-container form section>footer,
+.reg-containerFooter form section>footer{
     display: grid;
     grid-template-columns: 100px auto;
     column-gap: 5px;
@@ -77,25 +87,24 @@ select{
 
 }
 
-.reg-container form section footer :first-child{
+.reg-container form section footer :first-child,
+.reg-containerFooter  form section footer :first-child{
     background: none;
     border: none;
 
 }
 
-
-.reg-containerFooter{
-    background: red;
-    margin: 0 auto;
-    height: auto;
-}
-
 .reg-containerFooter form{
-    display: grid;
-
+    background: white;    
+    height: 500px;
 }
 
-.reg-containerFooter form section{
-    display: grid;
-}
+.reg-containerFooter form button{
+    font: 1.3em sans-serif;
+    color: white;
+    background: #187ddc;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
 
+}
