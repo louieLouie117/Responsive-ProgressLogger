@@ -31,6 +31,7 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("BannerOverview").innerText = "Design, Develope, and Maintained";   
         document.getElementById("BannerSummery").innerText ="Get a website or webapp designed, developed, and maintained by people that love helping others learn.";
         document.getElementById("BannerLinkTag").innerText ="See our services";
+        document.getElementById("websiteServicesPartial").style.display = "grid";
         console.log("Website Services")
         
     }
@@ -127,6 +128,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("getStarted").style.display = "none";
         document.getElementById("regApprenticeFooter").style.display = "none";
         document.getElementById("regMentorFooter").style.display = "none";
+        document.getElementById("websiteServicesPartial").style.display = "none";
+
 
         
 
