@@ -2,3 +2,16 @@ ul{
     list-style: none;
     padding: 0;
 }
+
+h3{
+    margin: 0;
+    padding: 0;
+}
+
+.keepRight{
+    justify-self: right;
+}
+
+.span2{
+    grid-template: 1/3;
+}

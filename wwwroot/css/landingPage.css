@@ -616,16 +616,19 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container header>ul>li:first-of-type{
     height: 600px;
+    padding-top: 20px;
+
 }
 
 .websiteServices-container header>ul>li{
     display: grid;
-    grid-template-rows: 50px 1fr 1fr;
+    grid-template-rows: 50px 2fr 1fr 120px;
     background: white;
     box-shadow: 0  0 7px rgba(0, 0, 0, 0.37);
     height: 50px;
     width: 350px;
     overflow: hidden;
+    border-radius: 5px;
 
 }
 
@@ -641,15 +644,53 @@ body ::-webkit-scrollbar {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.servicePricing-container{
-    background: red;
+.websiteServices-container main>ul{
     display: grid;
     grid-template-columns: 2fr 1fr;
+    row-gap: 20px;
+    justify-items: left;
+    padding: 20px;
 }
 
-.subscriptionInfo-container{
-    background: gold;
+.websiteServices-container main>ul li h3{
+    font: 1.1em sans-serif;
 }
+
+.websiteServices-container aside{
+    padding: 0 40px;
+    background: red;
+}
+
+.websiteServices-container footer{
+    display: grid;
+    padding: 0 40px;
+    justify-items: center;
+}
+
+.websiteServices-container footer input{
+    height: auto;
+}
+
+.websiteServices-container footer h3{
+    color: #187ddc;
+    font: 1em sans-serif;
+}
+
+.websiteServices-container main ul aside{
+    display: grid;
+    padding: 0;
+    justify-self: right;
+    background: gold;
+    width: auto;
+}
+
+.websiteServices-container main ul aside ul{
+    background: none;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: right;
+}
+
 
 
 
@@ -668,6 +709,12 @@ body ::-webkit-scrollbar {
         border-radius: 50px;
         padding-top: 20px;
     }
+
+
+.websiteServices-container main>ul{
+    padding: 20px 40px;
+}
+
 
 
 
