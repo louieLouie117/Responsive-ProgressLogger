@@ -611,7 +611,6 @@ body ::-webkit-scrollbar {
     width: 99%;
     height: auto;
     padding: 20px 0;
-
 }
 
 .websiteServices-container header>ul>li:first-of-type{
@@ -629,6 +628,8 @@ body ::-webkit-scrollbar {
     width: 350px;
     overflow: hidden;
     border-radius: 5px;
+    overflow: scroll;
+
 
 }
 
@@ -647,9 +648,11 @@ body ::-webkit-scrollbar {
 .websiteServices-container main>ul{
     display: grid;
     grid-template-columns: 2fr 1fr;
-    row-gap: 20px;
+    row-gap: 10px;
     justify-items: left;
     padding: 20px;
+ 
+
 }
 
 .websiteServices-container main>ul li h3{
@@ -657,8 +660,7 @@ body ::-webkit-scrollbar {
 }
 
 .websiteServices-container aside{
-    padding: 0 40px;
-    background: red;
+    padding: 0 30px;
 }
 
 .websiteServices-container footer{
@@ -678,18 +680,57 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside{
     display: grid;
+    row-gap: 10px;
     padding: 0;
     justify-self: right;
-    background: gold;
     width: auto;
+    margin-top: -10px;
+    height: 100px;
+    overflow: hidden;
+
+
+
 }
 
 .websiteServices-container main ul aside ul{
     background: none;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    justify-content: right;
+    display: grid; 
+  
 }
+
+.websiteServices-container main ul aside ul li {
+    display: grid;
+    grid-template-columns: 30px 4fr 1fr;
+    align-items: center;
+}
+
+.websiteServices-container main ul aside ul li :last-child {
+    justify-self: right;
+}
+
+
+
+
+.websiteServices-container main ul aside ul li h3{
+    font: 0.9em sans-serif;
+}
+
+.websiteServices-container main ul button{
+    background: none;
+    font: 1em sans-serif;
+    text-align: left;
+    color: #187ddc;
+    border: none;
+    text-decoration: underline;
+}
+
+
+
+#premiumServices{
+    display: grid;
+ 
+}
+
 
 
 
@@ -706,13 +747,13 @@ body ::-webkit-scrollbar {
         box-shadow: 0 10px 5px rgba(0, 0, 0, 0.16);
         min-width: 400px;
         height: 600px;
-        border-radius: 50px;
+        border-radius: 10px;
         padding-top: 20px;
     }
 
 
 .websiteServices-container main>ul{
-    padding: 20px 40px;
+    padding: 20px 30px;
 }
 
 

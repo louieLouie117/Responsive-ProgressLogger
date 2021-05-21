@@ -377,3 +377,30 @@ const RegApprenticeHandlerFooter = (e) =>{
     }
 
 }
+
+
+
+
+
+const PremiumServicesHandler = (e)=>{
+
+    
+    if(e.target.innerText === "More Options"){
+        document.querySelector("#premiumServicesBNT").innerText = "Close";
+        document.querySelector("#premiumServices").style.height = "400px";
+        return
+
+    }
+
+    
+    if(e.target.innerText === "Close"){
+        document.querySelector("#premiumServicesBNT").innerText = "More Options";
+        document.querySelector("#premiumServices").style.height = "100px";
+
+        return
+    
+    
+        };
+
+  
+}
