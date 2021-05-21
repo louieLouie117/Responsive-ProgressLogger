@@ -381,6 +381,36 @@ const RegApprenticeHandlerFooter = (e) =>{
 
 
 
+const ServicesOptions =(e)=>{
+    if(e.target.innerText === "Mobile Website"){
+    document.querySelector("#mobileWebsiteServices").style.height = "650px";
+    document.querySelector("#responsiveWebsiteServices").style.height = "50px";
+    document.querySelector("#webAppServices").style.height = "50px";
+
+
+
+    };
+
+        if(e.target.innerText === "Responsive Website"){
+            document.querySelector("#mobileWebsiteServices").style.height = "50px";
+            document.querySelector("#responsiveWebsiteServices").style.height = "650px";
+            document.querySelector("#webAppServices").style.height = "50px";
+        
+
+    };
+
+    if(e.target.innerText === "Web App"){
+        document.querySelector("#mobileWebsiteServices").style.height = "50px";
+        document.querySelector("#responsiveWebsiteServices").style.height = "50px";
+        document.querySelector("#webAppServices").style.height = "650px";
+    
+        };
+
+
+
+}
+
+
 
 const PremiumServicesHandler = (e)=>{
 
@@ -395,7 +425,7 @@ const PremiumServicesHandler = (e)=>{
     
     if(e.target.innerText === "Close"){
         document.querySelector("#premiumServicesBNT").innerText = "More Options";
-        document.querySelector("#premiumServices").style.height = "100px";
+        document.querySelector("#premiumServices").style.height = "120px";
 
         return
     

@@ -613,10 +613,18 @@ body ::-webkit-scrollbar {
     padding: 20px 0;
 }
 
-.websiteServices-container header>ul>li:first-of-type{
+/* .websiteServices-container header>ul>li:first-of-type{
     height: 600px;
     padding-top: 20px;
 
+} */
+
+
+#mobileWebsiteServices, #responsiveWebsiteServices, #webAppServices {
+    display: grid;
+    background: white;
+    overflow: hidden;
+    height: 50px;
 }
 
 .websiteServices-container header>ul>li{
@@ -635,7 +643,6 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container header>ul>li header{
     display: grid;
-    justify-content: center;
     align-self: center;
 }
 
@@ -643,6 +650,7 @@ body ::-webkit-scrollbar {
     color: #187ddc;
     font: 2em sans-serif;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
 .websiteServices-container main>ul{
@@ -685,7 +693,7 @@ body ::-webkit-scrollbar {
     justify-self: right;
     width: auto;
     margin-top: -10px;
-    height: 100px;
+    height: 120px;
     overflow: hidden;
 
 
@@ -700,8 +708,8 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside ul li {
     display: grid;
-    grid-template-columns: 30px 4fr 1fr;
-    align-items: center;
+    grid-template-columns: 30px 2fr 1fr;
+    align-items: flex-end;
 }
 
 .websiteServices-container main ul aside ul li :last-child {
@@ -735,6 +743,9 @@ body ::-webkit-scrollbar {
 
 
 
+
+
+
 @media screen and (min-width: 1000px) {
     .websiteServices-container header>ul {
         display: flex;
@@ -757,6 +768,15 @@ body ::-webkit-scrollbar {
 }
 
 
+#mobileWebsiteServices, #responsiveWebsiteServices, #webAppServices {
+    display: grid;
+    background: white;
+    overflow: scroll;
+    height: 600px;
+}
+
+
 
 
 }
+
