@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace ProgressLog.Models
 {
-    public class UserSpecialization
+    public class Specialization
     {
         [Key]
-        public int UserSpecializationId { get; set; }
+        public int SpecializationId { get; set; }
 
 
         [Display(Prompt = "add specialization..")]
