@@ -13,6 +13,10 @@ namespace ProgressLog.Models
 
         public DbSet<Section> Sections { get; set; }
         public DbSet<UserSkill> UserSkills { get; set; }
+        public DbSet<UserSpecialization> UserSpecializations { get; set; }
+
+
+
 
 
     }
