@@ -693,7 +693,7 @@ body ::-webkit-scrollbar {
     justify-self: right;
     width: auto;
     margin-top: -10px;
-    height: 120px;
+    height: 80px;
     overflow: hidden;
 
 
@@ -703,6 +703,7 @@ body ::-webkit-scrollbar {
 .websiteServices-container main ul aside ul{
     background: none;
     display: grid; 
+    row-gap: 10px;
   
 }
 
@@ -710,6 +711,7 @@ body ::-webkit-scrollbar {
     display: grid;
     grid-template-columns: 30px 2fr 1fr;
     align-items: flex-end;
+
 }
 
 .websiteServices-container main ul aside ul li :last-child {
@@ -721,6 +723,7 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside ul li h3{
     font: 0.9em sans-serif;
+
 }
 
 .websiteServices-container main ul button{
@@ -739,9 +742,9 @@ body ::-webkit-scrollbar {
  
 }
 
-
-
-
+.websiteServices-container main ul aside input{
+    height: auto;
+}
 
 
 
