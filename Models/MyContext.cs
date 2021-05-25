@@ -12,6 +12,8 @@ namespace ProgressLog.Models
         public DbSet<LogRecord> LogRecords { get; set; }
 
         public DbSet<Section> Sections { get; set; }
+        public DbSet<UserSkill> UserSkills { get; set; }
+
 
     }
 }
