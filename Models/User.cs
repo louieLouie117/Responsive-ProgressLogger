@@ -14,7 +14,7 @@ namespace ProgressLog.Models
 
         // About User---------------------------
 
-        public string UserTitle { get; set; }
+        public string Title { get; set; }
 
         public string FirstName { get; set; }
 

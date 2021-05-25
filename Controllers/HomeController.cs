@@ -494,7 +494,7 @@ namespace ProgressLog.Controllers
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
 
                 FromForm.AccountType = AccountType.Apprentice;
-                FromForm.UserTitle = "New Developer";
+                FromForm.Title = "New Developer";
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.MeetUpLink = "http://www.progresslypage.com/";
                 FromForm.ProfileColor = "136DC0";

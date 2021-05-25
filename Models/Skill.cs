@@ -12,7 +12,7 @@ namespace ProgressLog.Models
 
 
         [Display(Prompt = "new section..")]
-        public string SkillTitle { get; set; }
+        public string Title { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
