@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace ProgressLog.Models
 {
-    public class UserSkill
+    public class Skill
     {
         [Key]
-        public int UserSkillId { get; set; }
+        public int SkillId { get; set; }
 
 
         [Display(Prompt = "new section..")]

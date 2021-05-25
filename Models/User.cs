@@ -67,7 +67,7 @@ namespace ProgressLog.Models
 
         List<Section> Sections { get; set; }
 
-        List<UserSkill> UserSkills { get; set; }
+        List<Skill> Skills { get; set; }
         List<UserSpecialization> UserSpecializations { get; set; }
 
 
