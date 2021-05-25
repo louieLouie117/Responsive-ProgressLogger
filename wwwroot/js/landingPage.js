@@ -425,7 +425,7 @@ const PremiumServicesHandler = (e)=>{
     
     if(e.target.innerText === "Close"){
         document.querySelector("#premiumServicesBNT").innerText = "More Options";
-        document.querySelector("#premiumServices").style.height = "120px";
+        document.querySelector("#premiumServices").style.height = "80px";
 
         return
     

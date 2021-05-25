@@ -14,7 +14,7 @@ namespace ProgressLog.Models
 
         // About User---------------------------
 
-        public string UserTitle { get; set; }
+        public string Title { get; set; }
 
         public string FirstName { get; set; }
 
@@ -66,6 +66,11 @@ namespace ProgressLog.Models
         List<LogRecord> LogRecords { get; set; }
 
         List<Section> Sections { get; set; }
+
+        List<Skill> Skills { get; set; }
+        List<Specialization> Specializations { get; set; }
+
+
 
     }
 
