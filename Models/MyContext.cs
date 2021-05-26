@@ -19,6 +19,9 @@ namespace ProgressLog.Models
         public DbSet<ProjectTool> ProjectTools { get; set; }
         public DbSet<TodoList> TodoLists { get; set; }
         public DbSet<TodoListItem> TodoListItems { get; set; }
+        public DbSet<StickyNoteCollection> StickyNoteCollections { get; set; }
+        public DbSet<StickyNote> StickyNotes { get; set; }
+
 
 
     }
