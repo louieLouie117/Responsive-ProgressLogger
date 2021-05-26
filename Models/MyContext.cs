@@ -15,9 +15,10 @@ namespace ProgressLog.Models
 
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Specialization> Specializations { get; set; }
-
-
-
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectTool> ProjectTools { get; set; }
+        public DbSet<TodoList> TodoLists { get; set; }
+        public DbSet<TodoListItem> TodoListItems { get; set; }
 
 
     }

@@ -69,6 +69,8 @@ namespace ProgressLog.Models
 
         List<Skill> Skills { get; set; }
         List<Specialization> Specializations { get; set; }
+        List<Project> Projects { get; set; }
+
 
 
 
