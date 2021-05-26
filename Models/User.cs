@@ -64,12 +64,17 @@ namespace ProgressLog.Models
 
         // nav properties
         List<LogRecord> LogRecords { get; set; }
-
         List<Section> Sections { get; set; }
 
         List<Skill> Skills { get; set; }
         List<Specialization> Specializations { get; set; }
 
+        List<Project> Projects { get; set; }
+        List<ProjectTool> ProjectTools { get; set; }
+
+        List<StickyNoteCollection> StickyNoteCollections { get; set; }
+
+        List<StickyNote> StickyNotes { get; set; }
 
 
     }
