@@ -4,17 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProgressLog.Models
 {
-    public class StickyNote
+    public class Bookmark
     {
         [Key]
-        public int StickyNoteId { get; set; }
-
-        public string Text { get; set; }
-        public string PositionX { get; set; }
-        public string PositionY { get; set; }
-        public string Color { get; set; }
-
-
+        public int BookmarkId { get; set; }
+        public string Title { get; set; }
+        public string UrlLink { get; set; }
+        public string Notes { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
@@ -25,8 +21,8 @@ namespace ProgressLog.Models
 
 
         // f key for sections
-        public int StickyNoteCollectionId { get; set; }
-        public StickyNoteCollection StickyNoteCollection { get; set; }
+        public int BookmarkCollectionId { get; set; }
+        public BookmarkCollection BookmarkCollection { get; set; }
 
 
 
