@@ -20,8 +20,8 @@ body{margin: 0;}
 	border: solid 1px white;
 	/* margin-left: -500px; */
 }
-.menu-container h2,
-.menu-container a {
+.menu-container main h2,
+.menu-container main a {
 	font: 1.4em sans-serif;
 	color: white;
 }
@@ -52,11 +52,6 @@ body{margin: 0;}
 }
 
 
-.menu-container nav {
-	display: grid;
-	row-gap: 3px;
-	align-items: center;
-}
 
 .menuIcon-container {
 	display: grid;
@@ -76,7 +71,6 @@ body{margin: 0;}
 
 .menuList-container {
 	display: grid;
-	grid-template-rows: 70px;
 }
 
 .menuList-container header,
@@ -103,19 +97,77 @@ body{margin: 0;}
 	border: solid white 2px;
 }
 
-.menu-container nav {
+
+/* main navigation styles------------------------------------- */
+
+.menuList-container main {
+	height: auto;
+}
+
+.menuList-container main nav ul{
 	display: grid;
-	row-gap: 3px;
+	row-gap: 10px;
+}
+
+.menuList-container main nav ul li{
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	align-items: center;
+	justify-items: left;
+}
+
+.menuList-container aside{
+	display: grid;
+	grid-template-rows: 50px;
+	height: auto;
+	background: gold;
+}
+
+.menuList-container aside h3{
+	font: 1.3em sans-serif;
+	color: white;
+}
+
+.menuList-container aside nav{
+	display: grid;
+}
+
+.menuList-container aside nav ul{
+	display: grid;
+	row-gap: 5px;
+	grid-template-columns: auto auto auto;
+}
+
+.menuList-container aside nav ul li a{
+	font: 1em sans-serif;
+	color: white;
+	text-decoration: none;
+	border: 1px solid white;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+
+.menuList-container footer {
+	display: grid;
+	grid-template-columns: 1fr 50px;
+	height: 50px;
 	align-items: center;
 }
 
-.menuList-container footer,
+.menuList-container footer img{
+	height: 40px;
+	width: auto;
+}
+
+
+
+
 .postSale-container footer,
 .logoVersion footer {
 	display: grid;
 }
 
-.menuList-container footer img,
 .postSale-container footer img,
 .logoVersion footer img {
 	width: 300px;
@@ -125,30 +177,27 @@ body{margin: 0;}
 	align-self: flex-end;
 }
 
+
 .menuList-container footer p {
 	justify-self: flex-end;
 	color: white;
 }
 
 
-.menu-container nav{
-    display: grid;
-    grid-template-columns: 50px auto;
-    justify-items: left;
-}
 
-.menu-container nav img{
+
+.menu-container main nav img{
     width: 50px;
 }
 
-.menu-container nav button{
+.menu-container main nav button{
     font: 1.3em sans-serif;
     background: none;
     color: white;
     border: none;
 }
 
-.menuList-container h3{
+.menuList-container main nav ul h3{
     font: 1.7em sans-serif;
     margin: 0;
     padding: 0;
