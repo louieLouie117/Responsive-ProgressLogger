@@ -52,11 +52,6 @@ body{margin: 0;}
 }
 
 
-.menu-container nav {
-	display: grid;
-	row-gap: 3px;
-	align-items: center;
-}
 
 .menuIcon-container {
 	display: grid;
@@ -76,7 +71,6 @@ body{margin: 0;}
 
 .menuList-container {
 	display: grid;
-	grid-template-rows: 70px;
 }
 
 .menuList-container header,
@@ -103,19 +97,39 @@ body{margin: 0;}
 	border: solid white 2px;
 }
 
-.menu-container nav {
+.menuList-container nav ul{
 	display: grid;
-	row-gap: 3px;
+	row-gap: 20px;
+}
+
+.menuList-container nav ul li{
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	align-items: center;
+	justify-items: left;
+}
+
+
+.menuList-container footer {
+	display: grid;
+	grid-template-columns: 1fr 50px;
+	height: 50px;
 	align-items: center;
 }
 
-.menuList-container footer,
+.menuList-container footer img{
+	height: 40px;
+	width: auto;
+}
+
+
+
+
 .postSale-container footer,
 .logoVersion footer {
 	display: grid;
 }
 
-.menuList-container footer img,
 .postSale-container footer img,
 .logoVersion footer img {
 	width: 300px;
@@ -125,17 +139,14 @@ body{margin: 0;}
 	align-self: flex-end;
 }
 
+
 .menuList-container footer p {
 	justify-self: flex-end;
 	color: white;
 }
 
 
-.menu-container nav{
-    display: grid;
-    grid-template-columns: 50px auto;
-    justify-items: left;
-}
+
 
 .menu-container nav img{
     width: 50px;
