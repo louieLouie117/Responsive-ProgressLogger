@@ -108,13 +108,18 @@ body{margin: 0;}
 /* main navigation styles------------------------------------- */
 
 .menuList-container main {
-	height: 500px;
+	display: grid;
+}
+
+.menuList-container main nav{
+	display: grid;
 }
 
 .menuList-container main nav ul{
 	display: grid;
 	row-gap: 10px;
 }
+
 
 .menuList-container main nav ul li{
 	display: grid;
@@ -127,6 +132,8 @@ body{margin: 0;}
 	display: grid;
 	grid-template-rows: 50px;
 	align-content: flex-start;
+	height: 150px;
+	width: 310px;
 }
 
 .menuList-container aside h3{
