@@ -18,7 +18,14 @@ body{margin: 0;}
 	overflow: hidden;
     z-index: 50;
 	border: solid 1px white;
+	overflow: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
 	/* margin-left: -500px; */
+}
+
+.menu-container::-webkit-scrollbar{
+    display: none;
 }
 .menu-container main h2,
 .menu-container main a {
@@ -101,13 +108,18 @@ body{margin: 0;}
 /* main navigation styles------------------------------------- */
 
 .menuList-container main {
-	height: auto;
+	display: grid;
+}
+
+.menuList-container main nav{
+	display: grid;
 }
 
 .menuList-container main nav ul{
 	display: grid;
 	row-gap: 10px;
 }
+
 
 .menuList-container main nav ul li{
 	display: grid;
@@ -119,13 +131,15 @@ body{margin: 0;}
 .menuList-container aside{
 	display: grid;
 	grid-template-rows: 50px;
-	height: auto;
-	background: gold;
+	align-content: flex-start;
+	height: 150px;
+	width: 310px;
 }
 
 .menuList-container aside h3{
 	font: 1.3em sans-serif;
 	color: white;
+	height: auto;
 }
 
 .menuList-container aside nav{
@@ -134,8 +148,14 @@ body{margin: 0;}
 
 .menuList-container aside nav ul{
 	display: grid;
-	row-gap: 5px;
-	grid-template-columns: auto auto auto;
+	row-gap: 10px;
+	height: 100px;
+
+}
+
+.menuList-container aside nav ul section{
+	display: flex;
+	column-gap: 5px;
 }
 
 .menuList-container aside nav ul li a{
@@ -224,4 +244,8 @@ body{margin: 0;}
 #bookmarksPartial, #todoListPartial,
 #jobTrackerPartial{
 	display: none;
+}
+
+@media screen and (min-width: 1100px){
+
 }
