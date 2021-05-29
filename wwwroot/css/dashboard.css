@@ -201,6 +201,7 @@ body{margin: 0;}
 .menuList-container footer p {
 	justify-self: flex-end;
 	color: white;
+	align-self: center;
 }
 
 
