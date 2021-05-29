@@ -111,7 +111,6 @@ namespace ProgressLog.Controllers
         public IActionResult AllMentors()
         {
 
-            int UserIdInSession = (int)HttpContext.Session.GetInt32("SectionId");
             List<User> GetAllMentors = _context.Users
                 .ToList();
 

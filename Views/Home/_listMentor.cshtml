@@ -1,5 +1,15 @@
 <head>
 
+    <script>
+        $(document).ready(function () {
+            $.get("/AllMentors", data => {
+                RenderData(data);
+            });
+
+        });
+
+    </script>
+
 </head>
 
 <body>
