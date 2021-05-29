@@ -307,6 +307,8 @@ body ::-webkit-scrollbar {
 
 .apprenticePage-container header ul li{
     display: grid;
+    width: 350px;
+    justify-items: center;
 
 }
 

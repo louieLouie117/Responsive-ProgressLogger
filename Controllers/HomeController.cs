@@ -106,6 +106,18 @@ namespace ProgressLog.Controllers
             return View("dashboard", wMod);
         }
 
+
+        [HttpGet("AllMentors")]
+        public JsonResult AllMentors()
+        {
+
+            List<User> GetAllMentors = _context.Users
+                .ToList();
+
+            return Json(new { StatusCode = "Success", GetAllMentors });
+
+        }
+
         // -----------------------------------------------------------end
 
         // Processing Section Opporations--------------------------------------------------
@@ -539,6 +551,10 @@ namespace ProgressLog.Controllers
                 FromForm.AccountType = AccountType.Mentor;
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.ProfileColor = "136DC0";
+                FromForm.Languages = "Html5, CSS, JavaScript, C#, Python, Markdown";
+                FromForm.Database = "MySQL, MongoDB";
+                FromForm.VersionControl = "Git, GitHub";
+                FromForm.FrameworksLibraries = "React, Express, Node, Express-fileupload, Django ASP.NET, Entity Framework, jQuery, Ajax, SASS";
 
 
                 // Add to db
