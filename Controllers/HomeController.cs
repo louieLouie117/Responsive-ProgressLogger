@@ -108,7 +108,7 @@ namespace ProgressLog.Controllers
 
 
         [HttpGet("AllMentors")]
-        public IActionResult AllMentors()
+        public JsonResult AllMentors()
         {
 
             List<User> GetAllMentors = _context.Users

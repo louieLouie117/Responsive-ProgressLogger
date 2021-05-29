@@ -4,7 +4,28 @@
         $(document).ready(function () {
             $.get("/AllMentors", data => {
                 RenderData(data);
+                console.log("get data", data)
             });
+
+            const RenderData = (data) => {
+                console.log("here is all the mentors", data)
+                console.log("here is all the data", data.getAllMentors)
+
+                $.each(data.getAllMentors, function (key, value) {
+                    console.log("value", value)
+                    console.log("value", value.firstName)
+
+                    $(`
+                       <li>
+                          <img src="assets/profilePlaceholder.png" alt="">
+                          <h2>${value.firstName} ${value.lastName}</h2>
+                          <p>From:${value.state} </p>
+                       </li>
+                     `).prependTo("#newMentorList")
+
+                });
+
+            };
 
         });
 
@@ -14,72 +35,6 @@
 
 <body>
     <ul id="newMentorList">
-        <h2>New Mentors</h2>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
 
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
-        <li>
-            <img src="assets/profilePlaceholder.png" alt="">
-            <h2>Luis</h2>
-            <p>From: CA</p>
-        </li>
     </ul>
 </body>
