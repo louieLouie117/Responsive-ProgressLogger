@@ -112,6 +112,7 @@ namespace ProgressLog.Controllers
         {
 
             List<User> GetAllMentors = _context.Users
+                .Where(ul => ul.AccountType == AccountType.Mentor)
                 .ToList();
 
             return Json(new { StatusCode = "Success", GetAllMentors });
