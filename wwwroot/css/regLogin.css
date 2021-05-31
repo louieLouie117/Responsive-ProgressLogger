@@ -29,10 +29,16 @@
     font: 1em sans-serif;
 }
 
-.reg-containerFooter  form section h2{
+.reg-containerFooter form section h2{
     color: #187ddc;
     font: 1em sans-serif;
     text-shadow: none;
+}
+
+.reg-containerFooter form section aside{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
 }
 
 

@@ -578,7 +578,7 @@ body ::-webkit-scrollbar {
         align-self: center;
     }
 
-    .gettingStarted-container main aside{
+    .gettingStarted-container main>aside{
         justify-self: flex-end;
     }
 

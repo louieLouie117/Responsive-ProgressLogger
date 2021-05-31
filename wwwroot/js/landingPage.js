@@ -274,7 +274,16 @@ const StateSelectedHandlerApprentice = (e) => {
     console.log(stateSelected)
 
     document.getElementById("ApprenticeState").value = stateSelected;
+
 }
+const StateSelectedHandlerApprenticeFooter = (e) => {
+    let stateSelectedFooter = document.getElementById("ApprenticeStateSelectionListFooter").value;
+    console.log(stateSelectedFooter)
+
+    document.getElementById("ApprenticeStateFooter").value = stateSelectedFooter;
+
+}
+
 
 
 let ApprenticeStep = "step1"
