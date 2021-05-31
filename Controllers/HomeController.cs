@@ -119,6 +119,18 @@ namespace ProgressLog.Controllers
 
         }
 
+        [HttpGet("AllApprentice")]
+        public JsonResult AllApprentice()
+        {
+
+            List<User> GetAllApprentice = _context.Users
+                .Where(ul => ul.AccountType == AccountType.Apprentice)
+                .ToList();
+
+            return Json(new { StatusCode = "Success", GetAllApprentice });
+
+        }
+
         // -----------------------------------------------------------end
 
         // Processing Section Opporations--------------------------------------------------
