@@ -29,9 +29,8 @@ namespace ProgressLog.Models
         public DbSet<ActivityCategory> ActivityCategorys { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
 
-
-
-
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostComment> PostComments { get; set; }
 
     }
 }
