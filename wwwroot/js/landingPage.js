@@ -159,9 +159,13 @@ const HeaderEventHandler = (e) =>{
 // Mentor Registration------------------------------------------------
 const StateSelectedHandlerMentor = (e) => {
     let stateSelected = document.getElementById("MentorStateSelectionList").value;
-    console.log(stateSelected)
-
     document.getElementById("MentorState").value = stateSelected;
+
+
+    let stateSelectedFooter = document.getElementById("MentorStateSelectionListFooter").value;
+    document.getElementById("MentorStateFooter").value = stateSelectedFooter;
+    console.log(stateSelectedFooter)
+
     // document.getElementById("ApprenticeState").value = stateSelected;
 }
 
@@ -271,10 +275,12 @@ const RegMentorHandlerFooter = (e) =>{
 // Apprentice Registration---------------------------------------------------------
 const StateSelectedHandlerApprentice = (e) => {
     let stateSelected = document.getElementById("ApprenticeStateSelectionList").value;
-    console.log(stateSelected)
-
     document.getElementById("ApprenticeState").value = stateSelected;
+
+    let stateSelectedFooter = document.getElementById("ApprenticeStateSelectionListFooter").value;
+    document.getElementById("ApprenticeStateFooter").value = stateSelectedFooter;
 }
+
 
 
 let ApprenticeStep = "step1"

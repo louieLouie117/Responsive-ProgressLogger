@@ -112,9 +112,22 @@ namespace ProgressLog.Controllers
         {
 
             List<User> GetAllMentors = _context.Users
+                .Where(ul => ul.AccountType == AccountType.Mentor)
                 .ToList();
 
             return Json(new { StatusCode = "Success", GetAllMentors });
+
+        }
+
+        [HttpGet("AllApprentice")]
+        public JsonResult AllApprentice()
+        {
+
+            List<User> GetAllApprentice = _context.Users
+                .Where(ul => ul.AccountType == AccountType.Apprentice)
+                .ToList();
+
+            return Json(new { StatusCode = "Success", GetAllApprentice });
 
         }
 

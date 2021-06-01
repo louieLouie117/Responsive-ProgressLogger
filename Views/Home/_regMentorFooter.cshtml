@@ -60,16 +60,17 @@
             </section>
 
             <section id="regMentorStep3Footer">
-                <h2>Connect with others.</h2>
+                <h2>Connect with others near you.</h2>
 
-                <partial name="_stateListMentor" />
+                <partial name="_stateListMentorFooter" />
 
+                <h2>Introduce your self as</h2>
                 <span asp-validation-for="State"></span>
-                <input asp-for="State" placeholder="State" id="MentorState" class="hidden">
+                <input asp-for="State" placeholder="State" id="MentorStateFooter" class="hidden">
 
                 <aside>
-                    <input asp-for="FirstName" placeholder="First Name:">
-                    <input asp-for="LastName" placeholder="Last Name:">
+                    <input asp-for="FirstName" placeholder="First name:">
+                    <input asp-for="LastName" placeholder="Last name:">
                 </aside>
 
                 @* <input asp-for="UserTitle" placeholder="Title: Full Stack Developer, Frontend, Backend ect.."> *@

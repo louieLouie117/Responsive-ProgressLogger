@@ -48,14 +48,14 @@
             </section>
 
             <section id="regApprenticeStep3Footer">
-                <h2>Connect with mentors.</h2>
-
+                <h2>Introduce your self as</h2>
                 <span asp-validation-for="FirstName"></span>
-                <input asp-for="FirstName" placeholder="First Name:">
+                <input asp-for="FirstName" placeholder="First name:">
 
-                <partial name="_stateListApprentice" />
+                <h2>Connect with mentors near you.</h2>
+                <partial name="_stateListApprenticeFooter" />
 
-                <input asp-for="State" placeholder="State" id="ApprenticeState" class="hidden">
+                <input asp-for="State" placeholder="State" id="ApprenticeStateFooter" class="hidden">
 
 
                 <footer>
