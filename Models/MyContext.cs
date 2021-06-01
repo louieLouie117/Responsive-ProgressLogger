@@ -26,8 +26,14 @@ namespace ProgressLog.Models
 
         public DbSet<BookmarkCollection> BookmarkCollections { get; set; }
         public DbSet<Bookmark> Bookmarks { get; set; }
+        public DbSet<ActivityCategory> ActivityCategorys { get; set; }
+        public DbSet<ActivityLog> ActivityLogs { get; set; }
 
+        public DbSet<Post> Posts { get; set; }
 
+        public DbSet<PostComment> PostComments { get; set; }
+
+        public DbSet<JobTracker> JobTrackers { get; set; }
 
 
     }

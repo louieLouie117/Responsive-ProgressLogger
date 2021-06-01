@@ -17,3 +17,8 @@ h3, p{
     grid-row: auto;
 }
 
+
+a:visited {
+    color: white;
+  }
+
