@@ -13,6 +13,7 @@ namespace ProgressLog.Models
         public int UserId { get; set; }
 
         // About User---------------------------
+        public string UserName { get; set; }
 
         public string Title { get; set; }
 
