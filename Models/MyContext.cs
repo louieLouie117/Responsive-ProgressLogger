@@ -30,7 +30,11 @@ namespace ProgressLog.Models
         public DbSet<ActivityLog> ActivityLogs { get; set; }
 
         public DbSet<Post> Posts { get; set; }
+
         public DbSet<PostComment> PostComments { get; set; }
+
+        public DbSet<JobTracker> JobTrackers { get; set; }
+
 
     }
 }
