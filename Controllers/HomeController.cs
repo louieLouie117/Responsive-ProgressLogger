@@ -511,18 +511,33 @@ namespace ProgressLog.Controllers
                 ModelState.AddModelError("Email", "Email already in use!");
             }
 
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+            int numberGenerated = rdm.Next(min, max);
+
+            System.Console.WriteLine($"Apprentice is the random number {numberGenerated}");
+
             // Validations
             if (ModelState.IsValid)
             {
                 // #hash password
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
-
                 FromForm.AccountType = AccountType.Apprentice;
-                FromForm.Title = "New Developer";
+                FromForm.UserName = "user" + numberGenerated;
+                FromForm.LastName = "";
+                FromForm.Title = "Apprentice";
+                FromForm.City = "";
                 FromForm.ProfileImg = "profilePlaceholder.png";
+                FromForm.UserMessage = "Hello, I am new to web develop and would love to connect with a mentor.";
                 FromForm.MeetUpLink = "http://www.progresslypage.com/";
+                FromForm.MeetUpCost = "0.00";
                 FromForm.ProfileColor = "136DC0";
+                FromForm.Languages = "Html5, CSS, JavaScript";
+                FromForm.Database = "MySQL, MongoDB";
+                FromForm.VersionControl = "Git, GitHub";
+                FromForm.FrameworksLibraries = "jQuery, Ajax";
 
 
                 // Add to db
@@ -537,7 +552,7 @@ namespace ProgressLog.Controllers
             }
             else
             {
-                System.Console.WriteLine("Fix your erros!");
+                System.Console.WriteLine("Fix your errors!");
                 return View("index");
 
             }
@@ -554,15 +569,27 @@ namespace ProgressLog.Controllers
                 ModelState.AddModelError("Email", "Email already in use!");
             }
 
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+            int numberGenerated = rdm.Next(min, max);
+            System.Console.WriteLine($"Mentor is the random number {numberGenerated}");
+
+
             // Validations
             if (ModelState.IsValid)
             {
                 // #hash password
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
-
                 FromForm.AccountType = AccountType.Mentor;
+                FromForm.UserName = "user" + numberGenerated;
+                FromForm.Title = "Web Developer";
+                FromForm.UserMessage = "Hello, I will love to show you the wonderflue world of programming";
+                FromForm.City = "";
                 FromForm.ProfileImg = "profilePlaceholder.png";
+                FromForm.MeetUpLink = "http://www.progresslypage.com/";
+                FromForm.MeetUpCost = "0.00";
                 FromForm.ProfileColor = "136DC0";
                 FromForm.Languages = "Html5, CSS, JavaScript, C#, Python, Markdown";
                 FromForm.Database = "MySQL, MongoDB";

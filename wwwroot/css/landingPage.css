@@ -322,7 +322,7 @@ body ::-webkit-scrollbar {
 .apprenticePage-container>header ul li p{
     font: 1.3em sans-serif;
     color: #187ddc;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 
 
@@ -337,7 +337,6 @@ body ::-webkit-scrollbar {
     height: 150px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.345);
     border-radius: 80px;
-    
 }
 
 .apprenticePage-container ul {
