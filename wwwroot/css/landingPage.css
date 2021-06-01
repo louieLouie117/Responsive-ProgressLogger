@@ -214,15 +214,21 @@ button{
     padding-bottom: 15px;
 }
 
-.headerBanner-container>button{
-    font: 1.5em sans-serif;
+.headerBanner-container a{
+    display: grid;
+    justify-items: center;
+
+}
+
+.headerBanner-container>a button{
+    font: 1.7em sans-serif;
     background: none;
     height: 50px;
     border: none;
     padding: 5px;
     text-decoration: underline;
     color: white;
-    justify-self: center;
+    align-self: flex-end;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -391,7 +397,6 @@ body ::-webkit-scrollbar {
     font: 1.7em sans-serif;
     color: #136DC0;
     text-decoration: underline;
-    width: 350px;
     text-align: left;
     padding: 0;
 
@@ -508,6 +513,7 @@ body ::-webkit-scrollbar {
     border: white 1px solid;
     border-radius: 20px;
     color: white;
+    width: 300px;
 }
 
 .gettingStarted-container main footer header{
