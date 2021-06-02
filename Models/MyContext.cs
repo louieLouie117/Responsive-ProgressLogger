@@ -35,6 +35,12 @@ namespace ProgressLog.Models
 
         public DbSet<JobTracker> JobTrackers { get; set; }
 
+        public DbSet<Follower> Followers { get; set; }
+
+        public DbSet<FollowerList> FollowerLists { get; set; }
+
+
+
 
     }
 }
