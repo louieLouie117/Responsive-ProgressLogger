@@ -39,6 +39,10 @@ namespace ProgressLog.Models
 
         public DbSet<FollowerList> FollowerLists { get; set; }
 
+        public DbSet<Apprentice> Apprentices { get; set; }
+        public DbSet<ApprenticeList> ApprenticeLists { get; set; }
+
+
 
 
 
