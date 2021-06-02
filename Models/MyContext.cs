@@ -43,6 +43,11 @@ namespace ProgressLog.Models
         public DbSet<ApprenticeList> ApprenticeLists { get; set; }
 
 
+        public DbSet<Connection> Connections { get; set; }
+        public DbSet<ConnectionList> ConnectionLists { get; set; }
+
+
+
 
 
 
