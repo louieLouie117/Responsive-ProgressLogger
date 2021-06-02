@@ -25,7 +25,6 @@ namespace ProgressLog.Models
         public User User { get; set; }
 
 
-
         // Navigation property from association class M2M
         List<FollowerList> FollowerLists { get; set; }
 
