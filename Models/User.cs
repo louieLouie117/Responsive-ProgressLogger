@@ -22,6 +22,14 @@ namespace ProgressLog.Models
         public string LastName { get; set; }
         public string UserMessage { get; set; }
 
+        // Statues-----------------------------
+        public bool IsOnline { get; set; }
+        public bool IsActive { get; set; }
+        public int Followers { get; set; }
+        public int Apprentices { get; set; }
+        public int Connections { get; set; }
+
+
         // address------------------------------
         public string City { get; set; }
         public string State { get; set; }
