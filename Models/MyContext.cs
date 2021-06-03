@@ -34,6 +34,8 @@ namespace ProgressLog.Models
         public DbSet<PostComment> PostComments { get; set; }
 
         public DbSet<JobTracker> JobTrackers { get; set; }
+        public DbSet<JobTrackerNote> JobTrackerNotes { get; set; }
+
 
         public DbSet<Follower> Followers { get; set; }
 
