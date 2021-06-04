@@ -531,8 +531,6 @@ namespace ProgressLog.Controllers
                 FromForm.City = "";
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.UserMessage = "Hello, I am new to web develop and would love to connect with a mentor.";
-                FromForm.MeetUpLink = "http://www.progresslypage.com/";
-                FromForm.MeetUpCost = "0.00";
                 FromForm.ProfileColor = "136DC0";
                 FromForm.Languages = "Html5, CSS, JavaScript";
                 FromForm.Database = "MySQL, MongoDB";
@@ -588,8 +586,6 @@ namespace ProgressLog.Controllers
                 FromForm.UserMessage = "Hello, I will love to show you the wonderflue world of programming";
                 FromForm.City = "";
                 FromForm.ProfileImg = "profilePlaceholder.png";
-                FromForm.MeetUpLink = "http://www.progresslypage.com/";
-                FromForm.MeetUpCost = "0.00";
                 FromForm.ProfileColor = "136DC0";
                 FromForm.Languages = "Html5, CSS, JavaScript, C#, Python, Markdown";
                 FromForm.Database = "MySQL, MongoDB";

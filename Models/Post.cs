@@ -14,11 +14,11 @@ namespace ProgressLog.Models
         public string Message { get; set; }
         public string ImageLink { get; set; }
         public string VideoLink { get; set; }
-        public int Likes { get; set; }
-        public int Celebrates { get; set; }
-        public int Hearts { get; set; }
-        public int Supports { get; set; }
-        public string Shares { get; set; }
+        public int LikesCount { get; set; }
+        public int CelebratesCount { get; set; }
+        public int HeartsCount { get; set; }
+        public int SupportsCount { get; set; }
+        public int SharesCount { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
