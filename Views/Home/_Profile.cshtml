@@ -14,13 +14,9 @@
         @if (Model.AccountType == AccountType.Apprentice)
         {
 
-            @* <partial name="_ProfileApprentice" model="@Model.AccountType" /> *@
+            <partial name="_ProfileApprentice" />
 
             @* <partial name="_ProfileApprentice" model="@Model" view-data="ViewData" /> *@
-
-            <h2>This is the apprentice profile</h2>
-
-
 
 
         }
@@ -28,9 +24,7 @@
 
         @if (Model.AccountType == AccountType.Mentor)
         {
-            @* <partial name="_ProfileMentor" model="@Model.AccountType" /> *@
-            <h2>This is the Mentor profile</h2>
-
+            <partial name="_ProfileMentor" />
 
 
         }

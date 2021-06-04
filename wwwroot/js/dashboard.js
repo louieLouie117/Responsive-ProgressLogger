@@ -6,7 +6,7 @@ const showMainMenu =(e) => {
         console.log(e);
         if (menu === "close") {     
         document.getElementById("mainMenu").style.height = "95vh";
-        document.getElementById("mainMenu").style.width = "42vh";
+        document.getElementById("mainMenu").style.width = "50vh";
         document.getElementById("mainMenu").style.margin = "0px";
         document.getElementById("mainMenu").style.borderColor = "#136DC0";
         document.getElementById("mainMenu").style.borderRadius = "0";
@@ -57,7 +57,7 @@ const PartialHandler = (e) =>{
 
     }
 
-    if(e.target.innerText === "Daily Log"){
+    if(e.target.innerText === "Daily Journal"){
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "grid"
         document.getElementById("networkPartial").style.display = "none"
