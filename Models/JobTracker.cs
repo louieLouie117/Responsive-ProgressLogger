@@ -35,5 +35,8 @@ namespace ProgressLog.Models
         // navP
         public User User { get; set; }
 
+        List<JobTrackerNote> JobTrackerNotes { get; set; }
+
+
     }
 }

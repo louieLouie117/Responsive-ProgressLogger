@@ -5,21 +5,20 @@ using System.Collections.Generic;
 
 namespace ProgressLog.Models
 {
-    public class Specialization
+    public class DailyRoutine
     {
         [Key]
-        public int SpecializationId { get; set; }
+        public int DailyRoutineId { get; set; }
 
+        [Display(Prompt = "new section..")]
 
-        [Display(Prompt = "add specialization..")]
-        public string Title { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
 
-        public string Description { get; set; }
+        public string Activity { get; set; }
 
-        public int LikesCount { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
-
 
         public int UserId { get; set; }
         // navP

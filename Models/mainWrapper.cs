@@ -9,6 +9,9 @@ namespace ProgressLog.Models
     {
 
 
+
+        public User User { get; set; }
+
         public Section Section { get; set; }
 
         public LogRecord LogRecord { get; set; }

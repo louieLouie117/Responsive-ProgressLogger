@@ -1,29 +1,27 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections.Generic;
 
 namespace ProgressLog.Models
 {
-    public class Specialization
+    public class JobTrackerNote
     {
         [Key]
-        public int SpecializationId { get; set; }
-
-
-        [Display(Prompt = "add specialization..")]
-        public string Title { get; set; }
-
-        public string Description { get; set; }
-
-        public int LikesCount { get; set; }
+        public int JobTrackerNoteId { get; set; }
+        public string Note { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-
+        // fKey for user
         public int UserId { get; set; }
         // navP
         public User User { get; set; }
+
+
+        // f key for sections
+        public int JobTrackerId { get; set; }
+        public JobTracker JobTracker { get; set; }
+
 
 
     }

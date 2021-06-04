@@ -25,10 +25,11 @@ namespace ProgressLog.Models
         // Statues-----------------------------
         public bool IsOnline { get; set; }
         public bool IsActive { get; set; }
-        public int Followers { get; set; }
-        public int Apprentices { get; set; }
-        public int Connections { get; set; }
-
+        public int FollowersCount { get; set; }
+        public int ApprenticesCount { get; set; }
+        public int ConnectionsCount { get; set; }
+        public int PortfolioViewCount { get; set; }
+        public int MaxApprentices { get; set; }
 
         // address------------------------------
         public string City { get; set; }
@@ -47,9 +48,6 @@ namespace ProgressLog.Models
         public string ProfileImg { get; set; }
 
         public string ProfileColor { get; set; }
-
-        public string MeetUpLink { get; set; }
-        public string MeetUpCost { get; set; }
 
         // email and password---------------------------
         [EmailAddress]
