@@ -1,3 +1,7 @@
+@using ProgressLog.Models
+@model User
+
+
 <head>
 
 </head>
@@ -5,5 +9,34 @@
 <body>
     <div class="profile-container" id="profilePartial">
         <h1>Profile</h1>
+
+
+        @if (Model.AccountType == AccountType.Apprentice)
+        {
+
+            @* <partial name="_ProfileApprentice" model="@Model.AccountType" /> *@
+
+            @* <partial name="_ProfileApprentice" model="@Model" view-data="ViewData" /> *@
+
+            <h2>This is the apprentice profile</h2>
+
+
+
+
+        }
+
+
+        @if (Model.AccountType == AccountType.Mentor)
+        {
+            @* <partial name="_ProfileMentor" model="@Model.AccountType" /> *@
+            <h2>This is the Mentor profile</h2>
+
+
+
+        }
+
+
+
+
     </div>
 </body>

@@ -68,7 +68,7 @@ const PartialHandler = (e) =>{
 
     }
 
-    if(e.target.innerText === "Network"){
+    if(e.target.innerText === "Social Network"){
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "grid"

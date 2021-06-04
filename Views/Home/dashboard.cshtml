@@ -34,7 +34,8 @@
 
         <partial name="_dashboardNav" />
         <partial name="LogPartial" />
-        <partial name="_Profile" />
+        @* <partial name="_Profile" /> *@
+        <partial name="_Profile" model="@Model.User" />
         <partial name="_Network" />
         <partial name="_ActivityTracker" />
         <partial name="_Stickynotes" />

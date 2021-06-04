@@ -27,9 +27,6 @@ function hideNewLog(e){
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
     document.getElementById("newLogBTN").innerHTML = "";
 
-
-
-
 }
 
 

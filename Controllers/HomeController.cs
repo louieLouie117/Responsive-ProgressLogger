@@ -103,6 +103,9 @@ namespace ProgressLog.Controllers
 
             MainWrapper wMod = new MainWrapper();
 
+            wMod.User = UserIndb;
+            // this one line of code save me but why and how?
+
             return View("dashboard", wMod);
         }
 
