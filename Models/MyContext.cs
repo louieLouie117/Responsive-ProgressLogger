@@ -47,6 +47,8 @@ namespace ProgressLog.Models
 
         public DbSet<Connection> Connections { get; set; }
         public DbSet<ConnectionList> ConnectionLists { get; set; }
+        public DbSet<DailyRoutine> DailyRoutines { get; set; }
+
 
 
 
