@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Loger</title>
-    <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/regLogin.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -40,12 +39,14 @@
 
             <section id="regMentorStep1">
                 <span asp-validation-for="Email"></span>
-                <input asp-for="Email" placeholder="Email">
+                <input asp-for="Email" placeholder="email:">
                 <button type="button" onclick="RegMentorHandler(event)">next</button>
 
             </section>
 
             <section id="regMentorStep2">
+                <h2>Login to your accuont anytime.</h2>
+
                 <span asp-validation-for="Password"></span>
                 <input asp-for="Password" placeholder="Password">
 
@@ -59,13 +60,21 @@
             </section>
 
             <section id="regMentorStep3">
+                <h2>Connect with others near you.</h2>
+
                 <partial name="_stateListMentor" />
+
+                <span asp-validation-for="FirstName"></span>
+                <h2>Introduce your self as</h2>
+
+                <aside>
+                    <input asp-for="FirstName" placeholder="First name:">
+                    <input asp-for="LastName" placeholder="Last name:">
+                </aside>
 
                 <span asp-validation-for="State"></span>
                 <input asp-for="State" placeholder="State" id="MentorState" class="hidden">
 
-                <span asp-validation-for="City"></span>
-                <input asp-for="City" placeholder="City">
 
 
                 @* <input asp-for="UserTitle" placeholder="Title: Full Stack Developer, Frontend, Backend ect.."> *@
@@ -85,6 +94,7 @@
 
 
     </div>
+
 
 </body>
 

@@ -1,0 +1,97 @@
+@using ProgressLog.Models
+@model User
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Loger</title>
+    <link rel="stylesheet" href="~/css/regLogin.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HB0NHJ3FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6HB0NHJ3FD');
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#RegisterMentorForm").submit(event => {
+                event.preventDefault();
+                alert("form being submitted");
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="reg-containerFooter" id="regMentorFooter">
+
+        <form asp-action="RegisterMentor" asp-controller="Home" method="POST">
+
+            <section id="regMentorStep1Footer">
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email" placeholder="email:">
+                <button type="button" onclick="RegMentorHandlerFooter(event)">next</button>
+
+            </section>
+
+            <section id="regMentorStep2Footer">
+                <h2>Login to your accuont anytime.</h2>
+
+                <span asp-validation-for="Password"></span>
+                <input asp-for="Password" placeholder="Password">
+
+                <span asp-validation-for="Confirm"></span>
+                <input asp-for="Confirm" placeholder="Confirm Password">
+                <footer>
+                    <button type="button" onclick="RegMentorHandlerFooter(event)">back</button>
+                    <button type="button" onclick="RegMentorHandlerFooter(event)">next</button>
+
+                </footer>
+            </section>
+
+            <section id="regMentorStep3Footer">
+                <h2>Connect with others near you.</h2>
+
+                <partial name="_stateListMentorFooter" />
+
+                <h2>Introduce your self as</h2>
+                <span asp-validation-for="State"></span>
+                <input asp-for="State" placeholder="State" id="MentorStateFooter" class="hidden">
+
+                <aside>
+                    <input asp-for="FirstName" placeholder="First name:">
+                    <input asp-for="LastName" placeholder="Last name:">
+                </aside>
+
+                @* <input asp-for="UserTitle" placeholder="Title: Full Stack Developer, Frontend, Backend ect.."> *@
+                @* <input asp-for="MeetUpLink" placeholder="MeetUpLink"> *@
+
+                @* <input class="hidden" asp-for="ProfileImg" placeholder="Profile Img"> *@
+                @* <input class="hidden" asp-for="ProfileBackground" placeholder="ProfileBackground"> *@
+
+                @* <input type="submit" value="submit"> *@
+                <footer>
+                    <button type="button" onclick="RegMentorHandler(event)">back</button>
+                    <button type="submit">Creat Account</button>
+                </footer>
+            </section>
+
+        </form>
+
+
+    </div>
+
+
+</body>
+
+</html>

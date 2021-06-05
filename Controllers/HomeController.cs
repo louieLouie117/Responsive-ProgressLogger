@@ -103,7 +103,35 @@ namespace ProgressLog.Controllers
 
             MainWrapper wMod = new MainWrapper();
 
+            wMod.User = UserIndb;
+            // this one line of code save me but why and how?
+
             return View("dashboard", wMod);
+        }
+
+
+        [HttpGet("AllMentors")]
+        public JsonResult AllMentors()
+        {
+
+            List<User> GetAllMentors = _context.Users
+                .Where(ul => ul.AccountType == AccountType.Mentor)
+                .ToList();
+
+            return Json(new { StatusCode = "Success", GetAllMentors });
+
+        }
+
+        [HttpGet("AllApprentice")]
+        public JsonResult AllApprentice()
+        {
+
+            List<User> GetAllApprentice = _context.Users
+                .Where(ul => ul.AccountType == AccountType.Apprentice)
+                .ToList();
+
+            return Json(new { StatusCode = "Success", GetAllApprentice });
+
         }
 
         // -----------------------------------------------------------end
@@ -486,18 +514,31 @@ namespace ProgressLog.Controllers
                 ModelState.AddModelError("Email", "Email already in use!");
             }
 
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+            int numberGenerated = rdm.Next(min, max);
+
+            System.Console.WriteLine($"Apprentice is the random number {numberGenerated}");
+
             // Validations
             if (ModelState.IsValid)
             {
                 // #hash password
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
-
-                FromForm.AccountType = "Apprentice";
-                FromForm.UserTitle = "New Developer";
+                FromForm.AccountType = AccountType.Apprentice;
+                FromForm.UserName = "user" + numberGenerated;
+                FromForm.LastName = "";
+                FromForm.Title = "Apprentice";
+                FromForm.City = "";
                 FromForm.ProfileImg = "profilePlaceholder.png";
-                FromForm.MeetUpLink = "http://www.progresslypage.com/";
+                FromForm.UserMessage = "Hello, I am new to web develop and would love to connect with a mentor.";
                 FromForm.ProfileColor = "136DC0";
+                FromForm.Languages = "Html5, CSS, JavaScript";
+                FromForm.Database = "MySQL, MongoDB";
+                FromForm.VersionControl = "Git, GitHub";
+                FromForm.FrameworksLibraries = "jQuery, Ajax";
 
 
                 // Add to db
@@ -512,7 +553,7 @@ namespace ProgressLog.Controllers
             }
             else
             {
-                System.Console.WriteLine("Fix your erros!");
+                System.Console.WriteLine("Fix your errors!");
                 return View("index");
 
             }
@@ -529,16 +570,30 @@ namespace ProgressLog.Controllers
                 ModelState.AddModelError("Email", "Email already in use!");
             }
 
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+            int numberGenerated = rdm.Next(min, max);
+            System.Console.WriteLine($"Mentor is the random number {numberGenerated}");
+
+
             // Validations
             if (ModelState.IsValid)
             {
                 // #hash password
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 FromForm.Password = Hasher.HashPassword(FromForm, FromForm.Password);
-
-                FromForm.AccountType = "Mentor";
+                FromForm.AccountType = AccountType.Mentor;
+                FromForm.UserName = "user" + numberGenerated;
+                FromForm.Title = "Web Developer";
+                FromForm.UserMessage = "Hello, I will love to show you the wonderflue world of programming";
+                FromForm.City = "";
                 FromForm.ProfileImg = "profilePlaceholder.png";
                 FromForm.ProfileColor = "136DC0";
+                FromForm.Languages = "Html5, CSS, JavaScript, C#, Python, Markdown";
+                FromForm.Database = "MySQL, MongoDB";
+                FromForm.VersionControl = "Git, GitHub";
+                FromForm.FrameworksLibraries = "React, Express, Node, Express-fileupload, Django ASP.NET, Entity Framework, jQuery, Ajax, SASS";
 
 
                 // Add to db

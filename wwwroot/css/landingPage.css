@@ -1,15 +1,20 @@
 body{
     display: grid;
     background: whitesmoke;
-    margin: 0 auto;
-    max-width: 65em;
+    margin: 0;
+    /* max-width: 65em; */
     font: 1em sans-serif;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-x: hidden;
 
 }
 
-h1{
+h1, h2,p{
     margin: 0;
 }
+
+
 
 
 button{
@@ -19,8 +24,9 @@ button{
 
 .landingPage-container{
     display: grid;
-    height: 100vh;
+    height: 100.1vh;
 }
+
 
 .landingPage-container nav{
     display: grid;
@@ -45,6 +51,7 @@ button{
     color: white;
     font: 1em sans-serif;
     border: none;
+    
 }
 
 .background-container{
@@ -145,7 +152,7 @@ button{
 
 
 
-.options-container header p {
+.options-container>header p {
     background: none;
     border: none;
     font: 1.5em sans-serif;
@@ -180,18 +187,17 @@ button{
 
 .headerBanner-container{
     display: grid;
-    grid-template-rows:  200px 50px 50px 150px auto;
+    grid-template-rows:  100px 50px 50px 150px auto;
     position: absolute;
     row-gap: 20px;
     top: -800px;
     left: 50%;
     transform: translate(-50%, 0);
     background: #136DC0;
-    width: 90%;
+    width: 95%;
     height: auto;
-    border-radius: 0 0  40px 40px;
-    z-index: 3;
-    padding: 20px;
+    border-radius: 0 0  30px 30px;
+    padding: 15px;
 
 }
 
@@ -202,21 +208,27 @@ button{
 }
 
 .headerBanner-container p {
-    font: 1.5em sans-serif;
+    font: 1.3em sans-serif;
     color: white;
     margin: 0;
     padding-bottom: 15px;
 }
 
-.headerBanner-container>button{
-    font: 1.5em sans-serif;
+.headerBanner-container a{
+    display: grid;
+    justify-items: center;
+
+}
+
+.headerBanner-container>a button{
+    font: 1.7em sans-serif;
     background: none;
     height: 50px;
     border: none;
     padding: 5px;
     text-decoration: underline;
     color: white;
-    justify-self: center;
+    align-self: flex-end;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -236,6 +248,8 @@ button{
 
 @media screen and (min-width: 1000px) {
     .headerBanner-container{
+    grid-template-rows:  200px 50px 50px 150px auto;
+
         width: 50%;
         height: 650px;
         border-radius: 0 0  180px 180px;
@@ -260,4 +274,519 @@ button{
 
 }
 
+
+body ::-webkit-scrollbar {
+    width: 1px;
+    height: 0px;
+    display: none;
+  }
+
+body ::-webkit-scrollbar {
+    display: none;
+  }
+
+/* apprentice page style------------------------------------------- */
+
+.apprenticePage-container{
+    display: none;
+    background: none;
+    z-index: 50px;
+    margin: 0 auto;
+
+}
+
+.apprenticePage-container header{
+    display: grid;
+    grid-template-rows: 70px;
+    row-gap: 20px;
+}
+
+
+.apprenticePage-container header ul {
+    background: none;
+    display: flex;
+    overflow: scroll;
+    width: 99%;
+    column-gap: 30px;
+    height: 230px;
+}
+
+.apprenticePage-container header ul li{
+    display: grid;
+    width: 350px;
+    justify-items: center;
+
+}
+
+.apprenticePage-container>header ul li h2,
+.apprenticePage-container>header ul li p{
+    font: 1.3em sans-serif;
+    color: #187ddc;
+    /* padding: 0 20px; */
+}
+
+
+.apprenticePage-container h1{
+    margin: 0;
+    font: 1.3em sans-serif;
+    color: #187ddc;
+    justify-self: center;
+}
+
+.apprenticePage-container header ul li img{
+    height: 150px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.345);
+    border-radius: 80px;
+}
+
+.apprenticePage-container ul {
+    list-style: none;
+    padding: 0;
+    max-width: 85em;
+    margin: 0 auto;
+
+}
+
+
+
+/* getting started ---------------------------------------------- */
+#getStarted{
+    display: none;
+}
+
+#newApprenticeList{
+    display: none;
+    /* background: red;
+    margin-right: -1500px; */
+}
+
+#newMentorList{
+    display: none;
+    /* background: red;
+    margin-right: -1500px; */
+}
+
+.gettingStarted-container{
+    display: grid;
+    row-gap: 30px;
+}
+
+.gettingStarted-container header{
+    display: grid;
+    row-gap: 5px;
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 85em;
+
+}
+
+.gettingStarted-container header h2{
+    font: 2em sans-serif;
+    color: rgb(148, 148, 148);
+    align-self: flex-end;
+}
+.gettingStarted-container header p{
+    font: 1.3em sans-serif;
+    color: rgb(148, 148, 148);
+}
+
+.gettingStarted-container header button{
+    background: none;
+    border: none;
+    font: 1.7em sans-serif;
+    color: #136DC0;
+    text-decoration: underline;
+    text-align: left;
+    padding: 0;
+
+}
+
+.gettingStarted-container main{
+    display: grid;
+}
+
+.gettingStarted-container picture{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -1;
+
+}
+
+.gettingStarted-container>picture img{
+    width: 100%;
+    height: auto;
+   
+}
+
+.gettingStarted-container>main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: grid;
+    row-gap: 20px;
+    max-width: 85em;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.gettingStarted-container main h2{
+    color: white;
+    font: 2em sans-serif;
+}
+
+.gettingStarted-container main p{
+    font: 1.7em sans-serif;
+    color: white;
+}
+
+.gettingStarted-container section{
+    padding: 0 20px;
+}
+
+.gettingStarted-container main section h2,
+.gettingStarted-container main section p {
+    text-shadow: 0 0 20px black;
+
+}
+
+.gettingStarted-container main section h2{
+    font: 2.3em sans-serif;
+}
+
+.gettingStarted-container main section p{
+    font: 1.5em sans-serif;
+}
+.gettingStarted-container aside{
+    display: grid;
+    
+}
+.gettingStarted-container aside nav{
+    display: grid;
+    background: #187ddc;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 30px;
+
+}
+
+
+.gettingStarted-container aside nav ul{
+    display: grid;
+    row-gap: 10px;
+    padding: 30px;
+    width: 300px;
+    justify-self: center;
+
+}
+
+
+.gettingStarted-container aside nav ul h2{
+    font: 1.5em sans-serif;
+    text-decoration: underline;
+    
+}
+.gettingStarted-container aside nav ul li{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    justify-items: left;
+}
+
+.gettingStarted-container aside nav ul li h3{
+    font: 1.3em sans-serif;
+    color: white;
+}
+
+
+
+.gettingStarted-container aside nav ul li img{
+    height: 50px;
+    width: auto;
+}
+
+.gettingStarted-container main aside nav ul button{
+    background: none;
+    height: 40px;
+    font: 1em sans-serif;
+    border: white 1px solid;
+    border-radius: 20px;
+    color: white;
+    width: 300px;
+}
+
+.gettingStarted-container main footer header{
+    background: #187ddc;
+    border-radius: 30px 30px 0 0;
+    padding: 40px;
+
+}
+
+.gettingStarted-container>main>footer{
+    background: none;
+    height: 700px;
+}
+
+.gettingStarted-container>main>footer>main{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    background: #187ddc;
+}
+
+.gettingStarted-container main footer header h2{
+    font: 2em sans-serif;
+}
+
+.gettingStarted-container main footer header p{
+    font: 1.3em sans-serif;
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .apprenticePage-container{
+        margin-top: -200px;
+    }
+
+    .apprenticePage-container header ul {
+        background: none;
+        display: flex;
+        overflow: scroll;
+        max-width: 85em;
+        height: 230px;
+    }
+
+
+        
+    .apprenticePage-container h1{
+        font: 1.7em sans-serif;
+        color: white;
+        text-shadow: 0 0 5px black;
+
+    }
+
+
+    .gettingStarted-container>main {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        grid-template-rows: 850px auto;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+
+    }
+
+
+    .gettingStarted-container main section{
+        align-self: center;
+    }
+
+    .gettingStarted-container main>aside{
+        justify-self: flex-end;
+    }
+
+    .gettingStarted-container aside nav{
+        width: 450px;
+        height: 800px;
+    }
+
+    .gettingStarted-container>main>footer{
+        grid-column: 1/3;
+
+    }
+
+
+}
+
+
+
+/* website services------------------------------------------------------- */
+
+
+.websiteServices-container{
+    display: none;
+    margin: 0 auto;
+    margin-top: -140px;
+    width: auto;
+}
+
+.websiteServices-container header>ul {
+    display: grid;
+    row-gap: 10px;
+    width: 99%;
+    height: auto;
+    padding: 20px 0;
+}
+
+/* .websiteServices-container header>ul>li:first-of-type{
+    height: 600px;
+    padding-top: 20px;
+
+} */
+
+
+#mobileWebsiteServices, #responsiveWebsiteServices, #webAppServices {
+    display: grid;
+    background: white;
+    overflow: hidden;
+    height: 50px;
+}
+
+.websiteServices-container header>ul>li{
+    display: grid;
+    grid-template-rows: 50px 2fr 1fr 120px;
+    background: white;
+    box-shadow: 0  0 7px rgba(0, 0, 0, 0.37);
+    height: 50px;
+    width: 350px;
+    overflow: hidden;
+    border-radius: 5px;
+    overflow: scroll;
+
+
+}
+
+.websiteServices-container header>ul>li header{
+    display: grid;
+    align-self: center;
+}
+
+.websiteServices-container header>ul>li header h2{
+    color: #187ddc;
+    font: 2em sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.websiteServices-container main>ul{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 10px;
+    justify-items: left;
+    padding: 20px;
+ 
+
+}
+
+.websiteServices-container main>ul li h3{
+    font: 1.1em sans-serif;
+}
+
+.websiteServices-container aside{
+    padding: 0 30px;
+}
+
+.websiteServices-container footer{
+    display: grid;
+    padding: 0 40px;
+    justify-items: center;
+}
+
+.websiteServices-container footer input{
+    height: auto;
+}
+
+.websiteServices-container footer h3{
+    color: #187ddc;
+    font: 1em sans-serif;
+}
+
+.websiteServices-container main ul aside{
+    display: grid;
+    row-gap: 10px;
+    padding: 0;
+    justify-self: right;
+    width: auto;
+    margin-top: -10px;
+    height: 80px;
+    overflow: hidden;
+
+
+
+}
+
+.websiteServices-container main ul aside ul{
+    background: none;
+    display: grid; 
+    row-gap: 10px;
+  
+}
+
+.websiteServices-container main ul aside ul li {
+    display: grid;
+    grid-template-columns: 30px 2fr 1fr;
+    align-items: flex-end;
+
+}
+
+.websiteServices-container main ul aside ul li :last-child {
+    justify-self: right;
+}
+
+
+
+
+.websiteServices-container main ul aside ul li h3{
+    font: 0.9em sans-serif;
+
+}
+
+.websiteServices-container main ul button{
+    background: none;
+    font: 1em sans-serif;
+    text-align: left;
+    color: #187ddc;
+    border: none;
+    text-decoration: underline;
+}
+
+
+
+#premiumServices{
+    display: grid;
+ 
+}
+
+.websiteServices-container main ul aside input{
+    height: auto;
+}
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .websiteServices-container header>ul {
+        display: flex;
+        column-gap: 150px;
+        padding: 20px;
+
+    }
+
+    .websiteServices-container header>ul>li{
+        box-shadow: 0 10px 5px rgba(0, 0, 0, 0.16);
+        min-width: 400px;
+        height: 600px;
+        border-radius: 10px;
+        padding-top: 20px;
+    }
+
+
+.websiteServices-container main>ul{
+    padding: 20px 30px;
+}
+
+
+#mobileWebsiteServices, #responsiveWebsiteServices, #webAppServices {
+    display: grid;
+    background: white;
+    overflow: scroll;
+    height: 600px;
+}
+
+
+
+
+}
 

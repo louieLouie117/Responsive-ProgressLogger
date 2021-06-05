@@ -10,8 +10,10 @@
     <title>Written Logs</title>
 
     <link rel="stylesheet" href="~/css/dashboard.css">
-    <script src="~/js/script.js" async=""></script>
+    <link rel="stylesheet" href="~/css/globalStyles.css">
     <script src="~/js/dashboard.js" async=""></script>
+    @* <script src="~/js/dashboard.js" async=""></script> *@
+
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,11 +30,21 @@
 
 <body>
 
-    <partial name="_dashboardNav" />
+    <div class="dashboard-container">
+
+        <partial name="_dashboardNav" />
+        <partial name="LogPartial" />
+        @* <partial name="_Profile" /> *@
+        <partial name="_Profile" model="@Model.User" />
+        <partial name="_Network" />
+        <partial name="_ActivityTracker" />
+        <partial name="_Stickynotes" />
+        <partial name="_Bookmarks" />
+        <partial name="_TodoList" />
+        <partial name="_JobTracker" />
 
 
-    <partial name="LogPartial" />
-
+    </div>
 </body>
 
 </html>

@@ -1,12 +1,19 @@
+// I will need to move all the code that is related to daily log here so that I can keep all the js code separated by partials 
+
+
 
 // show the text and button options
 function showNewLog(e) {
     document.getElementById("newLogBTN").style.height = "80vh";
     document.getElementById("newLogBTN").style.position = "relative";
     document.getElementById("newLogBTN").style.padding = "40px";
+    document.getElementById("newLogBTN").style.boxShadow = "0 0 30px rgba(0, 0, 0, .762);";
     document.getElementById("saveBTN").style.display = "block";
     document.getElementById("cancleLog").style.display ="block";
-    
+    if(menu ==="open"){
+        showMainMenu()
+
+    }
     
 };
 
@@ -20,9 +27,6 @@ function hideNewLog(e){
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
     document.getElementById("newLogBTN").innerHTML = "";
 
-
-
-
 }
 
 
@@ -35,10 +39,6 @@ const ShowDeleteLog = (e)=>{
 
     document.getElementById(itemContainer).style.display = "none";
     document.getElementById(itemToDelete).style.display = "grid";
-
-
-
-
 
 
 }

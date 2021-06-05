@@ -1,0 +1,107 @@
+<head>
+
+</head>
+
+<body>
+    <div class="apprenticePage-container" id="apprenticePagePartial">
+        <header id="gettingStartedHeader">
+            <h1 id="getStartedJustAdded"></h1>
+
+            <partial name="_listApprentice" />
+            <partial name="_listMentor" />
+
+
+        </header>
+
+    </div>
+
+    <div class="gettingStarted-container" id='getStarted'>
+        <header>
+            <h2 id="getStartedTitle"> Get Started</h2>
+            <p id="getStartedInfo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit libero ea iusto
+                odio? Magni provident
+                aliquam dolorum dolor doloremque, omnis illum animi minus, libero unde, illo tempore voluptates repellat
+                quibusdam!</p>
+            <a href="#HeaderBanner" onclick="RegTitleHandler(event)"> <button id="connectWithBTN"> Connect with
+                    Mentors</button></a>
+        </header>
+        <picture id="blurImage">
+            <source media="(min-width: 1100px)" srcset="/assets/gettingStartedL.png" />
+            <source media="(min-width: 500px)" srcset="/assets/gettingStartedM.png" />
+            <img src="/assets/gettingStartedS.png" alt="">
+        </picture>
+        <main>
+
+            <section>
+                <h2>Dashboard & Tools</h2>
+                <p id="getToolsInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam perspiciatis nihil
+                    debitis autem ut
+                    facilis. Quaerat incidunt dolorum sunt expedita doloremque quam deleniti, impedit placeat vel.
+                    Deserunt officiis sed quam!</p>
+            </section>
+            <aside>
+                <nav>
+                    <ul>
+                        <h2>Available now</h2>
+                        <li>
+                            <img src="assets/profilePlaceholder.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Profile </h3>
+                        </li>
+                        <li>
+                            <img src="assets/iconNotebook.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Daily Log </h3>
+                        </li>
+                        <li>
+                            <img src="assets/iconNetwork.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Network </h3>
+                        </li>
+                        <h2>Coming soon</h2>
+
+                        <li>
+                            <img src="assets/iconCalander.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Activity Tracker </h3>
+                        </li>
+
+                        <li>
+                            <img src="assets/iconStckynotes.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Stickynotes </h3>
+                        </li>
+                        <li>
+                            <img src="assets/iconBookmark.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Bookmarks </h3>
+                        </li>
+                        <li>
+                            <img src="assets/iconTodoList.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Todo-list </h3>
+                        </li>
+                        <li>
+                            <img src="assets/iconJob.png" alt="">
+                            <h3 onclick="PartialHandler(event)"> Job Traker </h3>
+                        </li>
+
+                        <a href="#HeaderBanner" onclick="RegTitleHandler(event)"><button>Get Tools</button></a>
+
+                    </ul>
+                </nav>
+            </aside>
+
+            <footer>
+                <header>
+                    <h2 id="becomeUserTitle">Become an apprentice. Get paid to learn.</h2>
+                    <p id="becomeUserInfo">If you are interested in developing websites or webapps, why not get paid at
+                        the same time you
+                        are
+                        learning as an apprentice when you find a buisness that needs a website you can connect with a
+                        mentor and share the bacon. Once you are ready you can become a mentor for others.</p>
+                </header>
+                <main>
+                    <partial name="_regApprenticeFooter" />
+                    <partial name="_regMentorFooter" />
+
+                </main>
+            </footer>
+
+        </main>
+
+    </div>
+</body>

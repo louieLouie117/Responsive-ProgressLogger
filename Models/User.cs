@@ -5,18 +5,31 @@ using System.Collections.Generic;
 
 namespace ProgressLog.Models
 {
+
+    public enum AccountType { Apprentice = 0, Mentor = 1, Admin = 2 }
     public class User
     {
         [Key]
         public int UserId { get; set; }
 
         // About User---------------------------
-        public string UserTitle { get; set; }
+        public string UserName { get; set; }
+
+        public string Title { get; set; }
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
         public string UserMessage { get; set; }
+
+        // Statues-----------------------------
+        public bool IsOnline { get; set; }
+        public bool IsActive { get; set; }
+        public int FollowersCount { get; set; }
+        public int ApprenticesCount { get; set; }
+        public int ConnectionsCount { get; set; }
+        public int PortfolioViewCount { get; set; }
+        public int MaxApprentices { get; set; }
 
         // address------------------------------
         public string City { get; set; }
@@ -29,14 +42,12 @@ namespace ProgressLog.Models
         public string FrameworksLibraries { get; set; }
 
         // Profile-----------------------------
-        public string AccountType { get; set; }
-
+        [Column(TypeName = "nvarchar(24)")]
+        [EnumDataType(typeof(AccountType))]
+        public AccountType AccountType { get; set; }
         public string ProfileImg { get; set; }
 
         public string ProfileColor { get; set; }
-
-        public string MeetUpLink { get; set; }
-        public string MeetUpCost { get; set; }
 
         // email and password---------------------------
         [EmailAddress]
@@ -60,8 +71,18 @@ namespace ProgressLog.Models
 
         // nav properties
         List<LogRecord> LogRecords { get; set; }
-
         List<Section> Sections { get; set; }
+
+        List<Skill> Skills { get; set; }
+        List<Specialization> Specializations { get; set; }
+
+        List<Project> Projects { get; set; }
+        List<ProjectTool> ProjectTools { get; set; }
+
+        List<StickyNoteCollection> StickyNoteCollections { get; set; }
+
+        List<StickyNote> StickyNotes { get; set; }
+
 
     }
 
