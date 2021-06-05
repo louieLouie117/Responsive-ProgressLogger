@@ -1,9 +1,36 @@
 <head>
+    <script>
+        $(document).ready(function () {
+            $('#StickyNoteCollectionForm').submit(function (event) {
+                event.preventDefault();
+                let stickyNoteTitle = $('#stickyNoteTitle').val();
 
+                let jsonData = {
+                    title: stickyNoteTitle,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("StickyNoteCollectionHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+            })
+
+        })
+    </script>
 </head>
 
 <body>
     <div class="stickyNotes-container" id="stickyNotesPartial">
         <h1>Stickynotes</h1>
+        <form method="POST" id="StickyNoteCollectionForm">
+            <input id="stickyNoteTitle" type="text" placeholder="Title">
+            <input type="submit" value="Post">
+
+        </form>
     </div>
 </body>

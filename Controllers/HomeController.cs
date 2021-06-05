@@ -682,6 +682,15 @@ namespace ProgressLog.Controllers
 
             return Json(new { Status = "Success" });
         }
+        [HttpPost("StickyNoteCollectionHandler")]
+
+
+        public IActionResult StickyNoteCollectionHandler(StickyNoteCollection FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of activity category {FromForm.Title}");
+
+            return Json(new { Status = "Success" });
+        }
 
 
 
