@@ -1,0 +1,41 @@
+<head>
+    <script>
+        $(document).ready(function () {
+            $('#PostToFeedForm').submit(function (event) {
+                event.preventDefault();
+                let postMessage = $('#PostMessage').val();
+
+                let jsonData = {
+                    message: postMessage,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("PostFeedHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+
+
+            })
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="Post-Feed">
+        <h1>Post feed</h1>
+        <form method="POST" id="PostToFeedForm">
+            <input id="PostMessage" type="text" placeholder="what is on your mind?">
+            <input type="submit" value="Post">
+
+        </form>
+
+    </div>
+
+</body>

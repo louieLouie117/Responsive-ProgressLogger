@@ -666,6 +666,15 @@ namespace ProgressLog.Controllers
 
 
 
+        // Processing Forms------------------------------------------------
+        [HttpPost("PostFeedHandler")]
+        public IActionResult PostFeedHandler()
+        {
+            System.Console.WriteLine("you have reached the backend");
+
+            return Json(new { Status = "Success" });
+        }
+
 
 
 
