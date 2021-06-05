@@ -666,11 +666,19 @@ namespace ProgressLog.Controllers
 
 
 
-        // Processing Forms------------------------------------------------
+        // =================Processing Forms===============
         [HttpPost("PostFeedHandler")]
         public IActionResult PostFeedHandler()
         {
-            System.Console.WriteLine("you have reached the backend");
+            System.Console.WriteLine("you have reached the backend of post feed");
+
+            return Json(new { Status = "Success" });
+        }
+
+        [HttpPost("ActivityCategoryHandler")]
+        public IActionResult ActivityCategoryHandler()
+        {
+            System.Console.WriteLine("you have reached the backend of activity category");
 
             return Json(new { Status = "Success" });
         }
