@@ -5,7 +5,7 @@ const showSignIn= (e)=>{
         document.getElementById("signInContainer").style.marginTop = "0px"
         document.getElementById("signInContainer").style.transform = "smooth"
         document.getElementById("signInContainer").style.transition = ".5s"
-        e.target.innerText = "close";
+        // e.target.innerText = "close";
 
 
     return (logInEvent = "open");
@@ -14,7 +14,7 @@ const showSignIn= (e)=>{
         document.getElementById("signInContainer").style.marginTop = "-2300px"
         document.getElementById("signInContainer").style.transform = "smooth"
         document.getElementById("signInContainer").style.transition = ".5s"
-        e.target.innerText = "sign in";
+        // e.target.innerText = "sign in";
 
         return (logInEvent = "close");
 
