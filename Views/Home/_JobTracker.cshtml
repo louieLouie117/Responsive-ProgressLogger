@@ -1,17 +1,17 @@
 <head>
     <script>
         $(document).ready(function () {
-            $('#TodoListForm').submit(function (event) {
+            $('#JobTrackerForm').submit(function (event) {
                 event.preventDefault();
-                let TodoListTitle = $('#TodoListTitle').val();
+                let jobTrackerTitle = $('#jobTrackerTitle').val();
 
                 let jsonData = {
-                    title: TodoListTitle,
+                    title: jobTrackerTitle,
                 };
 
                 $.ajax({
                     type: 'POST',
-                    url: '@Url.Action("TodoListHandler", "Home")',
+                    url: '@Url.Action("JobTrackerHandler", "Home")',
                     data: jsonData,
 
                 })
@@ -28,5 +28,10 @@
 <body>
     <div class="jobTracker-container" id="jobTrackerPartial">
         <h1>Job Tracker</h1>
+        <form method="POST" id="JobTrackerForm">
+            <input id="jobTrackerTitle" type="text" placeholder="Title">
+            <input type="submit" value="Post">
+
+        </form>
     </div>
 </body>

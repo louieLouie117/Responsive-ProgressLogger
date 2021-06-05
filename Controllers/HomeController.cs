@@ -716,6 +716,14 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success" });
         }
 
+        [HttpPost("JobTrackerHandler")]
+        public IActionResult JobTrackerHandler(JobTracker FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of job tracker {FromForm.Title}");
+
+            return Json(new { Status = "Success" });
+        }
+
 
 
 
