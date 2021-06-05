@@ -1,9 +1,37 @@
 <head>
+    <script>
+        $(document).ready(function () {
+            $('#TodoListForm').submit(function (event) {
+                event.preventDefault();
+                let TodoListTitle = $('#TodoListTitle').val();
+
+                let jsonData = {
+                    title: TodoListTitle,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("TodoListHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+            })
+
+        })
+    </script>
 
 </head>
 
 <body>
     <div class="todoList-container" id="todoListPartial">
-        <h1>Todo List</h1>
+        <h1>Todo List test</h1>
+        <form method="POST" id="TodoListForm">
+            <input id="TodoListTitle" type="text" placeholder="Title">
+            <input type="submit" value="Post">
+
+        </form>
     </div>
 </body>

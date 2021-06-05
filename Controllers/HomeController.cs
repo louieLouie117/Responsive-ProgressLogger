@@ -700,6 +700,14 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success" });
         }
 
+        [HttpPost("TodoListHandler")]
+        public IActionResult TodoListHandler(TodoList FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of todo list collection {FromForm.Title}");
+
+            return Json(new { Status = "Success" });
+        }
+
 
 
 
