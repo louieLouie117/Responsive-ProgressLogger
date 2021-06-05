@@ -69,20 +69,86 @@ namespace ProgressLog.Models
         [DataType(DataType.Password)]
         public string Confirm { get; set; }
 
-        // nav properties
+        // nav properties for Daily Journal-------------------------
         List<LogRecord> LogRecords { get; set; }
         List<Section> Sections { get; set; }
 
-        List<Skill> Skills { get; set; }
-        List<Specialization> Specializations { get; set; }
+        // nav properties for Activity Tracker------------------------------------------------
+        List<ActivityCategory> ActivityCategorys { get; set; }
+        List<ActivityLog> ActivityLogs { get; set; }
 
+        // nav properties for Appretice------------------------------------------------
+        List<Apprentice> Apprentices { get; set; }
+        List<ApprenticeList> ApprenticeLists { get; set; }
+
+        // nav properties for Booksmakes------------------------------------------------
+        List<BookmarkCollection> BookmarkCollections { get; set; }
+        List<Bookmark> Bookmarks { get; set; }
+
+
+        // nav properties for Connections------------------------------------------------
+        List<Connection> Connections { get; set; }
+        List<ConnectionList> ConnectionLists { get; set; }
+
+
+        // nav properties for DailyRoutine------------------------------------------------
+        List<DailyRoutine> DailyRoutines { get; set; }
+
+        // nav properties for Followers------------------------------------------------
+        List<FollowerList> FollowerLists { get; set; }
+        List<Follower> Followers { get; set; }
+
+        // nav properties for Job Tracker------------------------------------------------
+        List<JobTracker> JobTrackers { get; set; }
+        List<JobTrackerNote> JobTrackerNotes { get; set; }
+        // nav properties for Post------------------------------------------------
+
+        List<Post> Posts { get; set; }
+        List<PostComment> PostComments { get; set; }
+
+        // nav properties for Projects-----------------------------------------
         List<Project> Projects { get; set; }
         List<ProjectTool> ProjectTools { get; set; }
 
+        // nav properties for Skills---------------------------------
+        List<Skill> Skills { get; set; }
+        List<Specialization> Specializations { get; set; }
+
+        // nav properties for Skills-----------------------------------------------
         List<StickyNoteCollection> StickyNoteCollections { get; set; }
-
         List<StickyNote> StickyNotes { get; set; }
+        // nav properties for Skills-----------------------------------------------
+        List<TodoList> TodoLists { get; set; }
+        List<TodoListItem> TodoListItems { get; set; }
 
+        // nav properties for Skills------------------------------------------------
+        // nav properties for Skills------------------------------------------------
+        // nav properties for Skills------------------------------------------------
+
+
+
+
+
+        // Kim: 1) The other end of the O2M/O2O for Follower,  e.g. Follower  <- User
+        // List<Follower> {Name} { get; set; } O2M
+        // Follower {Name} { get; set; } O2O
+
+        // Kim: 2) The other end of the M2M for Follower,  e.g. Follower -> FollowerList <- User
+        // List<FollowerList> {Name} { get; set; } M2M
+
+        // Kim: 3) The other end of the O2M/O2O for Apprentice,  e.g. Apprentice  <- User
+        // List<Apprentice> {Name} { get; set; } O2M
+        // Apprentice {Name} { get; set; } O2O
+
+        // Kim: 4) The other end of the M2M for Apprentice,  e.g. Apprentice -> ApprenticeList <- User
+        // List<ApprenticeList> {Name} { get; set; } M2M
+
+        // Kim: 5) The other end of the O2M/O2O for Collection,  e.g. Collection  <- User
+        // List<Collection> {Name} { get; set; } O2M
+        // Collection {Name} { get; set; } O2O
+
+        // Kim: 6) The other end of the M2M for Collection,  e.g. Collection -> CollectionList <- User
+        // List<CollectionList> {Name} { get; set; } M2M
 
     }
 
