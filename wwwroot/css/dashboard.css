@@ -130,6 +130,7 @@ body{margin: 0;}
 
 .menuList-container aside{
 	display: grid;
+	margin-top: 20px;
 	grid-template-rows: 50px;
 	align-content: flex-start;
 	height: 150px;

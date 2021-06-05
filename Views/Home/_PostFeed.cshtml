@@ -17,10 +17,26 @@
                 })
 
                 console.log("data to be set to the backend:", jsonData);
-
-
-
             })
+
+            $.get("/DisplayPostFeed", data => {
+                RenderData(data);
+            })
+
+            const RenderData = (data) => {
+                console.log("post feed data", data.data)
+                $.each(data.data, function (i, v) {
+                    console.log("message", v.message)
+
+
+                    $(`
+                     <li>${v.message}</li>
+                    `).prependTo("#AllPostFeed");
+
+                });
+
+
+            };
 
         })
     </script>
@@ -29,12 +45,22 @@
 
 <body>
     <div class="Post-Feed">
-        <h1>Post feed</h1>
-        <form method="POST" id="PostToFeedForm">
-            <input id="PostMessage" type="text" placeholder="what is on your mind?">
-            <input type="submit" value="Post">
 
-        </form>
+        <head>
+            <h1>Post feed</h1>
+            <form method="POST" id="PostToFeedForm">
+                <input id="PostMessage" type="text" placeholder="what is on your mind?">
+                <input type="submit" value="Post">
+
+            </form>
+        </head>
+        <main>
+            <h2>Data from the data base</h2>
+            <ul id="AllPostFeed">
+
+            </ul>
+
+        </main>
 
     </div>
 

@@ -687,6 +687,8 @@ namespace ProgressLog.Controllers
             _context.Add(FromForm);
             _context.SaveChanges();
 
+            // List<Post> PostFeed = _context.Posts.ToList();
+
             return Json(new { Status = "Success" });
         }
 
@@ -778,6 +780,8 @@ namespace ProgressLog.Controllers
             _context.Add(FromForm);
             _context.SaveChanges();
 
+
+
             return Json(new { Status = "Success" });
         }
 
@@ -799,7 +803,17 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success" });
         }
 
+        // =================REnder data back to the user==============
 
+        [HttpGet("DisplayPostFeed")]
+        public JsonResult DisplayPostFeed()
+        {
+
+            List<Post> PostFeed = _context.Posts.ToList();
+
+
+            return Json(new { Status = "Success", data = PostFeed });
+        }
 
 
 
