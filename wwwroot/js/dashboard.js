@@ -54,6 +54,8 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
 
     }
 
@@ -65,6 +67,8 @@ const PartialHandler = (e) =>{
         document.getElementById("stickyNotesPartial").style.display = "none"
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
 
     }
 
@@ -77,6 +81,8 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
     }
 
     if(e.target.innerText === "Activity Tracker"){
@@ -88,6 +94,8 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
     }
 
     if(e.target.innerText === "Stickynotes"){
@@ -99,6 +107,8 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
     }
 
     if(e.target.innerText === "Bookmarks"){
@@ -110,6 +120,8 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "grid"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
     }
 
     if(e.target.innerText === "Todo-list"){
@@ -121,6 +133,8 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "grid"
         document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
     }
 
     if(e.target.innerText === "Job Tracker"){
@@ -132,6 +146,21 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "grid"
+        document.getElementById("dailyRoutinePartial").style.display = "none"
+
+    }
+
+    if(e.target.innerText === "Daily Routine"){
+        document.getElementById("profilePartial").style.display = "none"
+        document.getElementById("dailyLogPartial").style.display = "none"
+        document.getElementById("networkPartial").style.display = "none"
+        document.getElementById("activityTrackerPartial").style.display = "none"
+        document.getElementById("stickyNotesPartial").style.display = "none"
+        document.getElementById("bookmarksPartial").style.display = "none"
+        document.getElementById("todoListPartial").style.display = "none"
+        document.getElementById("jobTrackerPartial").style.display = "none"
+        document.getElementById("dailyRoutinePartial").style.display = "grid"
+
     }
 
 

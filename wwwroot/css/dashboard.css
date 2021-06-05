@@ -241,7 +241,7 @@ body{margin: 0;}
 #profilePartial, #networkPartial, 
 #activityTrackerPartial, #stickyNotesPartial,
 #bookmarksPartial, #todoListPartial,
-#jobTrackerPartial{
+#jobTrackerPartial, #dailyRoutinePartial{
 	display: none;
 }
 
