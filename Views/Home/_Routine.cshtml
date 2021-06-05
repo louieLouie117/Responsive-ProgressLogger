@@ -1,0 +1,38 @@
+<head>
+    <script>
+        $(document).ready(function () {
+            alert("Routine")
+            $('#DailyRoutineForm').submit(function (event) {
+                event.preventDefault();
+                let RoutineActivity = $('#RoutineActivity').val();
+
+                let jsonData = {
+                    activity: RoutineActivity,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("DailyRoutineHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+            })
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="dailyRoutine-container" id="dailyRoutinePartial">
+        <h1>Daily Routine</h1>
+        <form method="POST" id="DailyRoutineForm">
+            <input id="RoutineActivity" type="text" placeholder="Activity">
+            <input type="submit" value="Post">
+
+        </form>
+    </div>
+</body>

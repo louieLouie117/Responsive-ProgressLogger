@@ -708,6 +708,14 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success" });
         }
 
+        [HttpPost("DailyRoutineHandler")]
+        public IActionResult DailyRoutineHandler(DailyRoutine FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of daily routine {FromForm.Activity}");
+
+            return Json(new { Status = "Success" });
+        }
+
 
 
 
