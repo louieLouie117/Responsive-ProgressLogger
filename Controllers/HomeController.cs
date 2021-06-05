@@ -815,6 +815,19 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success", data = PostFeed });
         }
 
+        [HttpGet("DisplayDailyRoutine")]
+        public JsonResult DisplayDailyRoutine()
+        {
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+
+            List<DailyRoutine> UserDailyRoutine = _context.DailyRoutines
+            .Where(us => us.UserId == GetUserbyId)
+            .ToList();
+
+            return Json(new { Status = "Success", data = UserDailyRoutine });
+        }
+
 
 
     }

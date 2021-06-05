@@ -27,16 +27,13 @@
                 console.log("post feed data", data.data)
                 $.each(data.data, function (i, v) {
                     console.log("message", v.message)
-
-
                     $(`
                      <li>${v.message}</li>
                     `).prependTo("#AllPostFeed");
 
                 });
-
-
             };
+
 
         })
     </script>
@@ -56,6 +53,7 @@
         </head>
         <main>
             <h2>Data from the data base</h2>
+
             <ul id="AllPostFeed">
 
             </ul>
