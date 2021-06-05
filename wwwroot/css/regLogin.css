@@ -3,6 +3,15 @@
 .signIn-container form{
     display: grid;
     padding: 50px;
+    row-gap: 5px;
+}
+
+.signIn-container form button{
+    background: #136DC0;
+    font: 1.3em sans-serif;
+    color: white;
+    border: none;
+    height: 40px;
 }
 
 .reg-container,

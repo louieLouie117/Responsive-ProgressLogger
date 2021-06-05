@@ -45,6 +45,7 @@ namespace ProgressLog.Controllers
         [HttpGet("login")]
         public IActionResult login()
         {
+            System.Console.WriteLine("from was submitted");
             return View("login");
         }
 
@@ -145,7 +146,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("you have reach the sections backend.");
 
@@ -195,7 +196,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("You have successfully reach the backend of delete section");
             System.Console.WriteLine($"id: {DataId.SectionId}");
@@ -219,7 +220,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
 
             System.Console.WriteLine("You have successfully reach the backend of filtering section");
@@ -287,7 +288,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("You have reached the backend of new log.");
             System.Console.WriteLine($"Data from user: {FromForm.TextLog}");
@@ -316,7 +317,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
 
             System.Console.WriteLine("You have reached the backend of editing log.");
@@ -429,7 +430,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("you have reach the backend of delete Log entry");
             System.Console.WriteLine($"this is the id: {DataId.LogRecordId}");
@@ -647,7 +648,7 @@ namespace ProgressLog.Controllers
 
             }
 
-            return View("login");
+            return View("index");
 
         }
 
