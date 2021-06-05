@@ -1,9 +1,36 @@
 <head>
+    <script>
+        $(document).ready(function () {
+            $('#BookmarkCollectionForm').submit(function (event) {
+                event.preventDefault();
+                let bookmakerTitle = $('#bookmakerTitle').val();
 
+                let jsonData = {
+                    title: bookmakerTitle,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("BookmakerCollectionHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+            })
+
+        })
+    </script>
 </head>
 
 <body>
     <div class="bookmarks-container" id="bookmarksPartial">
         <h1>Bookmarks</h1>
+        <form method="POST" id="BookmarkCollectionForm">
+            <input id="bookmakerTitle" type="text" placeholder="Title">
+            <input type="submit" value="Post">
+
+        </form>
     </div>
 </body>

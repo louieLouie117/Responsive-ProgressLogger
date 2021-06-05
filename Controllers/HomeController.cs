@@ -682,16 +682,23 @@ namespace ProgressLog.Controllers
 
             return Json(new { Status = "Success" });
         }
+
+
         [HttpPost("StickyNoteCollectionHandler")]
-
-
         public IActionResult StickyNoteCollectionHandler(StickyNoteCollection FromForm)
         {
-            System.Console.WriteLine($"you have reached the backend of activity category {FromForm.Title}");
+            System.Console.WriteLine($"you have reached the backend of stickynotes collection {FromForm.Title}");
 
             return Json(new { Status = "Success" });
         }
 
+        [HttpPost("BookmakerCollectionHandler")]
+        public IActionResult BookmakerCollectionHandler(BookmarkCollection FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of bookmaker collection {FromForm.Title}");
+
+            return Json(new { Status = "Success" });
+        }
 
 
 
