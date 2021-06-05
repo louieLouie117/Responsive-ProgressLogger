@@ -83,6 +83,26 @@ namespace ProgressLog.Models
 
         List<StickyNote> StickyNotes { get; set; }
 
+        // Kim: 1) The other end of the O2M/O2O for Follower,  e.g. Follower  <- User
+        // List<Follower> {Name} { get; set; } O2M
+        // Follower {Name} { get; set; } O2O
+
+        // Kim: 2) The other end of the M2M for Follower,  e.g. Follower -> FollowerList <- User
+        // List<FollowerList> {Name} { get; set; } M2M
+
+        // Kim: 3) The other end of the O2M/O2O for Apprentice,  e.g. Apprentice  <- User
+        // List<Apprentice> {Name} { get; set; } O2M
+        // Apprentice {Name} { get; set; } O2O
+
+        // Kim: 4) The other end of the M2M for Apprentice,  e.g. Apprentice -> ApprenticeList <- User
+        // List<ApprenticeList> {Name} { get; set; } M2M
+
+        // Kim: 5) The other end of the O2M/O2O for Collection,  e.g. Collection  <- User
+        // List<Collection> {Name} { get; set; } O2M
+        // Collection {Name} { get; set; } O2O
+
+        // Kim: 6) The other end of the M2M for Collection,  e.g. Collection -> CollectionList <- User
+        // List<CollectionList> {Name} { get; set; } M2M
 
     }
 
