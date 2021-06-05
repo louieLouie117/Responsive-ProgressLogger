@@ -672,6 +672,21 @@ namespace ProgressLog.Controllers
         {
             System.Console.WriteLine($"you have reached the backend of post feed {FromForm.Message}");
 
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+            FromForm.ImageLink = "";
+            FromForm.VideoLink = "";
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
             return Json(new { Status = "Success" });
         }
 
@@ -679,6 +694,16 @@ namespace ProgressLog.Controllers
         public IActionResult ActivityCategoryHandler(ActivityCategory FromForm)
         {
             System.Console.WriteLine($"you have reached the backend of activity category {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
 
             return Json(new { Status = "Success" });
         }
@@ -688,6 +713,16 @@ namespace ProgressLog.Controllers
         public IActionResult StickyNoteCollectionHandler(StickyNoteCollection FromForm)
         {
             System.Console.WriteLine($"you have reached the backend of stickynotes collection {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
 
             return Json(new { Status = "Success" });
         }
@@ -696,6 +731,16 @@ namespace ProgressLog.Controllers
         public IActionResult BookmakerCollectionHandler(BookmarkCollection FromForm)
         {
             System.Console.WriteLine($"you have reached the backend of bookmaker collection {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
 
             return Json(new { Status = "Success" });
         }
@@ -704,6 +749,16 @@ namespace ProgressLog.Controllers
         public IActionResult TodoListHandler(TodoList FromForm)
         {
             System.Console.WriteLine($"you have reached the backend of todo list collection {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
 
             return Json(new { Status = "Success" });
         }
@@ -712,6 +767,16 @@ namespace ProgressLog.Controllers
         public IActionResult DailyRoutineHandler(DailyRoutine FromForm)
         {
             System.Console.WriteLine($"you have reached the backend of daily routine {FromForm.Activity}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
 
             return Json(new { Status = "Success" });
         }
@@ -720,6 +785,16 @@ namespace ProgressLog.Controllers
         public IActionResult JobTrackerHandler(JobTracker FromForm)
         {
             System.Console.WriteLine($"you have reached the backend of job tracker {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
 
             return Json(new { Status = "Success" });
         }
