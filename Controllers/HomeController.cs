@@ -103,7 +103,6 @@ namespace ProgressLog.Controllers
                 .ToList();
 
             MainWrapper wMod = new MainWrapper();
-
             wMod.User = UserIndb;
             // this one line of code save me but why and how?
 

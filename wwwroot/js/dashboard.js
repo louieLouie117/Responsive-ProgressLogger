@@ -182,3 +182,26 @@ const PartialHandler = (e) =>{
 
 }
 
+
+const RecommendationHandler = (e) => {
+
+    if( e.target.innerText === "Get Started"){
+        document.querySelector("#GetStartedPartial").style.marginLeft = "0%";
+        document.getElementById("GetStartedPartial").style.transform = "smooth";
+        document.getElementById("GetStartedPartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "-1000px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s";
+
+    };
+
+    if( e.target.innerText === "back"){
+        document.querySelector("#GetStartedPartial").style.marginLeft = "-100%";
+        document.getElementById("GetStartedPartial").style.transform = "smooth";
+        document.getElementById("GetStartedPartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "0px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s";
+
+    }
+}
