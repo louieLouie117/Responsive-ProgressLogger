@@ -551,11 +551,12 @@ button{
     outline: none;
     position: fixed;
     bottom:  25px;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%);
     z-index: 5;
     height: 30px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.562);
+    width: 50%;
 
 }
 
@@ -816,6 +817,7 @@ button{
 
     .newLog_container form textarea{
         width: 40vw;
+        left: 50%;
     }
 
   

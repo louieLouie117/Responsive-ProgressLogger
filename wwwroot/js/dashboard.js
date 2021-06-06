@@ -184,24 +184,92 @@ const PartialHandler = (e) =>{
 
 
 const RecommendationHandler = (e) => {
-
-    if( e.target.innerText === "Get Started"){
+    
+    if(e.target.innerText === "Get Started"){
         document.querySelector("#GetStartedPartial").style.marginLeft = "0%";
         document.getElementById("GetStartedPartial").style.transform = "smooth";
         document.getElementById("GetStartedPartial").style.transition = ".5s";
         document.querySelector("#mainMenu").style.marginLeft = "-1000px";
         document.getElementById("mainMenu").style.transform = "smooth";
         document.getElementById("mainMenu").style.transition = ".5s";
+    };
 
+    if( e.target.innerText === "Materials & Books"){       
+        document.querySelector("#BooksMaterialsPartial").style.marginLeft = "0%";
+        document.getElementById("BooksMaterialsPartial").style.transform = "smooth";
+        document.getElementById("BooksMaterialsPartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "-1000px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s"; 
+
+    };
+    
+    if(e.target.innerText === "Grammarly"){
+        document.querySelector("#GrammarlyPartial").style.marginLeft = "0%";
+        document.getElementById("GrammarlyPartial").style.transform = "smooth";
+        document.getElementById("GrammarlyPartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "-1000px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s"; 
+    };
+    if(e.target.innerText === "Support & Help"){
+        document.querySelector("#HepSupportPartial").style.marginLeft = "0%";
+        document.getElementById("HepSupportPartial").style.transform = "smooth";
+        document.getElementById("HepSupportPartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "-1000px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s"; 
+    };
+    if(e.target.innerText === "Terms of Service"){
+        document.querySelector("#TermsOfServicePartial").style.marginLeft = "0%";
+        document.getElementById("TermsOfServicePartial").style.transform = "smooth";
+        document.getElementById("TermsOfServicePartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "-1000px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s"; 
+    };
+    if(e.target.innerText === "Privacy Policy"){
+        document.querySelector("#PrivacyPolicyPartial").style.marginLeft = "0%";
+        document.getElementById("PrivacyPolicyPartial").style.transform = "smooth";
+        document.getElementById("PrivacyPolicyPartial").style.transition = ".5s";
+        document.querySelector("#mainMenu").style.marginLeft = "-1000px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s"; 
     };
 
     if( e.target.innerText === "back"){
+        document.querySelector("#mainMenu").style.marginLeft = "0px";
+        document.getElementById("mainMenu").style.transform = "smooth";
+        document.getElementById("mainMenu").style.transition = ".5s"; 
+        
+        // Hide Get Started
         document.querySelector("#GetStartedPartial").style.marginLeft = "-100%";
         document.getElementById("GetStartedPartial").style.transform = "smooth";
         document.getElementById("GetStartedPartial").style.transition = ".5s";
-        document.querySelector("#mainMenu").style.marginLeft = "0px";
-        document.getElementById("mainMenu").style.transform = "smooth";
-        document.getElementById("mainMenu").style.transition = ".5s";
+      
+        // Hide Get Books and materials
+        document.querySelector("#BooksMaterialsPartial").style.marginLeft = "-100%";
+        document.getElementById("BooksMaterialsPartial").style.transform = "smooth";
+        document.getElementById("BooksMaterialsPartial").style.transition = ".5s";
 
+        // Hide Grammarly
+        document.querySelector("#GrammarlyPartial").style.marginLeft = "-100%";
+        document.getElementById("GrammarlyPartial").style.transform = "smooth";
+        document.getElementById("GrammarlyPartial").style.transition = ".5s";
+
+         // Hide help
+         document.querySelector("#HepSupportPartial").style.marginLeft = "-100%";
+         document.getElementById("HepSupportPartial").style.transform = "smooth";
+         document.getElementById("HepSupportPartial").style.transition = ".5s";
+
+        // Hide terms
+        document.querySelector("#TermsOfServicePartial").style.marginLeft = "-100%";
+        document.getElementById("TermsOfServicePartial").style.transform = "smooth";
+        document.getElementById("TermsOfServicePartial").style.transition = ".5s";
+
+        // Hide privay
+        document.querySelector("#PrivacyPolicyPartial").style.marginLeft = "-100%";
+        document.getElementById("PrivacyPolicyPartial").style.transform = "smooth";
+        document.getElementById("PrivacyPolicyPartial").style.transition = ".5s";
     }
 }
