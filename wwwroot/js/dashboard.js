@@ -45,7 +45,7 @@ const PartialHandler = (e) =>{
     console.log(e.target.innerText)
 
     if(e.target.innerText === "Profile"){
-        alert("Profile is under development :)");
+        alert("Profile is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "grid"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -75,7 +75,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Social Network"){
-        alert("Social Network is under development :)");
+        alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -90,7 +90,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Activity Tracker"){
-        alert("Activity Tracker under development :)");
+        alert("Activity Tracker is under development. When it is ready, it will move to the top. Please check back :)");
         return        
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -105,7 +105,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Stickynotes"){
-        alert("Stickynotes is under development :)");
+        alert("Stickynotes is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -120,7 +120,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Bookmarks"){
-        alert("Bookmaker is under development :)");
+        alert("Bookmaker is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -135,7 +135,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Todo-list"){
-        alert("Todo List is under development :)");
+        alert("Todo List is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -150,7 +150,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Job Tracker"){
-        alert("Job Tracker is under development :)");
+        alert("Job Tracker is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
@@ -165,7 +165,7 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Daily Routine"){
-        alert("Daily Routine is under development :)");
+        alert("Daily Routine is under development. When it is ready, it will move to the top. Please check back :)");
         return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"

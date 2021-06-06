@@ -540,6 +540,7 @@ namespace ProgressLog.Controllers
                 FromForm.Database = "MySQL, MongoDB";
                 FromForm.VersionControl = "Git, GitHub";
                 FromForm.FrameworksLibraries = "jQuery, Ajax";
+                FromForm.RoutineMessage = "Enter a message on why you are starting this routine.";
 
 
                 // Add to db
@@ -595,6 +596,7 @@ namespace ProgressLog.Controllers
                 FromForm.Database = "MySQL, MongoDB";
                 FromForm.VersionControl = "Git, GitHub";
                 FromForm.FrameworksLibraries = "React, Express, Node, Express-fileupload, Django ASP.NET, Entity Framework, jQuery, Ajax, SASS";
+                FromForm.RoutineMessage = "Enter a message on why you are starting this routine.";
 
 
                 // Add to db
