@@ -1,9 +1,37 @@
 <head>
+    <script>
+        $(document).ready(function () {
+            $('#JobTrackerForm').submit(function (event) {
+                event.preventDefault();
+                let jobTrackerTitle = $('#jobTrackerTitle').val();
+
+                let jsonData = {
+                    title: jobTrackerTitle,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("JobTrackerHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+            })
+
+        })
+    </script>
 
 </head>
 
 <body>
     <div class="jobTracker-container" id="jobTrackerPartial">
         <h1>Job Tracker</h1>
+        <form method="POST" id="JobTrackerForm">
+            <input id="jobTrackerTitle" type="text" placeholder="Title">
+            <input type="submit" value="Post">
+
+        </form>
     </div>
 </body>

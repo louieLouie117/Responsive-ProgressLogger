@@ -45,6 +45,7 @@ namespace ProgressLog.Controllers
         [HttpGet("login")]
         public IActionResult login()
         {
+            System.Console.WriteLine("from was submitted");
             return View("login");
         }
 
@@ -102,7 +103,6 @@ namespace ProgressLog.Controllers
                 .ToList();
 
             MainWrapper wMod = new MainWrapper();
-
             wMod.User = UserIndb;
             // this one line of code save me but why and how?
 
@@ -145,7 +145,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("you have reach the sections backend.");
 
@@ -195,7 +195,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("You have successfully reach the backend of delete section");
             System.Console.WriteLine($"id: {DataId.SectionId}");
@@ -219,7 +219,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
 
             System.Console.WriteLine("You have successfully reach the backend of filtering section");
@@ -287,7 +287,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("You have reached the backend of new log.");
             System.Console.WriteLine($"Data from user: {FromForm.TextLog}");
@@ -316,7 +316,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
 
             System.Console.WriteLine("You have reached the backend of editing log.");
@@ -429,7 +429,7 @@ namespace ProgressLog.Controllers
             // block pages is not in session
             if (HttpContext.Session.GetInt32("UserId") == null)
             {
-                return RedirectToAction("login");
+                return RedirectToAction("index");
             }
             System.Console.WriteLine("you have reach the backend of delete Log entry");
             System.Console.WriteLine($"this is the id: {DataId.LogRecordId}");
@@ -539,6 +539,7 @@ namespace ProgressLog.Controllers
                 FromForm.Database = "MySQL, MongoDB";
                 FromForm.VersionControl = "Git, GitHub";
                 FromForm.FrameworksLibraries = "jQuery, Ajax";
+                FromForm.RoutineMessage = "Enter a message on why you are starting this routine.";
 
 
                 // Add to db
@@ -594,6 +595,7 @@ namespace ProgressLog.Controllers
                 FromForm.Database = "MySQL, MongoDB";
                 FromForm.VersionControl = "Git, GitHub";
                 FromForm.FrameworksLibraries = "React, Express, Node, Express-fileupload, Django ASP.NET, Entity Framework, jQuery, Ajax, SASS";
+                FromForm.RoutineMessage = "Enter a message on why you are starting this routine.";
 
 
                 // Add to db
@@ -631,7 +633,7 @@ namespace ProgressLog.Controllers
                 if (userInDb == null)
                 {
                     ModelState.AddModelError("Email", "Invalid Email/Password");
-                    return View("login");
+                    return View("index");
                 }
                 // Check hashing are the same
                 var hasher = new PasswordHasher<LoginUser>();
@@ -647,7 +649,7 @@ namespace ProgressLog.Controllers
 
             }
 
-            return View("login");
+            return View("index");
 
         }
 
@@ -665,8 +667,167 @@ namespace ProgressLog.Controllers
 
 
 
+        // =================Processing Forms===============
+        [HttpPost("PostFeedHandler")]
+        public IActionResult PostFeedHandler(Post FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of post feed {FromForm.Message}");
+
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
 
 
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+            FromForm.ImageLink = "";
+            FromForm.VideoLink = "";
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            // List<Post> PostFeed = _context.Posts.ToList();
+
+            return Json(new { Status = "Success" });
+        }
+
+        [HttpPost("ActivityCategoryHandler")]
+        public IActionResult ActivityCategoryHandler(ActivityCategory FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of activity category {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            return Json(new { Status = "Success" });
+        }
+
+
+        [HttpPost("StickyNoteCollectionHandler")]
+        public IActionResult StickyNoteCollectionHandler(StickyNoteCollection FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of stickynotes collection {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            return Json(new { Status = "Success" });
+        }
+
+        [HttpPost("BookmakerCollectionHandler")]
+        public IActionResult BookmakerCollectionHandler(BookmarkCollection FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of bookmaker collection {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            return Json(new { Status = "Success" });
+        }
+
+        [HttpPost("TodoListHandler")]
+        public IActionResult TodoListHandler(TodoList FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of todo list collection {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            return Json(new { Status = "Success" });
+        }
+
+        [HttpPost("DailyRoutineHandler")]
+        public IActionResult DailyRoutineHandler(DailyRoutine FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of daily routine {FromForm.Activity}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+
+
+            return Json(new { Status = "Success" });
+        }
+
+        [HttpPost("JobTrackerHandler")]
+        public IActionResult JobTrackerHandler(JobTracker FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of job tracker {FromForm.Title}");
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            return Json(new { Status = "Success" });
+        }
+
+        // =================REnder data back to the user==============
+
+        [HttpGet("DisplayPostFeed")]
+        public JsonResult DisplayPostFeed()
+        {
+
+            List<Post> PostFeed = _context.Posts.ToList();
+
+
+            return Json(new { Status = "Success", data = PostFeed });
+        }
+
+        [HttpGet("DisplayDailyRoutine")]
+        public JsonResult DisplayDailyRoutine()
+        {
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+
+            List<DailyRoutine> UserDailyRoutine = _context.DailyRoutines
+            .Where(us => us.UserId == GetUserbyId)
+            .ToList();
+
+            return Json(new { Status = "Success", data = UserDailyRoutine });
+        }
 
 
 

@@ -1,9 +1,38 @@
 <head>
+    <script>
+        $(document).ready(function () {
+            $('#ActivityCategoryForm').submit(function (event) {
+                event.preventDefault();
+                let postTitle = $('#PostTitle').val();
+
+                let jsonData = {
+                    title: postTitle,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("ActivityCategoryHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+                console.log("data to be set to the backend:", jsonData);
+
+            })
+
+        })
+    </script>
+
 
 </head>
 
 <body>
     <div class="ativityTracker-container" id="activityTrackerPartial">
         <h1>Activity Tracker</h1>
+        <form method="POST" id="ActivityCategoryForm">
+            <input id="PostTitle" type="text" placeholder="Title">
+            <input type="submit" value="Post">
+
+        </form>
     </div>
 </body>
