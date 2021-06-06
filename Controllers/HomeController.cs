@@ -632,7 +632,7 @@ namespace ProgressLog.Controllers
                 if (userInDb == null)
                 {
                     ModelState.AddModelError("Email", "Invalid Email/Password");
-                    return View("login");
+                    return View("index");
                 }
                 // Check hashing are the same
                 var hasher = new PasswordHasher<LoginUser>();
