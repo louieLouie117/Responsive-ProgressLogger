@@ -42,10 +42,11 @@ const showMainMenu =(e) => {
 
 
 const PartialHandler = (e) =>{
-    showMainMenu()
     console.log(e.target.innerText)
 
     if(e.target.innerText === "Profile"){
+        alert("Profile is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "grid"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
@@ -68,11 +69,14 @@ const PartialHandler = (e) =>{
         document.getElementById("bookmarksPartial").style.display = "none"
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("dailyRoutinePartial").style.display = "none"
+        showMainMenu()
 
 
     }
 
     if(e.target.innerText === "Social Network"){
+        alert("Social Network is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "grid"
@@ -86,6 +90,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Activity Tracker"){
+        alert("Activity Tracker under development :)");
+        return        
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
@@ -99,6 +105,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Stickynotes"){
+        alert("Stickynotes is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
@@ -112,6 +120,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Bookmarks"){
+        alert("Bookmaker is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
@@ -125,6 +135,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Todo-list"){
+        alert("Todo List is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
@@ -138,6 +150,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Job Tracker"){
+        alert("Job Tracker is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
@@ -151,6 +165,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Daily Routine"){
+        alert("Daily Routine is under development :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "none"
