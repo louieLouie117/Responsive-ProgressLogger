@@ -17,7 +17,6 @@
             var sectionData = {
                 title: title,
             };
-            console.log("Section data:", sectionData);
 
             $.ajax({
                 url: '@Url.Action("NewSectionHandler", "Home")',
@@ -47,7 +46,6 @@
         const LoadData = () => {
             $('#sectionItems').load("/DisplaySection #sectionItems", data => {
                 data = JSON.parse(data);
-                console.log("in load", data);
                 RenderData(data);
             });
         };
@@ -56,8 +54,6 @@
             console.log("user Data", data.data)
 
             $.each(data.data, function (key, value) {
-                console.log(value)
-                console.log("section info:", value.sectionId + value.title)
 
                 let sectionId = value.sectionId;
                 let sectionTitle = value.title;

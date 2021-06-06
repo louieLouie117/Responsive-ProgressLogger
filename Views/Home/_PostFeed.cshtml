@@ -16,7 +16,6 @@
 
                 })
 
-                console.log("data to be set to the backend:", jsonData);
             })
 
             $.get("/DisplayPostFeed", data => {
@@ -24,9 +23,7 @@
             })
 
             const RenderData = (data) => {
-                console.log("post feed data", data.data)
                 $.each(data.data, function (i, v) {
-                    console.log("message", v.message)
                     $(`
                      <li>${v.message}</li>
                     `).prependTo("#AllPostFeed");
