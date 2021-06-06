@@ -3,16 +3,11 @@
         $(document).ready(function () {
             $.get("/AllApprentice", data => {
                 RenderData(data);
-                console.log("get data", data)
             });
 
             const RenderData = (data) => {
-                console.log("here is all the mentors", data)
-                console.log("here is all the data", data.getAllApprentice)
 
                 $.each(data.getAllApprentice, function (key, value) {
-                    console.log("value", value)
-                    console.log("value", value.firstName)
 
                     $(`
                        <li>

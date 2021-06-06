@@ -103,7 +103,6 @@ namespace ProgressLog.Controllers
                 .ToList();
 
             MainWrapper wMod = new MainWrapper();
-
             wMod.User = UserIndb;
             // this one line of code save me but why and how?
 
@@ -540,6 +539,7 @@ namespace ProgressLog.Controllers
                 FromForm.Database = "MySQL, MongoDB";
                 FromForm.VersionControl = "Git, GitHub";
                 FromForm.FrameworksLibraries = "jQuery, Ajax";
+                FromForm.RoutineMessage = "Enter a message on why you are starting this routine.";
 
 
                 // Add to db
@@ -595,6 +595,7 @@ namespace ProgressLog.Controllers
                 FromForm.Database = "MySQL, MongoDB";
                 FromForm.VersionControl = "Git, GitHub";
                 FromForm.FrameworksLibraries = "React, Express, Node, Express-fileupload, Django ASP.NET, Entity Framework, jQuery, Ajax, SASS";
+                FromForm.RoutineMessage = "Enter a message on why you are starting this routine.";
 
 
                 // Add to db
@@ -632,7 +633,7 @@ namespace ProgressLog.Controllers
                 if (userInDb == null)
                 {
                     ModelState.AddModelError("Email", "Invalid Email/Password");
-                    return View("login");
+                    return View("index");
                 }
                 // Check hashing are the same
                 var hasher = new PasswordHasher<LoginUser>();

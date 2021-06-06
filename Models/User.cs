@@ -21,6 +21,7 @@ namespace ProgressLog.Models
 
         public string LastName { get; set; }
         public string UserMessage { get; set; }
+        public string RoutineMessage { get; set; }
 
         // Statues-----------------------------
         public bool IsOnline { get; set; }
