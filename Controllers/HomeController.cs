@@ -829,6 +829,17 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success", data = UserDailyRoutine });
         }
 
+        // comment handler
+        [HttpGet("CommentHandler")]
+        public IActionResult CommentHandler(Post DataId)
+        {
+            HttpContext.Session.SetInt32("PostId", DataId.PostId);
+            System.Console.WriteLine($"you have reached the backend post id is: {DataId.PostId}");
+
+
+            return Json(new { Status = "success" });
+        }
+
 
 
     }

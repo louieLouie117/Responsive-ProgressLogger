@@ -75,8 +75,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Social Network"){
-        alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
-        return
+        // alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
+        // return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "grid"
@@ -86,6 +86,7 @@ const PartialHandler = (e) =>{
         document.getElementById("todoListPartial").style.display = "none"
         document.getElementById("jobTrackerPartial").style.display = "none"
         document.getElementById("dailyRoutinePartial").style.display = "none"
+        showMainMenu()
 
     }
 

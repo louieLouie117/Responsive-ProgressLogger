@@ -25,20 +25,44 @@
             const RenderData = (data) => {
                 $.each(data.data, function (i, v) {
                     $(`
-                     <li>${v.message}</li>
+                     <li>
+                         <p>${v.message}</p>
+                         <button id="${v.postId}"> <a id="${v.postId}" onclick="CommentHandler(event)">${v.postId} commment</a></button>
+                     </li>
                     `).prependTo("#AllPostFeed");
 
                 });
             };
-
-
         })
+
+
+        const CommentHandler = (e) => {
+            let postId = e.target.id;
+
+            var jsonData = {
+                postId: postId,
+            };
+
+            console.log("json data post id:", jsonData)
+
+            $.ajax({
+                url: '@Url.Action("CommentHandler", "Home")',
+                type: "GET",
+                data: jsonData,
+                @* success: SuccessStatus, *@
+                @* error: ErrorStatus, *@
+                @* complete: CompleteStatus *@
+            });
+
+        }
+
+
     </script>
 
 </head>
 
 <body>
-    <div class="Post-Feed">
+    <div class="postFeed-container">
 
         <head>
             <h1>Post feed</h1>
@@ -52,6 +76,15 @@
             <h2>Data from the data base</h2>
 
             <ul id="AllPostFeed">
+
+                <footer class="postComments-container" id="PostComments">
+                    <form method="POST" id="PostCommentForm">
+                        <input id="PostComment" type="text" placeholder="What are your thoughts about this post?">
+                        <input type="submit" value="Post">
+
+                    </form>
+
+                </footer>
 
             </ul>
 

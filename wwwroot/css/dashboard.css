@@ -263,3 +263,29 @@ body{margin: 0;}
 	margin-left: -100%;
 	z-index: 100;
 }
+
+
+/* post feed and comments */
+.postFeed-container{
+	display: grid;
+}
+.postFeed-container main ul {
+	display: grid;
+	row-gap: 10px;
+	overflow: scroll;
+}
+
+.postFeed-container main ul li{
+	background: white;
+	max-width: 350px;
+	padding: 20px;
+}
+
+.postComments-container{
+	display: none;
+	background: red;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 350px;
+}
