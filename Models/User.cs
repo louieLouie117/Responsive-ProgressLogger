@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ProgressLog.Models
 {
 
-    public enum AccountType { Apprentice = 0, Mentor = 1, Admin = 2, Lawyer = 3 }
+    public enum AccountType { Apprentice = 0, Mentor = 1, Admin = 2, Lawyer = 3, Accountant = 4 }
     public class User
     {
         [Key]
