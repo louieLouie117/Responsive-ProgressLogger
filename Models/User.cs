@@ -130,12 +130,11 @@ namespace ProgressLog.Models
         List<ExternalLink> ExternalLinks { get; set; }
 
 
-
         // nav properties for chatRoom -----------------------------------------------
         List<ChatRoom> ChatRooms { get; set; }
-        // nav properties for External Link-----------------------------------------------
+        // nav properties for ChatRoomHasMessages-----------------------------------------------
         List<ChatRoomHasMessage> ChatRoomHasMessages { get; set; }
-        // nav properties for External Link-----------------------------------------------
+        // nav properties for CharMessages-----------------------------------------------
         List<ChatMessage> ChatMessages { get; set; }
 
         // Kim: 1) The other end of the O2M/O2O for Follower,  e.g. Follower  <- User
