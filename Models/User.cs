@@ -25,6 +25,7 @@ namespace ProgressLog.Models
 
         // Statues-----------------------------
         public bool IsOnline { get; set; }
+        public bool IsTyping { get; set; }
         public bool ActiveOnChat { get; set; }
         public bool IsActive { get; set; }
         public int FollowersCount { get; set; }
