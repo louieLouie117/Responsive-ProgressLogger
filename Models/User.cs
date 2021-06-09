@@ -112,6 +112,8 @@ namespace ProgressLog.Models
         // nav properties for Projects-----------------------------------------
         List<Project> Projects { get; set; }
         List<ProjectTool> ProjectTools { get; set; }
+        List<ProjectBulletPoint> ProjectBulletPoints { get; set; }
+
 
         // nav properties for Skills---------------------------------
         List<Skill> Skills { get; set; }
