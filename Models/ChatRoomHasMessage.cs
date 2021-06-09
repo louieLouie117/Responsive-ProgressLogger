@@ -18,9 +18,9 @@ namespace ProgressLog.Models
         public ChatMessage ChatMessage { get; set; }
 
 
-        public int UserId { get; set; }
+        public int UserId { get; set; } //remove?
         // navP
-        public User User { get; set; }
+        public User User { get; set; } //remove?
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;

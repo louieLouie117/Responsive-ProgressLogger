@@ -9,3 +9,10 @@
 
 #### M2M
 The two tables you're connecting should have a nav property that's a list of the middle table in each of the tables: OneSide:ListOfMiddle > Middle < OtherSide:ListOfMiddle
+
+### 06/08
+Made notes in:
+- [ ] ChatMessages
+- [ ] ChatRoomHasMessage
+- [ ] ChatRoom
+- [ ] User
