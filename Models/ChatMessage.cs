@@ -21,6 +21,8 @@ namespace ProgressLog.Models
         // navP
         public User User { get; set; }
 
+        //needs nav prop for middle table
+
 
     }
 }

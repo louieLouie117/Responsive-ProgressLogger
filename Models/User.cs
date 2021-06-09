@@ -131,7 +131,7 @@ namespace ProgressLog.Models
 
 
         // nav properties for chatRoom -----------------------------------------------
-        List<ChatRoom> ChatRooms { get; set; }
+        List<ChatRoom> ChatRooms { get; set; } // switch: this is the one side in the O2M
         // nav properties for ChatRoomHasMessages-----------------------------------------------
         List<ChatRoomHasMessage> ChatRoomHasMessages { get; set; }
         // nav properties for CharMessages-----------------------------------------------
