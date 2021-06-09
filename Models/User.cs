@@ -129,6 +129,9 @@ namespace ProgressLog.Models
         // nav properties for External Link-----------------------------------------------
         List<ExternalLink> ExternalLinks { get; set; }
 
+        // nav properties for Appointment-----------------------------------------------
+        List<Mentorship> Mentorships { get; set; }
+
 
         // nav properties for chatRoom -----------------------------------------------
         List<ChatRoom> ChatRooms { get; set; } // switch: this is the one side in the O2M
