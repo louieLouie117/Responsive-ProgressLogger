@@ -21,6 +21,8 @@ namespace ProgressLog.Models
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTool> ProjectTools { get; set; }
+        public DbSet<ProjectBulletPoint> ProjectBulletPoints { get; set; }
+
 
 
 
@@ -68,6 +70,8 @@ namespace ProgressLog.Models
         public DbSet<DailyRoutine> DailyRoutines { get; set; }
 
         public DbSet<ExternalLink> ExternalLinks { get; set; }
+
+        public DbSet<Mentorship> Mentorships { get; set; }
 
 
 
