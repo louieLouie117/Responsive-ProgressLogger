@@ -133,6 +133,8 @@ namespace ProgressLog.Models
 
         // nav properties for Appointment-----------------------------------------------
         List<Mentorship> Mentorships { get; set; }
+        List<MentorshipTopic> MentorshipTopics { get; set; }
+
 
 
         // nav properties for chatRoom -----------------------------------------------

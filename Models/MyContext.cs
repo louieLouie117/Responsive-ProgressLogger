@@ -72,6 +72,8 @@ namespace ProgressLog.Models
         public DbSet<ExternalLink> ExternalLinks { get; set; }
 
         public DbSet<Mentorship> Mentorships { get; set; }
+        public DbSet<MentorshipTopic> MentorshipTopics { get; set; }
+
 
 
 
