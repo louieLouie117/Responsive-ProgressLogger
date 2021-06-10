@@ -295,7 +295,7 @@ body ::-webkit-scrollbar {
 
 }
 
-.apprenticePage-container header{
+.apprenticePage-container>header{
     display: grid;
     grid-template-rows: 70px;
     row-gap: 20px;
@@ -313,10 +313,35 @@ body ::-webkit-scrollbar {
 
 .apprenticePage-container header ul li{
     display: grid;
-    width: 350px;
+    min-width: 150px;
+    justify-items: center;
+    padding-top: 20px;
+
+}
+
+.apprenticePage-container header ul li header{
+    display: grid;
+    background: #136DC0;
+    height: 130px;
+    width: 130px;
+    border-radius: 130px;
+    align-items: center;
     justify-items: center;
 
 }
+
+.apprenticePage-container header ul li header h1{
+    text-shadow: none;
+    color: white;
+    font-size: 3em;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: cursive;
+    /* font-family: fantasy; */
+    /* font-family: monospace; */
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+
 
 .apprenticePage-container>header ul li h2,
 .apprenticePage-container>header ul li p{
