@@ -22,6 +22,8 @@ namespace ProgressLog.Models
         public string LastName { get; set; }
         public string UserMessage { get; set; }
         public string RoutineMessage { get; set; }
+        public string ApprenticeshipDescription { get; set; }
+
 
         // Statues-----------------------------
         public bool IsOnline { get; set; }
@@ -131,10 +133,14 @@ namespace ProgressLog.Models
         // nav properties for External Link-----------------------------------------------
         List<ExternalLink> ExternalLinks { get; set; }
 
-        // nav properties for Appointment-----------------------------------------------
+        // nav properties for Mentership-----------------------------------------------
         List<Mentorship> Mentorships { get; set; }
         List<MentorshipTopic> MentorshipTopics { get; set; }
 
+
+        // nav properties for Apprenticeship-----------------------------------------------
+        List<Apprenticeship> Apprenticeships { get; set; }
+        List<ApprenticeshipDetail> ApprenticeshipDetails { get; set; }
 
 
         // nav properties for chatRoom -----------------------------------------------

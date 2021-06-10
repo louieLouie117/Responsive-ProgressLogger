@@ -17,7 +17,7 @@ namespace ProgressLog.Models
         public string StartTime { get; set; }
         public string Duration { get; set; }
         public string EndTime { get; set; }
-        public string ContactNUmber { get; set; }
+        public string ContactNumber { get; set; }
 
         public string AppointmentPrice { get; set; }
         public string AppointmentLink { get; set; }

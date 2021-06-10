@@ -75,6 +75,10 @@ namespace ProgressLog.Models
         public DbSet<MentorshipTopic> MentorshipTopics { get; set; }
 
 
+        public DbSet<Apprenticeship> Apprenticeships { get; set; }
+        public DbSet<ApprenticeshipDetail> ApprenticeshipDetails { get; set; }
+
+
 
 
         public DbSet<ChatRoom> ChatRooms { get; set; }
