@@ -6,12 +6,19 @@
             });
 
             const RenderData = (data) => {
-
                 $.each(data.getAllApprentice, function (key, value) {
+
+                    let firstNameInitials = value.firstName.charAt(0);
+                    console.log("fristname initail", firstNameInitials)
+
+                    let lastNameInitials = value.lastName.charAt(0);
+                    console.log("lastName initial", lastNameInitials)
 
                     $(`
                        <li>
-                          <img src="assets/profilePlaceholder.png" alt="">
+                            <header>
+                                <h1>${firstNameInitials}${lastNameInitials}</h1>
+                            </header>
                           <h2>${value.firstName}</h2>
                           <p>From: ${value.state} </p>
                        </li>

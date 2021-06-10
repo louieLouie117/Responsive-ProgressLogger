@@ -7,14 +7,21 @@
             });
 
             const RenderData = (data) => {
-
                 $.each(data.getAllMentors, function (key, value) {
+
+                    let firstNameInitials = value.firstName.charAt(0);
+                    console.log("fristname initail", firstNameInitials);
+
+                    let lastNameInitials = value.lastName.charAt(0);
+                    console.log("lastName initial", lastNameInitials);
 
                     $(`
                        <li>
-                          <img src="assets/profilePlaceholder.png" alt="">
-                          <h2>${value.firstName} ${value.lastName}</h2>
-                          <p>From: ${value.state} </p>
+                            <header>
+                                <h1>${firstNameInitials}${lastNameInitials}</h1>
+                            </header>
+                            <h2>${value.firstName} ${value.lastName}</h2>
+                            <p>From: ${value.state} </p>
                        </li>
                      `).prependTo("#newMentorList")
 
