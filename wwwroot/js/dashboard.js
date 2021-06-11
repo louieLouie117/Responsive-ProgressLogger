@@ -274,3 +274,8 @@ const RecommendationHandler = (e) => {
         document.getElementById("PrivacyPolicyPartial").style.transition = ".5s";
     }
 }
+
+const CommentsHandler = (e) =>{
+
+    document.querySelector("#PostComments").style.display = "grid";
+}

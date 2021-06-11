@@ -51,8 +51,8 @@ namespace ProgressLog.Models
         [EnumDataType(typeof(AccountType))]
         public AccountType AccountType { get; set; }
         public string ProfileImg { get; set; }
-
         public string ProfileColor { get; set; }
+        public string FontType {get; set;}
 
         // email and password---------------------------
         [EmailAddress]
