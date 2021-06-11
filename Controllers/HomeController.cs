@@ -668,6 +668,27 @@ namespace ProgressLog.Controllers
 
 
         // =================Processing Forms===============
+
+
+        [HttpGet("GetUserHandler")]
+        public IActionResult GetUserHandler()
+        {
+
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+
+            List<User> GetUser = _context.Users
+            .Where(us => us.UserId == GetUserbyId)
+            .ToList();
+
+
+            return Json(new { Status = "Success", GetUser });
+        }
         [HttpPost("PostFeedHandler")]
         public IActionResult PostFeedHandler(Post FromForm)
         {
