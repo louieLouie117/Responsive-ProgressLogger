@@ -9,14 +9,11 @@
                 $.each(data.getAllApprentice, function (key, value) {
 
                     let firstNameInitials = value.firstName.charAt(0);
-                    console.log("fristname initail", firstNameInitials)
-
                     let lastNameInitials = value.lastName.charAt(0);
-                    console.log("lastName initial", lastNameInitials)
 
                     $(`
                        <li>
-                            <header>
+                            <header style="background: #${value.profileColor}">
                                 <h1>${firstNameInitials}${lastNameInitials}</h1>
                             </header>
                           <h2>${value.firstName}</h2>

@@ -19,8 +19,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
 
-
-
         const FilterSectionHandler = (e) => {
             @* alert("filterting data..."); *@
                 console.log("id to select", e.target.id)
@@ -267,6 +265,25 @@
             });
         };
 
+
+
+        $(document).ready(function () {
+            @* alert("wodking jquery"); *@
+                $.get("/GetUserHandler", data => {
+                    RenderData(data);
+                });
+
+            const RenderData = (data) => {
+                @* console.log("user profile color", data.getUser[0].profileColor) *@
+
+
+                    @* $(`
+                        <div class="profileColor-container" style="background: #${data.getUser[0].profileColor}">
+                        </div>
+                        `).appendTo("#dailyLogPartial") *@
+            };
+
+        });
     </script>
 </head>
 
