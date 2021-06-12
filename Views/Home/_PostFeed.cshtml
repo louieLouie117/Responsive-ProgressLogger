@@ -1,6 +1,8 @@
 <head>
     <script>
+
         $(document).ready(function () {
+
             $('#PostToFeedForm').submit(function (event) {
                 event.preventDefault();
                 let postMessage = $('#PostMessage').val();
@@ -21,6 +23,9 @@
             $.get("/DisplayPostFeed", data => {
                 RenderData(data);
             })
+            $.get("/GetCommentsHandler", data => {
+                alert("jquery working for comments");
+            });
 
             const RenderData = (data) => {
                 $.each(data.data, function (i, v) {
