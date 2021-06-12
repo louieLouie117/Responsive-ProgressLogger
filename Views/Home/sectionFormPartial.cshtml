@@ -51,14 +51,14 @@
         };
 
         const RenderData = (data) => {
-            console.log("user Data", data.data)
+            @* console.log("user Data", data.data) *@
 
-            $.each(data.data, function (key, value) {
+                $.each(data.data, function (key, value) {
 
-                let sectionId = value.sectionId;
-                let sectionTitle = value.title;
+                    let sectionId = value.sectionId;
+                    let sectionTitle = value.title;
 
-                $(`<li id="${value.sectionId}">
+                    $(`<li id="${value.sectionId}">
                     <div class="title-container">
 
                       <div class="dotIcon-container">
@@ -82,7 +82,7 @@
                     </div>
 
                     </li>`).appendTo("#sectionItems");
-            });
+                });
         };
 
     });
@@ -128,15 +128,13 @@
                 });
         };
         const RenderData = (data) => {
-            console.log("user Data", data.data)
-            $.each(data.data, function (key, value) {
-                console.log(value)
-                console.log("section info:", value.sectionId + value.title)
+            @* console.log("user Data", data.data) *@
+                $.each(data.data, function (key, value) {
 
-                let sectionId = value.sectionId;
-                let sectionTitle = value.title;
+                    let sectionId = value.sectionId;
+                    let sectionTitle = value.title;
 
-                $(`<li id="${value.sectionId}">
+                    $(`<li id="${value.sectionId}">
                     <div class="title-container">
 
                       <div class="dotIcon-container">
@@ -161,7 +159,7 @@
 
                     </li>`).appendTo("#sectionItems");
 
-            });
+                });
         };
     }
 

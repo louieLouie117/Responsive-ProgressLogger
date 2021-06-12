@@ -667,7 +667,68 @@ namespace ProgressLog.Controllers
 
 
 
+        // =================Get data from db===============
+
+
+        [HttpGet("GetUserHandler")]
+        public IActionResult GetUserHandler()
+        {
+
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+
+            List<User> GetUser = _context.Users
+            .Where(us => us.UserId == GetUserbyId)
+            .ToList();
+
+
+            return Json(new { Status = "Success", GetUser });
+        }
+
+
+
+        // comment handler
+        [HttpGet("SetPostIntoSession")]
+        public IActionResult SetPostIntoSession(Post DataId)
+        {
+            HttpContext.Session.SetInt32("PostId", DataId.PostId);
+            System.Console.WriteLine($"you have reached the backend post id is: {DataId.PostId}");
+
+
+            return Json(new { Status = "success" });
+        }
+
+
+        [HttpGet("GetCommentsHandler")]
+        public IActionResult GetCommentsHandler()
+        {
+
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+
+
+            int GetPostId = (int)HttpContext.Session.GetInt32("PostId");
+
+            List<PostComment> FilterComments = _context.PostComments
+                .Where(ul => ul.PostId == GetPostId)
+                .ToList();
+
+
+
+
+            return Json(new { Status = "Success", FilterComments });
+        }
+
         // =================Processing Forms===============
+
+
         [HttpPost("PostFeedHandler")]
         public IActionResult PostFeedHandler(Post FromForm)
         {
@@ -692,6 +753,35 @@ namespace ProgressLog.Controllers
 
             return Json(new { Status = "Success" });
         }
+
+
+
+
+        [HttpPost("PostCommentHandler")]
+        public IActionResult PostCommentHandler(PostComment FromForm)
+        {
+            System.Console.WriteLine($"you have reached the backend of post a comment {FromForm.Message}");
+
+
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("index");
+            }
+            int SelectedPost = (int)HttpContext.Session.GetInt32("PostId");
+            FromForm.PostId = SelectedPost;
+
+            int GetUserbyId = (int)HttpContext.Session.GetInt32("UserId");
+            FromForm.UserId = GetUserbyId;
+
+
+            _context.Add(FromForm);
+            _context.SaveChanges();
+
+            // List<Post> PostFeed = _context.Posts.ToList();
+
+            return Json(new { Status = "Success" });
+        }
+
 
         [HttpPost("ActivityCategoryHandler")]
         public IActionResult ActivityCategoryHandler(ActivityCategory FromForm)
@@ -829,16 +919,7 @@ namespace ProgressLog.Controllers
             return Json(new { Status = "Success", data = UserDailyRoutine });
         }
 
-        // comment handler
-        [HttpGet("CommentHandler")]
-        public IActionResult CommentHandler(Post DataId)
-        {
-            HttpContext.Session.SetInt32("PostId", DataId.PostId);
-            System.Console.WriteLine($"you have reached the backend post id is: {DataId.PostId}");
 
-
-            return Json(new { Status = "success" });
-        }
 
 
 

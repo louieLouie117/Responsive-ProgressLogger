@@ -4,13 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProgressLog.Models
 {
-    public class LogRecord
+    public class ProjectBulletPoint
     {
         [Key]
-        public int LogRecordId { get; set; }
+        public int ProjectBulletPointId { get; set; }
 
-        [MaxLength(5000)]
-        public string TextLog { get; set; }
+        public string Description { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
@@ -23,8 +22,8 @@ namespace ProgressLog.Models
 
 
         // f key for sections
-        public int SectionId { get; set; }
-        public Section Section { get; set; }
+        public int ProjectId { get; set; }
+        public Project Project { get; set; }
 
 
 

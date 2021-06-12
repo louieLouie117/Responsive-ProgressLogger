@@ -14,7 +14,6 @@ const showMainMenu =(e) => {
         document.getElementById("mainMenu").style.transition = ".5s";
         document.getElementById("mainMenu").style.padding = "30px";
         document.getElementById("mainMenu").style.boxShadow = "3px 0px 15px rgba(0, 0, 0, 0.301)";
-        console.log("inside the if stament",menu);
         return (menu = "open");
 
 
@@ -75,8 +74,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Social Network"){
-        // alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
-        // return
+        alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "grid"
@@ -244,33 +243,38 @@ const RecommendationHandler = (e) => {
         document.getElementById("mainMenu").style.transition = ".5s"; 
         
         // Hide Get Started
-        document.querySelector("#GetStartedPartial").style.marginLeft = "-100%";
+        document.querySelector("#GetStartedPartial").style.marginLeft = "-300%";
         document.getElementById("GetStartedPartial").style.transform = "smooth";
         document.getElementById("GetStartedPartial").style.transition = ".5s";
       
         // Hide Get Books and materials
-        document.querySelector("#BooksMaterialsPartial").style.marginLeft = "-100%";
+        document.querySelector("#BooksMaterialsPartial").style.marginLeft = "-300%";
         document.getElementById("BooksMaterialsPartial").style.transform = "smooth";
         document.getElementById("BooksMaterialsPartial").style.transition = ".5s";
 
         // Hide Grammarly
-        document.querySelector("#GrammarlyPartial").style.marginLeft = "-100%";
+        document.querySelector("#GrammarlyPartial").style.marginLeft = "-300%";
         document.getElementById("GrammarlyPartial").style.transform = "smooth";
         document.getElementById("GrammarlyPartial").style.transition = ".5s";
 
          // Hide help
-         document.querySelector("#HepSupportPartial").style.marginLeft = "-100%";
+         document.querySelector("#HepSupportPartial").style.marginLeft = "-300%";
          document.getElementById("HepSupportPartial").style.transform = "smooth";
          document.getElementById("HepSupportPartial").style.transition = ".5s";
 
         // Hide terms
-        document.querySelector("#TermsOfServicePartial").style.marginLeft = "-100%";
+        document.querySelector("#TermsOfServicePartial").style.marginLeft = "-300%";
         document.getElementById("TermsOfServicePartial").style.transform = "smooth";
         document.getElementById("TermsOfServicePartial").style.transition = ".5s";
 
         // Hide privay
-        document.querySelector("#PrivacyPolicyPartial").style.marginLeft = "-100%";
+        document.querySelector("#PrivacyPolicyPartial").style.marginLeft = "-300%";
         document.getElementById("PrivacyPolicyPartial").style.transform = "smooth";
         document.getElementById("PrivacyPolicyPartial").style.transition = ".5s";
     }
+}
+
+const CommentsHandler = (e) =>{
+
+    document.querySelector("#PostComments").style.display = "grid";
 }

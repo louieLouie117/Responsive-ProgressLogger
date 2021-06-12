@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ProgressLog.Models
 {
 
-    public enum AccountType { Apprentice = 0, Mentor = 1, Admin = 2 }
+    public enum AccountType { Apprentice = 0, Mentor = 1, Admin = 2, Lawyer = 3, Accountant = 4 }
     public class User
     {
         [Key]
@@ -15,16 +15,28 @@ namespace ProgressLog.Models
         // About User---------------------------
         public string UserName { get; set; }
 
+        [MaxLength(25)]
         public string Title { get; set; }
 
+        [MaxLength(25)]
         public string FirstName { get; set; }
 
+        [MaxLength(25)]
         public string LastName { get; set; }
+        [MaxLength(250)]
         public string UserMessage { get; set; }
+
+        [MaxLength(250)]
         public string RoutineMessage { get; set; }
+
+        [MaxLength(250)]
+        public string ApprenticeshipDescription { get; set; }
+
 
         // Statues-----------------------------
         public bool IsOnline { get; set; }
+        public bool IsTyping { get; set; }
+        public bool ActiveOnChat { get; set; }
         public bool IsActive { get; set; }
         public int FollowersCount { get; set; }
         public int ApprenticesCount { get; set; }
@@ -33,13 +45,22 @@ namespace ProgressLog.Models
         public int MaxApprentices { get; set; }
 
         // address------------------------------
+        [MaxLength(50)]
         public string City { get; set; }
+        [MaxLength(25)]
         public string State { get; set; }
 
         // Users tools and technologies
+        [MaxLength(250)]
         public string Languages { get; set; }
+
+        [MaxLength(250)]
         public string Database { get; set; }
+
+        [MaxLength(250)]
         public string VersionControl { get; set; }
+
+        [MaxLength(250)]
         public string FrameworksLibraries { get; set; }
 
         // Profile-----------------------------
@@ -47,12 +68,13 @@ namespace ProgressLog.Models
         [EnumDataType(typeof(AccountType))]
         public AccountType AccountType { get; set; }
         public string ProfileImg { get; set; }
-
         public string ProfileColor { get; set; }
+        public string FontType { get; set; }
 
         // email and password---------------------------
         [EmailAddress]
         [Required]
+        [MaxLength(100)]
         public string Email { get; set; }
 
         [DataType(DataType.Password)]
@@ -102,33 +124,49 @@ namespace ProgressLog.Models
         // nav properties for Job Tracker------------------------------------------------
         List<JobTracker> JobTrackers { get; set; }
         List<JobTrackerNote> JobTrackerNotes { get; set; }
-        // nav properties for Post------------------------------------------------
 
+        // nav properties for Post------------------------------------------------
         List<Post> Posts { get; set; }
         List<PostComment> PostComments { get; set; }
 
         // nav properties for Projects-----------------------------------------
         List<Project> Projects { get; set; }
         List<ProjectTool> ProjectTools { get; set; }
+        List<ProjectBulletPoint> ProjectBulletPoints { get; set; }
+
 
         // nav properties for Skills---------------------------------
         List<Skill> Skills { get; set; }
         List<Specialization> Specializations { get; set; }
 
-        // nav properties for Skills-----------------------------------------------
+        // nav properties for Stickynotes-----------------------------------------------
         List<StickyNoteCollection> StickyNoteCollections { get; set; }
         List<StickyNote> StickyNotes { get; set; }
-        // nav properties for Skills-----------------------------------------------
+
+        // nav properties for Todo list-----------------------------------------------
         List<TodoList> TodoLists { get; set; }
         List<TodoListItem> TodoListItems { get; set; }
 
-        // nav properties for Skills------------------------------------------------
-        // nav properties for Skills------------------------------------------------
-        // nav properties for Skills------------------------------------------------
+
+        // nav properties for External Link-----------------------------------------------
+        List<ExternalLink> ExternalLinks { get; set; }
+
+        // nav properties for Mentership-----------------------------------------------
+        List<Mentorship> Mentorships { get; set; }
+        List<MentorshipTopic> MentorshipTopics { get; set; }
 
 
+        // nav properties for Apprenticeship-----------------------------------------------
+        List<Apprenticeship> Apprenticeships { get; set; }
+        List<ApprenticeshipDetail> ApprenticeshipDetails { get; set; }
 
 
+        // nav properties for chatRoom -----------------------------------------------
+        List<ChatRoom> ChatRooms { get; set; } // switch: this is the one side in the O2M
+        // nav properties for ChatRoomHasMessages-----------------------------------------------
+        List<ChatRoomHasMessage> ChatRoomHasMessages { get; set; }
+        // nav properties for CharMessages-----------------------------------------------
+        List<ChatMessage> ChatMessages { get; set; }
 
         // Kim: 1) The other end of the O2M/O2O for Follower,  e.g. Follower  <- User
         // List<Follower> {Name} { get; set; } O2M

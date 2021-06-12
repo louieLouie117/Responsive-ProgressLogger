@@ -1,6 +1,8 @@
 <head>
     <script>
+
         $(document).ready(function () {
+
             $('#PostToFeedForm').submit(function (event) {
                 event.preventDefault();
                 let postMessage = $('#PostMessage').val();
@@ -22,21 +24,45 @@
                 RenderData(data);
             })
 
+            @* chnage to load when a function is called *@
+                @* $.get("/GetCommentsHandler", data => {
+                    alert("jquery working for comments");
+                    }); *@
+
             const RenderData = (data) => {
                 $.each(data.data, function (i, v) {
                     $(`
                      <li>
                          <p>${v.message}</p>
-                         <button id="${v.postId}"> <a id="${v.postId}" onclick="CommentHandler(event)">${v.postId} commment</a></button>
+                         <button id="${v.postId}" onclick="CommentsHandler(event)"> <a id="${v.postId}" onclick="SetPostIntoSession(event)">${v.postId} commment</a></button>
                      </li>
                     `).prependTo("#AllPostFeed");
 
                 });
             };
+
+
+            $('#PostCommentForm').submit(function (event) {
+                event.preventDefault();
+                alert("button was click");
+                let UserComment = $('#UserComment').val();
+
+                let jsonData = {
+                    message: UserComment,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("PostCommentHandler", "Home")',
+                    data: jsonData,
+
+                })
+
+            })
         })
 
 
-        const CommentHandler = (e) => {
+        const SetPostIntoSession = (e) => {
             let postId = e.target.id;
 
             var jsonData = {
@@ -46,7 +72,7 @@
             console.log("json data post id:", jsonData)
 
             $.ajax({
-                url: '@Url.Action("CommentHandler", "Home")',
+                url: '@Url.Action("SetPostIntoSession", "Home")',
                 type: "GET",
                 data: jsonData,
                 @* success: SuccessStatus, *@
@@ -55,6 +81,8 @@
             });
 
         }
+
+
 
 
     </script>
@@ -79,7 +107,7 @@
 
                 <footer class="postComments-container" id="PostComments">
                     <form method="POST" id="PostCommentForm">
-                        <input id="PostComment" type="text" placeholder="What are your thoughts about this post?">
+                        <input id="UserComment" type="text" placeholder="What are your thoughts about this post?">
                         <input type="submit" value="Post">
 
                     </form>

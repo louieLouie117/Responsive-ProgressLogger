@@ -4,13 +4,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProgressLog.Models
 {
-    public class LogRecord
+    public class ApprenticeshipDetail
     {
         [Key]
-        public int LogRecordId { get; set; }
+        public int ApprenticeshipDetailId { get; set; }
 
-        [MaxLength(5000)]
-        public string TextLog { get; set; }
+        public string Description { get; set; }
+        public int Pricing { get; set; }
+
+        public bool HasSubscription { get; set; }
+        public bool SubscriptionMessage { get; set; }
+
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
@@ -23,8 +27,8 @@ namespace ProgressLog.Models
 
 
         // f key for sections
-        public int SectionId { get; set; }
-        public Section Section { get; set; }
+        public int ApprenticeshipId { get; set; }
+        public Apprenticeship Apprenticeship { get; set; }
 
 
 
