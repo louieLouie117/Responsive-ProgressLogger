@@ -15,13 +15,21 @@ namespace ProgressLog.Models
         // About User---------------------------
         public string UserName { get; set; }
 
+        [MaxLength(25)]
         public string Title { get; set; }
 
+        [MaxLength(25)]
         public string FirstName { get; set; }
 
+        [MaxLength(25)]
         public string LastName { get; set; }
+        [MaxLength(250)]
         public string UserMessage { get; set; }
+
+        [MaxLength(250)]
         public string RoutineMessage { get; set; }
+
+        [MaxLength(250)]
         public string ApprenticeshipDescription { get; set; }
 
 
@@ -37,13 +45,22 @@ namespace ProgressLog.Models
         public int MaxApprentices { get; set; }
 
         // address------------------------------
+        [MaxLength(50)]
         public string City { get; set; }
+        [MaxLength(25)]
         public string State { get; set; }
 
         // Users tools and technologies
+        [MaxLength(250)]
         public string Languages { get; set; }
+
+        [MaxLength(250)]
         public string Database { get; set; }
+
+        [MaxLength(250)]
         public string VersionControl { get; set; }
+
+        [MaxLength(250)]
         public string FrameworksLibraries { get; set; }
 
         // Profile-----------------------------
@@ -52,11 +69,12 @@ namespace ProgressLog.Models
         public AccountType AccountType { get; set; }
         public string ProfileImg { get; set; }
         public string ProfileColor { get; set; }
-        public string FontType {get; set;}
+        public string FontType { get; set; }
 
         // email and password---------------------------
         [EmailAddress]
         [Required]
+        [MaxLength(100)]
         public string Email { get; set; }
 
         [DataType(DataType.Password)]
