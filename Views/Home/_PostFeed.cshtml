@@ -23,9 +23,11 @@
             $.get("/DisplayPostFeed", data => {
                 RenderData(data);
             })
-            $.get("/GetCommentsHandler", data => {
-                alert("jquery working for comments");
-            });
+
+            @* chnage to load when a function is called *@
+                @* $.get("/GetCommentsHandler", data => {
+                    alert("jquery working for comments");
+                    }); *@
 
             const RenderData = (data) => {
                 $.each(data.data, function (i, v) {

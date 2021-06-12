@@ -14,7 +14,6 @@ const showMainMenu =(e) => {
         document.getElementById("mainMenu").style.transition = ".5s";
         document.getElementById("mainMenu").style.padding = "30px";
         document.getElementById("mainMenu").style.boxShadow = "3px 0px 15px rgba(0, 0, 0, 0.301)";
-        console.log("inside the if stament",menu);
         return (menu = "open");
 
 
@@ -75,8 +74,8 @@ const PartialHandler = (e) =>{
     }
 
     if(e.target.innerText === "Social Network"){
-        // alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
-        // return
+        alert("Social Network is under development. When it is ready, it will move to the top. Please check back :)");
+        return
         document.getElementById("profilePartial").style.display = "none"
         document.getElementById("dailyLogPartial").style.display = "none"
         document.getElementById("networkPartial").style.display = "grid"

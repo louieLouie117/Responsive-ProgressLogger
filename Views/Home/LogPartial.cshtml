@@ -21,8 +21,7 @@
 
         const FilterSectionHandler = (e) => {
             @* alert("filterting data..."); *@
-                console.log("id to select", e.target.id)
-            document.getElementById("welcomeLogMessage").style.display = "none";
+                document.getElementById("welcomeLogMessage").style.display = "none";
             document.getElementById("paper").style.display = "grid";
 
             let idSelected = e.target.id;
@@ -33,7 +32,6 @@
                 var jsonData = {
                     sectionId: itemId,
                 };
-                console.log("item id:", itemId)
                 $.ajax({
                     url: '@Url.Action("FilterSectionHandler", "Home")',
                     type: "GET",
@@ -44,10 +42,10 @@
                 });
             })
             const SuccessStatus = (result) => {
-                console.log("Successfuly filtered items...");
-                console.log("Here is the result:", result)
+                @* console.log("Successfuly filtered items..."); *@
+                    @* console.log("Here is the result:", result) *@
 
-                let userData = result;
+                    let userData = result;
 
                 LoadDataLogs(userData);
 
@@ -62,41 +60,169 @@
             const LoadDataLogs = (userData) => {
                 $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
                     data = JSON.parse(data);
-                    console.log("You are in load", data.filterBySession);
-                    RenderDataDate(data);
+                    @* console.log("You are in load", data.filterBySession); *@
+                        RenderDataDate(data);
                 });
 
                 $('#UserLogText').load("FilterBySession #UserLogText", data => {
                     data = JSON.parse(data);
-                    console.log("You are in load", data.filterBySession);
-                    RenderData(data);
+                    @* console.log("You are in load", data.filterBySession); *@
+                        RenderData(data);
                 });
             };
             const RenderDataDate = (data) => {
-                console.log("user Data", data.filterBySession)
+                @* console.log("user Data", data.filterBySession) *@
+                    $.each(data.filterBySession, function (key, value) {
+                        const DateFormat = {
+                            weekday: "long",
+
+                        };
+
+                        let WeekDayFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
+
+                        $(`<li id="${value.logRecordId}Date">
+                            <button><a href="#goTo${value.logRecordId}">${WeekDayFormated}</a></button>
+                    </li>`).prependTo("#UserLogsList");
+
+                    });
+            };
+            const RenderData = (data) => {
+                @* console.log("user Data", data.filterBySession) *@
+                    $.each(data.filterBySession, function (key, value) {
+                        @* console.log("value:", value);
+                                console.log("Log id:", value.logRecordId);
+                                console.log("log text:", value.textLog);
+                                console.log("Log day:", value.createdAt);
+                                console.log("section Id:", value.sectionId); *@
+                            let day = value.createdAt;
+
+                        const DateFormat = {
+                            weekday: "long",
+                            month: "long",
+                            day: "numeric"
+                        };
+
+                        let dateFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
+
+
+
+                        @* console.log("new Data here:", dateFormated); *@
+                            @* console.log("day", day) *@
+                            $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
+                                <div class="dateText-container" id="goTo${value.logRecordId}">
+                                    <h3 >${dateFormated}</h3>
+                                </div>
+                                <div class="editDelete_container">
+                                    @* <a href="/edit/${value.logRecordId}">Edit</a> *@
+                                    <a id="${value.logRecordId}" onclick="EditLogHandler(event)">Edit</a>
+                                    <button id="${value.logRecordId}DeleteWarning" onclick="ShowDeleteLog(event)">Delete</button>
+
+                                </div>
+                        </div>
+                        <div class="deleteLog-container" id="${value.logRecordId}DeleteWarningBox">
+                                <p>Delete?</p>
+                                <aside>
+                                    @* <a href="/deleteLog/${value.logRecordId}">Yes</a> *@
+                                    <a id="${value.logRecordId}" onclick="DeleteLogHandler(event)">Yes</a>
+
+                                    <button id="${value.logRecordId}DeleteWarning" onclick="HideDeleteLog(event)">No</button>
+
+                                </aside>
+                        </div>
+                            <p id="${value.logRecordId}LogToEdit">${value.textLog}</p>
+
+
+
+                    `).prependTo("#UserLogText");
+                    });
+            };
+
+        }
+
+
+        const DeleteLogHandler = (e) => {
+            @* alert("delte button was click"); *@
+                @* console.log("e.targer id selected", e.target.id) *@
+
+                let logIdSelected = e.target.id;
+            @* console.log("varible", logIdSelected) *@
+
+                let itemId = e.target.id
+            var jsonData = {
+                logRecordId: itemId,
+            };
+            @* console.log("item id:", itemId) *@
+                $.ajax({
+                    url: '@Url.Action("DeleteLogEntryHandler", "Home")',
+                    type: "GET",
+                    data: jsonData,
+                    success: SuccessStatus,
+                    error: ErrorStatus,
+                    complete: CompleteStatus
+                });
+
+        }
+
+        const SuccessStatus = (result) => {
+            console.log("Success...");
+            LoadData();
+        };
+        const ErrorStatus = (xhr, status, strErr) => {
+            console.log("There was an error!");
+        };
+        const CompleteStatus = (xhr, status) => {
+            console.log("Ajax has completed...");
+        };
+
+        const LoadData = (userData) => {
+            $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
+                data = JSON.parse(data);
+                @* console.log("You are in load", data.filterBySession); *@
+                    RenderDataDate(data);
+            });
+
+            $('#UserLogText').load("FilterBySession #UserLogText", data => {
+                data = JSON.parse(data);
+                @* console.log("You are in load", data.filterBySession); *@
+                    RenderData(data);
+            });
+        };
+
+
+        const RenderDataDate = (data) => {
+            @* console.log("user Data", data.filterBySession) *@
                 $.each(data.filterBySession, function (key, value) {
-                    const DateFormat = {
+                    @* console.log("value:", value);
+                            console.log("Log id:", value.logRecordId);
+                            console.log("log text:", value.textLog);
+                            console.log("Log day:", value.createdAt);
+                            console.log("section Id:", value.sectionId); *@
+
+                const DateFormat = {
                         weekday: "long",
 
                     };
 
                     let WeekDayFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
 
+
+
                     $(`<li id="${value.logRecordId}Date">
                             <button><a href="#goTo${value.logRecordId}">${WeekDayFormated}</a></button>
                     </li>`).prependTo("#UserLogsList");
 
                 });
-            };
-            const RenderData = (data) => {
-                console.log("user Data", data.filterBySession)
+        };
+        const RenderData = (data) => {
+            @* console.log("user Data", data.filterBySession) *@
                 $.each(data.filterBySession, function (key, value) {
-                    console.log("value:", value);
-                    console.log("Log id:", value.logRecordId);
-                    console.log("log text:", value.textLog);
-                    console.log("Log day:", value.createdAt);
-                    console.log("section Id:", value.sectionId);
-                    let day = value.createdAt;
+                    @* console.log("value:", value);
+                            console.log("Log id:", value.logRecordId);
+                            console.log("log text:", value.textLog);
+                            console.log("Log day:", value.createdAt);
+                            console.log("section Id:", value.sectionId); *@
+                        let day = value.createdAt;
+
 
                     const DateFormat = {
                         weekday: "long",
@@ -108,8 +234,8 @@
 
 
 
-                    console.log("new Data here:", dateFormated);
-                    @* console.log("day", day) *@
+                    @* console.log("new Data here:", dateFormated); *@
+                        @* console.log("day", day) *@
                         $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
                                 <div class="dateText-container" id="goTo${value.logRecordId}">
                                     <h3 >${dateFormated}</h3>
@@ -133,136 +259,8 @@
                         </div>
                             <p id="${value.logRecordId}LogToEdit">${value.textLog}</p>
 
-
-
                     `).prependTo("#UserLogText");
                 });
-            };
-
-        }
-
-
-        const DeleteLogHandler = (e) => {
-            @* alert("delte button was click"); *@
-                console.log("e.targer id selected", e.target.id)
-
-            let logIdSelected = e.target.id;
-            console.log("varible", logIdSelected)
-
-            let itemId = e.target.id
-            var jsonData = {
-                logRecordId: itemId,
-            };
-            console.log("item id:", itemId)
-            $.ajax({
-                url: '@Url.Action("DeleteLogEntryHandler", "Home")',
-                type: "GET",
-                data: jsonData,
-                success: SuccessStatus,
-                error: ErrorStatus,
-                complete: CompleteStatus
-            });
-
-        }
-
-        const SuccessStatus = (result) => {
-            console.log("Success...");
-            LoadData();
-        };
-        const ErrorStatus = (xhr, status, strErr) => {
-            console.log("There was an error!");
-        };
-        const CompleteStatus = (xhr, status) => {
-            console.log("Ajax has completed...");
-        };
-
-        const LoadData = (userData) => {
-            $('#UserLogsList').load("FilterBySession #UserLogsList", data => {
-                data = JSON.parse(data);
-                console.log("You are in load", data.filterBySession);
-                RenderDataDate(data);
-            });
-
-            $('#UserLogText').load("FilterBySession #UserLogText", data => {
-                data = JSON.parse(data);
-                console.log("You are in load", data.filterBySession);
-                RenderData(data);
-            });
-        };
-
-
-        const RenderDataDate = (data) => {
-            console.log("user Data", data.filterBySession)
-            $.each(data.filterBySession, function (key, value) {
-                console.log("value:", value);
-                console.log("Log id:", value.logRecordId);
-                console.log("log text:", value.textLog);
-                console.log("Log day:", value.createdAt);
-                console.log("section Id:", value.sectionId);
-
-                const DateFormat = {
-                    weekday: "long",
-
-                };
-
-                let WeekDayFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
-
-
-
-                $(`<li id="${value.logRecordId}Date">
-                            <button><a href="#goTo${value.logRecordId}">${WeekDayFormated}</a></button>
-                    </li>`).prependTo("#UserLogsList");
-
-            });
-        };
-        const RenderData = (data) => {
-            console.log("user Data", data.filterBySession)
-            $.each(data.filterBySession, function (key, value) {
-                console.log("value:", value);
-                console.log("Log id:", value.logRecordId);
-                console.log("log text:", value.textLog);
-                console.log("Log day:", value.createdAt);
-                console.log("section Id:", value.sectionId);
-                let day = value.createdAt;
-
-
-                const DateFormat = {
-                    weekday: "long",
-                    month: "long",
-                    day: "numeric"
-                };
-
-                let dateFormated = new Date(value.createdAt).toLocaleDateString("en-US", DateFormat);
-
-
-
-                console.log("new Data here:", dateFormated);
-                @* console.log("day", day) *@
-                    $(`<div class="logItem_container" id="${value.logRecordId}DeleteWarningTitle">
-                                <div class="dateText-container" id="goTo${value.logRecordId}">
-                                    <h3 >${dateFormated}</h3>
-                                </div>
-                                <div class="editDelete_container">
-                                    @* <a href="/edit/${value.logRecordId}">Edit</a> *@
-                                    <a id="${value.logRecordId}" onclick="EditLogHandler(event)">Edit</a>
-                                    <button id="${value.logRecordId}DeleteWarning" onclick="ShowDeleteLog(event)">Delete</button>
-
-                                </div>
-                        </div>
-                        <div class="deleteLog-container" id="${value.logRecordId}DeleteWarningBox">
-                                <p>Delete?</p>
-                                <aside>
-                                    @* <a href="/deleteLog/${value.logRecordId}">Yes</a> *@
-                                    <a id="${value.logRecordId}" onclick="DeleteLogHandler(event)">Yes</a>
-
-                                    <button id="${value.logRecordId}DeleteWarning" onclick="HideDeleteLog(event)">No</button>
-
-                                </aside>
-                        </div>
-                            <p id="${value.logRecordId}LogToEdit">${value.textLog}</p>
-
-                    `).prependTo("#UserLogText");
-            });
         };
 
 
