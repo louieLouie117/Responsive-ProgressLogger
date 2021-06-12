@@ -9,6 +9,7 @@ namespace ProgressLog.Models
         [Key]
         public int LogRecordId { get; set; }
 
+        [MaxLength(5000)]
         public string TextLog { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
