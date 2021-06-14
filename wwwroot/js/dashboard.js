@@ -237,7 +237,7 @@ const RecommendationHandler = (e) => {
         document.getElementById("mainMenu").style.transition = ".5s"; 
     };
 
-    if( e.target.innerText === "back"){
+    if( e.target.innerText === "< back"){
         document.querySelector("#mainMenu").style.marginLeft = "0px";
         document.getElementById("mainMenu").style.transform = "smooth";
         document.getElementById("mainMenu").style.transition = ".5s"; 
