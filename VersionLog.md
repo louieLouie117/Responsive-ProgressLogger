@@ -1,4 +1,6 @@
-
+# Version 2.8
+### Monday, June 14 2021
+Today I was able to get the Route 53 up and running and will be setting up the SSL tomorrow.
 
 
 # Version 2.7 | Testing
