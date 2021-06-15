@@ -8,11 +8,16 @@ function showNewLog(e) {
     document.getElementById("newLogBTN").style.position = "relative";
     document.getElementById("newLogBTN").style.padding = "40px";
     document.getElementById("newLogBTN").style.boxShadow = "0 0 30px rgba(0, 0, 0, .762);";
+
+    if(screen.width < 1100 ){
+        document.querySelector("#newLogBTN").style.left = "0";
+    }
+
     document.getElementById("saveBTN").style.display = "block";
     document.getElementById("cancleLog").style.display ="block";
+    document.querySelector("#newLogEntry").style.height = "99vh";
     if(menu ==="open"){
         showMainMenu()
-
     }
     
 };
@@ -26,6 +31,12 @@ function hideNewLog(e){
     document.getElementById("newLogBTN").style.padding = "0";
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
     document.getElementById("newLogBTN").innerHTML = "";
+    if(screen.width < 1100 ){
+        document.querySelector("#newLogBTN").style.left = "100px";
+    }
+
+    document.querySelector("#newLogEntry").style.height = "10vh";
+
 
 }
 

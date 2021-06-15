@@ -89,7 +89,7 @@ button{
 
 
 .options-container header p {
-    background: rgba(237, 237, 237, 0.185);
+    background: rgba(74, 74, 74, 0.185);
     font: 1.5em sans-serif;
     margin: 40px 0;
     padding: 40px;
@@ -651,8 +651,10 @@ body ::-webkit-scrollbar {
 
 } */
 
-
-#mobileWebsiteServices, #responsiveWebsiteServices, #webAppServices {
+#mobileWebsiteServices{
+    height: auto;
+}
+#responsiveWebsiteServices, #webAppServices {
     display: grid;
     background: white;
     overflow: hidden;
@@ -665,7 +667,7 @@ body ::-webkit-scrollbar {
     background: white;
     box-shadow: 0  0 7px rgba(0, 0, 0, 0.37);
     height: 50px;
-    width: 350px;
+    max-width: 450px;
     overflow: hidden;
     border-radius: 5px;
     overflow: scroll;
