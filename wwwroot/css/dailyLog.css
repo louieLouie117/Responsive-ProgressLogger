@@ -10,6 +10,7 @@
 
 }
 
+
 #logItemBeingEdited{
     display: none;
 }
@@ -515,14 +516,15 @@ button{
     display: grid;
     position: fixed;
     grid-template-rows: 30px 1fr;
-    top: 0;
+    bottom: 0;
     /* position: relative; */
     padding-bottom: 5px;
     /* background: green; */
-    width: 100vh;
-    height: 2px;
-    
-
+    width: 100vw;
+    height: 10vh;
+    margin: 0 auto;
+    justify-self: center;
+    background: red;
 
 
 }
@@ -542,7 +544,6 @@ button{
 
 
 .newLog_container form textarea{
-
     font: 1.1em sans-serif;
     padding-left: 20px;
     padding-top: 10px;
@@ -551,14 +552,41 @@ button{
     outline: none;
     position: fixed;
     bottom:  25px;
-    left: 55%;
-    transform: translate(-50%);
     z-index: 5;
     height: 30px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.562);
-    width: 50%;
 
 }
+
+
+@media screen and (min-width: 1100px) {
+
+.newLog_container{
+    width: 65vw;
+}
+
+    .newLog_container form textarea{
+        font: 1.1em sans-serif;
+        padding-left: 20px;
+        padding-top: 10px;
+        border-radius: 20px;
+        border: solid 1px white;
+        outline: none;
+        position: fixed;
+        bottom:  25px;
+        left: 55%;
+        transform: translate(-50%);
+        z-index: 5;
+        height: 30px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.562);
+        width: 50%;
+    
+    }
+
+}
+
+
+
 
 
 .newLog_container input{

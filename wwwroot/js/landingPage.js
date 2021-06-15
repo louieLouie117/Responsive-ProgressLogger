@@ -30,7 +30,7 @@ const HeaderBannerHandler =(e)=>{
     showSignIn();
     logInEvent = "close"
 
-    if(e.target.innerText === "Website Services"){
+    if(e.target.innerText === "Essential Services"){
         document.getElementById("BannerTitle").innerText ="Website Services";
         document.getElementById("BannerOverview").innerText = "Design, Develope, and Maintained";   
         document.getElementById("BannerSummery").innerText ="Get a website or webapp designed, developed, and maintained by people that love helping others learn.";

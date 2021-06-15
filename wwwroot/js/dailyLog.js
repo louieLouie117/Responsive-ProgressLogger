@@ -10,6 +10,7 @@ function showNewLog(e) {
     document.getElementById("newLogBTN").style.boxShadow = "0 0 30px rgba(0, 0, 0, .762);";
     document.getElementById("saveBTN").style.display = "block";
     document.getElementById("cancleLog").style.display ="block";
+    document.querySelector("#newLogEntry").style.height = "100vh";
     if(menu ==="open"){
         showMainMenu()
 
@@ -26,6 +27,8 @@ function hideNewLog(e){
     document.getElementById("newLogBTN").style.padding = "0";
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
     document.getElementById("newLogBTN").innerHTML = "";
+    document.querySelector("#newLogEntry").style.height = "10vh";
+
 
 }
 
