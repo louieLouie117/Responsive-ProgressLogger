@@ -32,7 +32,7 @@ function hideNewLog(e){
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
     document.getElementById("newLogBTN").innerHTML = "";
     if(screen.width < 1100 ){
-        document.querySelector("#newLogBTN").style.left = "0";
+        document.querySelector("#newLogBTN").style.left = "100px";
     }
 
     document.querySelector("#newLogEntry").style.height = "10vh";

@@ -651,8 +651,10 @@ body ::-webkit-scrollbar {
 
 } */
 
-
-#mobileWebsiteServices, #responsiveWebsiteServices, #webAppServices {
+#mobileWebsiteServices{
+    height: auto;
+}
+#responsiveWebsiteServices, #webAppServices {
     display: grid;
     background: white;
     overflow: hidden;
@@ -665,7 +667,7 @@ body ::-webkit-scrollbar {
     background: white;
     box-shadow: 0  0 7px rgba(0, 0, 0, 0.37);
     height: 50px;
-    width: 350px;
+    max-width: 450px;
     overflow: hidden;
     border-radius: 5px;
     overflow: scroll;

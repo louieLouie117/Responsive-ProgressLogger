@@ -30,7 +30,7 @@ const HeaderBannerHandler =(e)=>{
     showSignIn();
     logInEvent = "close"
 
-    if(e.target.innerText === "Essential Services"){
+    if(e.target.innerText === "Website Services"){
         document.getElementById("BannerTitle").innerText ="Website Services";
         document.getElementById("BannerOverview").innerText = "Design, Develope, and Maintained";   
         document.getElementById("BannerSummery").innerText ="Get a website or webapp designed, developed, and maintained by people that love helping others learn.";
@@ -391,10 +391,9 @@ const RegApprenticeHandlerFooter = (e) =>{
 
 
 
-
 const ServicesOptions =(e)=>{
     if(e.target.innerText === "Mobile Website"){
-    document.querySelector("#mobileWebsiteServices").style.height = "650px";
+    document.querySelector("#mobileWebsiteServices").style.height = "auto";
     document.querySelector("#responsiveWebsiteServices").style.height = "50px";
     document.querySelector("#webAppServices").style.height = "50px";
 
@@ -402,9 +401,9 @@ const ServicesOptions =(e)=>{
 
     };
 
-        if(e.target.innerText === "Responsive Website"){
+        if(e.target.innerText === "Essential Website"){
             document.querySelector("#mobileWebsiteServices").style.height = "50px";
-            document.querySelector("#responsiveWebsiteServices").style.height = "650px";
+            document.querySelector("#responsiveWebsiteServices").style.height = "auto";
             document.querySelector("#webAppServices").style.height = "50px";
         
 
@@ -413,7 +412,7 @@ const ServicesOptions =(e)=>{
     if(e.target.innerText === "Web App"){
         document.querySelector("#mobileWebsiteServices").style.height = "50px";
         document.querySelector("#responsiveWebsiteServices").style.height = "50px";
-        document.querySelector("#webAppServices").style.height = "650px";
+        document.querySelector("#webAppServices").style.height = "auto";
     
         };
 
