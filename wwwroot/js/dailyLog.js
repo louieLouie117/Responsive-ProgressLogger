@@ -35,7 +35,7 @@ function hideNewLog(e){
         document.querySelector("#newLogBTN").style.left = "100px";
     }
 
-    document.querySelector("#newLogEntry").style.height = "10vh";
+    document.querySelector("#newLogEntry").style.height = "1vh";
 
 
 }

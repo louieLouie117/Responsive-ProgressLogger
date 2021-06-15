@@ -516,12 +516,12 @@ button{
     display: grid;
     position: fixed;
     grid-template-rows: 30px 1fr;
-    bottom: 0;
+    top: 0;
     /* position: relative; */
     padding-bottom: 5px;
     /* background: green; */
     width: 100vw;
-    height: 10vh;
+    height: 1vh;
     margin: 0 auto;
     justify-self: center;
 
