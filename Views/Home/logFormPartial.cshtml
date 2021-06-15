@@ -98,7 +98,7 @@
 </script>
 
 
-<div class="newLog_container">
+<div class="newLog_container" id="newLogEntry">
     <form id="LogForm" asp-action="CreateLog" asp-controller="Home" method="POST">
         <label id="logItemBeingEdited"></label>
         <textarea asp-for="TextLog" id="newLogBTN" onclick="showNewLog()" placeholder=" enter log..."></textarea>
