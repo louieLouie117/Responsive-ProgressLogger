@@ -80,6 +80,10 @@
 
         console.log(e.target.id)
 
+        if (screen.width < 1100) {
+            document.querySelector("#newLogBTN").style.left = "0";
+        }
+
 
         document.getElementById("logItemBeingEdited").innerText = e.target.id;
         let logId = e.target.id + "LogToEdit";
@@ -88,7 +92,6 @@
         console.log("this is the text:", logTextToEdit);
 
         document.getElementById("newLogBTN").value = logTextToEdit;
-
 
     }
 

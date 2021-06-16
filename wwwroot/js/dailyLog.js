@@ -30,13 +30,13 @@ function hideNewLog(e){
     document.getElementById("cancleLog").style.display ="none";
     document.getElementById("newLogBTN").style.padding = "0";
     document.getElementById("newLogBTN").style.paddingLeft = "20px";
-    document.getElementById("newLogBTN").innerHTML = "";
+    // document.getElementById("newLogBTN").innerHTML = "";
+
     if(screen.width < 1100 ){
         document.querySelector("#newLogBTN").style.left = "100px";
     }
 
     document.querySelector("#newLogEntry").style.height = "1vh";
-
 
 }
 
