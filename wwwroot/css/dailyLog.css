@@ -51,7 +51,6 @@ button{
 
 
 
-
 /*Header navigation for all pages----------------------------------------->*/
  header {
     display: grid;
@@ -665,9 +664,8 @@ button{
     /*Remove Margins from here for mobile*/
     padding: 20px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.227);
-    height: auto;
-    
-    
+    height: 92vh;
+   
 }
 
 .readMode-container{
@@ -677,6 +675,7 @@ button{
     background: lightgray;
     justify-self: center;
     border-radius: 20px;
+    
 }
 
 .newRecord_container>form{
@@ -882,6 +881,7 @@ button{
         margin-bottom: 0;
         grid-template-columns: 65vw;
         margin: 0 2.5%;
+
 
 
 
