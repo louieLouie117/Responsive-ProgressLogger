@@ -252,6 +252,9 @@ body{margin: 0;}
 }
 
 /* Recommendation and support----------------------------------------- */
+.recommendation-container::-webkit-scrollbar{
+	display: none;
+}
 
 .recommendation-container{
 	display: grid;
@@ -260,11 +263,11 @@ body{margin: 0;}
 	top: 0;
 	left: 0;
 	height: 100vh;
-	width: 350px;
+	width: 360px;
 	overflow: scroll;
 	margin-left: -300%;
 	z-index: 100;
-	padding: 20px;
+	/* padding: 20px; */
 	box-shadow: 10px 0px 5px rgba(0, 0, 0, 0.103);
 	align-content: flex-start;
 }
@@ -296,25 +299,111 @@ body{margin: 0;}
 }
 
 
-/* Get started */
+/* Get started------------------------------- */
 .getStarted-container{
 	background: white;
 	row-gap: 10px;
 
 }
 
-.getStarted-container aside{
+.getStarted-container>aside{
 	display: grid;
 	grid-template-columns: 80px 1fr;
 	height: 50px;
 	align-items: center;
 }
 
-.getStarted-container aside button{
+.getStarted-container>aside button{
 	height: 40px;
 	width: auto;
 	background: none;
 	color: #136DC0;
 	border: none;
 	text-align: left;
+}
+
+.getStarted-container>header aside{
+	background: #136DC0;
+	position: relative;
+	height: auto;
+	padding: 20px;
+	color: white;
+
+	border-radius: 20px 20px 0 0;
+	display: grid;
+	row-gap: 5px;
+
+}
+
+.getStarted-container>header aside h2{
+	font-size: 1.7em;
+	font-family: monospace;
+	color: white;
+}
+
+.getStarted-container>header aside p{
+	font-size: 1.1em;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.getStarted-container>header section{
+	display: grid;
+	padding: 20px 20px 0 20px;
+	row-gap: 5px;
+}
+
+
+
+.getStarted-container h2{
+	font-size: 1.5em;
+	font-family: monospace;
+	font-weight: bold;
+	color: black;
+}
+
+.getStarted-container p{
+	font: 1em sans-serif;
+}
+
+
+.getStarted-container>main{
+	display: grid;
+	padding: 20px;
+	row-gap: 10px;
+
+}
+
+.getStarted-container>main>section{
+	display: grid;
+	row-gap: 10px;
+	height: 40px;
+	overflow: hidden;
+	border: solid 1.5px #136DC0;
+	font-size: .9em;
+}
+
+.getStarted-container>main>section h2{
+	padding: 10px;
+	cursor: pointer;
+}
+
+
+
+.getStarted-container>main section section{
+	display: grid;
+	row-gap: 10px;
+}
+
+.getStarted-container>main section section h3{
+	font-size: 1.5em;
+	font-family: monospace;
+}
+
+
+
+.getStarted-container main section img{
+	width: 300px;
+
 }
