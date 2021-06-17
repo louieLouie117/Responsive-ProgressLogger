@@ -278,3 +278,47 @@ const CommentsHandler = (e) =>{
 
     document.querySelector("#PostComments").style.display = "grid";
 }
+
+const GetStartedSectionHandler = (e)=>{
+
+    if(e.target.innerText === "About the free softwares."){
+        document.querySelector("#FreeSoftware").style.height = "auto"
+        document.querySelector("#FreeSoftware").style.border = "none"
+
+        document.querySelector("#CodingLanguages").style.height = "40px"
+        document.querySelector("#CodingLanguages").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ProgrammingFundamentals").style.height = "40px"
+        document.querySelector("#ProgrammingFundamentals").style.border = "solid 1px #136DC0"
+
+
+
+    };
+    if(e.target.innerText === "The three coding languages."){
+        document.querySelector("#CodingLanguages").style.height = "auto"
+        document.querySelector("#CodingLanguages").style.border = "none"
+
+        document.querySelector("#FreeSoftware").style.height = "40px"
+        document.querySelector("#FreeSoftware").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ProgrammingFundamentals").style.height = "40px"
+        document.querySelector("#ProgrammingFundamentals").style.border = "solid 1px #136DC0"
+
+
+    };
+
+    if(e.target.innerText === "Programming Fundamentals."){
+        document.querySelector("#ProgrammingFundamentals").style.height = "auto"
+        document.querySelector("#ProgrammingFundamentals").style.border = "none"
+
+        document.querySelector("#FreeSoftware").style.height = "40px"
+        document.querySelector("#FreeSoftware").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#CodingLanguages").style.height = "40px"
+        document.querySelector("#CodingLanguages").style.border = "solid 1px #136DC0"
+
+
+    };
+
+
+}
