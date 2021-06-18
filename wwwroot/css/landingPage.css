@@ -745,7 +745,7 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside ul li {
     display: grid;
-    grid-template-columns: 30px 3fr 1fr;
+    grid-template-columns: 30px 4fr 1fr;
     align-items: flex-end;
 
 }

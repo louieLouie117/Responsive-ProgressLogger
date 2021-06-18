@@ -306,14 +306,19 @@ body{margin: 0;}
 
 }
 
-.getStarted-container>aside{
+.getStarted-container ul {
+    margin: 0;
+
+}
+
+.getStarted-container>section{
 	display: grid;
 	grid-template-columns: 80px 1fr;
 	height: 50px;
 	align-items: center;
 }
 
-.getStarted-container>aside button{
+.getStarted-container>section button{
 	height: 40px;
 	width: auto;
 	background: none;
@@ -326,10 +331,9 @@ body{margin: 0;}
 	background: #136DC0;
 	position: relative;
 	height: auto;
-	padding: 20px;
+	padding: 10px;
 	color: white;
-
-	border-radius: 20px 20px 0 0;
+	border-radius: 10px 10px 0 0;
 	display: grid;
 	row-gap: 5px;
 
@@ -350,8 +354,8 @@ body{margin: 0;}
 
 .getStarted-container>header section{
 	display: grid;
-	padding: 20px 20px 0 20px;
-	row-gap: 5px;
+	padding: 10px 10px 0 10px;
+	row-gap: 10px;
 }
 
 
@@ -370,7 +374,7 @@ body{margin: 0;}
 
 .getStarted-container>main{
 	display: grid;
-	padding: 20px;
+	padding: 10px;
 	row-gap: 10px;
 
 }
@@ -381,12 +385,28 @@ body{margin: 0;}
 	height: 40px;
 	overflow: hidden;
 	border: solid 1.5px #136DC0;
-	font-size: .9em;
+	border-radius: 7px;
 }
+
+.getStarted-container main section section{
+	border: solid black 1px;
+	padding: 10px;
+	border-radius: 7px;
+}
+
+
 
 .getStarted-container>main>section h2{
 	padding: 10px;
 	cursor: pointer;
+	color: #136DC0;
+}
+
+.getStarted-container section p, 
+.getStarted-container main p,
+.getStarted-container aside p{
+	font-size: 1em;
+	line-height: 25px;
 }
 
 
@@ -407,3 +427,31 @@ body{margin: 0;}
 	width: 300px;
 
 }
+
+.getStarted-container footer{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	column-gap: 5px;
+	padding: 0 10px;
+}
+
+.getStarted-container footer a:first-child button {
+	background: #136DC0;
+	color: white;
+	font: 1em sans-serif;
+	border: solid 1px #136DC0;
+	height: 40px;
+	width: 100%;
+
+}
+.getStarted-container footer button:last-child{
+	background: white;
+	color: #136DC0;
+	border: solid 1px #136DC0;
+	height: 40px;
+	font: 1em sans-serif;
+}
+
+
+.getStarted-container aside{
+	padding: 10px;}

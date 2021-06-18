@@ -281,7 +281,7 @@ const CommentsHandler = (e) =>{
 
 const GetStartedSectionHandler = (e)=>{
 
-    if(e.target.innerText === "About the free softwares."){
+    if(e.target.innerText === "About the free softwares"){
         document.querySelector("#FreeSoftware").style.height = "auto"
         document.querySelector("#FreeSoftware").style.border = "none"
 
@@ -294,7 +294,7 @@ const GetStartedSectionHandler = (e)=>{
 
 
     };
-    if(e.target.innerText === "The three coding languages."){
+    if(e.target.innerText === "The three coding languages"){
         document.querySelector("#CodingLanguages").style.height = "auto"
         document.querySelector("#CodingLanguages").style.border = "none"
 
@@ -307,7 +307,7 @@ const GetStartedSectionHandler = (e)=>{
 
     };
 
-    if(e.target.innerText === "Programming Fundamentals."){
+    if(e.target.innerText === "Programming Fundamentals"){
         document.querySelector("#ProgrammingFundamentals").style.height = "auto"
         document.querySelector("#ProgrammingFundamentals").style.border = "none"
 
@@ -318,6 +318,38 @@ const GetStartedSectionHandler = (e)=>{
         document.querySelector("#CodingLanguages").style.border = "solid 1px #136DC0"
 
 
+    };
+
+    if(e.target.innerText === "Learn how to learn"){
+        document.querySelector("#LearnHowToLearnSection").style.height = "auto"
+        document.querySelector("#LearnHowToLearnSection").style.border = "none"
+
+        document.querySelector("#HaveDailyJournalSection").style.height = "40px"
+        document.querySelector("#HaveDailyJournalSection").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ConnectWithOthersSection").style.height = "40px"
+        document.querySelector("#ConnectWithOthersSection").style.border = "solid 1px #136DC0"
+    };
+
+    if(e.target.innerText === "Have a daily journal"){
+        document.querySelector("#HaveDailyJournalSection").style.height = "auto"
+        document.querySelector("#HaveDailyJournalSection").style.border = "none"
+
+        document.querySelector("#LearnHowToLearnSection").style.height = "40px"
+        document.querySelector("#LearnHowToLearnSection").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ConnectWithOthersSection").style.height = "40px"
+        document.querySelector("#ConnectWithOthersSection").style.border = "solid 1px #136DC0"
+    };
+    if(e.target.innerText === "Connect with others"){
+        document.querySelector("#ConnectWithOthersSection").style.height = "auto"
+        document.querySelector("#ConnectWithOthersSection").style.border = "none"
+
+        document.querySelector("#HaveDailyJournalSection").style.height = "40px"
+        document.querySelector("#HaveDailyJournalSection").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#LearnHowToLearnSection").style.height = "40px"
+        document.querySelector("#LearnHowToLearnSection").style.border = "solid 1px #136DC0"
     };
 
 
