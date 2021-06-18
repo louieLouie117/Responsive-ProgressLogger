@@ -364,3 +364,29 @@ const MentorshipOptionsHandler = (e)=>{
 
         };
 };
+
+const SelectedOptionHandler = (e) => {
+    document.querySelector("#BeginnerBTN").style.display = "none";
+    document.querySelector("#IntermediateBTN").style.display = "none";
+    document.querySelector("#AdvancedBTN").style.display = "none";
+
+    if(e.target.innerText === "Beginner"){
+        document.querySelector("#SectionBeginner").style.display = "grid";
+        document.querySelector("#SectionIntermediate").style.display = "none";
+        document.querySelector("#SectionAdvanced").style.display = "none";
+
+
+    };
+
+    if(e.target.innerText === "Intermediate"){
+        document.querySelector("#SectionBeginner").style.display = "none";
+        document.querySelector("#SectionIntermediate").style.display = "grid";
+        document.querySelector("#SectionAdvanced").style.display = "none";
+
+    };  if(e.target.innerText === "Advanced"){
+        document.querySelector("#SectionBeginner").style.display = "none";
+        document.querySelector("#SectionIntermediate").style.display = "none";
+        document.querySelector("#SectionAdvanced").style.display = "grid";
+
+    };
+};

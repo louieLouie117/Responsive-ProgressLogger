@@ -428,7 +428,7 @@ body{margin: 0;}
 
 }
 
-.getStarted-container footer{
+.getStarted-container>footer{
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	column-gap: 5px;
@@ -485,29 +485,31 @@ body{margin: 0;}
 
 }
 
-.getStarted-container>footer>main header{
+.getStarted-container>footer>main>header{
 	display: grid;
+	row-gap: 10px;
 	background: white;
 	height: 500px;
 	width: 350px;
 	border-radius: 7px;
-	justify-content: center;
 	align-content: center;
 
 }
-.getStarted-container>footer>main header ul {
-	height: 500px;
-	display: grid;
-	align-content: center;
+.getStarted-container>footer>main header section {
+	display: none;
+	width: 300px;
 	row-gap: 10px;
 }
 
 
-.getStarted-container>footer>main header ul li button{
+.getStarted-container>footer>main header button{
 	background: #136DC0;
 	color: white;
 	width: 250px;
+	height: 50px;
 	font: 1.3em sans-serif;
+	justify-self: center;
+
 }
 
 
