@@ -91,7 +91,7 @@ button{
 
 
 .options-container header p {
-    background: rgba(74, 74, 74, 0.185);
+    background: rgba(74, 74, 74, 0.338);
     font: 1.5em sans-serif;
     margin: 40px 0;
     padding: 40px;
@@ -745,7 +745,7 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside ul li {
     display: grid;
-    grid-template-columns: 30px 3fr 1fr;
+    grid-template-columns: 30px 4fr 1fr;
     align-items: flex-end;
 
 }
