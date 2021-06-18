@@ -242,7 +242,18 @@
             <a href="https://calendly.com/cardona-luis/15min">
                 <button> Connect with me.</button>
             </a>
-            <button>Mentorship</button>
+            <button onclick="MentorshipOptionsHandler(event)">Mentorship</button>
+            <main id="MentorshipOptions">
+                <button onclick="MentorshipOptionsHandler(event)">X</button>
+                <header>
+                    <ul>
+                        <li><button onclick="SelectedOptionHandler(event)">Beginner</button></li>
+                        <li><button>Intermediate</button></li>
+                        <li><button>Advanced</button></li>
+                    </ul>
+                </header>
+
+            </main>
         </footer>
 
         <aside>

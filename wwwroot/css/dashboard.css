@@ -435,6 +435,14 @@ body{margin: 0;}
 	padding: 0 10px;
 }
 
+.getStarted-container footer button{
+	background: white;
+	color: #136DC0;
+	border: solid 1px #136DC0;
+	height: 40px;
+	font: 1em sans-serif;
+}
+
 .getStarted-container footer a:first-child button {
 	background: #136DC0;
 	color: white;
@@ -444,14 +452,62 @@ body{margin: 0;}
 	width: 100%;
 
 }
-.getStarted-container footer button:last-child{
-	background: white;
-	color: #136DC0;
-	border: solid 1px #136DC0;
-	height: 40px;
-	font: 1em sans-serif;
-}
 
 
 .getStarted-container aside{
-	padding: 10px;}
+	padding: 10px;
+}
+
+
+.getStarted-container>footer>main{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.735);
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	justify-content: center;
+	align-content: center;
+}
+
+.getStarted-container>footer>main>button{
+	width: 40px;
+	border-radius: 40px;
+	background: rgba(0, 0, 0, 0.509);
+	color: white;
+	font: 1.5em sans-serif;
+	border: solid 1px white;
+	position: fixed;
+	top: 5%;
+	right: 49%;
+
+}
+
+.getStarted-container>footer>main header{
+	display: grid;
+	background: white;
+	height: 500px;
+	width: 350px;
+	border-radius: 7px;
+	justify-content: center;
+	align-content: center;
+
+}
+.getStarted-container>footer>main header ul {
+	height: 500px;
+	display: grid;
+	align-content: center;
+	row-gap: 10px;
+}
+
+
+.getStarted-container>footer>main header ul li button{
+	background: #136DC0;
+	color: white;
+	width: 250px;
+	font: 1.3em sans-serif;
+}
+
+

@@ -354,3 +354,13 @@ const GetStartedSectionHandler = (e)=>{
 
 
 }
+
+const MentorshipOptionsHandler = (e)=>{
+        if(e.target.innerText === "Mentorship"){
+           document.querySelector("#MentorshipOptions").style.display = "grid";
+
+        }else{
+           document.querySelector("#MentorshipOptions").style.display = "none";
+
+        };
+};
