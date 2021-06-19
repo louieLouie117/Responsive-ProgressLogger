@@ -380,6 +380,16 @@ const SelectedOptionHandler = (e) => {
 
 
     };
+    if(e.target.innerText === "< Beginner Enrollment"){
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
+        document.querySelector("#BeginnerSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+        return
+
+
+    };
 
     if(e.target.innerText === "Intermediate"){
         document.querySelector("#SectionBeginner").style.display = "none";
@@ -392,7 +402,22 @@ const SelectedOptionHandler = (e) => {
 
 
 
-    };  if(e.target.innerText === "Advanced"){
+    };  
+
+    if(e.target.innerText === "< Intermediate Enrollment"){
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
+        document.querySelector("#BeginnerSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+        return
+
+
+    };
+    
+    
+    
+    if(e.target.innerText === "Advanced"){
         document.querySelector("#SectionBeginner").style.display = "none";
         document.querySelector("#SectionIntermediate").style.display = "none";
         document.querySelector("#SectionAdvanced").style.display = "grid";
@@ -400,6 +425,17 @@ const SelectedOptionHandler = (e) => {
         
         document.querySelector("#TitleHeader").style.display = "grid";
         document.getElementById("ClassTitle").innerHTML  = "< Advanced";
+
+    };
+
+    if(e.target.innerText === "< Advanced Enrollment"){
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
+        document.querySelector("#BeginnerSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+        return
+
 
     };
 
@@ -414,6 +450,9 @@ const SelectedOptionHandler = (e) => {
     }
 
 
+    
+
+
 
     
 };
@@ -422,15 +461,24 @@ const EnrollHandler = (e) =>{
     let Title = document.getElementById("ClassTitle").innerText
 
     if(  Title=== "< Beginner" ){
-        alert("Beginner")
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
+        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner Enrollment";
+
     }
 
     if(Title  === "< Intermediate" ){
-        alert("Intermediate")
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
+        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Intermediate Enrollment";
+
     }
 
     if(Title  === "< Advanced" ){
-        alert("Advanced")
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
+        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Advanced Enrollment";
+
     }
       
 

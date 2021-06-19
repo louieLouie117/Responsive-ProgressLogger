@@ -460,7 +460,8 @@ body{margin: 0;}
 
 
 .mentorshipOption-container{
-	display: grid;
+	display: none;
+	/* left here */
 	position: fixed;
 	top: 0;
 	left: 0;
