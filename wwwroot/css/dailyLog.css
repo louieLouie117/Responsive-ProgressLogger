@@ -316,7 +316,7 @@ header img {
     }
 
 
-    header>section {
+   .dailyLog-container header>section {
         display: grid;
         justify-content: right;
         align-items: center;

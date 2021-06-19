@@ -406,7 +406,7 @@ body{margin: 0;}
 .getStarted-container main p,
 .getStarted-container aside p{
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 23px;
 }
 
 
@@ -428,14 +428,14 @@ body{margin: 0;}
 
 }
 
-.getStarted-container footer{
+.getStarted-container>footer{
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	column-gap: 5px;
 	padding: 0 10px;
 }
 
-.getStarted-container footer button{
+.getStarted-container>footer>button{
 	background: white;
 	color: #136DC0;
 	border: solid 1px #136DC0;
@@ -459,8 +459,9 @@ body{margin: 0;}
 }
 
 
-.getStarted-container>footer>main{
+.mentorshipOption-container{
 	display: none;
+	/* left here */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -472,42 +473,128 @@ body{margin: 0;}
 	align-content: center;
 }
 
-.getStarted-container>footer>main>button{
-	width: 40px;
-	border-radius: 40px;
+.mentorshipOption-container>button{
+	border-radius: 60px;
 	background: rgba(0, 0, 0, 0.509);
 	color: white;
 	font: 1.5em sans-serif;
 	border: solid 1px white;
 	position: fixed;
 	top: 5%;
-	right: 49%;
+	right: 50%;
 
 }
 
-.getStarted-container>footer>main header{
+.mentorshipOption-container>header{
 	display: grid;
+	row-gap: 10px;
 	background: white;
 	height: 500px;
 	width: 350px;
 	border-radius: 7px;
+	align-content: center;
+
+}
+.mentorshipOption-container header section {
+	display: none;
+	width: auto;
+	row-gap: 20px;
+}
+
+.mentorshipOption-container>header> aside {
+	display: grid;
+	row-gap: 10px;
 	justify-content: center;
 	align-content: center;
-
-}
-.getStarted-container>footer>main header ul {
-	height: 500px;
-	display: grid;
-	align-content: center;
-	row-gap: 10px;
 }
 
 
-.getStarted-container>footer>main header ul li button{
+.mentorshipOption-container>header> aside button{
 	background: #136DC0;
 	color: white;
 	width: 250px;
+	height: 50px;
 	font: 1.3em sans-serif;
+	justify-self: center;
+	border: none;
+
 }
+
+.mentorshipOption-container header header{
+	background: #136DC0;
+	color: white;
+	height: 50px;
+	font-size: 1.1em;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border-radius: 7px 7px 0 0;
+	padding-left: 10px;
+	padding-top: 5px;
+
+}
+
+#TitleHeader{
+	display: none;
+	align-content: center;
+}
+
+.mentorshipOption-container header header h1{
+	cursor: pointer;
+	font: 1.7em sans-serif;
+}
+
+
+.mentorshipInfo-container {
+	display: grid;
+	row-gap: 20px;
+}
+
+.mentorshipInfo-container  main{
+	display: grid;
+	grid-row: 20px;
+	padding: 0 20px;
+}
+
+
+.mentorshipInfo-container>footer{
+	display: grid;
+	column-gap: 10px;
+	padding: 0 20px;
+}
+
+.mentorshipInfo-container>footer ul{
+	padding-left: 20px;
+}
+
+.mentorshipInfo-container>footer ul li{
+	list-style: disc;
+}
+
+
+
+.mentorshipOption-container  main footer{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+#BeginnerSubscription{
+	display: none;
+	padding: 20px;
+}
+
+
+
+.mentorshipOption-container main button{
+	background: white;
+	color: #136DC0;
+	height: 35px;
+	width: 140px;
+	font-size: 1.1em;
+	border: solid 1px #136DC0;
+}
+
+
+
+
 
 
