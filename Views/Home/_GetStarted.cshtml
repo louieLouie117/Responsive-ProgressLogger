@@ -1,5 +1,28 @@
 <head>
 
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AVTxhjV7tRY3hEuy0tZnI-C5wMKEL5KncgiZa1x4PqSSaFaqoaM5_c8IvYaZBgPzs_1hNZPLodfh7dRv&vault=true&intent=subscription"
+        data-sdk-integration-source="button-factory"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'subscribe'
+            },
+            createSubscription: function (data, actions) {
+                return actions.subscription.create({
+                    /* Creates the subscription */
+                    plan_id: 'P-13N41794WV3075800MDHCR5I'
+                });
+            },
+            onApprove: function (data, actions) {
+                alert(data.subscriptionID); // You can add optional success message for the subscriber here
+            }
+        }).render('#paypal-button-container-P-13N41794WV3075800MDHCR5I'); // Renders the PayPal button
+    </script>
+
 </head>
 
 <body>
@@ -257,11 +280,12 @@
                         <button onclick="SelectedOptionHandler(event)">Intermediate</button>
                         <button onclick="SelectedOptionHandler(event)">Advanced</button>
                     </aside>
-                    <section id="SectionBeginner">
-                        <header>
-                            <h1 onclick="SelectedOptionHandler(event)" id="BeginnerTitle">&#60; Beginner</h1>
+                    <header id="TitleHeader">
+                        <h1 onclick="SelectedOptionHandler(event)" id="ClassTitle"></h1>
 
-                        </header>
+                    </header>
+                    <section id="SectionBeginner">
+
                         <div class="mentorshipInfo-container" id="BeginnerMentorshipInfo">
                             <main>
                                 <h2>Monday-Friday</h2>
@@ -306,29 +330,6 @@
                         <div id="BeginnerSubscription">
                             <div id="paypal-button-container-P-13N41794WV3075800MDHCR5I"></div>
 
-                            <script
-                                src="https://www.paypal.com/sdk/js?client-id=AVTxhjV7tRY3hEuy0tZnI-C5wMKEL5KncgiZa1x4PqSSaFaqoaM5_c8IvYaZBgPzs_1hNZPLodfh7dRv&vault=true&intent=subscription"
-                                data-sdk-integration-source="button-factory"></script>
-                            <script>
-                                paypal.Buttons({
-                                    style: {
-                                        shape: 'pill',
-                                        color: 'gold',
-                                        layout: 'vertical',
-                                        label: 'subscribe'
-                                    },
-                                    createSubscription: function (data, actions) {
-                                        return actions.subscription.create({
-                                            /* Creates the subscription */
-                                            plan_id: 'P-13N41794WV3075800MDHCR5I'
-                                        });
-                                    },
-                                    onApprove: function (data, actions) {
-                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
-                                    }
-                                }).render('#paypal-button-container-P-13N41794WV3075800MDHCR5I'); // Renders the PayPal button
-                            </script>
-
                         </div>
 
                     </section>
@@ -336,92 +337,103 @@
 
 
                     <section id="SectionIntermediate">
-                        <header>
-                            <h1 onclick="SelectedOptionHandler(event)">&#60; Intermediate</h1>
 
-                        </header>
-                        <main>
+                        <div class="mentorshipInfo-container" id="BeginnerMentorshipInfo">
+                            <main>
+                                <h2>Monday-Friday</h2>
+                                <p>6:00 am - 7:00 am</p>
+                                <footer>
+                                    <button onclick="EnrollHandler(event)">Enroll</button>
+                                    <p>2 weeks free</p>
+                                </footer>
 
-                            <h2>Monday-Friday</h2>
-                            <p>5:00 am - 6:00 am</p>
+                            </main>
+
                             <footer>
-                                <button>Enroll</button>
-                                <p>10 weeks</p>
+                                <p>Getting started with coding is the most challenging part. You don't have to learn it
+                                    all
+                                    at once. You need to learn a little
+                                    every day.</p>
+                                <h2>Topics covered</h2>
+                                <ul>
+                                    <li>
+                                        <p>Setting up Discord</p>
+                                    </li>
+                                    <li>
+                                        <p>Setting up VS Code</p>
+                                    </li>
+                                    <li>
+                                        <p>Setting up Adobe XD</p>
+                                    </li>
+                                    <li>
+                                        <p>HTML Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>CSS Fundamentals </p>
+                                    </li>
+                                    <li>
+                                        <p>Design Fundamentals</p>
+                                    </li>
+
+                                </ul>
+
                             </footer>
+                        </div>
+                        <div id="BeginnerSubscription">
+                            <div id="paypal-button-container-P-13N41794WV3075800MDHCR5I"></div>
+                        </div>
 
-
-                        </main>
-
-                        <footer>
-                            <p>Getting started with coding is the most challenging part. So I will start with the basics
-                                with daily lectures. You don't have to learn it all at once. You need to learn a little
-                                every day. I go over the essentials topic listed below.</p>
-                            <h2>Topics covered</h2>
-                            <ul>
-                                <li>
-                                    <p>Mobile Website Development</p>
-                                </li>
-                                <li>
-                                    <p>Responsive Website Development</p>
-                                </li>
-                                <li>
-                                    <p>Programming Fundamentals</p>
-                                </li>
-                                <li>
-                                    <p>Deploying Website to the world</p>
-                                </li>
-
-                            </ul>
-
-
-                        </footer>
-
+                    </section>
 
                     </section>
 
                     <section id="SectionAdvanced">
-                        <header>
-                            <h1 onclick="SelectedOptionHandler(event)">&#60; Advanced</h1>
 
-                        </header>
-                        <main>
 
-                            <h2>Monday-Friday</h2>
-                            <p>4:00 am - 5:00 am</p>
+                        <div class="mentorshipInfo-container" id="BeginnerMentorshipInfo">
+                            <main>
+                                <h2>Monday-Friday</h2>
+                                <p>6:00 am - 7:00 am</p>
+                                <footer>
+                                    <button onclick="EnrollHandler(event)">Enroll</button>
+                                    <p>2 weeks free</p>
+                                </footer>
+
+                            </main>
 
                             <footer>
-                                <button>Enroll</button>
-                                <p>12 weeks</p>
+                                <p>Getting started with coding is the most challenging part. You don't have to learn it
+                                    all
+                                    at once. You need to learn a little
+                                    every day.</p>
+                                <h2>Topics covered</h2>
+                                <ul>
+                                    <li>
+                                        <p>Setting up Discord</p>
+                                    </li>
+                                    <li>
+                                        <p>Setting up VS Code</p>
+                                    </li>
+                                    <li>
+                                        <p>Setting up Adobe XD</p>
+                                    </li>
+                                    <li>
+                                        <p>HTML Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>CSS Fundamentals </p>
+                                    </li>
+                                    <li>
+                                        <p>Design Fundamentals</p>
+                                    </li>
+
+                                </ul>
+
                             </footer>
-
-
-                        </main>
-
-                        <footer>
-                            <p>Getting started with coding is the most difficult part. You don't have to learn it all at
-                                once. You just need to learn a
-                                little every day.</p>
-                            <h2>Topics covered</h2>
-                            <ul>
-                                <li>
-                                    <p>Setting Up Environment</p>
-                                </li>
-
-                                <li>
-                                    <p>Developing Web App with Python</p>
-                                </li>
-                                <li>
-                                    <p>Developing Web App with JavaScript</p>
-                                </li>
-                                <li>
-                                    <p>Developing Web App with C#</p>
-                                </li>
-                                <li>
-                                    <p>AWS Deploying Web App</p>
-                                </li>
-                            </ul>
-
-                        </footer>
+                        </div>
+                        <div id="BeginnerSubscription">
+                            <div id="paypal-button-container-P-13N41794WV3075800MDHCR5I"></div>
+                        </div>
                     </section>
                 </header>
 

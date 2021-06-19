@@ -519,7 +519,7 @@ body{margin: 0;}
 
 }
 
-.mentorshipOption-container header section header{
+.mentorshipOption-container header header{
 	background: #136DC0;
 	color: white;
 	height: 50px;
@@ -531,9 +531,14 @@ body{margin: 0;}
 
 }
 
+#TitleHeader{
+	display: none;
+	align-content: center;
+}
 
-.mentorshipOption-container header section header h1{
+.mentorshipOption-container header header h1{
 	cursor: pointer;
+	font: 1.7em sans-serif;
 }
 
 
