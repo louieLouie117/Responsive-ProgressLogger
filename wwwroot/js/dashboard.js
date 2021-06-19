@@ -366,14 +366,14 @@ const MentorshipOptionsHandler = (e)=>{
 };
 
 const SelectedOptionHandler = (e) => {
-    document.querySelector("#BeginnerBTN").style.display = "none";
-    document.querySelector("#IntermediateBTN").style.display = "none";
-    document.querySelector("#AdvancedBTN").style.display = "none";
+    document.querySelector("#MentorShipMenu").style.display = "none";
+
 
     if(e.target.innerText === "Beginner"){
         document.querySelector("#SectionBeginner").style.display = "grid";
         document.querySelector("#SectionIntermediate").style.display = "none";
         document.querySelector("#SectionAdvanced").style.display = "none";
+        document.querySelector("#SectionLayout").style.alignContent = "flex-start";
 
 
     };
@@ -382,11 +382,57 @@ const SelectedOptionHandler = (e) => {
         document.querySelector("#SectionBeginner").style.display = "none";
         document.querySelector("#SectionIntermediate").style.display = "grid";
         document.querySelector("#SectionAdvanced").style.display = "none";
+        document.querySelector("#SectionLayout").style.alignContent = "flex-start";
+
 
     };  if(e.target.innerText === "Advanced"){
         document.querySelector("#SectionBeginner").style.display = "none";
         document.querySelector("#SectionIntermediate").style.display = "none";
         document.querySelector("#SectionAdvanced").style.display = "grid";
+        document.querySelector("#SectionLayout").style.alignContent = "flex-start";
 
     };
+
+    if(e.target.innerText === "< Beginner" || e.target.innerText === "< Intermediate" || e.target.innerText === "< Advanced"){
+        document.querySelector("#SectionBeginner").style.display = "none";
+        document.querySelector("#SectionIntermediate").style.display = "none";
+        document.querySelector("#SectionAdvanced").style.display = "none";
+        document.querySelector("#SectionLayout").style.alignContent = "center";
+
+        document.querySelector("#MentorShipMenu").style.display = "grid";
+
+    }
+
+
+
+    if(e.target.innerText === "< Beginner Enrollment" || e.target.innerText === "< Intermediate Enrollment" || e.target.innerText === "< Advanced Enrollment"){
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
+        document.querySelector("#BeginnerSubscription").style.display = "none";
+     document.querySelector("#BeginnerTitle").innerHTML = "< Beginner";
+
+
+    }
+    
+};
+
+const EnrollHandler = (e) =>{
+    let Title =  document.querySelector("#BeginnerTitle").innerText;
+    console.log(Title)
+
+    if(Title === "< Beginner"){
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
+        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.querySelector("#BeginnerTitle").innerText = Title + " Enrollment"
+
+    };
+
+    if(document.querySelector("#BeginnerTitle").innerHTML === "< Intermediate"){
+
+    };
+
+   
+
+  
+
+
 };
