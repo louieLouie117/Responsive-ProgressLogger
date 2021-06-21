@@ -460,7 +460,7 @@ body{margin: 0;}
 
 
 .mentorshipOption-container{
-	display: none;
+	display: grid;
 	/* left here */
 	position: fixed;
 	top: 0;
@@ -539,7 +539,7 @@ body{margin: 0;}
 
 .mentorshipOption-container header header h1{
 	cursor: pointer;
-	font: 1.7em sans-serif;
+	font: 1.5em sans-serif;
 }
 
 
@@ -557,7 +557,7 @@ body{margin: 0;}
 
 .mentorshipInfo-container>footer{
 	display: grid;
-	column-gap: 10px;
+	row-gap: 5px;
 	padding: 0 20px;
 }
 
@@ -577,11 +577,19 @@ body{margin: 0;}
 	align-items: center;
 }
 
-#BeginnerSubscription{
+#BeginnerSubscription,
+#IntermediateSubscription,
+#AdvancedSubscription{
 	display: none;
 	padding: 20px;
+	row-gap: 10px;
 }
 
+#BeginnerSubscription p,
+#IntermediateSubscription p,
+#AdvancedSubscription p{
+	justify-self: center;
+}
 
 
 .mentorshipOption-container main button{

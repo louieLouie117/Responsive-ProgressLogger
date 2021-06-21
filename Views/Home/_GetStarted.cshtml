@@ -1,27 +1,10 @@
 <head>
 
-    <script
-        src="https://www.paypal.com/sdk/js?client-id=AVTxhjV7tRY3hEuy0tZnI-C5wMKEL5KncgiZa1x4PqSSaFaqoaM5_c8IvYaZBgPzs_1hNZPLodfh7dRv&vault=true&intent=subscription"
-        data-sdk-integration-source="button-factory"></script>
-    <script>
-        paypal.Buttons({
-            style: {
-                shape: 'pill',
-                color: 'gold',
-                layout: 'vertical',
-                label: 'subscribe'
-            },
-            createSubscription: function (data, actions) {
-                return actions.subscription.create({
-                    /* Creates the subscription */
-                    plan_id: 'P-13N41794WV3075800MDHCR5I'
-                });
-            },
-            onApprove: function (data, actions) {
-                alert(data.subscriptionID); // You can add optional success message for the subscriber here
-            }
-        }).render('#paypal-button-container-P-13N41794WV3075800MDHCR5I'); // Renders the PayPal button
-    </script>
+
+
+
+
+
 
 </head>
 
@@ -292,21 +275,16 @@
                                 <p>6:00 am - 7:00 am</p>
                                 <footer>
                                     <button onclick="EnrollHandler(event)">Enroll</button>
-                                    <p>2 weeks free</p>
+                                    <p>1 weeks free</p>
                                 </footer>
 
                             </main>
 
                             <footer>
-                                <p>Getting started with coding is the most challenging part. You don't have to learn it
-                                    all
-                                    at once. You need to learn a little
-                                    every day.</p>
+                                <p>Go from beginner to intermediate in 1 week.</p>
                                 <h2>Topics covered</h2>
                                 <ul>
-                                    <li>
-                                        <p>Setting up Discord</p>
-                                    </li>
+
                                     <li>
                                         <p>Setting up VS Code</p>
                                     </li>
@@ -314,21 +292,28 @@
                                         <p>Setting up Adobe XD</p>
                                     </li>
                                     <li>
+                                        <p>Setting up Discord</p>
+                                    </li>
+                                    <li>
                                         <p>HTML Fundamentals</p>
                                     </li>
                                     <li>
                                         <p>CSS Fundamentals </p>
                                     </li>
-                                    <li>
-                                        <p>Design Fundamentals</p>
-                                    </li>
+
 
                                 </ul>
 
                             </footer>
                         </div>
                         <div id="BeginnerSubscription">
-                            <div id="paypal-button-container-P-13N41794WV3075800MDHCR5I"></div>
+                            <p>Getting started with coding is the most challenging part. So join me on my beginner
+                                Discord server, Where I make coding simple.</p>
+                            <partial name="_subscriptionBeginner" />
+
+
+                            <p>19.99/month 2 weeks free</p>
+
 
                         </div>
 
@@ -338,13 +323,13 @@
 
                     <section id="SectionIntermediate">
 
-                        <div class="mentorshipInfo-container" id="BeginnerMentorshipInfo">
+                        <div class="mentorshipInfo-container" id="IntermediateMentorshipInfo">
                             <main>
                                 <h2>Monday-Friday</h2>
                                 <p>6:00 am - 7:00 am</p>
                                 <footer>
                                     <button onclick="EnrollHandler(event)">Enroll</button>
-                                    <p>2 weeks free</p>
+                                    <p>11 weeks</p>
                                 </footer>
 
                             </main>
@@ -357,30 +342,33 @@
                                 <h2>Topics covered</h2>
                                 <ul>
                                     <li>
-                                        <p>Setting up Discord</p>
+                                        <p>Mobile Website Development</p>
                                     </li>
                                     <li>
-                                        <p>Setting up VS Code</p>
-                                    </li>
-                                    <li>
-                                        <p>Setting up Adobe XD</p>
-                                    </li>
-                                    <li>
-                                        <p>HTML Fundamentals</p>
-                                    </li>
-                                    <li>
-                                        <p>CSS Fundamentals </p>
+                                        <p>Responsive Website Development</p>
                                     </li>
                                     <li>
                                         <p>Design Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>Programming Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>Deploying a Website to the world</p>
                                     </li>
 
                                 </ul>
 
                             </footer>
                         </div>
-                        <div id="BeginnerSubscription">
-                            <div id="paypal-button-container-P-13N41794WV3075800MDHCR5I"></div>
+                        <div id="IntermediateSubscription">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor minima sint, quidem
+                                dignissimos omnis doloremque ea laboriosam expedita repudiandae aliquam accusamus
+                                tenetur fuga, cum reprehenderit exercitationem sequi earum eaque ad.</p>
+
+                            <partial name="_subscriptionIntermediate" />
+
+
                         </div>
 
                     </section>
@@ -390,10 +378,10 @@
                     <section id="SectionAdvanced">
 
 
-                        <div class="mentorshipInfo-container" id="BeginnerMentorshipInfo">
+                        <div class="mentorshipInfo-container" id="AdvancedMentorshipInfo">
                             <main>
                                 <h2>Monday-Friday</h2>
-                                <p>6:00 am - 7:00 am</p>
+                                <p>4:00 am - 5:00 am</p>
                                 <footer>
                                     <button onclick="EnrollHandler(event)">Enroll</button>
                                     <p>2 weeks free</p>
@@ -431,8 +419,8 @@
 
                             </footer>
                         </div>
-                        <div id="BeginnerSubscription">
-                            <div id="paypal-button-container-P-13N41794WV3075800MDHCR5I"></div>
+                        <div id="AdvancedSubscription">
+                            <p>What is going on</p>
                         </div>
                     </section>
                 </header>
