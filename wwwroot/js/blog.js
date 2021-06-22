@@ -26,6 +26,10 @@ const showSignIn= (e)=>{
 let HeaderBannerStatus ="close"
 const HeaderBannerHandler =(e)=>{
 
+    document.querySelector('#blogPost').style.display = "none";
+    document.querySelector('#blogPage').style.gridTemplateColumns = "1fr";
+
+
    
     logInEvent = "open"
     showSignIn();
@@ -40,6 +44,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("websiteServicesPartial").style.display = "grid";
         console.log("Website Services")
         document.querySelector("#BannerLinkTag").style.textDecoration = "underline";
+
+
         
        
         

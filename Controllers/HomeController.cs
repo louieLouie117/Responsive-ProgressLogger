@@ -63,6 +63,13 @@ namespace ProgressLog.Controllers
         }
 
 
+        [HttpGet("coding-mentor")]
+        public IActionResult CodingBlog()
+        {
+            return View("Blog");
+        }
+
+
         [HttpGet("dashboard")]
         public IActionResult dashboard()
         {
