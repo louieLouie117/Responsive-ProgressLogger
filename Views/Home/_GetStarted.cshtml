@@ -1,7 +1,10 @@
 <head>
 
 
-
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AVTxhjV7tRY3hEuy0tZnI-C5wMKEL5KncgiZa1x4PqSSaFaqoaM5_c8IvYaZBgPzs_1hNZPLodfh7dRv&vault=true&intent=subscription"
+        data-sdk-integration-source="button-factory">
+        </script>
 
 
 
@@ -275,7 +278,7 @@
                                 <p>6:00 am - 7:00 am</p>
                                 <footer>
                                     <button onclick="EnrollHandler(event)">Enroll</button>
-                                    <p>1 weeks free</p>
+                                    <p>1 week free</p>
                                 </footer>
 
                             </main>
@@ -307,12 +310,32 @@
                             </footer>
                         </div>
                         <div id="BeginnerSubscription">
-                            <p>Getting started with coding is the most challenging part. So join me on my beginner
+                            <p>Getting started with coding is the most challenging part. So join me on my free beginner
                                 Discord server, Where I make coding simple.</p>
-                            <partial name="_subscriptionBeginner" />
+                            @* <partial name="_subscriptionBeginner" /> *@
+                            <div id="paypal-button-container-P-3HW03046BX644561KMDI4JLI"></div>
 
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'gold',
+                                        layout: 'vertical',
+                                        label: 'subscribe'
+                                    },
+                                    createSubscription: function (data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-3HW03046BX644561KMDI4JLI'
+                                        });
+                                    },
+                                    onApprove: function (data, actions) {
+                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-3HW03046BX644561KMDI4JLI'); // Renders the PayPal button
+                            </script>
 
-                            <p>19.99/month 2 weeks free</p>
+                            <p>19.99/month 1 weeks free</p>
 
 
                         </div>
@@ -362,11 +385,31 @@
                             </footer>
                         </div>
                         <div id="IntermediateSubscription">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor minima sint, quidem
-                                dignissimos omnis doloremque ea laboriosam expedita repudiandae aliquam accusamus
-                                tenetur fuga, cum reprehenderit exercitationem sequi earum eaque ad.</p>
+                            <p>Getting started with coding is the most challenging part. So join me on my free beginner
+                                Discord server, Where I make coding simple.</p>
 
-                            <partial name="_subscriptionIntermediate" />
+                            @* <partial name="_subscriptionIntermediate" /> *@
+                            <div id="paypal-button-container-P-3YK80258GW3709934MDI4LSA"></div>
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'blue',
+                                        layout: 'vertical',
+                                        label: 'subscribe'
+                                    },
+                                    createSubscription: function (data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-3YK80258GW3709934MDI4LSA'
+                                        });
+                                    },
+                                    onApprove: function (data, actions) {
+                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-3YK80258GW3709934MDI4LSA'); // Renders the PayPal button
+                            </script>
+                            <p>19.99/month 1 weeks free</p>
 
 
                         </div>
@@ -384,7 +427,7 @@
                                 <p>4:00 am - 5:00 am</p>
                                 <footer>
                                     <button onclick="EnrollHandler(event)">Enroll</button>
-                                    <p>2 weeks free</p>
+                                    <p>12 weeks</p>
                                 </footer>
 
                             </main>
@@ -421,6 +464,29 @@
                         </div>
                         <div id="AdvancedSubscription">
                             <p>What is going on</p>
+                            <div id="paypal-button-container-P-5RM51009GT746061WMDI4NJY"></div>
+
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'silver',
+                                        layout: 'vertical',
+                                        label: 'subscribe'
+                                    },
+                                    createSubscription: function (data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-5RM51009GT746061WMDI4NJY'
+                                        });
+                                    },
+                                    onApprove: function (data, actions) {
+                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-5RM51009GT746061WMDI4NJY'); // Renders the PayPal button
+                            </script>
+                            <p>179.99/month</p>
+
                         </div>
                     </section>
                 </header>
