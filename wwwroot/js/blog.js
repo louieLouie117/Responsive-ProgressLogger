@@ -153,6 +153,9 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("regMentorFooter").style.display = "none";
         document.getElementById("websiteServicesPartial").style.display = "none";
 
+        document.querySelector('#blogPost').style.display = "grid";
+        document.querySelector('#blogPage').style.gridTemplateColumns = "1fr 3.5fr";
+    
         
 
     return (HeaderBannerStatus = "close");

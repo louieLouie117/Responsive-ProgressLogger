@@ -2,9 +2,23 @@
 
 .blogPage-container{
     display: grid;
-    margin-top: -40px;
 
 }
+
+#blogPost{
+    margin-top: -40px;
+}
+
+
+/* Get started------------------------------- */
+.getStarted-container{
+	background: white;
+	row-gap: 10px;
+    max-width: 35em;
+    overflow: scroll;
+    height: 100vh;
+}
+
 
 @media screen and (min-width: 1100px){
 
@@ -14,19 +28,11 @@
         margin-top: 0px;
 
     }
+
+	.getStarted-container{
+		height: 105vh;
+	}
 }
-
-
-
-/* Get started------------------------------- */
-.getStarted-container{
-	background: white;
-	row-gap: 10px;
-    max-width: 35em;
-    overflow: scroll;
-    height: 99vh;
-}
-
 .getStarted-container ul {
     margin: 0;
 
