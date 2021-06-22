@@ -407,9 +407,9 @@ const SelectedOptionHandler = (e) => {
     if(e.target.innerText === "< Intermediate Enrollment"){
 
         document.querySelector("#TitleHeader").style.display = "grid";
-        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
-        document.querySelector("#BeginnerSubscription").style.display = "none";
-        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+        document.querySelector("#IntermediateMentorshipInfo").style.display = "grid";
+        document.querySelector("#IntermediateSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Intermediate";
         return
 
 
@@ -431,9 +431,9 @@ const SelectedOptionHandler = (e) => {
     if(e.target.innerText === "< Advanced Enrollment"){
 
         document.querySelector("#TitleHeader").style.display = "grid";
-        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
-        document.querySelector("#BeginnerSubscription").style.display = "none";
-        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+        document.querySelector("#AdvancedMentorshipInfo").style.display = "grid";
+        document.querySelector("#AdvancedSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Advanced";
         return
 
 
@@ -459,6 +459,7 @@ const SelectedOptionHandler = (e) => {
 
 const EnrollHandler = (e) =>{
     let Title = document.getElementById("ClassTitle").innerText
+    console.log(Title)
 
     if(  Title=== "< Beginner" ){
         document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
@@ -468,15 +469,15 @@ const EnrollHandler = (e) =>{
     }
 
     if(Title  === "< Intermediate" ){
-        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
-        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.querySelector("#IntermediateMentorshipInfo").style.display = "none";
+        document.querySelector("#IntermediateSubscription").style.display = "grid";
         document.getElementById("ClassTitle").innerHTML  = "< Intermediate Enrollment";
 
     }
 
     if(Title  === "< Advanced" ){
-        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
-        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.querySelector("#AdvancedMentorshipInfo").style.display = "none";
+        document.querySelector("#AdvancedSubscription").style.display = "grid";
         document.getElementById("ClassTitle").innerHTML  = "< Advanced Enrollment";
 
     }
@@ -486,3 +487,4 @@ const EnrollHandler = (e) =>{
 
 
 };
+

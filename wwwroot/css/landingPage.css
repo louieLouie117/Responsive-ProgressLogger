@@ -22,6 +22,34 @@ button{
     cursor: pointer;
 }
 
+#blogBTN{
+    position: absolute;
+    left: 20px;
+    background: none;
+    color: white;
+    width: 150px;
+    height: 30px;
+    font: 1.3em sans-serif;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+    align-self: center;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+
+@media screen and (min-width: 1000px) {
+    #blogBTN{
+    position: absolute;
+        top: none;
+        bottom: 40px;
+        left: 20px;
+    }
+    
+}
+
+
 .landingPage-container{
     display: grid;
     height: 100.1vh;
