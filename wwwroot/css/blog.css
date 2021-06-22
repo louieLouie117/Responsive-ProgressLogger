@@ -81,8 +81,8 @@
 
 .getStarted-container>header section{
 	display: grid;
-	padding: 10px 10px 0 10px;
-	row-gap: 10px;
+	padding:  10px;
+	row-gap: 13px;
 }
 
 
@@ -102,13 +102,13 @@
 .getStarted-container>main{
 	display: grid;
 	padding: 10px;
-	row-gap: 10px;
+	row-gap: 20px;
 
 }
 
 .getStarted-container>main>section{
 	display: grid;
-	row-gap: 10px;
+	row-gap: 20px;
 	height: 40px;
 	overflow: hidden;
 	border: solid 1.5px #136DC0;
@@ -132,7 +132,7 @@
 .getStarted-container section p, 
 .getStarted-container main p,
 .getStarted-container aside p{
-	font-size: 1em;
+	font-size: 1.2em;
 	line-height: 23px;
 }
 
@@ -183,6 +183,10 @@
 
 .getStarted-container aside{
 	padding: 10px;
+	padding-top: 30px;
+	display: grid;
+	row-gap: 15px;
+
 }
 
 
@@ -217,7 +221,7 @@
 	row-gap: 10px;
 	background: white;
 	height: 500px;
-	width: 350px;
+	width: 360px;
 	border-radius: 7px;
 	align-content: center;
 

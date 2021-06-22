@@ -73,8 +73,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("getStartedInfo").innerText = "Are you looking to learn how to code websites and web apps and don't know where to start or have not progressed as much as you wanted? Well, we are here to help you connect with mentors that have been where you are and can guide you motivate you to become a website and web app developer.";
         document.getElementById("connectWithBTN").innerText = "Start connecting with mentors";
         document.getElementById("getToolsInfo").innerText = "When you become an apprentice not only will you start connecting with mentors, but you also will have access to your dashboard and tools to help you on your new journey.  ";
-        document.getElementById("becomeUserTitle").innerText = "Become an apprentice. Get paid to learn.";
-        document.getElementById("becomeUserInfo").innerText = "If you are interested in developing websites or web apps, why not get paid while learning as an apprentice? When you find a business that needs a website or web app, you can connect with a mentor and share the bacon. Once you are ready, you can become a mentor for others.";
+        document.getElementById("becomeUserTitle").innerText = "Find mentors and become there apprentice.";
+        document.getElementById("becomeUserInfo").innerText = "If you are interested in becoming a web developer. Start connecting with mentors.";
 
      
       
