@@ -252,21 +252,51 @@ body{margin: 0;}
 }
 
 /* Recommendation and support----------------------------------------- */
+.recommendation-container::-webkit-scrollbar{
+	display: none;
+}
 
 .recommendation-container{
 	display: grid;
+	row-gap: 10px;
 	background: white;
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100vh;
-	width: 350px;
+	width: 360px;
 	overflow: scroll;
 	margin-left: -300%;
 	z-index: 100;
-	padding: 20px;
-	box-shadow: 10px 0px 5px rgba(0, 0, 0, 0.103);
+	/* padding: 20px; */
+	box-shadow: 10px 0px 5px rgba(61, 52, 52, 0.103);
 	align-content: flex-start;
+	padding: 10px;
+}
+
+.recommendation-container h1{
+	font: 1.7em sans-serif;
+}
+
+.recommendation-container p{
+	font: 1.3em sans-serif;
+}
+.recommendation-container button{
+	font: 1em sans-serif;
+	width: 100px;
+}
+
+.recommendedItems-container{
+	display: grid;
+	justify-content: center;
+	row-gap: 20px;
+
+}
+
+
+.recommendedItems-container section{
+	display: grid;
+	grid-template-columns: 1fr 130px ;
 }
 
 
@@ -296,25 +326,5 @@ body{margin: 0;}
 }
 
 
-/* Get started */
-.getStarted-container{
-	background: white;
-	row-gap: 10px;
 
-}
 
-.getStarted-container aside{
-	display: grid;
-	grid-template-columns: 80px 1fr;
-	height: 50px;
-	align-items: center;
-}
-
-.getStarted-container aside button{
-	height: 40px;
-	width: auto;
-	background: none;
-	color: #136DC0;
-	border: none;
-	text-align: left;
-}

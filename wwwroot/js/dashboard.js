@@ -237,7 +237,7 @@ const RecommendationHandler = (e) => {
         document.getElementById("mainMenu").style.transition = ".5s"; 
     };
 
-    if( e.target.innerText === "< back"){
+    if( e.target.innerText === "< back" ||  e.target.innerText === "Close" ){
         document.querySelector("#mainMenu").style.marginLeft = "0px";
         document.getElementById("mainMenu").style.transform = "smooth";
         document.getElementById("mainMenu").style.transition = ".5s"; 
@@ -278,3 +278,211 @@ const CommentsHandler = (e) =>{
 
     document.querySelector("#PostComments").style.display = "grid";
 }
+
+const GetStartedSectionHandler = (e)=>{
+
+    if(e.target.innerText === "About the free softwares"){
+        document.querySelector("#FreeSoftware").style.height = "auto"
+        document.querySelector("#FreeSoftware").style.border = "none"
+
+        document.querySelector("#CodingLanguages").style.height = "40px"
+        document.querySelector("#CodingLanguages").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ProgrammingFundamentals").style.height = "40px"
+        document.querySelector("#ProgrammingFundamentals").style.border = "solid 1px #136DC0"
+
+
+
+    };
+    if(e.target.innerText === "The three coding languages"){
+        document.querySelector("#CodingLanguages").style.height = "auto"
+        document.querySelector("#CodingLanguages").style.border = "none"
+
+        document.querySelector("#FreeSoftware").style.height = "40px"
+        document.querySelector("#FreeSoftware").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ProgrammingFundamentals").style.height = "40px"
+        document.querySelector("#ProgrammingFundamentals").style.border = "solid 1px #136DC0"
+
+
+    };
+
+    if(e.target.innerText === "Programming Fundamentals"){
+        document.querySelector("#ProgrammingFundamentals").style.height = "auto"
+        document.querySelector("#ProgrammingFundamentals").style.border = "none"
+
+        document.querySelector("#FreeSoftware").style.height = "40px"
+        document.querySelector("#FreeSoftware").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#CodingLanguages").style.height = "40px"
+        document.querySelector("#CodingLanguages").style.border = "solid 1px #136DC0"
+
+
+    };
+
+    if(e.target.innerText === "Learn how to learn"){
+        document.querySelector("#LearnHowToLearnSection").style.height = "auto"
+        document.querySelector("#LearnHowToLearnSection").style.border = "none"
+
+        document.querySelector("#HaveDailyJournalSection").style.height = "40px"
+        document.querySelector("#HaveDailyJournalSection").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ConnectWithOthersSection").style.height = "40px"
+        document.querySelector("#ConnectWithOthersSection").style.border = "solid 1px #136DC0"
+    };
+
+    if(e.target.innerText === "Have a daily journal"){
+        document.querySelector("#HaveDailyJournalSection").style.height = "auto"
+        document.querySelector("#HaveDailyJournalSection").style.border = "none"
+
+        document.querySelector("#LearnHowToLearnSection").style.height = "40px"
+        document.querySelector("#LearnHowToLearnSection").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#ConnectWithOthersSection").style.height = "40px"
+        document.querySelector("#ConnectWithOthersSection").style.border = "solid 1px #136DC0"
+    };
+    if(e.target.innerText === "Connect with others"){
+        document.querySelector("#ConnectWithOthersSection").style.height = "auto"
+        document.querySelector("#ConnectWithOthersSection").style.border = "none"
+
+        document.querySelector("#HaveDailyJournalSection").style.height = "40px"
+        document.querySelector("#HaveDailyJournalSection").style.border = "solid 1px #136DC0"
+
+        document.querySelector("#LearnHowToLearnSection").style.height = "40px"
+        document.querySelector("#LearnHowToLearnSection").style.border = "solid 1px #136DC0"
+    };
+
+
+}
+
+const MentorshipOptionsHandler = (e)=>{
+        if(e.target.innerText === "Mentorship"){
+           document.querySelector("#MentorshipOptions").style.display = "grid";
+
+        }else{
+           document.querySelector("#MentorshipOptions").style.display = "none";
+
+        };
+};
+
+const SelectedOptionHandler = (e) => {
+    document.querySelector("#MentorShipMenu").style.display = "none";
+
+
+    if(e.target.innerText === "Beginner"){
+        document.querySelector("#SectionBeginner").style.display = "grid";
+        document.querySelector("#SectionIntermediate").style.display = "none";
+        document.querySelector("#SectionAdvanced").style.display = "none";
+        document.querySelector("#SectionLayout").style.alignContent = "flex-start";
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+
+
+    };
+    if(e.target.innerText === "< Beginner Enrollment"){
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "grid";
+        document.querySelector("#BeginnerSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner";
+        return
+
+
+    };
+
+    if(e.target.innerText === "Intermediate"){
+        document.querySelector("#SectionBeginner").style.display = "none";
+        document.querySelector("#SectionIntermediate").style.display = "grid";
+        document.querySelector("#SectionAdvanced").style.display = "none";
+        document.querySelector("#SectionLayout").style.alignContent = "flex-start";
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Intermediate";
+
+
+
+    };  
+
+    if(e.target.innerText === "< Intermediate Enrollment"){
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.querySelector("#IntermediateMentorshipInfo").style.display = "grid";
+        document.querySelector("#IntermediateSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Intermediate";
+        return
+
+
+    };
+    
+    
+    
+    if(e.target.innerText === "Advanced"){
+        document.querySelector("#SectionBeginner").style.display = "none";
+        document.querySelector("#SectionIntermediate").style.display = "none";
+        document.querySelector("#SectionAdvanced").style.display = "grid";
+        document.querySelector("#SectionLayout").style.alignContent = "flex-start";
+        
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Advanced";
+
+    };
+
+    if(e.target.innerText === "< Advanced Enrollment"){
+
+        document.querySelector("#TitleHeader").style.display = "grid";
+        document.querySelector("#AdvancedMentorshipInfo").style.display = "grid";
+        document.querySelector("#AdvancedSubscription").style.display = "none";
+        document.getElementById("ClassTitle").innerHTML  = "< Advanced";
+        return
+
+
+    };
+
+    if(e.target.innerText === "< Beginner" || e.target.innerText === "< Intermediate" || e.target.innerText === "< Advanced"){
+        document.querySelector("#SectionBeginner").style.display = "none";
+        document.querySelector("#SectionIntermediate").style.display = "none";
+        document.querySelector("#SectionAdvanced").style.display = "none";
+        document.querySelector("#SectionLayout").style.alignContent = "center";
+        document.querySelector("#MentorShipMenu").style.display = "grid";
+        document.querySelector("#TitleHeader").style.display = "none";
+
+    }
+
+
+    
+
+
+
+    
+};
+
+const EnrollHandler = (e) =>{
+    let Title = document.getElementById("ClassTitle").innerText
+    console.log(Title)
+
+    if(  Title=== "< Beginner" ){
+        document.querySelector("#BeginnerMentorshipInfo").style.display = "none";
+        document.querySelector("#BeginnerSubscription").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Beginner Enrollment";
+
+    }
+
+    if(Title  === "< Intermediate" ){
+        document.querySelector("#IntermediateMentorshipInfo").style.display = "none";
+        document.querySelector("#IntermediateSubscription").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Intermediate Enrollment";
+
+    }
+
+    if(Title  === "< Advanced" ){
+        document.querySelector("#AdvancedMentorshipInfo").style.display = "none";
+        document.querySelector("#AdvancedSubscription").style.display = "grid";
+        document.getElementById("ClassTitle").innerHTML  = "< Advanced Enrollment";
+
+    }
+    
+
+};
+
+

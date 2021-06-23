@@ -22,6 +22,34 @@ button{
     cursor: pointer;
 }
 
+#blogBTN{
+    position: absolute;
+    left: 20px;
+    background: none;
+    color: white;
+    width: 150px;
+    height: 30px;
+    font: 1.3em sans-serif;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+    align-self: center;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+
+@media screen and (min-width: 1000px) {
+    #blogBTN{
+    position: absolute;
+        top: none;
+        bottom: 40px;
+        left: 20px;
+    }
+    
+}
+
+
 .landingPage-container{
     display: grid;
     height: 100.1vh;
@@ -91,7 +119,7 @@ button{
 
 
 .options-container header p {
-    background: rgba(74, 74, 74, 0.185);
+    background: rgba(74, 74, 74, 0.338);
     font: 1.5em sans-serif;
     margin: 40px 0;
     padding: 40px;
@@ -558,7 +586,6 @@ body ::-webkit-scrollbar {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 20px;
-    background: #187ddc;
 }
 
 .gettingStarted-container main footer header h2{
@@ -645,6 +672,7 @@ body ::-webkit-scrollbar {
     width: 99%;
     height: auto;
     padding: 20px 0;
+    justify-content: center;
 }
 
 /* .websiteServices-container header>ul>li:first-of-type{
@@ -745,7 +773,7 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside ul li {
     display: grid;
-    grid-template-columns: 30px 3fr 1fr;
+    grid-template-columns: 30px 4fr 1fr;
     align-items: flex-end;
 
 }

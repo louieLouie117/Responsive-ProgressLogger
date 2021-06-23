@@ -1,0 +1,25 @@
+@using ProgressLog.Models
+@model MainWrapper
+
+<head>
+    <link rel="stylesheet" href="~/css/landingPage.css">
+    <link rel="stylesheet" href="~/css/globalStyles.css">
+    <link rel="stylesheet" href="~/css/getStarted.css">
+    <script src="~/js/dashboard.js" async=""></script>
+
+</head>
+
+<body>
+
+    <div class="blogPage-container" id="blogPage">
+        <div id="blogPost">
+            <partial name="_GetStarted" />
+        </div>
+        <div>
+            <partial name="indexBlog" />
+        </div>
+    </div>
+
+
+
+</body>

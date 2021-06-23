@@ -52,7 +52,7 @@ button{
 
 
 /*Header navigation for all pages----------------------------------------->*/
- header {
+.dailyLog-container header {
     display: grid;
     background: #136DC0;
     color: white;
@@ -73,7 +73,7 @@ button{
 
 }
 
-header>a {
+.dailyLog-container header>a {
     padding: 10px;
     color: white;
     justify-self: left;
@@ -83,7 +83,7 @@ header>a {
 
 
 
-header>section {
+.dailyLog-container header>section {
     display: grid;
     grid-template-columns: 1fr ;
     justify-content: center;
@@ -291,7 +291,7 @@ header img {
         margin-left: 0px;
     }
 
-    header {
+   .dailyLog-container header {
         position: sticky;
         top: 0;
         left: 0;
@@ -305,6 +305,7 @@ header img {
         max-height: none;
         height: auto;
         min-width: 200px;
+        background: #136DC0;
     }
 
     .section-container{
@@ -315,7 +316,7 @@ header img {
     }
 
 
-    header>section {
+   .dailyLog-container header>section {
         display: grid;
         justify-content: right;
         align-items: center;

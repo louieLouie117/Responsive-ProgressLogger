@@ -1,72 +1,511 @@
 <head>
 
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AVTxhjV7tRY3hEuy0tZnI-C5wMKEL5KncgiZa1x4PqSSaFaqoaM5_c8IvYaZBgPzs_1hNZPLodfh7dRv&vault=true&intent=subscription"
+        data-sdk-integration-source="button-factory">
+        </script>
+
+    <link rel="stylesheet" href="~/css/blog.css">
+
+
 </head>
 
 <body>
     <div class="recommendation-container getStarted-container" id="GetStartedPartial">
-        <aside>
+        <section>
             <button onclick="RecommendationHandler(event)">&#60; back</button>
             <h1>Get Started</h1>
-        </aside>
+        </section>
 
-        <head>
-            <section>
+        <header>
+            <aside>
                 <h2>Why learn to code?</h2>
-                <p>Knowing how to code will open more opportunities in your future. Companies like Facebook, Microsoft,
-                    Apple, Amazon, and Google employ people that are developers and know how to code.</p>
-
-            </section>
+                <p>Knowing how to code will open more opportunities in your future.</p>
+            </aside>
 
             <section>
                 <h2>What can you do with code.</h2>
-                <p>You can do so much with code. Here are my top 8 list of things you can do with code. I will discuses
-                    the
-                    first two further. </p>
+                <p>You can do so much with code. This is my top 8 list of things you can do with code. </p>
                 <ul>
-                    <li>1. Websites.</li>
-                    <li>2. Web apps.</li>
-                    <li>3. Games.</li>
-                    <li>4. Native Applications.</li>
-                    <li>5. AI (artificial intelligence).</li>
-                    <li>6. AR (augmented reality).</li>
-                    <li>7. Robotics.</li>
-                    <li>8. Automation.</li>
+                    <li>
+                        <p>1. Websites.</p>
+                    </li>
+                    <li>
+                        <p>2. Web apps.</p>
+                    </li>
+                    <li>
+                        <p>3. Games.</p>
+                    </li>
+                    <li>
+                        <p>4. Native Applications.</p>
+                    </li>
+                    <li>
+                        <p>5. AI (Artificial Intelligence).</p>
+                    </li>
+                    <li>
+                        <p>6. AR (Augmented Reality).</p>
+                    </li>
+                    <li>
+                        <p>7. Robotics.</p>
+                    </li>
+                    <li>
+                        <p>8. Automation.</p>
+                    </li>
                 </ul>
+                <p>If you're looking to learn how to code for web development, you're in the right place. </p>
 
             </section>
 
             <section>
-                <h2>Why is coding more important
-                    now than ever before?</h2>
-                <p>We are currently in a pre-paradigm shift on the types of work available in the future, and the year
-                    2020 sure has sped up this paradigm shift. So getting started with coding is crucial and the best
-                    place to start is website then web apps.</p>
+                <h2>Why did I start to code?</h2>
+                <p>I have been designing websites and web apps for about three years. But without coding, I was met with
+                    many limitations. I found myself being restricted with web designers and website builders that
+                    promise you can do
+                    everything with no code. </p>
+                <p>However, what a website with no code doesn't tell you is that you can learn a skill that brings
+                    endless potential and new opportunities. </p>
+                <p>Coding can save you from wasting years of precious time and stop you from making the same mistakes I
+                    did. </p>
             </section>
 
-        </head>
+        </header>
         <main>
-            <section>
-                <h2>Getting started with websites.</h2>
-                <p>To get started coding, I will talk about 3 things you must do and 3 personals recommendations I have
-                    found helpful when just starting to code websites or web apps. Let us start with the first thing you
-                    need to do.
-                </p>
-                <ul>
-                    <li>1. Download two free software</li>
-                    <li>2. Learn three coding languages</li>
-                    <li>3. Understand the fundamental of programming.</li>
+            <h2>Getting started with websites.</h2>
+            <p>The best place to start learning to code is websites because what you learn can be applied to web apps. I
+                will discuss three things you must do to code websites. I will also mention three personal
+                recommendations I wished someone had told me when starting to code. Let us begin with the things you
+                must do. </p>
+            <ul>
+                <li>
+                    <p>1. Download two free software</p>
+                </li>
+                <li>
+                    <p>2. Learn three coding languages</p>
+                </li>
+                <li>
+                    <p>3. Understand the fundamental of programming</p>
+                </li>
 
-                </ul>
+            </ul>
+            <section id="FreeSoftware">
+                <h2 onclick="GetStartedSectionHandler(event)">About the free softwares</h2>
+                <p>The two free software your going to need are Adobe XD and Visual Studio Code.</p>
+                <section>
+                    <h3>Adobe XD</h3>
+                    <img src="assets/adobeXdImg.png" alt="">
+                    <p>Adobe XD is software you use to create mockups. You will be using it to draw a website or app
+                        digitally. It is used for UX/UI design to bring your ideas into a concept. You can download it
+                        for
+                        free on the adobes website.</p>
+                    <a href="https://www.adobe.com/products/xd.html?sdid=2XBSC559&mv=search&MV=Search&ef_id=d2ec4d22b424164a74eb2df0b6dbd74c:G:s&s_kwcid=AL!3085!10!79302355773101!79302514845697&msclkid=d2ec4d22b424164a74eb2df0b6dbd74c"
+                        target="blank">Learn
+                        more.</a>
+                </section>
+                <section>
+
+                    <h3>Visual Studio Code</h3>
+                    <img src="assets/vsCodeImg.png" alt="">
+                    <p>Visual Studio Code is a code editor that you use to type your code. There are plenty of code
+                        editors
+                        you can use, and in my opinion, Visual Studio Code is the king of them all. There are many
+                        reasons
+                        to use Visual Studio Code over other editors, and the number one reason is that it is free.
+                        Don't
+                        waste your time reaching what code editor to use, download VS code, and spend your time coding.
+                    </p>
+                    <a href="https://code.visualstudio.com/" target="blank">Learn more.</a>
+                </section>
             </section>
 
+            <section id="CodingLanguages">
+                <h2 onclick="GetStartedSectionHandler(event)">The three coding languages</h2>
+                <p>The three coding languages that you need to learn are HTML, CSS, and JavaScript. When I first
+                    started, I read many articles that said to start with HTML. However, I am here to tell you that it
+                    is possible to learn both HTML and CSS together, and the best way to learn to have your hands on the
+                    keyboard and start typing HTML and CSS.</p>
+                <img src="assets/fundamentalsImg.png" alt="">
+                <section>
+                    <h3>What is HTML?</h3>
+                    <p>At its core, HTML outlines all the content a person sees when they visit a website. It is a
+                        markup code that you type so that a computer can interpret and display the content. To get
+                        started with HTML, you will need to use HTML elements. Elements give the website structure and
+                        meaning.</p>
+                </section>
+                <section>
+                    <h3>What is CSS?</h3>
+                    <p>CSS is a markup language code that you type to create styles for HTML elements. When you use CSS,
+                        you will be selecting specific elements and modifying them. Selecting and modifying elements is
+                        the reason why CSS exists.</p>
+                </section>
+
+                <section>
+                    <h3>What is JavaScript?</h3>
+                    <p>JavaScript is a programming langue that gives a list of instructions to be executed by a
+                        computer. The list of instructions is known as statements. JavaScript is an intermediate langue
+                        that you want to study in-depth. However, you don't have to wait till you fully understand
+                        JavaScript to start using it. You can begin using some of the basics by understanding the
+                        fundamental concepts.</p>
+                </section>
 
 
 
+
+            </section>
+
+            <section id="ProgrammingFundamentals">
+                <h2 onclick="GetStartedSectionHandler(event)">Programming Fundamentals</h2>
+                <p>In regards to programming fundaments, I have listed the seven concepts you need to understand. </p>
+                <ul>
+                    <li>
+                        <p>1. Variables</p>
+                    </li>
+                    <li>
+                        <p>2. Data Types</p>
+                    </li>
+                    <li>
+                        <p>3. Arrays</p>
+                    </li>
+                    <li>
+                        <p>4. Functions</p>
+                    </li>
+                    <li>
+                        <p>5. Loops</p>
+                    </li>
+                    <li>
+                        <p>6. Conditions</p>
+                    </li>
+                    <li>
+                        <p>7. Objects</p>
+                    </li>
+                </ul>
+                <p>If you are new to programming, you need to spend time reading about the fundamentals. I have included
+                    in the materials and books section an excellent book you can start reading. </p>
+                <p>Now, make sure you read this for fun and don't spend a lot of time taking notes and rereading things.
+                    You might have a hard time understanding because, with programming, the best way to learn is by
+                    physically typing out the code. </p>
+                <p>If you have any questions about the fundamentals or need help getting started typing the code, I will
+                    have a way to contact me at the end of this article. </p>
+
+            </section>
+
+            <h2>Personal Recommendations.</h2>
+            <p>Regarding my personal recommendation, I would have loved it if someone had shared these three
+                recommendations with me early on in my programming journey. </p>
+            <ul>
+
+                <li>
+                    <p>1. Learn how to learn</p>
+                </li>
+                <li>
+                    <p>2. Have a daily journal</p>
+                </li>
+                <li>
+                    <p>3. Connect with others</p>
+                </li>
+            </ul>
+
+            <section id="LearnHowToLearnSection">
+                <h2 onclick="GetStartedSectionHandler(event)">Learn how to learn</h2>
+                <p>When I first started to code, I would spend my time studying and reading books I found on amazon or
+                    online watching videos on Youtube and Lynda.com. </p>
+
+                <p>However, there is a better way to learn to code. The key is to spend most of your time with your
+                    hands on the keyboard coding, not just reading about it. In my free beginner mentorship, I cover all
+                    the fundamentals and set up your computer so that you can start typing code right away. You see, the
+                    best way to learn is to practice. </p>
+                <p>
+                    If you're having a hard time learning to code, this free online course <a
+                        href="https://www.coursera.org/learn/learning-how-to-learn"> Learning How to
+                        Learn</a>, by Barbara Oakley and Dr. Terrence Sejnowski helped me. I recommend anyone that
+                    starts my mentorship to take this free course.
+                </p>
+            </section>
+
+            <section id="HaveDailyJournalSection">
+                <h2 onclick="GetStartedSectionHandler(event)">Have a daily journal</h2>
+                <p>Personally, since I started writing every day, I have become much more productive. In this web app
+                    Progressly Page I developed a daily journal for you to write down your successes and failures every
+                    day. When developing the daily journal, my focus was on making sure it was mobile-friendly. The goal
+                    was to develop a digital journal that allows users to write down new ideas or a solution to a
+                    particular problem anywhere at any time. </p>
+
+                <p>The daily journal is free and recommends you start writing every day because you will learn that
+                    documentation will play a crucial role in programming. </p>
+
+                <p>I, personally, add a new section for every month and try to write every morning and before going to
+                    sleep. If you haven't already, take the time to create a free apprentice or mentor account, add a
+                    new section, and write
+                    your first entry log. I have integrated this blog into the web app so that you can continue reading
+                    it after you have written your first log. </p>
+                <p>If you have created an account and written your first log, congratulations, you are on your way to
+                    becoming a programmer. You see, programming is all about creating a set of instructions for the
+                    computer and simply making sure they are working. If you haven't yet done so, no worries, there is
+                    still time. My next recommendation is to connect with others that have the same goals you have. </p>
+            </section>
+            <section id="ConnectWithOthersSection">
+                <h2 onclick="GetStartedSectionHandler(event)">Connect with others</h2>
+                <p>This last recommendation is something I would have loved to receive when I first started coding.
+                    However, growing up, there were no programmers I could connect with for mentorship, and to this day,
+                    many people face this same problem.
+                </p>
+                <p>That is why my mission for this web app is to connect anyone interested in programming with mentors
+                    who want to help. I will be developing the social network aspect for this web app in the upcoming
+                    versions. </p>
+
+            </section>
+            <p>If you have any questions, don't hesitate to connect with me. If you already know you want to start
+                coding, you can read more about my free beginner mentorship.</p>
 
 
         </main>
         <footer>
+            <a href="https://calendly.com/cardona-luis/15min" target="blank">
+                <button> Connect with me.</button>
+            </a>
+            <button onclick="MentorshipOptionsHandler(event)">Mentorship</button>
 
+
+            <main class="mentorshipOption-container" id="MentorshipOptions">
+
+                <button onclick="MentorshipOptionsHandler(event)">X</button>
+                <header id="SectionLayout">
+
+                    <aside id="MentorShipMenu">
+
+                        <h2>Mentorship</h2>
+                        <button onclick="SelectedOptionHandler(event)">Beginner</button>
+                        <button onclick="SelectedOptionHandler(event)">Intermediate</button>
+                        <button onclick="SelectedOptionHandler(event)">Advanced</button>
+                    </aside>
+                    <header id="TitleHeader">
+                        <h1 onclick="SelectedOptionHandler(event)" id="ClassTitle"></h1>
+
+                    </header>
+                    <section id="SectionBeginner">
+
+                        <div class="mentorshipInfo-container" id="BeginnerMentorshipInfo">
+                            <main>
+                                <h2>Monday-Friday</h2>
+                                <p>6:00 am - 7:00 am</p>
+                                <footer>
+                                    <button onclick="EnrollHandler(event)">Enroll</button>
+                                    <p>1 week free</p>
+                                </footer>
+
+                            </main>
+
+                            <footer>
+                                <p>Beginner to intermediate in 1 week.</p>
+                                <h2>Topics covered</h2>
+                                <ul>
+
+                                    <li>
+                                        <p>Setting up VS Code</p>
+                                    </li>
+                                    <li>
+                                        <p>Setting up Adobe XD</p>
+                                    </li>
+                                    <li>
+                                        <p>Setting up Discord</p>
+                                    </li>
+                                    <li>
+                                        <p>HTML Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>CSS Fundamentals </p>
+                                    </li>
+
+
+                                </ul>
+
+                            </footer>
+                        </div>
+                        <div id="BeginnerSubscription">
+                            <p>Getting started with coding is the most challenging part. So join me on my free beginner
+                                Discord server, Where I make coding simple.</p>
+                            @* <partial name="_subscriptionBeginner" /> *@
+                            <div id="paypal-button-container-P-3HW03046BX644561KMDI4JLI"></div>
+
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'gold',
+                                        layout: 'vertical',
+                                        label: 'subscribe'
+                                    },
+                                    createSubscription: function (data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-3HW03046BX644561KMDI4JLI'
+                                        });
+                                    },
+                                    onApprove: function (data, actions) {
+                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-3HW03046BX644561KMDI4JLI'); // Renders the PayPal button
+                            </script>
+
+                            <p>19.99/month 1 weeks free</p>
+
+
+                        </div>
+
+                    </section>
+
+
+
+                    <section id="SectionIntermediate">
+
+                        <div class="mentorshipInfo-container" id="IntermediateMentorshipInfo">
+                            <main>
+                                <h2>Monday-Friday</h2>
+                                <p>6:00 am - 7:00 am</p>
+                                <footer>
+                                    <button onclick="EnrollHandler(event)">Enroll</button>
+                                    <p>11 weeks</p>
+                                </footer>
+
+                            </main>
+
+                            <footer>
+                                <p>Start your frontend developer path.</p>
+
+                                <h2>Topics covered</h2>
+                                <ul>
+                                    <li>
+                                        <p>Mobile Website Development</p>
+                                    </li>
+                                    <li>
+                                        <p>Responsive Website Development</p>
+                                    </li>
+                                    <li>
+                                        <p>Design Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>Programming Fundamentals</p>
+                                    </li>
+                                    <li>
+                                        <p>Deploying a Website to the world</p>
+                                    </li>
+
+                                </ul>
+
+                            </footer>
+                        </div>
+                        <div id="IntermediateSubscription">
+                            <p>Getting started with coding is the most challenging part. So join me on my free beginner
+                                Discord server, Where I make coding simple.</p>
+
+                            @* <partial name="_subscriptionIntermediate" /> *@
+                            <div id="paypal-button-container-P-3YK80258GW3709934MDI4LSA"></div>
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'blue',
+                                        layout: 'vertical',
+                                        label: 'subscribe'
+                                    },
+                                    createSubscription: function (data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-3YK80258GW3709934MDI4LSA'
+                                        });
+                                    },
+                                    onApprove: function (data, actions) {
+                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-3YK80258GW3709934MDI4LSA'); // Renders the PayPal button
+                            </script>
+                            <p>19.99/month 1 weeks free</p>
+
+
+                        </div>
+
+                    </section>
+
+                    </section>
+
+                    <section id="SectionAdvanced">
+
+
+                        <div class="mentorshipInfo-container" id="AdvancedMentorshipInfo">
+                            <main>
+                                <h2>Monday-Friday</h2>
+                                <p>4:00 am - 5:00 am</p>
+                                <footer>
+                                    <button onclick="EnrollHandler(event)">Enroll</button>
+                                    <p>12 weeks</p>
+                                </footer>
+                            </main>
+
+                            <footer>
+                                <p>Start developing web apps.</p>
+                                <h2>Topics covered</h2>
+                                <ul>
+                                    <li>
+                                        <p>Web App with Python | 4 weeks</p>
+                                    </li>
+                                    <li>
+                                        <p>Web App with JavaScript | 4 weeks</p>
+                                    </li>
+                                    <li>
+                                        <p>Web App with C# | 4 weeks</p>
+                                    </li>
+                                    <li>
+                                        <p>Deploying Web App to AWS</p>
+                                    </li>
+
+                                </ul>
+
+                            </footer>
+                        </div>
+                        <div id="AdvancedSubscription">
+                            <p>What is going on</p>
+                            <div id="paypal-button-container-P-5RM51009GT746061WMDI4NJY"></div>
+
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'silver',
+                                        layout: 'vertical',
+                                        label: 'subscribe'
+                                    },
+                                    createSubscription: function (data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-5RM51009GT746061WMDI4NJY'
+                                        });
+                                    },
+                                    onApprove: function (data, actions) {
+                                        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-5RM51009GT746061WMDI4NJY'); // Renders the PayPal button
+                            </script>
+                            <p>179.99/month</p>
+
+                        </div>
+                    </section>
+                </header>
+
+            </main>
         </footer>
+
+        <aside>
+            <h2>Getting Started with web apps.</h2>
+            <p>Regarding web apps, web apps are considered an advanced topic, and one of the fastest ways to advance in
+                web apps is to join a coding boot camp. </p>
+            <p>
+                However, with so many different coding boot camps, my mentorship offers a pre-boot camp web development
+                experience at a low cost.
+
+            </p>
+            <p>My advanced mentorship aims to help you make sure web development is something
+                you want to do before sending 15-20k on a coding boot camp. I will go over your choice of Python,
+                JavaScript, or C# for developing web apps.</p>
+            <p>end of blog..</p>
+        </aside>
     </div>
 </body>
