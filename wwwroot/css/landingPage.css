@@ -586,7 +586,6 @@ body ::-webkit-scrollbar {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 20px;
-    background: #187ddc;
 }
 
 .gettingStarted-container main footer header h2{
@@ -673,6 +672,7 @@ body ::-webkit-scrollbar {
     width: 99%;
     height: auto;
     padding: 20px 0;
+    justify-content: center;
 }
 
 /* .websiteServices-container header>ul>li:first-of-type{

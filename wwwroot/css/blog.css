@@ -14,7 +14,7 @@
 .getStarted-container{
 	background: white;
 	row-gap: 10px;
-    max-width: 35em;
+    max-width: 65em;
     overflow: scroll;
     height: 100vh;
 }
@@ -41,7 +41,7 @@
 .getStarted-container>section{
 	display: grid;
 	grid-template-columns: 80px 1fr;
-	height: 50px;
+	height: 40px;
 	align-items: center;
 }
 
