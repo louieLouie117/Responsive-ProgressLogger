@@ -481,10 +481,8 @@ const EnrollHandler = (e) =>{
         document.getElementById("ClassTitle").innerHTML  = "< Advanced Enrollment";
 
     }
-      
-
-  
-
+    
 
 };
+
 
