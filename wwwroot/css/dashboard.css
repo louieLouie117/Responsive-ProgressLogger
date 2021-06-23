@@ -258,6 +258,7 @@ body{margin: 0;}
 
 .recommendation-container{
 	display: grid;
+	row-gap: 10px;
 	background: white;
 	position: absolute;
 	top: 0;
@@ -268,8 +269,34 @@ body{margin: 0;}
 	margin-left: -300%;
 	z-index: 100;
 	/* padding: 20px; */
-	box-shadow: 10px 0px 5px rgba(0, 0, 0, 0.103);
+	box-shadow: 10px 0px 5px rgba(61, 52, 52, 0.103);
 	align-content: flex-start;
+	padding: 10px;
+}
+
+.recommendation-container h1{
+	font: 1.7em sans-serif;
+}
+
+.recommendation-container p{
+	font: 1.3em sans-serif;
+}
+.recommendation-container button{
+	font: 1em sans-serif;
+	width: 100px;
+}
+
+.recommendedItems-container{
+	display: grid;
+	justify-content: center;
+	row-gap: 20px;
+
+}
+
+
+.recommendedItems-container section{
+	display: grid;
+	grid-template-columns: 1fr 130px ;
 }
 
 

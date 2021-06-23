@@ -14,7 +14,7 @@
 .getStarted-container{
 	background: white;
 	row-gap: 10px;
-    max-width: 35em;
+    max-width: 65em;
     overflow: scroll;
     height: 100vh;
 }
@@ -41,7 +41,7 @@
 .getStarted-container>section{
 	display: grid;
 	grid-template-columns: 80px 1fr;
-	height: 50px;
+	height: 40px;
 	align-items: center;
 }
 
@@ -81,7 +81,7 @@
 
 .getStarted-container>header section{
 	display: grid;
-	padding:  10px;
+	padding:  20px;
 	row-gap: 13px;
 }
 
@@ -101,7 +101,7 @@
 
 .getStarted-container>main{
 	display: grid;
-	padding: 10px;
+	padding: 20px;
 	row-gap: 20px;
 
 }
@@ -151,7 +151,7 @@
 
 
 .getStarted-container main section img{
-	width: 300px;
+	width: 280px;
 
 }
 
@@ -159,7 +159,7 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	column-gap: 5px;
-	padding: 0 10px;
+	padding: 0 20px;
 }
 
 .getStarted-container>footer>button{
@@ -182,7 +182,7 @@
 
 
 .getStarted-container aside{
-	padding: 10px;
+	padding: 20px;
 	padding-top: 30px;
 	display: grid;
 	row-gap: 15px;
@@ -202,6 +202,7 @@
 	margin: 0;
 	justify-content: center;
 	align-content: center;
+	justify-items: center;
 }
 
 .mentorshipOption-container>button{
