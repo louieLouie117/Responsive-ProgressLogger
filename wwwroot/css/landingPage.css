@@ -752,7 +752,7 @@ body ::-webkit-scrollbar {
 
 .websiteServices-container main ul aside{
     display: grid;
-    row-gap: 10px;
+    row-gap: 20px;
     padding: 0;
     justify-self: right;
     width: auto;
@@ -816,7 +816,7 @@ body ::-webkit-scrollbar {
 @media screen and (min-width: 1000px) {
     .websiteServices-container header>ul {
         display: flex;
-        column-gap: 150px;
+        column-gap: 100px;
         padding: 20px;
 
     }
