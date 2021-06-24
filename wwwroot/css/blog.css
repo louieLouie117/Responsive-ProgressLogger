@@ -16,7 +16,7 @@
 	row-gap: 10px;
     max-width: 65em;
     overflow: scroll;
-    height: 100vh;
+    height: 90vh;
 }
 
 
@@ -24,13 +24,13 @@
 
         
     .blogPage-container{
-        grid-template-columns: 1fr 3.5fr;
+        grid-template-columns: 1fr 3fr;
         margin-top: 0px;
 
     }
 
 	.getStarted-container{
-		height: 105vh;
+		height: 104vh;
 	}
 }
 .getStarted-container ul {
@@ -294,6 +294,8 @@
 }
 
 .mentorshipInfo-container>footer ul{
+	display: grid;
+	row-gap: 10px;
 	padding-left: 20px;
 }
 

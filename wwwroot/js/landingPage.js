@@ -38,8 +38,9 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("BannerSummery").innerText ="Get a website or webapp designed, developed, and maintained by people that love helping others learn.";
         document.getElementById("BannerLinkTag").innerText ="view our services";
         document.getElementById("websiteServicesPartial").style.display = "grid";
-        console.log("Website Services")
         document.querySelector("#BannerLinkTag").style.textDecoration = "underline";
+        document.querySelector("#blogBTN").style.display = "none";
+
         
        
         
@@ -69,6 +70,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("getToolsInfo").innerText = "When you become an apprentice not only will you start connecting with mentors, but you also will have access to your dashboard and tools to help you on your new journey.  ";
         document.getElementById("becomeUserTitle").innerText = "Find mentors and become there apprentice.";
         document.getElementById("becomeUserInfo").innerText = "If you are interested in becoming a web developer. Start connecting with mentors.";
+        document.querySelector("#blogBTN").style.display = "none";
+
 
      
       
@@ -100,6 +103,7 @@ const HeaderBannerHandler =(e)=>{
        document.getElementById("getToolsInfo").innerText = "When you become a mentor you can connect with an apprentice that needs help programming a website or web app. You also get access to your dashboard with tools to help you stay organized.";
        document.getElementById("becomeUserTitle").innerText = "Become a mentor. Help others learn.";
        document.getElementById("becomeUserInfo").innerText = "Do you have the skills to code websites or web apps? Do you want to help businesses get online and at the same time be a mentor for someone? Then get started become a mentor today.";
+       document.querySelector("#blogBTN").style.display = "none";
 
     
 
@@ -146,6 +150,8 @@ const HeaderBannerHandler =(e)=>{
         document.getElementById("regApprenticeFooter").style.display = "none";
         document.getElementById("regMentorFooter").style.display = "none";
         document.getElementById("websiteServicesPartial").style.display = "none";
+        document.querySelector("#blogBTN").style.display = "block";
+
 
         
 
