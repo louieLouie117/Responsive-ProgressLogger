@@ -649,6 +649,8 @@ namespace ProgressLog.Controllers
                 if (result == 0)
                 {
                     // handle failure (this should be similar to how "existing email" is handled)
+                    System.Console.WriteLine("no access");
+                    return View("index");
                 }
                 // Set Session Instance
                 HttpContext.Session.SetInt32("UserId", userInDb.UserId);
